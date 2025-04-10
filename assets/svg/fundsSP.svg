@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="19.165722mm"
+   height="7.895174mm"
+   viewBox="0 0 19.165722 7.895174"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4627806"
+     inkscape:cx="378.73076"
+     inkscape:cy="223.88867"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="455"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1889">
+      <path
+         d="M 0,793.2 H 613.2 V 0 H 0 Z"
+         transform="translate(-401.93161,-616.37401)"
+         id="path1889" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1893">
+      <path
+         d="M 0,793.2 H 613.2 V 0 H 0 Z"
+         transform="translate(-368.56741,-626.58592)"
+         id="path1893" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1895">
+      <path
+         d="M 0,793.2 H 613.2 V 0 H 0 Z"
+         transform="translate(-368.29201,-621.84181)"
+         id="path1895" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1897">
+      <path
+         d="M 0,793.2 H 613.2 V 0 H 0 Z"
+         transform="translate(-406.56931,-626.58592)"
+         id="path1897" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1899">
+      <path
+         d="M 0,793.2 H 613.2 V 0 H 0 Z"
+         transform="translate(-406.84471,-621.84181)"
+         id="path1899" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-138.64167,-182.01353)">
+    <path
+       id="path1888"
+       d="M 0,0 H -1.047 L 6.229,8.912 6.23,7.841 Z m -26.876,0 -8.223,10.07 8.226,10.067 H -1.82 L 6.229,10.284 V 9.857 L -1.818,0 Z m -2.01,0 -6.23,7.841 V 9.146 L -27.648,0 Z m -9.922,3.701 c -0.011,0.593 -0.248,1.168 -0.671,1.588 -0.765,0.769 -2.044,0.886 -2.926,0.297 l -3.574,3.017 v 2.93 l 3.574,3.018 c 0.884,-0.588 2.163,-0.472 2.924,0.295 0.432,0.429 0.668,0.998 0.676,1.59 h 5.544 l -2.976,-3.745 -10e-4,-5.241 2.979,-3.749 z m 9.92,16.436 h 1.242 l -7.469,-9.142 V 12.3 Z m 28.892,0 6.225,-7.837 v -1.071 l -7.278,8.908 z M 7.351,12.691 0.545,21.258 H -29.43 l -3.039,-3.825 h -7.533 l 0.157,-0.621 c 0.117,-0.461 -0.01,-0.931 -0.342,-1.261 -0.498,-0.501 -1.373,-0.502 -1.874,-10e-4 l -0.323,0.324 -4.592,-3.877 V 8.139 l 4.592,-3.876 0.323,0.324 c 0.501,0.501 1.373,0.504 1.876,-0.003 0.33,-0.327 0.457,-0.798 0.34,-1.258 l -0.157,-0.621 h 7.535 l 3.039,-3.827 H 0.541 L 7.352,7.45 Z"
+       style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       transform="matrix(0.35277776,0,0,-0.35277776,155.21376,189.51289)"
+       clip-path="url(#clipPath1889)"
+       inkscape:export-filename="fundsSP.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="path1892"
+       d="M 0,0 C -0.002,0.537 0.437,0.976 0.976,0.976 1.516,0.977 1.951,0.537 1.953,0 1.953,-0.539 1.516,-0.977 0.976,-0.977 0.437,-0.977 0,-0.539 0,0"
+       style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       transform="matrix(0.35277776,0,0,-0.35277776,143.44361,185.91035)"
+       clip-path="url(#clipPath1893)" />
+    <path
+       id="path1894"
+       d="m 0,0 -0.488,0.345 c 0.902,1.282 1.38,2.793 1.38,4.368 0,1.591 -0.487,3.115 -1.405,4.407 l 0.488,0.347 C 0.966,8.073 1.489,6.428 1.489,4.713 1.489,3.014 0.975,1.384 0,0"
+       style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       transform="matrix(0.35277776,0,0,-0.35277776,143.34645,187.58397)"
+       clip-path="url(#clipPath1895)" />
+    <path
+       id="path1896"
+       d="M 0,0 C 0.002,0.537 -0.437,0.976 -0.977,0.976 -1.517,0.977 -1.951,0.537 -1.953,0 c 0,-0.539 0.436,-0.977 0.976,-0.977 C -0.437,-0.977 0,-0.539 0,0"
+       style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       transform="matrix(0.35277776,0,0,-0.35277776,156.84983,185.91035)"
+       clip-path="url(#clipPath1897)" />
+    <path
+       id="path1898"
+       d="m 0,0 c -0.974,1.383 -1.487,3.013 -1.487,4.713 0,1.716 0.521,3.36 1.512,4.754 L 0.513,9.12 C -0.404,7.828 -0.891,6.304 -0.891,4.713 c 0,-1.576 0.478,-3.087 1.379,-4.368"
+       style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       transform="matrix(0.35277776,0,0,-0.35277776,156.94699,187.58397)"
+       clip-path="url(#clipPath1899)" />
+    <path
+       style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.170907"
+       d="m 534.94011,710.94322 c 0,-0.67854 -0.72831,-1.77481 -1.4665,-2.20742 -0.64847,-0.38003 -0.89505,-0.42881 -1.82084,-0.36025 -0.58894,0.0436 -1.19844,0.10791 -1.35444,0.14288 -0.17057,0.0382 -1.2095,-0.70937 -2.60633,-1.87549 l -2.32271,-1.93907 v -1.85485 -1.85485 l 2.34775,-1.97695 c 1.57784,-1.32864 2.43255,-1.94071 2.60634,-1.86644 0.52845,0.22583 2.03445,0.26946 2.62086,0.0759 0.78426,-0.25883 1.77424,-1.36041 1.91978,-2.13619 l 0.11413,-0.60837 h 3.48458 c 1.91652,0 3.48458,0.0253 3.48458,0.0563 0,0.031 -0.84573,1.12691 -1.8794,2.43543 l -1.87941,2.37913 -5.8e-4,3.50482 -5.7e-4,3.50481 1.87998,2.34419 c 1.03399,1.28931 1.87998,2.3847 1.87998,2.43422 0,0.0495 -1.57662,0.09 -3.5036,0.09 -3.17074,0 -3.5036,-0.0274 -3.5036,-0.28785 z"
+       id="path2"
+       transform="scale(0.26458333)" />
+  </g>
+</svg>
