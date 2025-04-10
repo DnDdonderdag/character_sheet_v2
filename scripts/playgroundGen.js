@@ -1,20 +1,17 @@
+import * as decorators from "./decoratorTemplate.js"
+import * as calculator from "./calculations.js"
 
-import * as decorators from "./decorators.js"
-
-function createGenericPage(top,left){
+function createGenericPage(id, top,left){
     //Just page layout, page is 900 by 600 px
     const page = document.createElement("div");
-    page.style.top = "10px";
-    page.style.left = "10px";
-    page.style.width = "600px";
-    page.style.height = "900px";
-    page.style.backgroundColor = "#D0D0D0";
-    page.style.position = "absolute";
+    page.id = id
+    page.style = "--top:"+String(top)+"px; --left:"+String(left)+"px;"
+    page.className = "pageBackground"
     document.body.insertBefore(page, null);
     return page
 }
 
-function createGenericFormField(top, left, width, height, color, alignment ){
+function createGenericFormField(id, top, left, width, height, color, alignment ){
     // ====
     //  Creates a form field box
     // ====
@@ -27,10 +24,8 @@ function createGenericFormField(top, left, width, height, color, alignment ){
     var alignment = (alignment === undefined) ? "left" : alignment;
     var color = (color === undefined) ? "#dde4ff" : color;
 
-    console.log(alignment)
-
     const formfield = document.createElement("textarea");
-    formfield.id = "testTextField";
+    formfield.id = id;
     formfield.style = "--top:"+String(top)+"px; --left:"+String(left)+"px; --width:"+String(width)+"px; --height:"+String(height)+"px; --color:"+String(color)+"; --align:"+String(alignment)+""
     formfield.className = "genericformfield"
     formfield.spellcheck = false;
@@ -39,12 +34,20 @@ function createGenericFormField(top, left, width, height, color, alignment ){
 
 function genericUpdater(){
     decorators.genericDecoratorHandler()
+    calculator.calculationUpdater()
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    let page = createGenericPage(10,10)
-    let formfield = decorators.genericDecorator(createGenericFormField(300,300,200,100))
+export function generatePlayground(){
+    let page = createGenericPage("page1", 10, 10)
+    let formfield = 
+        calculator.calcDecorator( //This field is calculated
+            decorators.genericDecorator( //This field is decorated with the template
+                createGenericFormField("testField", 300, 300, 200, 100)
+            )
+        )
+    formfield.value = ""
+    formfield.textContent = "im a formula"
     page.appendChild(formfield); 
     genericUpdater()
-});
+};
 

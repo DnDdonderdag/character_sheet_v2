@@ -15,3 +15,13 @@
   }.genericformfield:hover{
     outline: solid 1px;
   }
+
+
+.pageBackground{
+    position: absolute;
+    left: var(--left);
+    top: var(--top);
+    width: 600px;
+    height: 900px;
+    background-color: rgb(175, 175, 175);
+}
