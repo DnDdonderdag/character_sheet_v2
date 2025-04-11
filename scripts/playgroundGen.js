@@ -2,7 +2,7 @@ import * as decorators from "./decoratorTemplate.js"
 import * as calc from "./calculations.js"
 import * as sync from "./syncronising.js";
 
-/*=========
+/*==========
 IMPORTANT NOTES:
 
  - Always apply the syncDecorator after the calcDecorator (for calculated fields)

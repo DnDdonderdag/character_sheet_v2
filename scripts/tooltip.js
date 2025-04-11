@@ -17,7 +17,7 @@ function showTooltip(event){
         tooltip.style.color = "black";
         tooltip.style.position = "absolute";
         tooltip.style.padding = "1px"
-        tooltip.style.zIndex = 1001;    
+        tooltip.style.zIndex = 1001;
         document.body.appendChild(tooltip);
     }
 }
