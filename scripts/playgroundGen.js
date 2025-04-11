@@ -1,5 +1,6 @@
 import * as decorators from "./decoratorTemplate.js"
 import * as calculator from "./calculations.js"
+import * as sync from "./syncronising.js";
 
 function createGenericPage(id, top,left){
     //Just page layout, page is 900 by 600 px
@@ -39,14 +40,35 @@ function genericUpdater(){
 
 export function generatePlayground(){
     let page = createGenericPage("page1", 10, 10)
-    let formfield = 
-        calculator.calcDecorator( //This field is calculated
+    let formfield =
+        sync.syncDecorator("TestSyncClass", //This field will sync its data with all fields with same syncClass
+            calculator.calcDecorator( //This field is calculated
+                decorators.genericDecorator( //This field is decorated with the template
+                    createGenericFormField("testField", 300, 300, 200, 100)
+                )
+            )
+        )
+
+    let secondFormfield =
+        sync.syncDecorator("TestSyncClass", //This field will sync its data with all fields with same syncClass
+            calculator.calcDecorator( //This field is calculated
+                decorators.genericDecorator( //This field is decorated with the template
+                    createGenericFormField("testField2", 100, 50, 200, 100)
+                )
+            )
+        )
+    let unsyncedFormfield =
+        sync.syncDecorator("otherTestSyncClass", //This field will sync its data with all fields with same syncClass
             decorators.genericDecorator( //This field is decorated with the template
-                createGenericFormField("testField", 300, 300, 200, 100)
+                createGenericFormField("testField2", 400, 50, 200, 100)
             )
         )
     formfield.value = ""
-    formfield.textContent = "im a formula"
+    formfield.textContent = "when updated, i sync"
+    secondFormfield.textContent = "update me to sync"
+    unsyncedFormfield.textContent = "i should not sync"
+    page.appendChild(unsyncedFormfield); 
+    page.appendChild(secondFormfield); 
     page.appendChild(formfield); 
     genericUpdater()
 };

@@ -1,6 +1,6 @@
 export function genericDecorator(field){
     let className = field.className
-    className += " decoratorTest"  // replace with relevant classname
+    className += " " + "decoratorTest"  // replace with relevant classname
     field.className = className
     return field
 }

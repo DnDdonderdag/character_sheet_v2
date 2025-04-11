@@ -15,10 +15,11 @@ function enterCalc(){
    this.value = dummy
 }
 function exitCalc(){
-    //console.log("uncalculating "+this.id) //for testing
+    console.log("uncalculating "+this.id) //for testing
     let dummy = this.textContent
     this.textContent = this.value
     this.value = dummy
+
 
     calculationUpdater()
 }
