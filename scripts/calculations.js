@@ -7,7 +7,6 @@ export function calcDecorator(field){
     return field
 }
 
-
 function enterCalc(){
    //console.log("calculating "+this.id) //for testing
    let dummy = this.textContent
@@ -15,11 +14,10 @@ function enterCalc(){
    this.value = dummy
 }
 function exitCalc(){
-    console.log("uncalculating "+this.id) //for testing
+    //console.log("uncalculating "+this.id) //for testing
     let dummy = this.textContent
     this.textContent = this.value
     this.value = dummy
-
 
     calculationUpdater()
 }
@@ -27,7 +25,7 @@ function exitCalc(){
 function calculate(formula){
     //This is where the actual calculating logic should go
     //It will take the formula as input, and return the result
-    let result = formula + " and now im calculated"//temporary remove when implenting
+    let result = "im the calculated form of: '" +formula +"'" //temporary remove when implenting
 
     return result
 }

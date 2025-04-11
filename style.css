@@ -1,3 +1,16 @@
+/* fonts and other extra's*/
+@font-face {
+    font-family:Scalasans;
+    src: url(Assets/otf/scalasans.otf);
+  }@font-face {
+    font-family:Scalasansbold ;
+    src: url(Assets/otf/scala-sans-bold.otf);
+  }@font-face {
+    font-family:Scalasanslight ;
+    src: url(Assets/otf/scala-sans-light.otf);
+  }
+
+
 .genericformfield{
     position: absolute;
     left: var(--left);
