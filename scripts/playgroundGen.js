@@ -1,6 +1,7 @@
 import * as decorators from "./decoratorTemplate.js"
 import * as calc from "./calculations.js"
 import * as sync from "./syncronising.js";
+import * as saveload from "./saveLoad.js"
 
 /*==========
 IMPORTANT NOTES:
@@ -37,7 +38,7 @@ function createGenericFormField(id, top, left, width, height, color, alignment){
     const formfield = document.createElement("textarea");
     formfield.id = id;
     formfield.style = "--top:"+String(top)+"px; --left:"+String(left)+"px; --width:"+String(width)+"px; --height:"+String(height)+"px; --color:"+String(color)+"; --align:"+String(alignment)+""
-    formfield.className = "genericformfield"
+    formfield.className = "genericformfield save"
     formfield.spellcheck = false;
     return formfield
 }
@@ -74,6 +75,9 @@ export function generatePlayground(){
     page.appendChild(unsyncedFormfield); 
     page.appendChild(secondFormfield); 
     page.appendChild(formfield); 
+
+    saveload.createSaveLoadButtons(10, 10)
+
     genericUpdater()
 };
 
