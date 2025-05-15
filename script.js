@@ -505,14 +505,14 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
     //death saves field
     const line = document.createElement("img");
     line.className = "verticalline not-selectable"
-    line.src="assets/svg/verticalLine.svg";
+    line.src="assets/svg/VerticalLine.svg";
     line.alt="line";
     line.draggable = false;
     line.style = "--top:"+String(238)+"px; --left:"+String(155)+"px;  --scale:rotate(-90deg) scale(0.5,1) "
     maindiv.appendChild(line);
     const line2 = document.createElement("img");
     line2.className = "verticalline not-selectable"
-    line2.src="assets/svg/verticalLine.svg";
+    line2.src="assets/svg/VerticalLine.svg";
     line2.alt="line";
     line2.draggable = false;
     line2.style = "--top:"+String(258)+"px; --left:"+String(155)+"px;  --scale:rotate(-90deg) scale(0.5,1) "
