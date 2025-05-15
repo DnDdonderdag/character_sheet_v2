@@ -245,7 +245,7 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
 
     const headerchar = document.createElement("img");
     headerchar.className="header not-selectable"
-    headerchar.src="assets/SV/headerP3.svg";
+    headerchar.src="assets/svg/headerP3.svg";
     headerchar.alt="headerchar";
     headerchar.draggable = false;
     headerchar.style = "--top:"+String(top)+"px; --left:"+String(left)+"px;"
