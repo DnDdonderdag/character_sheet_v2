@@ -57,7 +57,7 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
     for(let i=0; i<4; i++){
         const corner = document.createElement("img");
         corner.className="corner not-selectable"
-        corner.src="Assets/SVG/FrameCorner.svg";
+        corner.src="assets/svg/FrameCorner.svg";
         corner.alt="corner";
         corner.draggable = false;
         corner.style="--rotate:"+rotations[i]+"; --width:20px; "+positions[i]
@@ -72,10 +72,10 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
         const line = document.createElement("img");
         line.className = "horizontalline not-selectable"
         if(i<2){
-            line.src="Assets/SVG/HorizontalLine.svg";
+            line.src="assets/svg/HorizontalLine.svg";
         }
         else{
-            line.src="Assets/SVG/VerticalLine.svg";
+            line.src="asets/svg/VerticalLine.svg";
         }
         line.alt="line";
         line.draggable = false;
@@ -143,7 +143,7 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
     
     const headerchar = document.createElement("img");
     headerchar.className="header not-selectable"
-    headerchar.src="Assets/SVG/headerP1.svg";
+    headerchar.src="assets/svg/headerP1.svg";
     headerchar.alt="headerchar";
     headerchar.draggable = false;
     headerchar.style = "--top:"+String(top)+"px; --left:"+String(left)+"px;"
@@ -206,7 +206,7 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
 
     const headerchar = document.createElement("img");
     headerchar.className="header not-selectable"
-    headerchar.src="Assets/SVG/headerP2.svg";
+    headerchar.src="assets/svg/headerP2.svg";
     headerchar.alt="headerchar";
     headerchar.draggable = false;
     headerchar.style = "--top:"+String(top)+"px; --left:"+String(left)+"px;"
@@ -245,7 +245,7 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
 
     const headerchar = document.createElement("img");
     headerchar.className="header not-selectable"
-    headerchar.src="Assets/SVG/headerP3.svg";
+    headerchar.src="assets/SV/headerP3.svg";
     headerchar.alt="headerchar";
     headerchar.draggable = false;
     headerchar.style = "--top:"+String(top)+"px; --left:"+String(left)+"px;"
@@ -270,7 +270,7 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
 
     const headerchar = document.createElement("img");
     headerchar.className="header not-selectable"
-    headerchar.src="Assets/SVG/headerP4.svg";
+    headerchar.src="assets/svg/headerP4.svg";
     headerchar.alt="headerchar";
     headerchar.draggable = false;
     headerchar.style = "--top:"+String(top)+"px; --left:"+String(left)+"px;"
@@ -314,7 +314,7 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
 
     const headerchar = document.createElement("img");
     headerchar.className="header not-selectable"
-    headerchar.src="Assets/SVG/headerP5.svg";
+    headerchar.src="assets/svg/headerP5.svg";
     headerchar.alt="headerchar";
     headerchar.draggable = false;
     headerchar.style = "--top:"+String(top)+"px; --left:"+String(left)+"px;"
@@ -331,8 +331,8 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
         for (let j=0; j<2 ; j++){
             const inventorytab = document.createElement("img");
             inventorytab.className="inventorytab not-selectable"
-            if (j==0){inventorytab.src="Assets/SVG/inventorytab top.svg";}
-            else{inventorytab.src="Assets/SVG/inventorytab bottom.svg";}
+            if (j==0){inventorytab.src="assets/svg/inventorytab top.svg";}
+            else{inventorytab.src="assets/svg/inventorytab bottom.svg";}
             inventorytab.alt="inventorytab";
             inventorytab.draggable = false;
             inventorytab.style= "--top:"+String(top+27+31*j)+"px; --left:"+String(left+240+190*i)+"px; --width:"+String(170)+"px"
@@ -360,7 +360,7 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
         else if (i==2){temptop = 475;}
         const profbonusbox = document.createElement("img");
         profbonusbox.className="proficiencybox not-selectable"
-        profbonusbox.src="Assets/SVG/profbonus.svg";
+        profbonusbox.src="assets/svg/profbonus.svg";
         profbonusbox.draggable = false;
         profbonusbox.style=" --top:"+String(temptop)+"px; --left:"+String(10)+"px"
         maindiv.appendChild(profbonusbox);   
@@ -394,7 +394,7 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
 
         const box = document.createElement("img");
         box.className="abilitybox not-selectable"
-        box.src="Assets/SVG/modifiertab.svg";
+        box.src="assets/svg/modifiertab.svg";
         box.alt=abilities[i];
         box.draggable = false;
         box.style=" --top:"+String(i*80)+"px; --left:"+String(0)+"px; --width:190px; --height:auto;"
@@ -464,7 +464,7 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
 
     const ac = document.createElement("img");
     ac.className="acshield not-selectable"
-    ac.src="Assets/SVG/armor.svg";
+    ac.src="assets/svg/armor.svg";
     ac.draggable = false;
     ac.style=" --top:"+String(10)+"px; --left:"+String(8)+"px; --height:63px; --width:auto;"
     maindiv.appendChild(ac); 
@@ -505,14 +505,14 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
     //death saves field
     const line = document.createElement("img");
     line.className = "verticalline not-selectable"
-    line.src="Assets/SVG/verticalLine.svg";
+    line.src="assets/svg/verticalLine.svg";
     line.alt="line";
     line.draggable = false;
     line.style = "--top:"+String(238)+"px; --left:"+String(155)+"px;  --scale:rotate(-90deg) scale(0.5,1) "
     maindiv.appendChild(line);
     const line2 = document.createElement("img");
     line2.className = "verticalline not-selectable"
-    line2.src="Assets/SVG/verticalLine.svg";
+    line2.src="assets/svg/verticalLine.svg";
     line2.alt="line";
     line2.draggable = false;
     line2.style = "--top:"+String(258)+"px; --left:"+String(155)+"px;  --scale:rotate(-90deg) scale(0.5,1) "
@@ -569,8 +569,8 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
 
     const bar = document.createElement("img");
     bar.className="spellbar not-selectable " + addedclass
-    if (level==0){bar.src="Assets/SVG/spellbar cantrip.svg";}
-    else {bar.src="Assets/SVG/spellbar.svg";}
+    if (level==0){bar.src="assets/svg/spellbar cantrip.svg";}
+    else {bar.src="assets/svg/spellbar.svg";}
     bar.alt="spellbar";
     bar.draggable = false;
     bar.style = "--top:"+String(top)+"px; --left:"+String(left)+"px; --width:"+String(width)+"px"
@@ -641,7 +641,7 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
     for (let i=0; i<3 ; i++){
         const headerchar = document.createElement("img");
         headerchar.className="spelllistrect not-selectable"
-        headerchar.src="Assets/SVG/spelllist frame.svg";
+        headerchar.src="assets/svg/spelllist frame.svg";
         headerchar.alt="spelllistframe";
         headerchar.draggable = false;
         headerchar.style = "--top:"+String(top)+"px; --left:"+String(left + i*206)+"px; --height:"+String(760)+"px; --width:"+String(207)+"px"
@@ -718,7 +718,7 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
     for (let i=0; i<1 ; i++){//ac shield, not actual forloop, just collapsed
         const ac = document.createElement("img");
         ac.className="acshield not-selectable " + addedclass
-        ac.src="Assets/SVG/armor.svg";
+        ac.src="assets/svg/armor.svg";
         ac.draggable = false;
         ac.style=" --top:"+String(top+63)+"px; --left:"+String(left+428)+"px; --height:63px; --width:auto;"
         maindiv.appendChild(ac); 
@@ -801,7 +801,7 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
     for (let i=0; i<1 ; i++){//ac shield, not actual forloop, just collapsed
         const ac = document.createElement("img");
         ac.className="acshield not-selectable " + addedclass
-        ac.src="Assets/SVG/armor.svg";
+        ac.src="assets/svg/armor.svg";
         ac.draggable = false;
         ac.style=" --top:"+String(top-9+625)+"px; --left:"+String(left+428)+"px; --height:63px; --width:auto;"
         maindiv.appendChild(ac); 
@@ -923,7 +923,7 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
     for (let i=0; i<5 ; i++){
         const inventorytab = document.createElement("img");
         inventorytab.className="inventorytab not-selectable"
-        inventorytab.src="Assets/SVG/essential item tab.svg";
+        inventorytab.src="assets/svg/essential item tab.svg";
         inventorytab.alt="essentialstab";
         inventorytab.draggable = false;
         inventorytab.style= "--top:"+String(top+15+30*i)+"px; --left:"+String(left + 487)+"px; --width:"+String(125)+"px"
@@ -938,7 +938,7 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
     for (let i=0; i<5 ; i++){
         const inventorytab = document.createElement("img");
         inventorytab.className="fundstab not-selectable"
-        inventorytab.src="Assets/SVG/funds"+funds[i]+".svg";
+        inventorytab.src="assets/svg/funds"+funds[i]+".svg";
         inventorytab.alt="funds";
         inventorytab.draggable = false;
         inventorytab.style= "--top:"+String(top+20+30*i)+"px; --left:"+String(left+ 335)+"px; --width:"+String(67)+"px; --scale:"+"none;"
@@ -946,7 +946,7 @@ function createFormField(top,left,width,height,name,format,textsize,color,align,
 
         const inventorytabrev = document.createElement("img");
         inventorytabrev.className="fundstab not-selectable"
-        inventorytabrev.src="Assets/SVG/funds"+funds[i]+".svg";
+        inventorytabrev.src="assets/svg/funds"+funds[i]+".svg";
         inventorytabrev.alt="funds";
         inventorytabrev.draggable = false;
         inventorytabrev.style= "--top:"+String(top+20+30*i)+"px; --left:"+String(left+ 408)+"px; --width:"+String(67)+"px; --scale:"+"scale(-1,1);"
