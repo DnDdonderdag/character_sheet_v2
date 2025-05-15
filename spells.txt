@@ -1,0 +1,2 @@
+event.value= "This form field is to store a dictionary of all spells, refresh this field if spells don't load"
+var dict={

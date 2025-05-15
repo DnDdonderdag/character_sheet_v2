@@ -1,50 +1,516 @@
+/*find and replace in svg:  \sicc-color\([,0-9a-z-\.\s]*\)   */
+/*  #dde4ff  blue color*/
+
+.body{
+  font-family: monospace;
+}
+
+
+
+/*Rules for Frame */
+.frame{
+  left: var(--left, 20px);
+  top: var(--top, 20px);
+  position: absolute;
+  width:  calc(var(--width, 50px));
+  height: calc(var(--height, 50px));
+  background-color: rgb(255, 255, 255);
+  clip-path:  polygon(var(--bevel) 0px,calc(var(--width) - var(--bevel)) 0px,calc(var(--width)) var(--bevel),calc(var(--width))  calc(var(--height) - var(--bevel)),calc(var(--width) - var(--bevel))  calc(var(--height)),var(--bevel)  calc(var(--height)),0px  calc(var(--height) - var(--bevel)),0px var(--bevel));
+} .verticalline{
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: var(--top);
+  left:var(--left);
+  transform: var(--scale);
+  display: block;
+  margin: auto;  
+  user-select: none;
+  z-index: 1000;
+} .corner {
+  width: var(--width); /* Set desired width */
+  height: var(--width); /* Maintain aspect ratio */
+  position: absolute; /* Positioning */
+  top: var(--top); /* Set top position */
+  left: var(--left);
+  transform: var(--rotate);
+  user-select: none;
+} .horizontalline{
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: var(--top);
+  left:var(--left);
+  transform: var(--scale);
+  display: block;
+  margin: auto;
+  user-select: none;
+} .frameform{
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  width: var(--width);
+  height: var(--height);
+  background-color: #dde4ff;
+  resize:none;
+  font-family:Arial, Helvetica, sans-serif;
+  border:none;
+  outline:none;
+  font-size: 12pt;
+  z-index: 1000;
+
+} .framename{
+  position: absolute;
+  top: var(--top);
+  height: 30px;
+  width: var(--width);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-family: scalasans;
+  font-size: 6pt;
+} .frameform:hover{
+  outline: solid 1px;
+}
+
+/*Save button*/
+.savebutton {
+  position: absolute;
+  left:var(--left);
+  top: var(--top);
+  height: var(--height);
+  width:  var(--width);
+}.browsebutton{
+  position: absolute;
+  left:var(--left);
+  top: var(--top);
+  height: var(--height);
+  width:  var(--width);
+}
+
+/*Rules for a featurebox*/
+.featurebox {
+  left: var(--left);
+  top: var(--top);
+  position: absolute;
+  width:  calc(var(--width));
+  height: calc(var(--height));
+  clip-path:  polygon(var(--bevel) 0px,calc(var(--width) - var(--bevel)) 0px,calc(var(--width)) var(--bevel),calc(var(--width))  calc(var(--height) - var(--bevel)),calc(var(--width) - var(--bevel))  calc(var(--height)),var(--bevel)  calc(var(--height)),0px  calc(var(--height) - var(--bevel)),0px var(--bevel));
+  background: var(--color); 
+  z-index: -1;
+}.featurebox::after{
+  content: "";
+  position: absolute;
+  top:calc(var(--bevel)/4);
+  left: calc(var(--bevel)/4);
+  width:  calc(var(--width) - var(--bevel)/2);
+  height: calc(var(--height) - var(--bevel)/2 );
+  clip-path: polygon(
+
+  calc(var(--bevel)) 0px,
+  calc(var(--width) - var(--bevel)*1.5) 0px,
+
+  calc(var(--width) - var(--bevel)/2) calc(var(--bevel)),
+  calc(var(--width) - var(--bevel)/2) calc(var(--height) - var(--bevel)*1.5),
+
+  calc(var(--width) - var(--bevel)*1.5) calc(var(--height) - var(--bevel)/2),
+  calc(var(--bevel)) calc(var(--height) - var(--bevel)/2),
+  
+  0px calc(var(--height) - var(--bevel)*1.5),
+  0px calc(var(--bevel)),
+
+  calc(var(--bevel)) 0px,
+
+  calc(var(--bevel) + 2px) 2px,
+  2px calc(var(--bevel) + 2px),
+  2px calc(var(--height) - var(--bevel)*1.5 - 2px),
+ 
+  calc(var(--bevel) + 2px) calc(var(--height) - var(--bevel)/2 - 2px),
+  calc(var(--width) - var(--bevel)*1.5 - 2px) calc(var(--height) - var(--bevel)/2 - 2px),
+  
+  calc(var(--width) - var(--bevel)/2 - 2px) calc(var(--height) - var(--bevel)*1.5 - 2px),
+  calc(var(--width) - var(--bevel)/2 - 2px) calc(var(--bevel) + 2px),
+
+  calc(var(--width) - var(--bevel)*1.5 - 2px) 2px,
+  calc(var(--bevel) + 2px) 2px
+  );
+  background: rgb(255, 255, 255); 
+  z-index: -1;
+} 
+
+/*Rules for filling the dark featurebox*/
+.filldarkfeaturebox {
+  left: var(--left);
+  top: var(--top);
+  position: absolute;
+  width:  200px;
+  height: 300px;
+}.acshield{
+  position: absolute; 
+  left: var(--left);
+  top: var(--top);
+  width: var(--width);
+  height:var(--height);
+}.acshieldname{
+  position: absolute;
+  left: var(--left);
+  top: var(--top);
+  height: 40px;
+  width: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-family: scalasanslight;
+  font-size: 5pt;
+}.acshieldform{ 
+  text-align: center;
+  position: absolute;
+  left: var(--left);
+  top:var(--top);
+
+  width: var(--width);
+  height: var(--height);
+  background-color: #dde4ff;
+  resize:none;
+  font-family:Arial, Helvetica, sans-serif;
+  border:none;
+  outline:none;
+  text-align: center;
+  font-size: 12pt;
+  z-index: 1000;
+}.acshieldform:hover{
+  outline: solid 1px;
+}
+
+
+/*
+rules for ability boxes*/
+.abilitybox{
+  left: var(--left);
+  top: var(--top);
+  position: absolute;
+  width:  var(--width);
+  height: var(--height);
+}.abilityboxes{
+  left: var(--left);
+  top: var(--top);
+  position: absolute;
+  width:  190px;
+  height: 500px;
+}.abilityboxname{
+  position: absolute;
+  left: var(--left);
+  top: var(--top);
+  height: 30px;
+  width: 65px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-family: scalasanslight;
+  font-size: 6pt;
+}.abilityboxform{
+  position: absolute;
+  left: var(--left);
+  top: var(--top);
+  width: 40px;
+  height: 26px;
+  background-color: #dde4ff;
+  resize:none;
+  font-family:Arial, Helvetica, sans-serif;
+  border:none;
+  outline:none;
+  text-align: center;
+  font-size: 16pt;
+
+}.modiferform{
+  position: absolute;
+  left: var(--left);
+  top: var(--top);
+  width: 20px;
+  height: 12px;
+  background-color: #e7e8e8;
+  resize:none;
+  font-family:Arial, Helvetica, sans-serif;
+  border:none;
+  outline:none;
+  text-align: center;
+  font-size: 7pt;
+}.abilityboxform:hover{
+  outline: solid 1px;
+}.skilltext{
+  position: absolute;
+  left: var(--left);
+  top: var(--top);
+  height: 10px;
+  width: 80px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  font-family: scalasanslight;
+  font-size: 6pt;
+}.skillline{
+  position: absolute;  
+  left: var(--left);
+  top: var(--top);
+  background-color: #000000;
+  height: 1px;
+  width: 14px;
+}.proficiencybox{
+  left: var(--left);
+  top: var(--top);
+  position: absolute;
+  width:  170px;
+  height: auto;
+}.proficiencyboxname{
+  position: absolute;
+  left: var(--left);
+  top: var(--top);
+  height: 15px;
+  width: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-family: scalasanslight;
+  font-size: 7pt;
+}
+
+
+/*rules for header*/
+.header{
+  position: absolute;
+  top: var(--top); /* Set top position */
+  left: var(--left);
+  user-select: none;
+  height: auto;
+  width: 645px;
+  z-index: -10;
+}.headertab{
+  position: absolute;
+  left: var(--left);
+  top: var(--top);
+  height: 15px;
+  width: 85px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  font-family: scalasanslight;
+  font-size: 6pt;
+}.headertabform{
+  position: absolute;
+  left: var(--left);
+  top: var(--top);
+  width: 100px;
+  height: 12px;
+  background-color: #dde4ff;
+  resize:none;
+  font-family:Arial, Helvetica, sans-serif;
+  border:none;
+  outline:none;
+  text-align: left;
+  font-size: 11px;
+}.headertabform:hover{
+  outline: solid 1px;
+}.charnameform{
+  position: absolute;
+  left: var(--left);
+  top: var(--top);
+  width: 180px;
+  height: 21px;
+  background-color: #dde4ff;
+  resize:none;
+  font-family:Arial, Helvetica, sans-serif;
+  border:none;
+  outline:none;
+  text-align: center;
+  font-size: 12pt;
+}.charnameform:hover{
+  outline: solid 1px;
+}
+
+.spelllistrect{
+  left: var(--left);
+  top: var(--top);
+  position: absolute;
+  width:  var(--width);
+  height: var(--height);
+  transform: none;
+}.spellbar{
+  left: var(--left);
+  top: var(--top);
+  position: absolute;
+  width:  var(--width);;
+  height: auto;
+}
+
+/* rules for generic formfield*/
+.genericformfield{
+  position: absolute;
+  left: var(--left);
+  top: var(--top);
+  width: var(--width);
+  height: var(--height);
+  background-color: var(--color);
+  resize:none;
+  font-family:Arial, Helvetica, sans-serif;
+  border:none;
+  outline:none;
+  text-align: var(--align);
+  font-size: var(--fontsize);
+  z-index: 1000;
+}.genericformfield:hover{
+  outline: solid 1px;
+}.generictext{
+  position: absolute;
+  top: var(--top);
+  left: var(--left);
+  height: var(--height);
+  width: var(--width);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: var(--align);
+  font-family: scalasans;
+  font-size: var(--fontsize);
+  color: var(--color);
+  z-index: 1000;
+}.genericbutton{
+  position: absolute;  
+  left: var(--left);
+  top: var(--top);
+  border: .7px solid rgb(0, 0, 0);
+  background-color: #FFFFFF;
+  height: var(--size);
+  border-radius:50%;
+  width:  var(--size);
+  z-index: 1000;
+}.genericbutton:hover{
+  border: 2px solid rgb(0, 0, 0);
+  left: calc(var(--left) - 0.80px);
+  top: calc(var(--top) - 0.80px);
+}.checkmarkbutton{
+  position: absolute;  
+  left: var(--left);
+  top: var(--top);
+  border: .7px solid rgb(0, 0, 0);
+  background-color: #dde4ff;
+  height: var(--size);
+  width:  var(--size);
+  z-index: 1000;
+  font-size: var(--textsize);
+  text-align: center;
+  vertical-align: text-top;
+  user-select: none; 
+  line-height:var(--lineheight);
+}.checkmarkbutton:hover{
+  border: .7px solid rgb(0, 0, 0); 
+  cursor: pointer;
+}.genericline{
+  height: var(--height);
+  width: var(--width);
+  position: absolute;
+  top: var(--top);
+  left:var(--left);
+  transform: var(--scale);
+  display: block;
+  margin: auto;
+  user-select: none;
+  background-color: #000000;
+}.dropdown{
+  position: absolute;
+  left:var(--left);
+  top: var(--top);
+  height: var(--height);
+  width:  var(--width);
+}.genericScriptedButton{
+  position: absolute;
+  left:var(--left);
+  top: var(--top);
+  height: var(--height);
+  width:  var(--width);
+  background-color:  #c5c6c7;
+  font-size: var(--textsize);
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: scalasanslight;
+  line-height:11px;
+  cursor: pointer;
+}
+
+.inventorytab{
+  position: absolute;
+  left:var(--left);
+  top: var(--top);
+  height: auto;
+  width:  var(--width);
+}.fundstab{
+  position: absolute;
+  left:var(--left);
+  top: var(--top);
+  height: auto;
+  width:  var(--width);
+  transform:  var(--scale);
+} 
+
 /* fonts and other extra's*/
 @font-face {
-    font-family:Scalasans;
-    src: url(Assets/otf/scalasans.otf);
-  }@font-face {
-    font-family:Scalasansbold ;
-    src: url(Assets/otf/scala-sans-bold.otf);
-  }@font-face {
-    font-family:Scalasanslight ;
-    src: url(Assets/otf/scala-sans-light.otf);
-  }
-
-
-.genericformfield{
-    position: absolute;
-    left: var(--left);
-    top: var(--top);
-    width: var(--width);
-    height: var(--height);
-    background-color: var(--color);
-    resize:none;
-    font-family:Arial, Helvetica, sans-serif;
-    border:none;
-    outline:none;
-    text-align: var(--align);
-    font-size: var(--fontsize);
-    z-index: 1000;
-  }.genericformfield:hover{
-    outline: solid 1px;
-  }
-
-
-.pageBackground{
-    position: absolute;
-    left: var(--left);
-    top: var(--top);
-    width: 600px;
-    height: 900px;
-    z-index: -100;
-    background-color: rgb(222, 222, 222);
+  font-family:Scalasans;
+  src: url(Assets/scalasans.otf);
+}@font-face {
+  font-family:Scalasansbold ;
+  src: url(Assets/scala-sans-bold.otf);
+}@font-face {
+  font-family:Scalasanslight ;
+  src: url(Assets/scala-sans-light.otf);
 }
 
 .not-selectable {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}.divider{
+  position: absolute;
+  left:var(--left);
+  top: var(--top);
+  height: var(--height);
+  width:  var(--width);
+  background-color: #c5c6c7;
+  opacity: 0;
+}.tooltip{
+  position: absolute;
+  top: var(--top);
+  left: var(--left);
+  height: var(--height);
+  width: var(--width);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: var(--align);
+  font-family: scalasans;
+  font-size: var(--fontsize);
+  color: black;
+  background-color: var(--color);
+  pointer-events:none;
 }
+
+#invisdiv {
+  width: auto;
+  display: inline-block;
+  visibility: hidden;
+  position: fixed;
+  overflow:auto;
+}
+
+/*delete later*/
+#measurer {
+  position: absolute;
+  left: 1300px;
+  top: 1000px;
+  z-index: 9;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+}#measurertool {
+  position: absolute;
+  left: 1300px;
+  top: 1000px;
+  width: 10px;
+  height: 20px;
+  cursor: move;
+  z-index: 10;
+  background-color: #000000;
+  color: #fff;
+}
+
