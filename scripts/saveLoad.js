@@ -1,4 +1,6 @@
+import { buttonUpdater } from "./assetGeneration/button.js";
 import * as calc from "./calculations.js"
+import * as button from "./assetGeneration/button.js"
 
 // Functions for creating the buttons
 export function createSaveLoadButtons(top, left){
@@ -120,6 +122,7 @@ async function loadState(result){
             catch{console.log("did not find: ", property)}
         }
         calc.calculationUpdater()
+        button.buttonUpdater()
     }
 }
 async function CheckSaved(){

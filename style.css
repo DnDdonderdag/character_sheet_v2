@@ -11,7 +11,7 @@
   }
 
 
-.genericformfield{
+.formfield{
     position: absolute;
     left: var(--left);
     top: var(--top);
@@ -25,8 +25,39 @@
     text-align: var(--align);
     font-size: var(--fontsize);
     z-index: 1000;
-  }.genericformfield:hover{
+  }.formfield:hover{
     outline: solid 1px;
+  }
+
+  .checkmark{
+    position: absolute;
+    left: var(--left);
+    top: var(--top);
+    width: var(--width);
+    height: var(--height);
+    background-color: var(--color);
+    resize:none;
+    font-family:Arial, Helvetica, sans-serif;
+    border:none;
+    outline:none;
+    outline: solid 1px;
+    z-index: 1000;
+  }.checkmark:hover{
+    outline: solid 2px;
+  }.checkmarkDiamond{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;   /* or a fixed size, e.g., 10px */
+    height: 50%;  /* same as above */
+    background-color: black;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: black;
+    resize:none;
+    font-family:Arial, Helvetica, sans-serif;
+    border:none;
+    outline:none;
+    z-index: 1001;
   }
 
 

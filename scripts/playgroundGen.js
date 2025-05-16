@@ -1,7 +1,9 @@
-import * as decorators from "./decoratorTemplate.js"
-import * as calc from "./calculations.js"
+import * as decorators from "./decoratorTemplate.js";
+import * as calc from "./calculations.js";
 import * as sync from "./syncronising.js";
-import * as saveload from "./saveLoad.js"
+import * as saveload from "./saveLoad.js";
+import * as formfield  from "./assetGeneration/formfield.js";
+import * as button  from "./assetGeneration/button.js";
 
 /*==========
 IMPORTANT NOTES:
@@ -22,26 +24,6 @@ function createGenericPage(id, top, left){
     return page
 }
 
-function createGenericFormField(id, top, left, width, height, color, alignment){
-    // ====
-    //  Creates a form field box
-    // ====
-    // top, left, width, height speak for themselves
-    // alignment, choose from things like "left" "center"
-    // color, set the color, default is "#dde4ff"
-
-
-    //These allow variables to be undefined, and they set a default value
-    var alignment = (alignment === undefined) ? "left" : alignment;
-    var color = (color === undefined) ? "#dde4ff" : color;
-
-    const formfield = document.createElement("textarea");
-    formfield.id = id;
-    formfield.style = "--top:"+String(top)+"px; --left:"+String(left)+"px; --width:"+String(width)+"px; --height:"+String(height)+"px; --color:"+String(color)+"; --align:"+String(alignment)+""
-    formfield.className = "genericformfield save"
-    formfield.spellcheck = false;
-    return formfield
-}
 
 function genericUpdater(){
     decorators.genericDecoratorHandler()
@@ -50,31 +32,33 @@ function genericUpdater(){
 
 export function generatePlayground(){
     let page = createGenericPage("page1", 10, 10)
-    let formfield =
+    let field =
         sync.syncDecorator("TestSyncClass", //This field will sync its data with all fields with same syncClass
             calc.calcDecorator( //This field is calculated
-                createGenericFormField("testField", 300, 300, 200, 100)
+                formfield.create("testField", 300, 300, 200, 100, page)
             )
         )
 
-    let secondFormfield =
+    let secondField =
         sync.syncDecorator("TestSyncClass", //This field will sync its data with all fields with same syncClass
             calc.calcDecorator( //This field is calculated
-                createGenericFormField("testField2", 100, 50, 200, 100)
+                formfield.create("testField2", 100, 50, 200, 100, page)
             )
         )
 
-    let unsyncedFormfield =
+    let unsyncedField =
         sync.syncDecorator("otherTestSyncClass", //This field will sync its data with all fields with same syncClass
-           createGenericFormField("unsyncedField", 400, 50, 200, 100)
+            formfield.create("unsyncedField", 400, 50, 200, 100, page)
         )
 
-    formfield.textContent = "when updated, i sync"
-    secondFormfield.textContent = "update me to sync"
-    unsyncedFormfield.textContent = "i should not sync"
-    page.appendChild(unsyncedFormfield); 
-    page.appendChild(secondFormfield); 
-    page.appendChild(formfield); 
+
+    let testButton =
+        button.checkmark("testButton", 30, 400, 30, 30, page)
+        
+    field.textContent = "when updated, i sync"
+    secondField.textContent = "update me to sync"
+    unsyncedField.textContent = "i should not sync"
+
 
     saveload.createSaveLoadButtons(10, 10)
 
