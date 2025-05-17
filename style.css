@@ -69,12 +69,29 @@
     resize:none;
     font-family:Arial, Helvetica, sans-serif;
     border:none;
-    outline:none;
     outline: solid 1px;
     z-index: 1000;
     border-radius: 50%;
   }.tickbox:hover{
     outline: solid 2px;
+  }
+
+
+  .textbox{
+    position: absolute;
+    left: var(--left);
+    top: var(--top);
+    width: var(--width);
+    height: var(--height);
+    color: var(--color);
+    text-align: var(--align);
+    background-color: rgb(150, 150, 150); /* while page making, otherwise transparent */
+    font-size: var(--fontsize);
+    resize:none;
+    font-family: var(--fontfamiliy);
+    border:none;
+    outline:none;
+    z-index: 1000;
   }
 
 

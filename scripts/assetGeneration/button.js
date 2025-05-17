@@ -1,4 +1,4 @@
-export function checkmark(id, top, left, width, height, page, color){
+export function checkmark(id, top, left, width, height, parentDiv, color){
     // ====
     //  Creates square checkbox button
     // ====
@@ -21,12 +21,12 @@ export function checkmark(id, top, left, width, height, page, color){
     diamond.className = "not-selectable checkmarkDiamond save "
     diamond.style.setProperty("visibility", "hidden");
     
-    page.appendChild(checkmark)
+    parentDiv.appendChild(checkmark)
     checkmark.appendChild(diamond)
     return checkmark
 }
 
-export function tickbox(id, top, left, width, height, page, color){
+export function tickbox(id, top, left, width, height, parentDiv, color){
     // ====
     //  Creates circular tickbox button
     // ====
@@ -44,7 +44,7 @@ export function tickbox(id, top, left, width, height, page, color){
     tickbox.value = 0;
     tickbox.addEventListener("click", tickboxClicked, false)
 
-    page.appendChild(tickbox)
+    parentDiv.appendChild(tickbox)
     return tickbox
 }
 

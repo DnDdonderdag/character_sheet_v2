@@ -1,4 +1,4 @@
-export function create(id, top, left, width, height, page, color, alignment){
+export function create(id, top, left, width, height, parentDiv, color, alignment){
     // ====
     //  Creates a form field box
     // ====
@@ -16,6 +16,6 @@ export function create(id, top, left, width, height, page, color, alignment){
     formfield.style = "--top:"+String(top)+"px; --left:"+String(left)+"px; --width:"+String(width)+"px; --height:"+String(height)+"px; --color:"+String(color)+"; --align:"+String(alignment)+""
     formfield.className = "not-selectable formfield save"
     formfield.spellcheck = false;
-    page.appendChild(formfield)
+    parentDiv.appendChild(formfield)
     return formfield
 }

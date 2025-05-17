@@ -4,6 +4,7 @@ import * as sync from "../decorators/syncronising.js";
 import * as saveload from "../utilities/saveLoad.js";
 import * as formfield  from "../assetGeneration/formfield.js";
 import * as button  from "../assetGeneration/button.js";
+import * as text from "../assetGeneration/text.js"
 
 /*==========
 IMPORTANT NOTES:
@@ -56,7 +57,10 @@ export function generatePlayground(){
         button.checkmark("testButton", 30, 400, 30, 30, page)
     let testButton =
         button.tickbox("testTickbox", 30, 450, 30, 30, page)
-           
+    let textTest = 
+        text.create("testText", "THIS IS A TEST", 100, 400, 100, 10, page, "Scalasans")
+
+        
     field.textContent = "when updated, i sync"
     secondField.textContent = "update me to sync"
     unsyncedField.textContent = "i should not sync"
