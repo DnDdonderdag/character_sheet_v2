@@ -1,6 +1,6 @@
-import { buttonUpdater } from "./assetGeneration/button.js";
-import * as calc from "./calculations.js"
-import * as button from "./assetGeneration/button.js"
+import { buttonUpdater } from "../assetGeneration/button.js";
+import * as calc from "../decorators/calculations.js"
+import * as button from "../assetGeneration/button.js"
 
 // Functions for creating the buttons
 export function createSaveLoadButtons(top, left){

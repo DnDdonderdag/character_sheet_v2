@@ -1,9 +1,9 @@
-import * as decorators from "./decoratorTemplate.js";
-import * as calc from "./calculations.js";
-import * as sync from "./syncronising.js";
-import * as saveload from "./saveLoad.js";
-import * as formfield  from "./assetGeneration/formfield.js";
-import * as button  from "./assetGeneration/button.js";
+import * as decorators from "../decorators/decoratorTemplate.js";
+import * as calc from "../decorators/calculations.js";
+import * as sync from "../decorators/syncronising.js";
+import * as saveload from "../utilities/saveLoad.js";
+import * as formfield  from "../assetGeneration/formfield.js";
+import * as button  from "../assetGeneration/button.js";
 
 /*==========
 IMPORTANT NOTES:
@@ -52,9 +52,11 @@ export function generatePlayground(){
         )
 
 
-    let testButton =
+    let checkmark =
         button.checkmark("testButton", 30, 400, 30, 30, page)
-        
+    let testButton =
+        button.tickbox("testTickbox", 30, 450, 30, 30, page)
+           
     field.textContent = "when updated, i sync"
     secondField.textContent = "update me to sync"
     unsyncedField.textContent = "i should not sync"
