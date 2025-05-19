@@ -7,7 +7,7 @@ export function createSaveLoadButtons(top, left){
     createSaveButton(top, left)
     createLoadButton(top, left + 45)
 }
-function createSaveButton(top, left,) {
+function createSaveButton(top, left) {
     const saveButton = document.createElement("button");
     saveButton.className="saveButton";
     saveButton.textContent = "Save";

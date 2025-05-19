@@ -56,7 +56,15 @@ export function generatePlayground(){
     let checkmark =
         button.checkmark("testButton", 30, 400, 30, 30, page)
     let testButton =
-        button.tickbox("testTickbox", 30, 450, 30, 30, page)
+        sync.syncDecorator("testSyncButton",
+            button.tickbox("testTickbox", 30, 450, 30, 30, page)
+        )
+        
+    let testButton2 =
+        sync.syncDecorator("testSyncButton",
+            button.tickbox("testTickbox2", 60, 450, 30, 30, page)
+        )
+
     let textTest = 
         text.create("testText", "THIS IS A TEST", 100, 400, 100, 10, page, "Scalasans")
 
