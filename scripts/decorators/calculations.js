@@ -25,7 +25,7 @@ function exitCalc(){
 function calculate(formula){
     //This is where the actual calculating logic should go
     //It will take the formula as input, and return the result
-    let result = "im the calculated form of: '" +formula +"'" //temporary remove when implenting
+    let result = "Calc of: '" +formula +"'" //temporary remove when implenting
 
     return result
 }

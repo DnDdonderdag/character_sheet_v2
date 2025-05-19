@@ -1,4 +1,4 @@
-export function create(id, top, left, width, height, parentDiv, color, alignment){
+export function create(id, top, left, width, height, parentDiv, color, alignment, maxFontSize){
     // ====
     //  Creates a form field box
     // ====
@@ -8,19 +8,22 @@ export function create(id, top, left, width, height, parentDiv, color, alignment
 
 
     //These allow variables to be undefined, and they set a default value
-    var alignment = (alignment === undefined) ? "left" : alignment;
-    var color = (color === undefined) ? "#dde4ff" : color;
+    alignment = (alignment === undefined) ? "left" : alignment;
+    color = (color === undefined) ? "#dde4ff" : color;
+    maxFontSize = (maxFontSize === undefined) ? 16 : maxFontSize;
 
     const formfield = document.createElement("textarea");
     formfield.id = id;
-    formfield.style = "--top:"+String(top)+"px; --left:"+String(left)+"px; --width:"+String(width)+"px; --height:"+String(height)+"px; --color:"+String(color)+"; --align:"+String(alignment)+""
+    formfield.style = "--top:"+String(top-1)+"px; --left:"+String(left)+"px; --width:"+String(width-4)+"px; --height:"+String(height-4)+"px; --color:"+String(color)+"; --align:"+String(alignment)+""
     formfield.className = "not-selectable formfield save"
     formfield.spellcheck = false;
-    parentDiv.appendChild(formfield)
+    formfield.maxFontSize = maxFontSize
+    formfield.style.setProperty("font-size", maxFontSize + "px")
+    if (parentDiv){parentDiv.appendChild(formfield)}
     return formfield
 }
 
-export function singleLine(id, top, left, width, height, parentDiv, color, alignment){
+export function singleLine(id, top, left, width, height, parentDiv, color, alignment, maxFontSize){
     // ====
     //  Creates a form field box
     // ====
@@ -30,14 +33,18 @@ export function singleLine(id, top, left, width, height, parentDiv, color, align
 
 
     //These allow variables to be undefined, and they set a default value
-    var alignment = (alignment === undefined) ? "left" : alignment;
-    var color = (color === undefined) ? "#dde4ff" : color;
+    alignment = (alignment === undefined) ? "left" : alignment;
+    color = (color === undefined) ? "#dde4ff" : color;
+    maxFontSize = (maxFontSize === undefined) ? 16 : maxFontSize;
+
 
     const formfield = document.createElement("input");
     formfield.id = id;
     formfield.style = "--top:"+String(top)+"px; --left:"+String(left)+"px; --width:"+String(width)+"px; --height:"+String(height)+"px; --color:"+String(color)+"; --align:"+String(alignment)+""
     formfield.className = "not-selectable singleLine save"
     formfield.spellcheck = false;
-    parentDiv.appendChild(formfield)
+    formfield.maxFontSize = maxFontSize
+    formfield.style.setProperty("font-size", maxFontSize + "px")
+    if (parentDiv){parentDiv.appendChild(formfield)}
     return formfield
 }

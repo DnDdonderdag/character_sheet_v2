@@ -101,7 +101,7 @@
     height: var(--height);
     color: var(--color);
     text-align: var(--align);
-    background-color: rgb(150, 150, 150); /* while page making, otherwise transparent */
+    background-color: transparent; /* while page making, otherwise transparent */
     font-size: var(--fontsize);
     resize:none;
     font-family: var(--fontfamiliy);
@@ -120,6 +120,36 @@
     z-index: -100;
     background-color: rgb(222, 222, 222);
 }
+
+.frame{
+  position: absolute;
+  left: var(--left);
+  top: var(--top);
+  width: var(--width);
+  height: var(--height);
+  background-color: white;
+  z-index: 100;
+  clip-path:  polygon(var(--bevel) 0px,calc(var(--width) - var(--bevel)) 0px,calc(var(--width)) var(--bevel),calc(var(--width))  calc(var(--height) - var(--bevel)),calc(var(--width) - var(--bevel))  calc(var(--height)),var(--bevel)  calc(var(--height)),0px  calc(var(--height) - var(--bevel)),0px var(--bevel));
+} .corner {
+  width: var(--width); /* Set desired width */
+  height: var(--width); /* Maintain aspect ratio */
+  position: absolute; /* Positioning */
+  top: var(--top); /* Set top position */
+  left: var(--left);
+  transform: var(--rotate);
+  user-select: none;
+}.horizontalline{
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: var(--top);
+  left:var(--left);
+  transform: var(--scale);
+  display: block;
+  margin: auto;
+  user-select: none;
+}
+
 
 .not-selectable {
     -webkit-touch-callout: none;

@@ -1,4 +1,5 @@
 import * as button  from "../assetGeneration/button.js";
+import * as sync   from "./autoSize.js";
 
 let syncClasses = [];
 
@@ -30,6 +31,6 @@ export function syncUpdater(){
         let field = affectedFields[i]
         field.value = this.value
         field.textContent = this.textContent
-        
     }
+    sync.autoSizeUpdater()
 }
