@@ -5,6 +5,7 @@ import * as saveload from "../utilities/saveLoad.js";
 import * as formfield  from "../assetGeneration/formfield.js";
 import * as button  from "../assetGeneration/button.js";
 import * as text from "../assetGeneration/text.js"
+import * as autoSize from "../decorators/autoSize.js";
 
 /*==========
 IMPORTANT NOTES:
@@ -48,9 +49,21 @@ export function generatePlayground(){
         )
 
     let unsyncedField =
-        sync.syncDecorator("otherTestSyncClass", //This field will sync its data with all fields with same syncClass
-            formfield.create("unsyncedField", 400, 50, 200, 100, page)
+        autoSize.autoSizeDecorator(
+            sync.syncDecorator("otherTestSyncClass", //This field will sync its data with all fields with same syncClass
+                formfield.create("unsyncedField", 400, 50, 200, 100, page)
+            )
         )
+
+    let sinleLineField =
+    autoSize.autoSizeDecorator(
+        formfield.singleLine("singleLineField", 300, 50, 200, 30, page, undefined, "left")
+    )
+
+    let sinleLineField2 =
+    autoSize.autoSizeDecorator(
+        formfield.singleLine("singleLineField2", 340, 50, 200, 30, page, undefined, "left")
+    )
 
 
     let checkmark =

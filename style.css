@@ -27,6 +27,22 @@
     z-index: 1000;
   }.formfield:hover{
     outline: solid 1px;
+  }.singleLine{
+    position: absolute;
+    left: var(--left);
+    top: var(--top);
+    width: var(--width);
+    height: var(--height);
+    background-color: var(--color);
+    resize:none;
+    font-family:Arial, Helvetica, sans-serif;
+    border:none;
+    outline:none;
+    text-align: var(--align);
+    font-size: var(--fontsize);
+    z-index: 1000;
+  }.singleLine:hover{
+    outline: solid 1px;
   }
 
   .checkmark{
