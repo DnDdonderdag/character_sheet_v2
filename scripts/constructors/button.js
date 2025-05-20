@@ -1,6 +1,6 @@
 import * as update from "../utilities/updater.js";
 
-export function checkmark(id, top, left, width, height, parentDiv, color){
+export function checkmark(id, top, left, width, height, parentDivID, color){
     // ====
     //  Creates square checkbox button
     // ====
@@ -23,12 +23,12 @@ export function checkmark(id, top, left, width, height, parentDiv, color){
     diamond.className = "not-selectable checkmarkDiamond save "
     diamond.style.setProperty("visibility", "hidden");
     
-    parentDiv.appendChild(checkmark)
+    document.getElementById(parentDivID).appendChild(checkmark)
     checkmark.appendChild(diamond)
     return checkmark
 }
 
-export function tickbox(id, top, left, width, height, parentDiv, color){
+export function tickbox(id, top, left, width, height, parentDivID, color){
     // ====
     //  Creates circular tickbox button
     // ====
@@ -46,7 +46,7 @@ export function tickbox(id, top, left, width, height, parentDiv, color){
     tickbox.value = 0;
     tickbox.addEventListener("click", update.onButtonPress, false)
 
-    parentDiv.appendChild(tickbox)
+    document.getElementById(parentDivID).appendChild(tickbox)
     return tickbox
 }
 

@@ -1,11 +1,10 @@
-import * as decorators from "../decorators/decoratorTemplate.js";
 import * as calc from "../decorators/calculations.js";
 import * as sync from "../decorators/syncronising.js";
 import * as formfield  from "../constructors/formfield.js";
 import * as text from "../constructors/text.js"
 import * as autoSize from "../decorators/autoSize.js";
 
-export function create(id, top, left, width, height, parentDiv,labelText, syncClass, alignment){
+export function create(id, top, left, width, height, parentDivID,labelText, syncClass, alignment){
     /*
         syncClass optional, if left out form will not sync
         LabelText optional, if left out form will fill box
@@ -15,17 +14,19 @@ export function create(id, top, left, width, height, parentDiv,labelText, syncCl
     frame.className = "not-selectable frame"
     frame.style = "--top:"+String(top)+"px; --left:"+String(left)+"px; --width:"+String(width)+"px; --height:"+String(height)+"px;; --bevel:7.5px;"
 
+    document.getElementById(parentDivID).appendChild(frame)
+
     let frameFormField
     if(labelText){
         frameFormField = 
             autoSize.autoSizeDecorator(
-                formfield.create(id, 7, 10, width-20, height-22, frame, undefined, alignment)
+                formfield.create(id, 7, 10, width-20, height-22, id+"Frame", undefined, alignment)
             )
-        text.create(id+"FrameLabel", labelText, height-13, 0, width, 8, frame, "Scalasans")
+        text.create(id+"FrameLabel", labelText, height-13, 0, width, 8, id+"Frame", "Scalasans")
     } else{
         frameFormField = 
             autoSize.autoSizeDecorator(
-                formfield.create(id, 7, 10, width-20, height-14, frame, undefined, alignment)
+                formfield.create(id, 7, 10, width-20, height-14, id+"Frame", undefined, alignment)
             )
     }
 
@@ -68,5 +69,4 @@ export function create(id, top, left, width, height, parentDiv,labelText, syncCl
         frame.appendChild(line);
     }
 
-    parentDiv.appendChild(frame)
 }

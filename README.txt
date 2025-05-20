@@ -1,3 +1,31 @@
+TO DO:
+
+Decorators:
+ - calc (WIP)
+ - autoSizeText (DONE)
+ - sync (DONE)
+Utilities:
+ - save & load (WIP) (Warning for unsaved content, and layout customisation)
+ - update (DONE)
+ - Tooltip (DONE)
+ - Layout Customisation
+
+Generic constructors 
+ - Form fields (DONE)
+ - buttons (DONE)
+    - checkmarks, square
+    - Tickboxes, circular
+ - Frame (DONE)
+ - Page (WIP)
+ - Lookup
+ - Customisable area
+
+
+Server side:
+ - DM pagina met useful info over spelers
+
+
+
 Lijstje ter verbetering
  - Paginas door gebruiker laten indelen (ook dupliceren)
  - File managmenent (save, save as, load) (warning voor niet compatible files)
@@ -9,24 +37,9 @@ Lijstje ter verbetering
  - Fix de textareas in ios
  - Page title character name
 
-Decorators:
- - calc (WIP)
- - autoSizeText (DONE)
- - sync (DONE)
-Utilities:
- - save & load (DONE)
- - update (DONE)
- - Tooltip (DONE)
 
-
-Generic constructors 
- - Form fields (DONE)
- - buttons (DONE)
-    - checkmarks (square) 
-    - Tickboxes (circular)
- - Frame (Done)
- - Page
-
-
-Server side:
- - DM pagina met useful info over spelers
+Ideas:
+    voor layout customisation:
+        layout deel van save, JSON met pages als keys, waar de value een string is met de JS code die
+        deze pagina genereert, volgorde wordt behouden. Layout kan ook als los bestandje worden geupload
+        om layout te initialiseren.

@@ -94,13 +94,19 @@ function unpackJson(){
     let reader = new FileReader()
     reader.readAsText(file)
     reader.onload = function() {
-        loadState(JSON.parse(reader.result));
+        loadLayout(JSON.parse(reader.result).layout)
+        loadState(JSON.parse(reader.result).fieldValues);
     }
     reader.onerror = function() {
         console.log(reader.error);
         alert("Error loading file")
     };
 }
+async function loadLayout(result){
+    //not implemented
+}
+
+
 async function loadState(result){
     let confirmed = true
     if (!await CheckSaved()){ //Check if there is any unsaved data

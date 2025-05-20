@@ -1,4 +1,4 @@
-export function create(id, content, top, left, width, height, parent, fontfamily, color, fontsize, alignment){
+export function create(id, content, top, left, width, height, parentDivID, fontfamily, color, fontsize, alignment){
     // ====
     //  Creates a text box
     // ====
@@ -19,6 +19,7 @@ export function create(id, content, top, left, width, height, parent, fontfamily
     textbox.style = "--top:"+String(top)+"px; --left:"+String(left)+"px; --width:"+String(width)+"px; --height:"+String(height)+"px; --color:"+String(color)+"; --align:"+String(alignment)+"; --fontsize:"+String(fontsize)+"px"+"; --fontfamiliy:"+String(fontfamily)+";"
     textbox.className = "not-selectable textbox"
     textbox.spellcheck = false;
-    parent.appendChild(textbox)
+    
+    document.getElementById(parentDivID).appendChild(textbox)
     return textbox
 }

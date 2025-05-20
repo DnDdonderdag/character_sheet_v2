@@ -1,3 +1,4 @@
 # Character data files
 *.json
+formatter.txt
 !example-character.json
