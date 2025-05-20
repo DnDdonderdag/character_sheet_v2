@@ -1,0 +1,25 @@
+{
+    "fieldValues":{
+        "TBD": "TBD",
+        "TBD2" : "TBD2"
+    },
+    "layout": {
+        "statsPage":
+        {   
+            "function": "page", 
+            "args": ["statsPage",10,10]
+        },
+
+        "saveLoad":
+        {   
+            "function": "saveLoadButtons", 
+            "args": [10,10]
+        }
+
+
+        
+    }
+}
+
+
+
