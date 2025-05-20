@@ -1,5 +1,5 @@
 import * as calc from "../decorators/calculations.js"
-import * as button from "../assetGeneration/button.js"
+import * as button from "../constructors/button.js"
 import * as update from "./updater.js";
 
 // Functions for creating the buttons

@@ -1,4 +1,3 @@
-import * as update from "../utilities/updater.js"
 
 export function autoSizeDecorator(field){
     let className = field.className

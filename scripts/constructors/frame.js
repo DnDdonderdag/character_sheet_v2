@@ -1,8 +1,8 @@
 import * as decorators from "../decorators/decoratorTemplate.js";
 import * as calc from "../decorators/calculations.js";
 import * as sync from "../decorators/syncronising.js";
-import * as formfield  from "../assetGeneration/formfield.js";
-import * as text from "../assetGeneration/text.js"
+import * as formfield  from "../constructors/formfield.js";
+import * as text from "../constructors/text.js"
 import * as autoSize from "../decorators/autoSize.js";
 
 export function create(id, top, left, width, height, parentDiv,labelText, syncClass, alignment){

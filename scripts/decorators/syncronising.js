@@ -1,6 +1,3 @@
-import * as button  from "../assetGeneration/button.js";
-import * as sync   from "./autoSize.js";
-
 let syncClasses = [];
 
 export function syncDecorator(syncClass,field){
@@ -10,7 +7,6 @@ export function syncDecorator(syncClass,field){
     syncClasses.push(String(syncClass));
     field.className = className;
 
-    
     return field;
 };
 
@@ -26,5 +22,4 @@ export function syncUpdater(triggeringField){
         field.value = triggeringField.value
         field.textContent = triggeringField.textContent
     }
-    sync.autoSizeUpdater()
 }
