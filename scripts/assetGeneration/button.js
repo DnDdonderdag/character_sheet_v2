@@ -1,3 +1,5 @@
+import * as update from "../utilities/updater.js";
+
 export function checkmark(id, top, left, width, height, parentDiv, color){
     // ====
     //  Creates square checkbox button
@@ -14,7 +16,7 @@ export function checkmark(id, top, left, width, height, parentDiv, color){
     checkmark.style = "--top:"+String(top)+"px; --left:"+String(left)+"px; --width:"+String(width)+"px; --height:"+String(height)+"px; --color:"+String(color)+"; "
     checkmark.className = "not-selectable checkmark button save "
     checkmark.value = 0;
-    checkmark.addEventListener("click", checkmarkClicked, false)
+    checkmark.addEventListener("click", update.onButtonPress, false)
 
     const diamond = document.createElement("div");
     diamond.id = id + "Diamond";
@@ -42,25 +44,12 @@ export function tickbox(id, top, left, width, height, parentDiv, color){
     tickbox.style = "--top:"+String(top)+"px; --left:"+String(left)+"px; --width:"+String(width)+"px; --height:"+String(height)+"px; --color:"+String(color)+"; "
     tickbox.className = "not-selectable tickbox button save "
     tickbox.value = 0;
-    tickbox.addEventListener("click", tickboxClicked, false)
+    tickbox.addEventListener("click", update.onButtonPress, false)
 
     parentDiv.appendChild(tickbox)
     return tickbox
 }
 
-
-function checkmarkClicked(){
-    let diamond = document.getElementById(this.id + "Diamond");
-    var visibility = (this.value === 1) ? "hidden" : "visible";
-    diamond.style.setProperty("visibility", visibility)
-    this.value = 1 - this.value;
-}
-
-function tickboxClicked(){
-    let backgroundColor = (this.value === 1) ? "#dde4ff" : "gray";
-    this.style.setProperty("background-color", backgroundColor)
-    this.value = 1 - this.value;
-}
 
 
 export function buttonUpdater(){

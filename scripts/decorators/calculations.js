@@ -2,30 +2,33 @@ export function calcDecorator(field){
     let className = field.className
     className += " " + "calculated"  
     field.className = className
-    field.addEventListener("focus", enterCalc, false);
-    field.addEventListener("focusout", exitCalc, false);
     return field
 }
 
-function enterCalc(){
-   //console.log("calculating "+this.id) //for testing
-   let dummy = this.textContent
-   this.textContent = this.value
-   this.value = dummy
-}
-function exitCalc(){
-    //console.log("uncalculating "+this.id) //for testing
-    let dummy = this.textContent
-    this.textContent = this.value
-    this.value = dummy
-
-    calculationUpdater()
-}
 
 function calculate(formula){
     //This is where the actual calculating logic should go
     //It will take the formula as input, and return the result
-    let result = "Calc of: '" +formula +"'" //temporary remove when implenting
+    // Replace all [fieldID] references with the values of those fields
+    
+
+    //search and replace square brackets, final first.
+    while (formula.lastIndexOf("[")>=0){
+        let start = formula.lastIndexOf("[")
+        let finish = start + formula.slice(start).indexOf("]")
+        let replacementid = formula.slice(start+1,finish)
+        let replacementtext
+        try{
+            replacementtext = document.getElementById(replacementid).value
+            replacementtext = (replacementtext == "") ? (0) : (replacementtext)
+            formula = formula.replace(formula.slice(start, finish+1), String(replacementtext))
+        }
+        catch{ 
+            replacementtext = "-could not find " + replacementid + "-"
+            formula = formula.replace(formula.slice(start, finish+1), String(replacementtext))
+            }
+    }
+    let result = formula
 
     return result
 }

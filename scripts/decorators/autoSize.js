@@ -1,8 +1,9 @@
+import * as update from "../utilities/updater.js"
+
 export function autoSizeDecorator(field){
     let className = field.className
     className += " " + "autoSize"  
     field.className = className
-    field.addEventListener("input", autoSizeUpdater, false)
     return field
 }
 
@@ -20,47 +21,47 @@ if (!autoSizer){
     document.body.appendChild(autoSizer)
 }
 
-function resize(){
-    if (this.className.includes("formfield")){
-        var fontSize = window.getComputedStyle(this, null).getPropertyValue('font-size');
+export function resize(triggeringField){
+    if (triggeringField.className.includes("formfield")){
+        var fontSize = window.getComputedStyle(triggeringField, null).getPropertyValue('font-size');
         fontSize = parseFloat(fontSize);
         
-        while(fontSize<this.maxFontSize){
-            var style = window.getComputedStyle(this, null).getPropertyValue('font-size');
+        while(fontSize<triggeringField.maxFontSize){
+            var style = window.getComputedStyle(triggeringField, null).getPropertyValue('font-size');
             var fontSize = parseFloat(style);
-            this.style.fontSize = fontSize+0.1 + 'px'
-            if (this.clientHeight < this.scrollHeight) {
-                this.style.fontSize = fontSize -0.1+ 'px';
+            triggeringField.style.fontSize = fontSize+0.1 + 'px'
+            if (triggeringField.clientHeight < triggeringField.scrollHeight) {
+                triggeringField.style.fontSize = fontSize -0.1+ 'px';
                 break
             }
         }
-        while (this.clientHeight < this.scrollHeight) {
-            var style = window.getComputedStyle(this, null).getPropertyValue('font-size');
+        while (triggeringField.clientHeight < triggeringField.scrollHeight) {
+            var style = window.getComputedStyle(triggeringField, null).getPropertyValue('font-size');
             var fontSize = parseFloat(style);
-            this.style.fontSize = fontSize-0.1 + 'px';
+            triggeringField.style.fontSize = fontSize-0.1 + 'px';
         }
 
-    } else if (this.className.includes("singleLine")){
-        var fontSize = window.getComputedStyle(this, null).getPropertyValue('font-size');
+    } else if (triggeringField.className.includes("singleLine")){
+        var fontSize = window.getComputedStyle(triggeringField, null).getPropertyValue('font-size');
         fontSize = parseFloat(fontSize);
         autoSizer.style.fontSize = fontSize + 'px'
-        autoSizer.innerText = this.value
+        autoSizer.innerText = triggeringField.value
 
-        while (autoSizer.offsetWidth > this.offsetWidth - 5){
+        while (autoSizer.offsetWidth > triggeringField.offsetWidth - 5){
             autoSizer.style.fontSize = fontSize + 'px'
-            autoSizer.innerText = this.value
+            autoSizer.innerText = triggeringField.value
             
             fontSize -= 0.1
             autoSizer.style.fontSize = fontSize + 'px'
-            this.style.fontSize = fontSize + 'px'
+            triggeringField.style.fontSize = fontSize + 'px'
         }
-        while (autoSizer.offsetWidth < this.offsetWidth - 5 && fontSize < this.maxFontSize){
+        while (autoSizer.offsetWidth < triggeringField.offsetWidth - 5 && fontSize < triggeringField.maxFontSize){
             autoSizer.style.fontSize = fontSize + 'px'
-            autoSizer.innerText = this.value
+            autoSizer.innerText = triggeringField.value
             
             fontSize += 0.1
             autoSizer.style.fontSize = fontSize + 'px'
-            this.style.fontSize = fontSize + 'px'
+            triggeringField.style.fontSize = fontSize + 'px'
         }
     }
 }
@@ -71,6 +72,6 @@ export function autoSizeUpdater(){
     let affectedFields = document.getElementsByClassName("autoSize")
     for (let i = 0; i<affectedFields.length; i++){
         let field = affectedFields[i]
-        resize.call(field)
+        resize(field)
     }
 }

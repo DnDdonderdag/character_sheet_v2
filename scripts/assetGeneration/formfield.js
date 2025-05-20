@@ -1,3 +1,5 @@
+import * as update from "../utilities/updater.js";
+
 export function create(id, top, left, width, height, parentDiv, color, alignment, maxFontSize){
     // ====
     //  Creates a form field box
@@ -19,6 +21,9 @@ export function create(id, top, left, width, height, parentDiv, color, alignment
     formfield.spellcheck = false;
     formfield.maxFontSize = maxFontSize
     formfield.style.setProperty("font-size", maxFontSize + "px")
+    formfield.addEventListener("focusout", update.onUnfocus, false)
+    formfield.addEventListener("focus", update.onfocus, false);
+    formfield.addEventListener("input", update.onKeystroke, false)
     if (parentDiv){parentDiv.appendChild(formfield)}
     return formfield
 }
@@ -45,6 +50,9 @@ export function singleLine(id, top, left, width, height, parentDiv, color, align
     formfield.spellcheck = false;
     formfield.maxFontSize = maxFontSize
     formfield.style.setProperty("font-size", maxFontSize + "px")
+    formfield.addEventListener("focusout", update.onUnfocus, false)
+    formfield.addEventListener("focus", update.onfocus, false);
+    formfield.addEventListener("input", update.onKeystroke, false)
     if (parentDiv){parentDiv.appendChild(formfield)}
     return formfield
 }

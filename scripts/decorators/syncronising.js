@@ -9,28 +9,22 @@ export function syncDecorator(syncClass,field){
     className += " " + "sync" + " syncMe" + String(syncClass);
     syncClasses.push(String(syncClass));
     field.className = className;
-    if (field.className.includes("button")){
-        field.addEventListener("click",  syncUpdater, false);
-        field.addEventListener("click",  button.buttonUpdater, false);   
-    }
-    else {
-        field.addEventListener("focusout", syncUpdater, false);
-    }
+
     
     return field;
 };
 
 
-export function syncUpdater(){
-    let classname = this.className
-    let preSliced = classname.slice(this.className.indexOf("syncMe")) // filtering the syncclass from within the enitre class string
+export function syncUpdater(triggeringField){
+    let classname = triggeringField.className
+    let preSliced = classname.slice(triggeringField.className.indexOf("syncMe")) // filtering the syncclass from within the enitre class string
     let syncClass = (preSliced.indexOf(" ") == -1) ? preSliced : preSliced.slice(0, preSliced.indexOf(" ")) // finishing filtering (this is a one line if-else)
 
     let affectedFields = document.getElementsByClassName(syncClass)
     for (let i = 0; i<affectedFields.length; i++){
         let field = affectedFields[i]
-        field.value = this.value
-        field.textContent = this.textContent
+        field.value = triggeringField.value
+        field.textContent = triggeringField.textContent
     }
     sync.autoSizeUpdater()
 }

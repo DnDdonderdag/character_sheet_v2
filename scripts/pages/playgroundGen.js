@@ -7,12 +7,9 @@ import * as text from "../assetGeneration/text.js"
 import * as autoSize from "../decorators/autoSize.js";
 import * as frame from "../assetGeneration/frame.js";
 
-
 /*==========
 IMPORTANT NOTES:
 
- - Always apply the syncDecorator after the calcDecorator (for calculated fields)
- - Never call the sync updater while user is editing
 
 ==========*/
 
@@ -28,10 +25,6 @@ function createGenericPage(id, top, left){
 }
 
 
-function genericUpdater(){
-    calc.calculationUpdater()
-    autoSize.autoSizeUpdater()
-}
 
 export function generatePlayground(){
     let page = createGenericPage("page1", 10, 10)
@@ -54,12 +47,13 @@ export function generatePlayground(){
         )
 
     let unsyncedField =
-        autoSize.autoSizeDecorator(
-            sync.syncDecorator("otherTestSyncClass", //This field will sync its data with all fields with same syncClass
-                formfield.create("unsyncedField", 400, 50, 200, 100, page)
+        calc.calcDecorator(
+            autoSize.autoSizeDecorator(
+                sync.syncDecorator("otherTestSyncClass", //This field will sync its data with all fields with same syncClass
+                    formfield.create("unsyncedField", 400, 50, 200, 100, page)
+                )
             )
         )
-
     let singleLineField =
     autoSize.autoSizeDecorator(
         formfield.singleLine("singleLineField", 300, 50, 200, 30, page, undefined, "left")
@@ -90,13 +84,11 @@ export function generatePlayground(){
         frame.create("testFrame", 450, 300, 200, 300, page, "TEST")
 
 
-    field.textContent = "when updated, i sync"
-    secondField.textContent = "update me to sync"
-    unsyncedField.textContent = "i should not sync"
-    singleLineField.value = "Welcome to this test page, this field holds a lot of text"
+    field.textContent = "1+1 [unsynce[singleLineField]Fi[singleLineField2]ld]"
+    unsyncedField.textContent = "test"
+    singleLineField.value = "d"
+    singleLineField2.value = "e"
 
     saveload.createSaveLoadButtons(10, 10)
-
-    genericUpdater()
 };
 
