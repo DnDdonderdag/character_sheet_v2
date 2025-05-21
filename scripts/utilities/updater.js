@@ -59,8 +59,6 @@ export function onButtonPress(){
         triggeringField.value = 1 - triggeringField.value
     }
 
-    
-
     if (triggeringField.className.includes("sync")){
         sync.syncUpdater(triggeringField)
     }

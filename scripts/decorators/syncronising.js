@@ -20,6 +20,6 @@ export function syncUpdater(triggeringField){
     for (let i = 0; i<affectedFields.length; i++){
         let field = affectedFields[i]
         field.value = triggeringField.value
-        field.textContent = triggeringField.textContent
+        if (field.className.includes("calc")){field.textContent = triggeringField.textContent}
     }
 }

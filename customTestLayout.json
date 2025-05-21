@@ -8,9 +8,14 @@
         "testTickbox2": 1
     },
     "layout": {
-        "page1":{   
+        "presetTestPage":{
+            "function": "presetTestPage",
+            "args": [10,10]
+        },
+
+        "customTestPage1":{   
             "function": "page", 
-            "args": ["page1",10,10]
+            "args": ["page1",10,620]
         },
 
             "saveLoad":{   
@@ -37,51 +42,50 @@
                 "args": ["testText", "Welcome to the testing page", 350,20,180,10, "page1" , "Scalasans", "black"]
             },
 
+
             "button1":{
                 "function": "sync",
                 "args": 
                 {
                     "function" : "tickbox",
                     "syncClass": "testSyncButton",
-                    "args": ["testButton1", 70,140,20,20,"page1"]
+                    "args": ["testButton1", 40,140,20,20,"page1"]
                 }
             },
-
             "button2":{
                 "function": "sync",
                 "args": 
                 {
                     "function" : "tickbox",
+                    "syncClass": "testSyncButton2",
+                    "args": ["testButton2", 70,140,20,20,"page1"]
+                }
+            },
+            "button3":{
+                "function": "sync",
+                "args": 
+                {
+                    "function" : "checkmark",
+                    "syncClass": "testSyncButton2",
+                    "args": ["testButton3", 100,140,20,20,"page1"]
+                }
+            },
+            "button4":{
+                "function": "sync",
+                "args": 
+                {
+                    "function" : "checkmark",
                     "syncClass": "testSyncButton",
-                    "args": ["testButton2", 40,140,20,20,"page1"]
+                    "args": ["testButton4", 130,140,20,20,"page1"]
                 }
             },
 
             "frame1":{
                 "function" : "frame",
                 "args": ["testFrame", 40,190,150,300,"page1", "TEST FRAME","testSyncClass"]
-            },
+            }
 
         
-        "page2":{   
-            "function": "page", 
-            "args": ["page2",10,620]
-        },
-
-        "formField2":{
-            "function": "calc",
-            "args": 
-            {
-                "function": "sync",
-                "args": 
-                {
-                    "function" : "formfield",
-                    "syncClass": "testSyncClass",
-                    "args": ["testField2", 40,200,100,300,"page2"]
-                }
-            }
-        }
-
         
     }
 }
