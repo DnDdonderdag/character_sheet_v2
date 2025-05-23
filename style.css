@@ -108,6 +108,13 @@
     outline:none;
     z-index: 1000;
   }
+  .asset{
+    position: absolute;
+    left: var(--left);
+    top: var(--top);
+    width: var(--width);
+    height: var(--height);
+  }
 
 
 .pageBackground{

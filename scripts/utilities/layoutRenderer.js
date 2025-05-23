@@ -9,6 +9,7 @@ import * as autoSize from "../decorators/autoSize.js";
 import * as frame from "../constructors/frame.js";
 import * as page from "../constructors/page.js";
 import * as presetTestPage from "../pages/presetTestPage.js"
+import * as svg from "../constructors/svg.js";
 
 
 const functionMap = {
@@ -25,6 +26,8 @@ const functionMap = {
   checkmark: (args) => button.checkmark(...args),
   tickbox: (args) => button.tickbox(...args),
   text: (args) => text.create(...args),
+  svg: (args) => svg.create(...args),
+
 
   //Pre made pages
   presetTestPage: (args) => presetTestPage.create(...args)

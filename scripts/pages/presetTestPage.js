@@ -7,6 +7,8 @@ import * as text from "../constructors/text.js";
 import * as autoSize from "../decorators/autoSize.js";
 import * as frame from "../constructors/frame.js";
 import * as page from "../constructors/page.js";
+import * as svg from "../constructors/svg.js";
+import * as lookup from "../utilities/lookup.js"
 
 
 
@@ -73,14 +75,20 @@ export function create(top,left){
     let textTest = 
         text.create("testTextPlayground", "THIS IS A TEST", 100, 400, 100, 10, "playgroundPage", "Scalasans");
 
-    let textFrame = 
+    let testFrame = 
         frame.create("testFramePlayground", 450, 300, 200, 300, "playgroundPage", "TEST");
 
+    let testAsset = 
+        svg.create("testAssetPlayground", 200, 300, 80, 80, "armor.svg", "playgroundPage")
+        
+    
+    
 
     field.textContent = "1+1 [unsynce[singleLineFieldPlayground]Fi[singleLineField2Playground]ldPlayground]";
-    unsyncedField.textContent = "test";
+    unsyncedField.textContent = "Alarm";
     singleLineField.value = "d";
     singleLineField2.value = "e";
+    testFrame.textContent = "[unsyncedFieldPlayground]\nLevel: {spells,[unsyncedFieldPlayground],level}\nCasting Time: {spells,[unsyncedFieldPlayground],castingtime}\nRange: {spells,[unsyncedFieldPlayground],range}\nComponents: {spells,[unsyncedFieldPlayground],components}\nDuration: {spells,[unsyncedFieldPlayground],duration}\n\n{spells,[unsyncedFieldPlayground],description}"
 
     saveload.createSaveLoadButtons(top, left);
 };

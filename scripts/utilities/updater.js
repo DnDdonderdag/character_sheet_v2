@@ -65,6 +65,7 @@ export function onButtonPress(){
     
     downStreamCalculationUpdater()
     button.buttonUpdater()
+    autoSize.autoSizeUpdater()
 }
 
 function downStreamCalculationUpdater(){

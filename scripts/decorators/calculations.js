@@ -1,3 +1,6 @@
+import * as lookup from "../utilities/lookup.js";
+
+
 export function calcDecorator(field){
     let className = field.className
     className += " " + "calculated"  
@@ -12,7 +15,7 @@ function calculate(formula){
     // Replace all [fieldID] references with the values of those fields
     
 
-    //search and replace square brackets, final first.
+    //search and replace square brackets, final first for field reference
     while (formula.lastIndexOf("[")>=0){
         let start = formula.lastIndexOf("[")
         let finish = start + formula.slice(start).indexOf("]")
@@ -26,6 +29,22 @@ function calculate(formula){
         catch{ 
             replacementtext = "-could not find " + replacementid + "-"
             formula = formula.replace(formula.slice(start, finish+1), String(replacementtext))
+            }
+    }
+
+    //search and replace square brackets, final first for lookup
+    while (formula.lastIndexOf("{")>=0){
+        let bracketStartIndex = formula.lastIndexOf("{")
+        let bracketEndIndex = bracketStartIndex + formula.slice(bracketStartIndex).indexOf("}")
+        let keys = formula.slice(bracketStartIndex+1,bracketEndIndex).toLowerCase().replaceAll(" ","").replaceAll("-","").replaceAll("'","").replaceAll("/","")
+        let replacementText
+        try{
+            replacementText = lookup.fromString(keys.split(","))
+            formula = formula.replace(formula.slice(bracketStartIndex, bracketEndIndex+1), String(replacementText))
+        }
+        catch{ 
+            replacementText = "-could not find " + keys + "-"
+            formula = formula.replace(formula.slice(bracketStartIndex, bracketEndIndex+1), String(replacementText))
             }
     }
     let result = formula

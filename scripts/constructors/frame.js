@@ -68,5 +68,5 @@ export function create(id, top, left, width, height, parentDivID,labelText, sync
         line.style = tops[i]+lefts[i]+scales[i]
         frame.appendChild(line);
     }
-
+    return frameFormField
 }

@@ -83,6 +83,11 @@
             "frame1":{
                 "function" : "frame",
                 "args": ["testFrame", 40,190,150,300,"page1", "TEST FRAME","testSyncClass"]
+            },
+            
+            "testAsset":{
+                "function": "svg",
+                "args": ["testAssetCustom", 200, 380, 80, 80, "armor.svg", "page1"]
             }
 
         

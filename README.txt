@@ -18,7 +18,11 @@ Generic constructors
  - Frame (DONE)
  - Page (WIP)
  - Lookup
- - Customisable area
+ - Customisable area (WIP, more assets to be added)
+
+ Other features:
+ - Tooltip lookup on hover voor spells etc.
+ - Image uploadable, maybe store on server?
 
 
 Server side:
@@ -43,3 +47,5 @@ Ideas:
         layout deel van save, JSON met pages als keys, waar de value een string is met de JS code die
         deze pagina genereert, volgorde wordt behouden. Layout kan ook als los bestandje worden geupload
         om layout te initialiseren.
+    Voor lookup:
+        add lookup as a calculation feature
