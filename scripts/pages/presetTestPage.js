@@ -1,4 +1,4 @@
-import * as calc from "../decorators/calculations.js";
+import * as calc from "../decorators/calculate/calculations.js";
 import * as sync from "../decorators/syncronising.js";
 import * as saveload from "../utilities/saveLoad.js";
 import * as formfield  from "../constructors/formfield.js";
@@ -84,11 +84,11 @@ export function create(top,left){
     
     
 
-    field.textContent = "1+1 [unsynce[singleLineFieldPlayground]Fi[singleLineField2Playground]ldPlayground]";
+    field.textContent = "{3d6 + (1+ 1) }";
     unsyncedField.textContent = "Alarm";
     singleLineField.value = "d";
     singleLineField2.value = "e";
-    testFrame.textContent = "[unsyncedFieldPlayground]\nLevel: {spells,[unsyncedFieldPlayground],level}\nCasting Time: {spells,[unsyncedFieldPlayground],castingtime}\nRange: {spells,[unsyncedFieldPlayground],range}\nComponents: {spells,[unsyncedFieldPlayground],components}\nDuration: {spells,[unsyncedFieldPlayground],duration}\n\n{spells,[unsyncedFieldPlayground],description}"
+    testFrame.textContent = "[unsyncedFieldPlayground]\nLevel: <spells,[unsyncedFieldPlayground],level>\nCasting Time: <spells,[unsyncedFieldPlayground],castingtime>\nRange: <spells,[unsyncedFieldPlayground],range>\nComponents: <spells,[unsyncedFieldPlayground],components>\nDuration: <spells,[unsyncedFieldPlayground],duration>\n\n<spells,[unsyncedFieldPlayground],description>"
 
     saveload.createSaveLoadButtons(top, left);
 };

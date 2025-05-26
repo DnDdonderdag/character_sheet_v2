@@ -1,5 +1,5 @@
 import * as update from "../utilities/updater.js";
-import * as calc from "../decorators/calculations.js";
+import * as calc from "../decorators/calculate/calculations.js";
 import * as sync from "../decorators/syncronising.js";
 import * as saveload from "../utilities/saveLoad.js";
 import * as formfield  from "../constructors/formfield.js";

@@ -1,4 +1,4 @@
-import * as calc from "../decorators/calculations.js";
+import * as calc from "../decorators/calculate/calculations.js";
 import * as sync from "../decorators/syncronising.js";
 import * as formfield  from "../constructors/formfield.js";
 import * as text from "../constructors/text.js"

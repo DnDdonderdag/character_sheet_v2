@@ -3,7 +3,7 @@
 // autosize updater, at every key stroke, and when editing any field
 //
 import * as button from "../constructors/button.js"
-import * as calc from "../decorators/calculations.js"
+import * as calc from "../decorators/calculate/calculations.js"
 import * as sync from "../decorators/syncronising.js"
 import * as autoSize from "../decorators/autoSize.js";
 

@@ -1,3 +1,4 @@
+import * as sync from "../decorators/syncronising.js";
 import * as update from "../utilities/updater.js";
 
 export function create(id, top, left, width, height, parentDivID, color, alignment, maxFontSize){
@@ -25,6 +26,7 @@ export function create(id, top, left, width, height, parentDivID, color, alignme
     formfield.addEventListener("focus", update.onfocus, false);
     formfield.addEventListener("input", update.onKeystroke, false)
     document.getElementById(parentDivID).appendChild(formfield)
+    
     return formfield
 }
 

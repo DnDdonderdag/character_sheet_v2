@@ -116,6 +116,10 @@
     height: var(--height);
   }
 
+#tooltip{
+    white-space:pre-wrap;
+}
+
 
 .pageBackground{
     position: absolute;

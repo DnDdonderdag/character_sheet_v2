@@ -1,6 +1,7 @@
 import * as layoutRenderer from "./utilities/layoutRenderer.js"
 import * as playground from "./pages/presetTestPage.js"
 import * as update from "./utilities/updater.js"
+import * as tooltip from "./utilities/tooltip.js"
 
 
 function unpackJson(){

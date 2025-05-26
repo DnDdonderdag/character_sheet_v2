@@ -1,7 +1,7 @@
 TO DO:
 
 Decorators:
- - calc (WIP)
+ - calc (DONE) (Maybe try to fix associativity one day)
  - autoSizeText (DONE)
  - sync (DONE)
 Utilities:
@@ -16,13 +16,13 @@ Generic constructors
     - checkmarks, square
     - Tickboxes, circular
  - Frame (DONE)
- - Page (WIP)
- - Lookup
- - Customisable area (WIP, more assets to be added)
+ - Page (DONE)
 
  Other features:
  - Tooltip lookup on hover voor spells etc.
  - Image uploadable, maybe store on server?
+ - Include syncclass in tooltip (DONE)
+ - Lookup (DONE)
 
 
 Server side:

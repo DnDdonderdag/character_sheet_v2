@@ -1,4 +1,4 @@
-import * as calc from "../decorators/calculations.js"
+import * as calc from "../decorators/calculate/calculations.js"
 import * as button from "../constructors/button.js"
 import * as update from "./updater.js";
 
