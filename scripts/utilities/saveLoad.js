@@ -1,6 +1,13 @@
 import * as calc from "../decorators/calculate/calculations.js"
 import * as button from "../constructors/button.js"
 import * as update from "./updater.js";
+import * as layoutRenderer from "./layoutRenderer.js"
+
+
+let currentLayout = {}
+export function setLayout(layout){
+    currentLayout = layout
+}
 
 // Functions for creating the buttons
 export function createSaveLoadButtons(top, left){
@@ -29,7 +36,7 @@ function createLoadButton(top, left) {
     loadButton.style.position = "absolute"
     loadButton.style.top = top + "px";
     loadButton.style.left = left + "px";
-    loadButton.style.width = ("200px");
+    loadButton.style.width = ("70px");
     loadButton.style.heigt = ("100px");
     loadButton.draggable = false;
     loadButton.style.zIndex = 0;
@@ -43,13 +50,13 @@ function createLoadButton(top, left) {
 // Functions for saving
 async function saveSheet() {
     var formfields = document.getElementsByClassName("save")
-    var json = {}
+    var json = {fieldValues:{},layout:currentLayout}
     for (let i=0 ; i<formfields.length; i++){
         let field = formfields.item(i)
         if (field.className.includes("calc")){
-            json[String(field.id)] = field.textContent
+            json["fieldValues"][String(field.id)] = field.textContent
         } else {
-            json[String(field.id)] = field.value
+            json["fieldValues"][String(field.id)] = field.value
         }
         
     }
@@ -94,28 +101,32 @@ function unpackJson(){
     let reader = new FileReader()
     reader.readAsText(file)
     reader.onload = function() {
-        loadLayout(JSON.parse(reader.result).layout)
-        loadState(JSON.parse(reader.result).fieldValues);
+        
+        loadState(JSON.parse(reader.result));
     }
     reader.onerror = function() {
         console.log(reader.error);
         alert("Error loading file")
     };
 }
-async function loadLayout(result){
-    //not implemented
+async function loadLayout(layout){
+    document.body.innerHTML = '';
+    layoutRenderer.render(layout);
+    update.onPageLoad()
 }
 
 
 async function loadState(result){
     let confirmed = true
     if (!await CheckSaved()){ //Check if there is any unsaved data
-        if (!confirm("Are you sure you want to open this file, the current one is not saved.")==true){
+        if (!confirm("Are you sure you want to open this file, the current one is not saved.")){
             confirmed = false // Make sure they want to overwrite unsaved data
             // There is a quirk here we might want to fix, no matter if you confirm or not, the browse button will still display the chosen file as if it is loaded
         } 
     }
     if (confirmed){ // Load the file into the sheet
+        loadLayout(result.layout)
+        result = result.fieldValues
         for (const property in result){
             try{
                 let field = document.getElementById(property)

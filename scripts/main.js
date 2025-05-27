@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //temporary setup while testing
     const loadButton = document.createElement("input");
-    loadButton.id = "loadButton"
+    loadButton.id = "loadLayoutButton"
     loadButton.type = "file"
     loadButton.textContent = "Browse...";
     loadButton.style.position = "absolute"
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
     //for testing
-    fetch('/customTestLayout.json')
+    fetch('/layoutTemplate.json')
         .then(res => res.json())
         .then(data => {
             layoutRenderer.render(data.layout);

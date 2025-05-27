@@ -9,6 +9,7 @@ import * as autoSize from "../decorators/autoSize.js";
 import * as frame from "../constructors/frame.js";
 import * as page from "../constructors/page.js";
 import * as presetTestPage from "../pages/presetTestPage.js"
+import * as statsPage from "../pages/statsPage.js"
 import * as svg from "../constructors/svg.js";
 
 
@@ -30,7 +31,8 @@ const functionMap = {
 
 
   //Pre made pages
-  presetTestPage: (args) => presetTestPage.create(...args)
+  presetTestPage: (args) => presetTestPage.create(...args),
+  statsPage: (args) => statsPage.create(...args)
 
   };
 
@@ -48,4 +50,5 @@ export function render(layout){
     for (const [key, value] of Object.entries(layout)) {
         runFunctionByName(value.function, value.args)
       }
+      saveload.setLayout(layout)
 }

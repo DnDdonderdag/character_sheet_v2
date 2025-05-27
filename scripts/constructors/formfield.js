@@ -47,7 +47,7 @@ export function singleLine(id, top, left, width, height, parentDivID, color, ali
 
     const formfield = document.createElement("input");
     formfield.id = id;
-    formfield.style = "--top:"+String(top)+"px; --left:"+String(left)+"px; --width:"+String(width)+"px; --height:"+String(height)+"px; --color:"+String(color)+"; --align:"+String(alignment)+""
+    formfield.style = "--top:"+String(top)+"px; --left:"+String(left)+"px; --width:"+String(width-4)+"px; --height:"+String(height-2)+"px; --color:"+String(color)+"; --align:"+String(alignment)+""
     formfield.className = "not-selectable singleLine save autoSize"
     formfield.spellcheck = false;
     formfield.maxFontSize = maxFontSize

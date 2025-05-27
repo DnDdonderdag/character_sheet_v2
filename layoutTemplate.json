@@ -9,19 +9,14 @@
     },
     "layout": {
         "presetTestPage":{
-            "function": "presetTestPage",
-            "args": [10,10]
+            "function": "statsPage",
+            "args": [10,5]
         },
 
-        "customTestPage1":{   
+        "lookupPage":{   
             "function": "page", 
-            "args": ["page1",10,620]
+            "args": ["lookupPage",10,645]
         },
-
-            "saveLoad":{   
-                "function": "saveLoadButtons", 
-                "args": [10,10]
-            },
 
             "formField1":{
                 "function": "calc",
@@ -32,14 +27,14 @@
                     {
                         "function" : "formfield",
                         "syncClass": "testSyncClass",
-                        "args": ["testField", 40,20,100,300,"page1"]
+                        "args": ["testField", 40,20,100,300,"lookupPage"]
                     }
                 }
             },
 
             "textTest":{
                 "function" : "text",
-                "args": ["testText", "Welcome to the testing page", 350,20,180,10, "page1" , "Scalasans", "black"]
+                "args": ["testText", "Welcome to the testing page", 350,20,180,10, "lookupPage" , "Scalasans", "black"]
             },
 
 
@@ -49,7 +44,7 @@
                 {
                     "function" : "tickbox",
                     "syncClass": "testSyncButton",
-                    "args": ["testButton1", 40,140,20,20,"page1"]
+                    "args": ["testButton1", 40,140,20,20,"lookupPage"]
                 }
             },
             "button2":{
@@ -58,7 +53,7 @@
                 {
                     "function" : "tickbox",
                     "syncClass": "testSyncButton2",
-                    "args": ["testButton2", 70,140,20,20,"page1"]
+                    "args": ["testButton2", 70,140,20,20,"lookupPage"]
                 }
             },
             "button3":{
@@ -67,7 +62,7 @@
                 {
                     "function" : "checkmark",
                     "syncClass": "testSyncButton2",
-                    "args": ["testButton3", 100,140,20,20,"page1"]
+                    "args": ["testButton3", 100,140,20,20,"lookupPage"]
                 }
             },
             "button4":{
@@ -76,18 +71,18 @@
                 {
                     "function" : "checkmark",
                     "syncClass": "testSyncButton",
-                    "args": ["testButton4", 130,140,20,20,"page1"]
+                    "args": ["testButton4", 130,140,20,20,"lookupPage"]
                 }
             },
 
             "frame1":{
                 "function" : "frame",
-                "args": ["testFrame", 40,190,150,300,"page1", "TEST FRAME","testSyncClass"]
+                "args": ["testFrame", 40,190,150,300,"lookupPage", "TEST FRAME","testSyncClass"]
             },
             
             "testAsset":{
                 "function": "svg",
-                "args": ["testAssetCustom", 200, 380, 80, 80, "armor.svg", "page1"]
+                "args": ["testAssetCustom", 200, 380, 80, 80, "armor.svg", "lookupPage"]
             }
 
         

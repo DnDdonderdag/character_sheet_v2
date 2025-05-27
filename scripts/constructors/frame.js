@@ -4,38 +4,53 @@ import * as formfield  from "../constructors/formfield.js";
 import * as text from "../constructors/text.js"
 import * as autoSize from "../decorators/autoSize.js";
 
-export function create(id, top, left, width, height, parentDivID,labelText, syncClass, alignment){
+export function create(id, top, left, width, height, parentDivID,labelText, syncClass, alignment, formBool){
     /*
         syncClass optional, if left out form will not sync
         LabelText optional, if left out form will fill box
     */
+
+    formBool = (formBool === undefined) ? true : formBool;
+    
     let frame = document.createElement("div")
-    frame.id = id+"Frame"
+    if (formBool){frame.id = id+"Frame"}
+    else {frame.id = id}
+    
     frame.className = "not-selectable frame"
     frame.style = "--top:"+String(top)+"px; --left:"+String(left)+"px; --width:"+String(width)+"px; --height:"+String(height)+"px;; --bevel:7.5px;"
 
+
     document.getElementById(parentDivID).appendChild(frame)
-
     let frameFormField
-    if(labelText){
-        frameFormField = 
-            autoSize.autoSizeDecorator(
-                formfield.create(id, 7, 10, width-20, height-22, id+"Frame", undefined, alignment)
-            )
-        text.create(id+"FrameLabel", labelText, height-13, 0, width, 8, id+"Frame", "Scalasans")
-    } else{
-        frameFormField = 
-            autoSize.autoSizeDecorator(
-                formfield.create(id, 7, 10, width-20, height-14, id+"Frame", undefined, alignment)
-            )
-    }
+    if (formBool){
+        
+        if(labelText){
+            frameFormField = 
+                autoSize.autoSizeDecorator(
+                    formfield.create(id, 7, 10, width-20, height-22, id+"Frame", undefined, alignment)
+                )
+            text.create(id+"FrameLabel", labelText, height-13, 0, width, 8, id+"Frame", "Scalasans")
+        } else{
+            frameFormField = 
+                autoSize.autoSizeDecorator(
+                    formfield.create(id, 7, 10, width-20, height-14, id+"Frame", undefined, alignment)
+                )
+        }
+        frameFormField = calc.calcDecorator(frameFormField)
 
-    frameFormField = calc.calcDecorator(frameFormField)
-
-    if (syncClass){
-        frameFormField =
-            sync.syncDecorator(syncClass, frameFormField)
+        if (syncClass){
+            frameFormField =
+                sync.syncDecorator(syncClass, frameFormField)
+        }
+        
+    } else {
+        if (labelText){
+            text.create(id+"FrameLabel", labelText, height-13, 0, width, 8, id, "Scalasans")
+        }
     }
+    
+    
+
     
 
     //create corners
@@ -68,5 +83,10 @@ export function create(id, top, left, width, height, parentDivID,labelText, sync
         line.style = tops[i]+lefts[i]+scales[i]
         frame.appendChild(line);
     }
-    return frameFormField
+    if (formBool){
+        return frameFormField
+    } else {
+        return
+    }
+    
 }

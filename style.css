@@ -84,11 +84,11 @@
     resize:none;
     font-family:Arial, Helvetica, sans-serif;
     border:none;
-    outline: solid 1px;
+    outline: solid 0.5px;
     z-index: 1000;
     border-radius: 50%;
   }.tickbox:hover{
-    outline: solid 2px;
+    outline: solid 1.5px;
   }
 
 
@@ -115,6 +115,61 @@
     width: var(--width);
     height: var(--height);
   }
+    .assetDiv{
+    position: absolute;
+    left: var(--left);
+    top: var(--top);
+    width: var(--width);
+    height: var(--height);
+  }
+  .bevelledBox {
+  left: var(--left);
+  top: var(--top);
+  position: absolute;
+  width:  calc(var(--width));
+  height: calc(var(--height));
+  clip-path:  polygon(var(--bevel) 0px,calc(var(--width) - var(--bevel)) 0px,calc(var(--width)) var(--bevel),calc(var(--width))  calc(var(--height) - var(--bevel)),calc(var(--width) - var(--bevel))  calc(var(--height)),var(--bevel)  calc(var(--height)),0px  calc(var(--height) - var(--bevel)),0px var(--bevel));
+  background: var(--color); 
+  z-index: -1;
+}.bevelledBox::after{
+  content: "";
+  position: absolute;
+  top:calc(var(--bevel)/4);
+  left: calc(var(--bevel)/4);
+  width:  calc(var(--width) - var(--bevel)/2);
+  height: calc(var(--height) - var(--bevel)/2 );
+  clip-path: polygon(
+
+  calc(var(--bevel)) 0px,
+  calc(var(--width) - var(--bevel)*1.5) 0px,
+
+  calc(var(--width) - var(--bevel)/2) calc(var(--bevel)),
+  calc(var(--width) - var(--bevel)/2) calc(var(--height) - var(--bevel)*1.5),
+
+  calc(var(--width) - var(--bevel)*1.5) calc(var(--height) - var(--bevel)/2),
+  calc(var(--bevel)) calc(var(--height) - var(--bevel)/2),
+  
+  0px calc(var(--height) - var(--bevel)*1.5),
+  0px calc(var(--bevel)),
+
+  calc(var(--bevel)) 0px,
+
+  calc(var(--bevel) + 2px) 2px,
+  2px calc(var(--bevel) + 2px),
+  2px calc(var(--height) - var(--bevel)*1.5 - 2px),
+ 
+  calc(var(--bevel) + 2px) calc(var(--height) - var(--bevel)/2 - 2px),
+  calc(var(--width) - var(--bevel)*1.5 - 2px) calc(var(--height) - var(--bevel)/2 - 2px),
+  
+  calc(var(--width) - var(--bevel)/2 - 2px) calc(var(--height) - var(--bevel)*1.5 - 2px),
+  calc(var(--width) - var(--bevel)/2 - 2px) calc(var(--bevel) + 2px),
+
+  calc(var(--width) - var(--bevel)*1.5 - 2px) 2px,
+  calc(var(--bevel) + 2px) 2px
+  );
+  background: rgb(255, 255, 255); 
+  z-index: -1;
+} 
 
 #tooltip{
     white-space:pre-wrap;
@@ -125,10 +180,18 @@
     position: absolute;
     left: var(--left);
     top: var(--top);
-    width: 600px;
+    width: 630px;
     height: 900px;
     z-index: -100;
-    background-color: rgb(222, 222, 222);
+    background-color: transparent;
+    outline: solid 1px;
+}
+.header{
+    position: absolute;
+    left: var(--left);
+    top: var(--top);
+    width: 650px;
+    z-index: -100;
 }
 
 .frame{

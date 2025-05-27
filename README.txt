@@ -49,3 +49,8 @@ Ideas:
         om layout te initialiseren.
     Voor lookup:
         add lookup as a calculation feature
+
+
+Bugs:
+ - Tooltip, sometimes shows "syncMe" still, when it shouldnt
+ - Calc not finished, add floor, divide
