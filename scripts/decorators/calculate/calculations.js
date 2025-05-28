@@ -55,12 +55,13 @@ function calculate(formula){
         let replacementtext
         replacementtext = parser.evaluate(replacementid)
         try{
-            replacementtext = parser.evaluate(replacementid)
+            //replacementtext = parser.evaluate(replacementid) //Reverse polish calculator, enable when improved
+            replacementtext = String(eval(replacementid))
             formula = formula.replace(formula.slice(start, finish+1), String(replacementtext))
         }
         catch{ 
-
-            }
+            formula = formula.replace(formula.slice(start, finish+1), replacementid)
+        }
     }
 
     let result = formula

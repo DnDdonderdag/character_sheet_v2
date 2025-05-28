@@ -10,6 +10,8 @@ import * as frame from "../constructors/frame.js";
 import * as page from "../constructors/page.js";
 import * as presetTestPage from "../pages/presetTestPage.js"
 import * as statsPage from "../pages/statsPage.js"
+import * as spellListPage from "../pages/spellListPage.js"
+import * as inventoryPage from "../pages/inventoryPage.js"
 import * as svg from "../constructors/svg.js";
 
 
@@ -24,6 +26,7 @@ const functionMap = {
   frame: (args) => frame.create(...args),
 
   formfield: (args) => formfield.create(...args),
+  singleLine: (args) => formfield.singleLine(...args),
   checkmark: (args) => button.checkmark(...args),
   tickbox: (args) => button.tickbox(...args),
   text: (args) => text.create(...args),
@@ -32,7 +35,9 @@ const functionMap = {
 
   //Pre made pages
   presetTestPage: (args) => presetTestPage.create(...args),
-  statsPage: (args) => statsPage.create(...args)
+  statsPage: (args) => statsPage.create(...args),
+  spellListPage: (args) => spellListPage.create(...args),
+  inventoryPage: (args) => inventoryPage.create(...args)
 
   };
 

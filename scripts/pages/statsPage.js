@@ -22,7 +22,7 @@ export function create(top,left){
     statsPageHeader.src="Assets/SVG/headerP1.svg";
     statsPageHeader.alt="headerchar";
     statsPageHeader.draggable = false;
-    statsPageHeader.style = "--top:"+String(top)+"px; --left:"+String(left - 25)+"px;"
+    statsPageHeader.style = "--top:"+String(10)+"px; --left:"+String(-20)+"px;"
     statsPage.appendChild(statsPageHeader);
 
 
@@ -38,7 +38,7 @@ export function create(top,left){
     let characterInfotextContents =["CLASS & LEVEL", "ALIGNMENT", "PLAYER NAME", "RACE", "BACKGROUND", "EXPERIENCE POINTS"]
     for (let i = 0; i<6; i++){
         sync.syncDecorator(characterInfoSyncDecorators[i],
-            formfield.singleLine(characterInfoFormFieldIds[i], 46 + i%2 * 29, 272 + i%3 * 110, 100, 16, "statsPage", undefined, "Left", undefined)
+            formfield.singleLine(characterInfoFormFieldIds[i], 46 + i%2 * 29, 272 + i%3 * 110, 100, 16, "statsPage", undefined, "Left", 13)
         )
         text.create(characterInfoFormFieldIds+"Text", characterInfotextContents[i], 63 + i%2 * 29, 272 + i%3 * 110, 100, 8, "statsPage", "Scalasanslight", undefined, undefined, "left")
     }
@@ -72,7 +72,7 @@ export function create(top,left){
     let hitDiceForm = calc.calcDecorator(sync.syncDecorator("hitDice",formfield.singleLine("hitDice", 22,10,73,28, "hitDiceFrame", undefined, 'center', 20)))
     
     let deathSaves = frame.create("deathSavesFrame", 230, 102, 93, 65, "healthBevelledBox", "DEATH SAVES", undefined, undefined, false)
-    let successesText = text.create("successes", "SUCCESSES", 15, 5, 38, 7, "deathSavesFrame", undefined, undefined, undefined, "right")
+    let successesText = text.create("successes", "SUCCESSES", 12, 5, 38, 7, "deathSavesFrame", undefined, undefined, undefined, "right")
     let failsText = text.create("fails", "FAILURES", 30, 5, 38, 7, "deathSavesFrame", undefined, undefined, undefined, "right")
     
     for (let i=0; i<4; i++){
@@ -81,7 +81,7 @@ export function create(top,left){
         asset.alt="failed asset";
         asset.draggable = false;
         asset.id = "deathSaveLineAsset";
-        asset.style = "--top:"+String(17 + i%2 * 15)+"px; --left:"+String(40+ Math.floor(i/2) * 10)+"px; --width:"+String(40)+"px; --height:"+String(10)+"px;"
+        asset.style = "--top:"+String(14 + i%2 * 18)+"px; --left:"+String(40+ Math.floor(i/2) * 10)+"px; --width:"+String(40)+"px; --height:"+String(10)+"px;"
         asset.className = "not-selectable asset"
         asset.style.setProperty("transform", "rotate(-90deg)")
         asset.style.setProperty("z-index", "-1")
@@ -89,8 +89,8 @@ export function create(top,left){
         document.getElementById("deathSavesFrame").appendChild(asset)
     }
     for (let i=0; i<3; i++){
-       sync.syncDecorator("deathSave"+String(i), button.tickbox("deathSave" + String(i), 15, 48 + 13*i, 7,7, "deathSavesFrame", undefined))
-       sync.syncDecorator("deathFail"+String(i), button.tickbox("deathFail" + String(i), 30, 48 + 13*i, 7,7, "deathSavesFrame", undefined))
+       sync.syncDecorator("deathSave"+String(i), button.tickbox("deathSave" + String(i), 11, 47 + 13*i, 9,9, "deathSavesFrame", undefined))
+       sync.syncDecorator("deathFail"+String(i), button.tickbox("deathFail" + String(i), 29, 47 + 13*i, 9,9, "deathSavesFrame", undefined))
     }
 
     //Attacks and spell casting
@@ -129,7 +129,7 @@ export function create(top,left){
         let abilityTab = sync.syncDecorator(abilities[i] + "Value", calc.calcDecorator(formfield.singleLine(abilities[i] + "Value", 42, 12, 46,27, "statBoxAsset"+abilities[i], undefined, "center", 25)))
         text.create(abilities[i]+"Text", abilities[i].toUpperCase(), 69, 5, 60, 9, "statBoxAsset"+abilities[i], "scalasanslight", undefined, 8, "center")
         abilityTab.textContent = "10"
-
+        modTab.textContent = "{((Math.floor([" + abilities[i] + "Value]/2)-5>=0)?'+': '')+String(Math.floor([" + abilities[i] + "Value]/2)-5)}"
 
         for(let j=0; j<skills[abilities[i]].length; j++){
             let skill = skills[abilities[i]][j]

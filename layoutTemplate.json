@@ -8,84 +8,138 @@
         "testTickbox2": 1
     },
     "layout": {
-        "presetTestPage":{
-            "function": "statsPage",
-            "args": [10,5]
+
+        "inventoryPage":{
+            "function" : "inventoryPage",
+            "args": [1,645]
         },
+        "statsPage":{
+            "function": "statsPage",
+            "args": [1,5]
+        },
+
+        "spellListPage":{
+            "function": "spellListPage",
+            "args": [910,5]
+        },
+
+
+
 
         "lookupPage":{   
             "function": "page", 
-            "args": ["lookupPage",10,645]
+            "args": ["lookupPage",1,1285]
         },
 
-            "formField1":{
-                "function": "calc",
-                "args": 
-                {
-                    "function": "sync",
+
+            "headerAssetLookupPage":{
+                "function":"svg",
+                "args":["headerAssetLookupPage", -95, -16, 650, 300, "headerP3.svg", "lookupPage"]
+            },
+
+            "spellCastingAbilityTextLookupPage":{
+                "function":"text",
+                "args": ["spellCastingAbilityTextLookupPage", "SPELLCASTING ABILITY", 180, 78, 80, 20, "headerAssetLookupPage", null, null, 8, "center"]
+            },
+            "spellSaveDCTextLookupPage":{
+                "function":"text",
+                "args": ["spellSaveDCTextLookupPage", "SPELL SAVE DC", 180, 190, 80, 20, "headerAssetLookupPage", null, null, 8, "center"]
+            },
+            "spellATKBonusTextLookupPage":{
+                "function":"text",
+                "args": ["spellATKBonusTextLookupPage", "SPELL ATTACK BONUS", 180, 310, 70, 20, "headerAssetLookupPage", null, null, 8, "center"]
+            },
+
+            "spellcastingAbilityLookupPage":{
+                "function": "sync",
+                "args":{
+                    "function": "calc",
+                    "syncClass": "spellcastingAbility",
                     "args": 
                     {
-                        "function" : "formfield",
-                        "syncClass": "testSyncClass",
-                        "args": ["testField", 40,20,100,300,"lookupPage"]
+                        "function" : "singleLine",
+                        "args": ["spellcastingAbilityLookup", 145, 84, 68, 30,"headerAssetLookupPage", null, "center", 20, "INT"]
+                    }
+                }
+            },
+            "spellSaveDCLookupPage":{
+                "function": "sync",
+                "args":{
+                    "function": "calc",
+                    "syncClass": "spellSaveDC",
+                    "args": 
+                    {
+                        "function" : "singleLine",
+                        "args": ["spellSaveDCLookup", 145, 196, 68, 30,"headerAssetLookupPage", null, "center", 20, "{8+[prof]+{'[[spellcastingAbilityLookup]mod]'.substring(1)}}"]
+                    }
+                }
+            },
+            "spellAttackBonusLookupPage":{
+                "function": "sync",
+                "args":{
+                    "function": "calc",
+                    "syncClass": "spellAttackBonus",
+                    "args": 
+                    {
+                        "function" : "singleLine",
+                        "args": ["spellAttackBonusLookup", 145, 311, 68, 30,"headerAssetLookupPage", null, "center", 20, "{[prof]+{'[[spellcastingAbilityLookup]mod]'.substring(1)}}"]
                     }
                 }
             },
 
-            "textTest":{
-                "function" : "text",
-                "args": ["testText", "Welcome to the testing page", 350,20,180,10, "lookupPage" , "Scalasans", "black"]
+            "lookupFrameLookupPage":{
+                "function": "frame",
+                "args":["LookupFrame", 120, 5, 410, 770, "lookupPage", "LOOKUP", null, null, false]
+            },
+            "lookupBarLookupPage1":{
+                "function": "singleLine",
+                "args": ["lookupBar1", 7, 10, 194, 20, "LookupFrame", null, null, null]
+            },
+            "lookupBarLookupPage2":{
+                "function": "singleLine",
+                "args": ["lookupBar2", 7, 206, 194, 20, "LookupFrame", null, null, null]
+            },
+            "lookupBarLookupPage3":{
+                "function": "singleLine",
+                "args": ["lookupBar3", 383, 10, 194, 20, "LookupFrame", null, null, null]
             },
 
-
-            "button1":{
-                "function": "sync",
+            "lookupBarLookupPage4":{
+                "function": "singleLine",
+                "args": ["lookupBar4", 383, 206, 194, 20, "LookupFrame", null, null, null]
+            },
+            "lookupResultLookupPage1":{
+                "function": "calc",
                 "args": 
                 {
-                    "function" : "tickbox",
-                    "syncClass": "testSyncButton",
-                    "args": ["testButton1", 40,140,20,20,"lookupPage"]
+                    "function" : "formfield",
+                    "args": ["lookupResultLookupPage1", 30,10,194,350,"LookupFrame", "#c5c6c7", null, null, "{('[lookupBar1]'!=0) ? '[lookupBar1]':'Enter spell above';}\nLevel: <spells,[lookupBar1],level>\nCasting Time: <spells,[lookupBar1],castingtime>\nRange: <spells,[lookupBar1],range>\nComponents: <spells,[lookupBar1],components>\nDuration: <spells,[lookupBar1],duration>\n\n<spells,[lookupBar1],description>"]
                 }
             },
-            "button2":{
-                "function": "sync",
+            "lookupResultLookupPage2":{
+                "function": "calc",
                 "args": 
                 {
-                    "function" : "tickbox",
-                    "syncClass": "testSyncButton2",
-                    "args": ["testButton2", 70,140,20,20,"lookupPage"]
+                    "function" : "formfield",
+                    "args": ["lookupResultLookupPage2", 30,206,194,350,"LookupFrame", "#c5c6c7", null, null, "{('[lookupBar2]'!=0) ? '[lookupBar2]':'Enter spell above';}\nLevel: <spells,[lookupBar2],level>\nCasting Time: <spells,[lookupBar2],castingtime>\nRange: <spells,[lookupBar2],range>\nComponents: <spells,[lookupBar2],components>\nDuration: <spells,[lookupBar2],duration>\n\n<spells,[lookupBar2],description>"]
                 }
             },
-            "button3":{
-                "function": "sync",
+            "lookupResultLookupPage3":{
+                "function": "calc",
                 "args": 
                 {
-                    "function" : "checkmark",
-                    "syncClass": "testSyncButton2",
-                    "args": ["testButton3", 100,140,20,20,"lookupPage"]
+                    "function" : "formfield",
+                    "args": ["lookupResultLookupPage3", 406,10,194,349,"LookupFrame", "#c5c6c7", null, null, "{('[lookupBar3]'!=0) ? '[lookupBar3]':'Enter spell above';}\nLevel: <spells,[lookupBar3],level>\nCasting Time: <spells,[lookupBar3],castingtime>\nRange: <spells,[lookupBar3],range>\nComponents: <spells,[lookupBar3],components>\nDuration: <spells,[lookupBar3],duration>\n\n<spells,[lookupBar3],description>"]
                 }
             },
-            "button4":{
-                "function": "sync",
+            "lookupResultLookupPage4":{
+                "function": "calc",
                 "args": 
                 {
-                    "function" : "checkmark",
-                    "syncClass": "testSyncButton",
-                    "args": ["testButton4", 130,140,20,20,"lookupPage"]
+                    "function" : "formfield",
+                    "args": ["lookupResultLookupPage4", 406,206,194,349,"LookupFrame", "#c5c6c7", null, null, "{('[lookupBar4]'!=0) ? '[lookupBar4]':'Enter spell above';}\nLevel: <spells,[lookupBar4],level>\nCasting Time: <spells,[lookupBar4],castingtime>\nRange: <spells,[lookupBar4],range>\nComponents: <spells,[lookupBar4],components>\nDuration: <spells,[lookupBar4],duration>\n\n<spells,[lookupBar4],description>"]
                 }
-            },
-
-            "frame1":{
-                "function" : "frame",
-                "args": ["testFrame", 40,190,150,300,"lookupPage", "TEST FRAME","testSyncClass"]
-            },
-            
-            "testAsset":{
-                "function": "svg",
-                "args": ["testAssetCustom", 200, 380, 80, 80, "armor.svg", "lookupPage"]
             }
-
-        
         
     }
 }

@@ -8,10 +8,10 @@ export function create(id, content, top, left, width, height, parentDivID, fontf
 
 
     //These allow variables to be undefined, and they set a default value
-    var fontfamily = (fontfamily === undefined) ? "Scalasans" : fontfamily;
-    var alignment = (alignment === undefined) ? "center" : alignment;
-    var fontsize = (fontsize === undefined) ? height : fontsize;
-    var color = (color === undefined) ? "black" : color;
+    var fontfamily = (fontfamily === undefined || fontfamily === null) ? "Scalasans" : fontfamily;
+    var alignment = (alignment === undefined || alignment === null) ? "center" : alignment;
+    var fontsize = (fontsize === undefined || fontsize === null) ? height : fontsize;
+    var color = (color === undefined || color === null) ? "black" : color;
 
     const textbox = document.createElement("div");
     textbox.id = id;

@@ -10,7 +10,7 @@ export function create(id, top, left, width, height, parentDivID,labelText, sync
         LabelText optional, if left out form will fill box
     */
 
-    formBool = (formBool === undefined) ? true : formBool;
+    formBool = (formBool === undefined || formBool === null) ? true : formBool;
     
     let frame = document.createElement("div")
     if (formBool){frame.id = id+"Frame"}

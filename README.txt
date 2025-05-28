@@ -53,4 +53,5 @@ Ideas:
 
 Bugs:
  - Tooltip, sometimes shows "syncMe" still, when it shouldnt
- - Calc not finished, add floor, divide
+ - Calc not working properly, currently replaced with eval, fix eventually
+ - Tooltip, when scrolling sideways not appearin in correct spot
