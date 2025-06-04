@@ -11,7 +11,11 @@
 
         "inventoryPage":{
             "function" : "inventoryPage",
-            "args": [1,645]
+            "args": [1,1285]
+        },
+        "backgroundPage":{
+            "function" : "backgroundPage",
+            "args": [910,5]
         },
         "statsPage":{
             "function": "statsPage",
@@ -20,7 +24,7 @@
 
         "spellListPage":{
             "function": "spellListPage",
-            "args": [910,5]
+            "args": [910,645]
         },
 
 
@@ -28,7 +32,7 @@
 
         "lookupPage":{   
             "function": "page", 
-            "args": ["lookupPage",1,1285]
+            "args": ["lookupPage",1,645]
         },
 
 

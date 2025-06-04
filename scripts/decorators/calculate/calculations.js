@@ -16,7 +16,7 @@ function calculate(formula){
     
 
     //search and replace square brackets, final first for field reference
-    while (formula.lastIndexOf("[")>=0){
+    while (formula.lastIndexOf("[")>=0 && formula.slice(formula.lastIndexOf("[")).indexOf("]") > 0 ){
         let start = formula.lastIndexOf("[")
         let finish = start + formula.slice(start).indexOf("]")
         let replacementid = formula.slice(start+1,finish)
@@ -33,7 +33,7 @@ function calculate(formula){
     }
 
     //search and replace square brackets, final first for lookup
-    while (formula.lastIndexOf("<")>=0){
+    while (formula.lastIndexOf("<")>=0 && formula.slice(formula.lastIndexOf("<")).indexOf(">") > 0 ){
         let bracketStartIndex = formula.lastIndexOf("<")
         let bracketEndIndex = bracketStartIndex + formula.slice(bracketStartIndex).indexOf(">")
         let keys = formula.slice(bracketStartIndex+1,bracketEndIndex).toLowerCase().replaceAll(" ","").replaceAll("-","").replaceAll("'","").replaceAll("/","")
@@ -48,7 +48,7 @@ function calculate(formula){
             }
     }
 
-    while (formula.lastIndexOf("{")>=0){
+    while (formula.lastIndexOf("{")>=0 && formula.slice(formula.lastIndexOf("{")).indexOf("}") > 0 ){
         let start = formula.lastIndexOf("{")
         let finish = start + formula.slice(start).indexOf("}")
         let replacementid = formula.slice(start+1,finish)

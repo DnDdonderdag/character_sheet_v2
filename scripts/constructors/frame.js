@@ -50,9 +50,6 @@ export function create(id, top, left, width, height, parentDivID,labelText, sync
     }
     
     
-
-    
-
     //create corners
     const rotations = ["scale(-1,1)","scale(1,1)","scale(1,-1)","scale(-1,-1)"];
     const positions = ["--top:0px; --left:0px;"," --top:0px; --left:"+String(width-20)+"px;"," --top:"+String(height-20)+"px; --left:"+String(width-20)+"px;"," --top:"+String(height-20)+"px; --left:0px;"];

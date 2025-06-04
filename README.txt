@@ -5,7 +5,7 @@ Decorators:
  - autoSizeText (DONE)
  - sync (DONE)
 Utilities:
- - save & load (WIP) (Warning for unsaved content, and layout customisation)
+ - save & load (WIP) (Warning for unsaved content)
  - update (DONE)
  - Tooltip (DONE)
  - Layout Customisation
@@ -19,7 +19,7 @@ Generic constructors
  - Page (DONE)
 
  Other features:
- - Tooltip lookup on hover voor spells etc.
+ - Tooltip lookup on hover voor spells etc. (TO BE FIXED)
  - Image uploadable, maybe store on server?
  - Include syncclass in tooltip (DONE)
  - Lookup (DONE)
@@ -43,15 +43,11 @@ Lijstje ter verbetering
 
 
 Ideas:
-    voor layout customisation:
-        layout deel van save, JSON met pages als keys, waar de value een string is met de JS code die
-        deze pagina genereert, volgorde wordt behouden. Layout kan ook als los bestandje worden geupload
-        om layout te initialiseren.
-    Voor lookup:
-        add lookup as a calculation feature
+    Voor lookup
+        Laat mensen eigen dingen toevoegen aan de lookups, sla op in veld naast fieldvalues and layout
+    Monster Lookup
+        zoals title suggereert, monsters in een lookup
 
 
 Bugs:
- - Tooltip, sometimes shows "syncMe" still, when it shouldnt
  - Calc not working properly, currently replaced with eval, fix eventually
- - Tooltip, when scrolling sideways not appearin in correct spot

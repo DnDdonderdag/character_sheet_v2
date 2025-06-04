@@ -53,9 +53,9 @@ export function create(top,left){
     let speed = frame.create("speedFrame", 10, 131, 62,60, "healthBevelledBox", "SPEED", undefined, 'center', false)
     let speedForm = calc.calcDecorator(sync.syncDecorator("speed",formfield.singleLine("speed", 7, 10, 42, 38, "speedFrame", undefined, "center", 25)))
     let initiative = frame.create("initiativeFrame", 10, 65, 62 ,60, "healthBevelledBox", "INITIATIVE", "undefined", 'center', false)
-    let initiativeForm = calc.calcDecorator(sync.syncDecorator("initiative",formfield.singleLine("initiative", 7, 10, 42, 38, "initiativeFrame", undefined, "center", 25)))
+    let initiativeForm = calc.calcDecorator(sync.syncDecorator("initiative",formfield.singleLine("initiative", 7, 10, 42, 38, "initiativeFrame", undefined, "center", 25, "[DEXmod]")))
     let ACAsset = svg.create("acAssetStatsPage", 10, 5, 60, 60, "armor.svg", "healthBevelledBox")
-    let acForm = sync.syncDecorator("ac", formfield.singleLine("ac", 10,15,30,28, "acAssetStatsPage", undefined, "center", 20))
+    let acForm = calc.calcDecorator(sync.syncDecorator("ac", formfield.singleLine("ac", 10,15,30,28, "acAssetStatsPage", undefined, "center", 20, "{[ACvalueInventoryPage0] * [armorEquippedInventoryPage0] + [ACvalueInventoryPage1] * [armorEquippedInventoryPage1] + [ACvalueInventoryPage2] * [armorEquippedInventoryPage2] + [ACvalueInventoryPage3] * [armorEquippedInventoryPage3]}")))
     let acText = text.create("acText", "ARMOR CLASS", 38, 15, 30, 30, "acAssetStatsPage", undefined, undefined, 6, 'center')
 
     let health = frame.create("healthFrame", 75, 5, 190, 80, "healthBevelledBox", "CURRENT HIT POINTS", undefined, undefined, false)

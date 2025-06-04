@@ -12,6 +12,7 @@ import * as presetTestPage from "../pages/presetTestPage.js"
 import * as statsPage from "../pages/statsPage.js"
 import * as spellListPage from "../pages/spellListPage.js"
 import * as inventoryPage from "../pages/inventoryPage.js"
+import * as backgroundPage from "../pages/characterBackgroundPage.js"
 import * as svg from "../constructors/svg.js";
 
 
@@ -37,7 +38,8 @@ const functionMap = {
   presetTestPage: (args) => presetTestPage.create(...args),
   statsPage: (args) => statsPage.create(...args),
   spellListPage: (args) => spellListPage.create(...args),
-  inventoryPage: (args) => inventoryPage.create(...args)
+  inventoryPage: (args) => inventoryPage.create(...args),
+  backgroundPage: (args) => backgroundPage.create(...args)
 
   };
 
