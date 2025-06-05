@@ -8,6 +8,43 @@ export function calcDecorator(field){
     return field
 }
 
+function searchNReplaceData(start, finish, formula, data){
+    let replacementtext
+    try{
+        replacementtext = document.getElementById(data).value
+        replacementtext = (replacementtext == "") ? (0) : (replacementtext)
+        formula = formula.replace(formula.slice(start, finish+1), String(replacementtext))
+    }
+    catch{
+        replacementtext = "-could not find " + data + "-"
+        formula = formula.replace(formula.slice(start, finish+1), String(replacementtext))
+    }
+    return formula
+}
+function evalData(start, finish, formula, data){
+        let replacementtext
+        try{
+            replacementtext = String(eval(data))
+            formula = formula.replace(formula.slice(start, finish+1), String(replacementtext))
+        }
+        catch{ 
+            formula = formula.replace(formula.slice(start, finish+1), data)
+        }
+        return formula
+}
+function lookupData(start, finish, formula){
+        let keys = formula.slice(start+1,finish).toLowerCase().replaceAll(" ","").replaceAll("-","").replaceAll("'","").replaceAll("/","")
+        let replacementText
+        try{
+            replacementText = lookup.fromString(keys.split(","))
+            formula = formula.replace(formula.slice(start, finish+1), String(replacementText))
+        }
+        catch{
+            replacementText = "-could not find " + keys + "-"
+            formula = formula.replace(formula.slice(start, finish+1), String(replacementText))
+        }
+        return formula
+}
 
 function calculate(formula){
     //This is where the actual calculating logic should go
@@ -16,57 +53,29 @@ function calculate(formula){
     
 
     //search and replace square brackets, final first for field reference
-    while (formula.lastIndexOf("[")>=0 && formula.slice(formula.lastIndexOf("[")).indexOf("]") > 0 ){
-        let start = formula.lastIndexOf("[")
-        let finish = start + formula.slice(start).indexOf("]")
-        let replacementid = formula.slice(start+1,finish)
-        let replacementtext
-        try{
-            replacementtext = document.getElementById(replacementid).value
-            replacementtext = (replacementtext == "") ? (0) : (replacementtext)
-            formula = formula.replace(formula.slice(start, finish+1), String(replacementtext))
-        }
-        catch{ 
-            replacementtext = "-could not find " + replacementid + "-"
-            formula = formula.replace(formula.slice(start, finish+1), String(replacementtext))
-            }
-    }
 
-    //search and replace square brackets, final first for lookup
-    while (formula.lastIndexOf("<")>=0 && formula.slice(formula.lastIndexOf("<")).indexOf(">") > 0 ){
-        let bracketStartIndex = formula.lastIndexOf("<")
-        let bracketEndIndex = bracketStartIndex + formula.slice(bracketStartIndex).indexOf(">")
-        let keys = formula.slice(bracketStartIndex+1,bracketEndIndex).toLowerCase().replaceAll(" ","").replaceAll("-","").replaceAll("'","").replaceAll("/","")
-        let replacementText
-        try{
-            replacementText = lookup.fromString(keys.split(","))
-            formula = formula.replace(formula.slice(bracketStartIndex, bracketEndIndex+1), String(replacementText))
+    let closingSymbols = ["}", "]", "⟩"]
+    let openingSymbols = ["{", "[", "⟨"]
+    while (true){
+        let firstCloser = closingSymbols[closingSymbols.map((e) => (formula.indexOf(e)>=0)?formula.indexOf(e):Infinity).indexOf(Math.min.apply(Math, closingSymbols.map((e) => (formula.indexOf(e)>=0)?formula.indexOf(e):Infinity)))]
+        let correspondingOpener = openingSymbols[closingSymbols.map((e) => (formula.indexOf(e)>=0)?formula.indexOf(e):Infinity).indexOf(Math.min.apply(Math, closingSymbols.map((e) => (formula.indexOf(e)>=0)?formula.indexOf(e):Infinity)))]
+        let finish = formula.indexOf(firstCloser)
+        let start = formula.slice(0,finish).lastIndexOf(correspondingOpener)
+        if (start>finish || start == -1 || finish == -1){
+            break
         }
-        catch{ 
-            replacementText = "-could not find " + keys + "-"
-            formula = formula.replace(formula.slice(bracketStartIndex, bracketEndIndex+1), String(replacementText))
-            }
-    }
-
-    while (formula.lastIndexOf("{")>=0 && formula.slice(formula.lastIndexOf("{")).indexOf("}") > 0 ){
-        let start = formula.lastIndexOf("{")
-        let finish = start + formula.slice(start).indexOf("}")
-        let replacementid = formula.slice(start+1,finish)
-        let replacementtext
-        replacementtext = parser.evaluate(replacementid)
-        try{
-            //replacementtext = parser.evaluate(replacementid) //Reverse polish calculator, enable when improved
-            replacementtext = String(eval(replacementid))
-            formula = formula.replace(formula.slice(start, finish+1), String(replacementtext))
-        }
-        catch{ 
-            formula = formula.replace(formula.slice(start, finish+1), replacementid)
+        let data = formula.slice(start+1,finish)
+        if (correspondingOpener == "["){
+            formula = searchNReplaceData(start, finish, formula, data)
+        } else if(correspondingOpener == "{"){
+            formula = evalData(start, finish, formula, data)
+        } else if(correspondingOpener == "⟨"){
+            formula = lookupData(start, finish, formula)
+        } else {
+            console.log("something went wrong")
         }
     }
-
-    let result = formula
-
-    return result
+    return formula
 }
 
 export function calculationUpdater(){
@@ -79,10 +88,6 @@ export function calculationUpdater(){
         let result = calculate(formula)
         field.value = result
     }
- }
- 
-
-
-
+}
 
 

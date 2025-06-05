@@ -10,6 +10,7 @@ import * as page from "../constructors/page.js";
 import * as svg from "../constructors/svg.js";
 import * as lookup from "../utilities/lookup.js"
 import * as bevelledBox from "../constructors/bevelledBox.js"
+import * as spellbar from "../constructors/spellbar.js"
 
 
 export function create(top,left){
@@ -44,62 +45,20 @@ export function create(top,left){
         document.getElementById("spellListFrame"+String(i) + "SpellListPage").style.setProperty("transform", "scale(1,1.095)")
     }
 
-    function createSpellBar(level, top, parent, lineAmount){
-        if (level == 0){
-            let cantripAsset = svg.create("cantripBarAssetSpellListPage", top, 5, 197, 50, "spellBarCantrip.svg", parent)
-            text.create("cantripTextSpellListPage", "0", 12, 5, 10, 20, "cantripBarAssetSpellListPage", undefined, undefined, undefined, "center")
-            text.create("cantripSpellTextSpellListPage", "CANTRIPS", 19, 30, 150, 10, "cantripBarAssetSpellListPage", undefined, undefined, 10, "center")
-            for(let j=0; j<lineAmount; j++){
-
-                let spellLine = sync.syncDecorator("spellLine"+String(j)+"Level"+level,calc.calcDecorator(formfield.singleLine("spellLine"+String(j)+"Level"+level+"SpellList", 45 + 12 * j, 12, 180, 11, "cantripBarAssetSpellListPage", undefined, "left", 11, undefined)))
-                let line = document.createElement("div")
-                line.id = "spellLine"+String(j)+"Level"+level+"Asset"
-                line.className = "spellLineAsset"
-                line.style.setProperty("top", 56 + 12 * j +"px")
-                line.style.setProperty("transform", "scale(1,calc(1/1.095))")
-                spellLine.style.setProperty("transform", "scale(1,calc(1/1.095))")
-                cantripAsset.appendChild(line)
-            }
-        } else{
-            let SpellBarAsset = svg.create("level"+level+"SpellBarAssetSpellListPage", top, 5, 197, 50, "spellBar.svg", parent)
-            text.create("level"+level+"TextSpellListPage", String(level), 12, 5, 10, 20, "level"+level+"SpellBarAssetSpellListPage", undefined, undefined, undefined, "center")
-            for (let i=0; i<4; i++){
-                let spellLineCheckmark = sync.syncDecorator("spellCheckmark"+String(i)+"Level"+level, button.checkmark("level"+level+"SpellCheckMark"+String(i)+"SpellList", 16, 90 + i* 24, 18, 18, "level"+level+"SpellBarAssetSpellListPage", undefined))
-                spellLineCheckmark.style.setProperty("transform", "scale(1,calc(1/1.095))")
-            }
-            sync.syncDecorator("spellAmountLevel"+level, formfield.singleLine("spellAmountLevel"+level+"SpellList", 14, 23, 45,  22, "level"+level+"SpellBarAssetSpellListPage", undefined, "center", undefined))
-            for(let j=0; j<lineAmount; j++){
-
-                let spellLine = sync.syncDecorator("spellLine"+String(j)+"Level"+level,calc.calcDecorator(formfield.singleLine("spellLine"+String(j)+"Level"+level+"SpellList", 48 + 12 * j, 12, 180, 10, "level"+level+"SpellBarAssetSpellListPage", undefined, "left", 11, undefined)))
-                let line = document.createElement("div")
-                line.id = "spellLine"+String(j)+"Level"+level+"Asset"
-                line.className = "spellLineAsset"
-                line.style.setProperty("top", 58 + 12 * j +"px")
-                line.style.setProperty("left", 12+"px")
-                line.style.setProperty("width", "183px")
-                line.style.setProperty("transform", "scale(1,calc(1/1.095))")
-                spellLine.style.setProperty("transform", "scale(1,calc(1/1.095))")
-                SpellBarAsset.appendChild(line)
-
-                let spellLineButton = button.tickbox("button"+String(j)+"Level"+level,  50 + 12 * j, 2, 8, 8, "level"+level+"SpellBarAssetSpellListPage", undefined)
-                spellLineButton.style.setProperty("transform", "scale(1,calc(1/1.095))")
-            
-            }
-        }
-    }
+    
     //57 lines total
     //1 bar = 4 lines
     //top = 107 + 4*12*bars + 12*lines
 
-    createSpellBar(0, 107, "spellListFrame0SpellListPage", 8)
-    createSpellBar(1, 107+4*12*1+8*12, "spellListFrame0SpellListPage", 19)
-    createSpellBar(2, 107+4*12*2+(8+19)*12, "spellListFrame0SpellListPage", 18)
-    createSpellBar(3, 107, "spellListFrame1SpellListPage", 16)
-    createSpellBar(4, 107+4*12*1+16*12, "spellListFrame1SpellListPage", 15)
-    createSpellBar(5, 107+4*12*2+(16+15)*12, "spellListFrame1SpellListPage", 14)
-    createSpellBar(6, 107, "spellListFrame2SpellListPage", 12)
-    createSpellBar(7, 107+4*12*1+12*12, "spellListFrame2SpellListPage", 11)
-    createSpellBar(8, 107+4*12*2+(12+11)*12, "spellListFrame2SpellListPage", 10)
-    createSpellBar(9, 107+4*12*3+(12+11+10)*12, "spellListFrame2SpellListPage", 8)
+    spellbar.create(0, 107, 5, "spellListFrame0SpellListPage", 8, true, "spellListPage")
+    spellbar.create(1, 107+4*12*1+8*12, 5, "spellListFrame0SpellListPage", 19, true, "spellListPage")
+    spellbar.create(2, 107+4*12*2+(8+19)*12, 5, "spellListFrame0SpellListPage", 18, true, "spellListPage")
+    spellbar.create(3, 107, 5, "spellListFrame1SpellListPage", 16, true, "spellListPage")
+    spellbar.create(4, 107+4*12*1+16*12, 5, "spellListFrame1SpellListPage", 15, true, "spellListPage")
+    spellbar.create(5, 107+4*12*2+(16+15)*12, 5, "spellListFrame1SpellListPage", 14, true, "spellListPage")
+    spellbar.create(6, 107, 5, "spellListFrame2SpellListPage", 12, true, "spellListPage")
+    spellbar.create(7, 107+4*12*1+12*12, 5, "spellListFrame2SpellListPage", 11, true, "spellListPage")
+    spellbar.create(8, 107+4*12*2+(12+11)*12, 5, "spellListFrame2SpellListPage", 10, true, "spellListPage")
+    spellbar.create(9, 107+4*12*3+(12+11+10)*12, 5, "spellListFrame2SpellListPage", 8, true, "spellListPage")
 };
 

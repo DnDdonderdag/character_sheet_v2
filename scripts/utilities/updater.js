@@ -6,6 +6,7 @@ import * as button from "../constructors/button.js"
 import * as calc from "../decorators/calculate/calculations.js"
 import * as sync from "../decorators/syncronising.js"
 import * as autoSize from "../decorators/autoSize.js";
+import * as programmableButton from "../constructors/programmableButton.js"
 
 
 export function onKeystroke(){
@@ -49,6 +50,25 @@ export function onPageLoad(){
 export function onFileLoad(){
     button.buttonUpdater()
     downStreamCalculationUpdater()
+    autoSize.autoSizeUpdater()
+}
+
+export function onProgrammableButtonPress(){
+    let triggeringField = this
+
+    programmableButton.click(triggeringField)
+
+    downStreamCalculationUpdater()
+    button.buttonUpdater()
+    autoSize.autoSizeUpdater()
+}
+
+export function onProgrammableButtonRightClick(){
+    let triggeringField = this
+
+    programmableButton.rightClick(triggeringField)
+
+
     autoSize.autoSizeUpdater()
 }
 

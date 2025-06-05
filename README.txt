@@ -19,7 +19,7 @@ Generic constructors
  - Page (DONE)
 
  Other features:
- - Tooltip lookup on hover voor spells etc. (TO BE FIXED)
+ - Tooltip lookup on hover voor spells etc. 
  - Image uploadable, maybe store on server?
  - Include syncclass in tooltip (DONE)
  - Lookup (DONE)

@@ -10,6 +10,7 @@ import * as page from "../constructors/page.js";
 import * as svg from "../constructors/svg.js";
 import * as lookup from "../utilities/lookup.js"
 import * as bevelledBox from "../constructors/bevelledBox.js"
+import * as programmableButton from "../constructors/programmableButton.js"
 
 
 export function create(top,left){
@@ -64,7 +65,7 @@ export function create(top,left){
     let HPForm = calc.calcDecorator(sync.syncDecorator("HP",formfield.singleLine("HP", 22,10,170,43, "healthFrame", undefined, 'center', 25)))
     
     let tempHP = frame.create("tempHPFrame", 160, 5, 190, 65, "healthBevelledBox", "TEMPORARY HIT POINTS", undefined, undefined, false)
-    let tempHPForm = calc.calcDecorator(sync.syncDecorator("TempHp",formfield.singleLine("tempHP", 7,10,170,43, "tempHPFrame", undefined, 'center', 25)))
+    let tempHPForm = calc.calcDecorator(sync.syncDecorator("tempHP",formfield.singleLine("tempHP", 7,10,170,43, "tempHPFrame", undefined, 'center', 25)))
     
     let hitDice = frame.create("hitDiceFrame", 230, 5, 93, 65, "healthBevelledBox", "HIT DICE", undefined, undefined, false)
     let hitDiceText = text.create("hitDiceText", "TOTAL", 9, 10, 80, 8, "hitDiceFrame", undefined, "#c5c6c7", undefined, "left")

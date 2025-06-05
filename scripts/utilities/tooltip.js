@@ -9,12 +9,12 @@ function showTooltip(event){
         const tooltip = document.createElement("div");
         tooltip.id = "tooltip"
         tooltip.style.height = "20px";
-        tooltip.textContent = "ID: " + activeElement.id;
+        tooltip.textContent = "ID:" + activeElement.id;
         if (activeElement.className.includes("sync")){
             let classname = activeElement.className
             let preSliced = classname.slice(activeElement.className.indexOf("syncMe")) // filtering the syncclass from within the enitre class string
             let syncClass = (preSliced.indexOf(" ") == -1) ? preSliced.slice(6) : preSliced.slice(6, preSliced.indexOf(" ")) // finishing filtering (this is a one line if-else)
-            tooltip.textContent += "\nSyncClass: " + syncClass
+            tooltip.textContent += "\nSyncClass:" + syncClass
             tooltip.style.height = "40px";
         }
         tooltip.style.top = `${rect.top + window.scrollY}px`;

@@ -49,6 +49,6 @@ export function create(top,left){
     text.create("featureLookUpClassBackgroundPageText", "CLASS", 7, 10, 125, 10, "featuresLookupBackgroundPage", undefined, undefined, undefined, "left")
     text.create("featureLookUpSubclassBackgroundPageText", "SUBCLASS", 7, 140, 125, 10, "featuresLookupBackgroundPage", undefined, undefined, undefined, "left")
     text.create("featureLookUpFeatureBackgroundPageText", "FEATURE", 7, 270, 125, 10, "featuresLookupBackgroundPage", undefined, undefined, undefined, "left")
-    calc.calcDecorator(sync.syncDecorator("featureLookupBackgroundPage",formfield.create("featureLookupBackgroundPage", 49,10, 390, 380-13-49, "featuresLookupBackgroundPage", undefined, "left", undefined, "{('[featureLookUpSubclassBackgroundPage]'!=0) ? '':'Lookup any class feature in this field.\\nEnter any 5e class.\\nEnter BASE for subclass for base features';}<features,[featureLookUpClassBackgroundPage],[featureLookUpSubclassBackgroundPage],[featureLookUpFeatureBackgroundPage],description>")))
+    calc.calcDecorator(sync.syncDecorator("featureLookupBackgroundPage",formfield.create("featureLookupBackgroundPage", 49,10, 390, 380-13-49, "featuresLookupBackgroundPage", undefined, "left", undefined, "{('[featureLookUpSubclassBackgroundPage]'!=0) ? '':'Lookup any class feature in this field.\\nEnter any 5e class.\\nEnter BASE for subclass for base features';}⟨features,[featureLookUpClassBackgroundPage],[featureLookUpSubclassBackgroundPage],[featureLookUpFeatureBackgroundPage],description⟩")))
 };
 

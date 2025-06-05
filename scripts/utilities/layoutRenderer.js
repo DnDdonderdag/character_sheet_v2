@@ -13,7 +13,11 @@ import * as statsPage from "../pages/statsPage.js"
 import * as spellListPage from "../pages/spellListPage.js"
 import * as inventoryPage from "../pages/inventoryPage.js"
 import * as backgroundPage from "../pages/characterBackgroundPage.js"
+import * as notesPage from "../pages/notesPage.js"
 import * as svg from "../constructors/svg.js";
+import * as programmableButton from "../constructors/programmableButton.js"
+import * as bevelledBox from "../constructors/bevelledBox.js"
+import * as spellbar from "../constructors/spellbar.js"
 
 
 const functionMap = {
@@ -32,14 +36,17 @@ const functionMap = {
   tickbox: (args) => button.tickbox(...args),
   text: (args) => text.create(...args),
   svg: (args) => svg.create(...args),
-
+  programmableButton: (args) => programmableButton.create(...args),
+  bevelledBox: (args) => bevelledBox.create(...args),
+  spellbar: (args) => spellbar.create(...args),
 
   //Pre made pages
   presetTestPage: (args) => presetTestPage.create(...args),
   statsPage: (args) => statsPage.create(...args),
   spellListPage: (args) => spellListPage.create(...args),
   inventoryPage: (args) => inventoryPage.create(...args),
-  backgroundPage: (args) => backgroundPage.create(...args)
+  backgroundPage: (args) => backgroundPage.create(...args),
+  notesPage: (args) => notesPage.create(...args)
 
   };
 
