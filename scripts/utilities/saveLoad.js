@@ -3,6 +3,12 @@ import * as button from "../constructors/button.js"
 import * as update from "./updater.js";
 import * as layoutRenderer from "./layoutRenderer.js"
 
+//alert the user when reloading
+window.addEventListener('beforeunload', function (e) {
+e.preventDefault();
+e.returnValue = '';
+});
+
 
 let currentLayout = {}
 export function setLayout(layout){
@@ -28,7 +34,7 @@ function createSaveButton(top, left) {
     saveButton.onclick = function(){saveSheet()};
     document.body.appendChild(saveButton);
 }
-function createLoadButton(top, left) {
+export function createLoadButton(top, left) {
     const loadButton = document.createElement("input");
     loadButton.id = "loadButton"
     loadButton.type = "file"
@@ -43,7 +49,7 @@ function createLoadButton(top, left) {
     loadButton.accept = "application/JSON"
     loadButton.addEventListener('change', unpackJson, false);
     document.body.appendChild(loadButton);
-    
+    return loadButton
 }
 
 
@@ -96,7 +102,7 @@ async function saveSheet() {
 
 
 //Functions for loading
-function unpackJson(){
+export function unpackJson(){
     const file = this.files[0];
     let reader = new FileReader()
     reader.readAsText(file)
