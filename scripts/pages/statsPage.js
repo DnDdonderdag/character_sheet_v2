@@ -20,7 +20,7 @@ export function create(top,left){
     let statsPageHeader = document.createElement("img");
     statsPageHeader.id = "statsPageHeaderSVG"
     statsPageHeader.className="header not-selectable"
-    statsPageHeader.src="assets/SVG/headerP1.svg";
+    statsPageHeader.src="assets/svg/headerP1.svg";
     statsPageHeader.alt="headerchar";
     statsPageHeader.draggable = false;
     statsPageHeader.style = "--top:"+String(10)+"px; --left:"+String(-20)+"px;"
