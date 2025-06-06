@@ -37,7 +37,7 @@ export function create(level, top, left, parent, lineAmount, lineBool, idAdditio
         }
         
     } else{
-        let SpellBarAsset = svg.create("level"+level+"SpellBarAsset"+idAddition, top, left, 197, 50, "spellBar.svg", parent)
+        let SpellBarAsset = svg.create("level"+level+"SpellBarAsset"+idAddition, top, left, 197, 50, "spellbar.svg", parent)
         text.create("level"+level+"Text"+idAddition, String(level), 12, 5, 10, 20, "level"+level+"SpellBarAsset"+idAddition, undefined, undefined, undefined, "center")
         for (let i=0; i<4; i++){
             let spellLineCheckmark = sync.syncDecorator("spellCheckmark"+String(i)+"Level"+level, button.checkmark("level"+level+"SpellCheckMark"+String(i)+idAddition, 16, 90 + i* 24, 18, 18, "level"+level+"SpellBarAsset"+idAddition, undefined))
