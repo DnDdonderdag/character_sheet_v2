@@ -1,4 +1,4 @@
-TO DO:
+Fetures:
 
 Decorators:
  - calc (DONE) (Maybe try to fix associativity one day)
@@ -51,3 +51,16 @@ Ideas:
 
 Bugs:
  - Calc not working properly, currently replaced with eval, fix eventually
+ - loading page is still wrong
+
+
+
+
+To do:
+ - server side
+ - save file name
+ - bug fixing
+ - layout loading on startup
+ - on the fly lookup adding
+
+ 

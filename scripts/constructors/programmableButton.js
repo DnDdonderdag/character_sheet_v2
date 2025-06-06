@@ -45,7 +45,7 @@ export function rightClick(field){
     let scriptFieldParent = document.createElement("div")
     scriptFieldParent.id = "scriptFieldParent"
     document.body.appendChild(scriptFieldParent)
-    let scriptField = formfield.create("scriptField", 0,0,100,200,"scriptFieldParent", undefined, "left", undefined, undefined)
+    let scriptField = formfield.create("scriptField", 0,0,200,100,"scriptFieldParent", "#e7e8e8", "left", undefined, undefined)
     scriptField.addEventListener("blur", scriptFieldUnfocus)
     scriptField.style.setProperty("visibility", "visible")
     

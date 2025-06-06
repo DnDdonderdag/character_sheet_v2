@@ -23,7 +23,7 @@ export function create(level, top, left, parent, lineAmount, lineBool, idAdditio
         if (lineBool){
             for(let j=0; j<lineAmount; j++){
 
-                let spellLine = sync.syncDecorator("spellLine"+String(j)+"Level"+level,calc.calcDecorator(formfield.singleLine("spellLine"+String(j)+"Level"+level+idAddition, 45 + 12 * j, 12, 180, 11, "cantripBarAsset"+idAddition, undefined, "left", 11, undefined)))
+                let spellLine = sync.syncDecorator("spellLine"+String(j)+"Level"+level,calc.calcDecorator(formfield.singleLine("spellLine"+String(j)+"Level"+level+idAddition, 45 + 12 * j, 12, 180, 11, "cantripBarAsset"+idAddition, undefined, "left", 9, undefined)))
                 let line = document.createElement("div")
                 line.id = "spellLine"+String(j)+"Level"+level+"Asset"+idAddition
                 line.className = "spellLineAsset"
@@ -49,7 +49,7 @@ export function create(level, top, left, parent, lineAmount, lineBool, idAdditio
         if (lineBool){
             for(let j=0; j<lineAmount; j++){
 
-                let spellLine = sync.syncDecorator("spellLine"+String(j)+"Level"+level,calc.calcDecorator(formfield.singleLine("spellLine"+String(j)+"Level"+level+idAddition, 48 + 12 * j, 12, 180, 10, "level"+level+"SpellBarAsset"+idAddition, undefined, "left", 11, undefined)))
+                let spellLine = sync.syncDecorator("spellLine"+String(j)+"Level"+level,calc.calcDecorator(formfield.singleLine("spellLine"+String(j)+"Level"+level+idAddition, 48 + 12 * j, 12, 180, 10, "level"+level+"SpellBarAsset"+idAddition, undefined, "left", 9, undefined)))
                 let line = document.createElement("div")
                 line.id = "spellLine"+String(j)+"Level"+level+"Asset"+idAddition
                 line.className = "spellLineAsset"

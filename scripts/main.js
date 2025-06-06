@@ -38,8 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.body.appendChild(loadButton);
 
-
-    
+    /*
     //for testing
     fetch('/layoutTemplate.json')
         .then(res => res.json())
@@ -48,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
             update.onPageLoad()
         })
         loadButton.style.setProperty("visibility", "hidden")
-
+    */
     
 
 

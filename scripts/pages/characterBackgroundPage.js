@@ -35,7 +35,7 @@ export function create(top,left){
 
     frame.create("backstory", 120, 5, 410, 380, "backgroundPage", "BACKSTORY", "backstory", undefined, true)
     bevelledBox.create("characterBevelledBox", 120, 425, 200, 380, undefined, "backgroundPage", "c5c6c7")
-    frame.create("allies&organisations", 510, 5, 200, 380, "backgroundPage", "BACKSTORY", "backstory", undefined, true)
+    frame.create("allies&organisations", 510, 5, 200, 380, "backgroundPage", "ALLIES & ORGANISATIONS", "alliesAndOrganisations", undefined, true)
     let characterQuestions = ["personalityTraits", "ideals", "bonds", "flaws"]
     let characterQuestionsText = ["PERSONALITY TRAITS", "IDEALS", "BONDS", "FLAWS"]
     for (let i=0; i<4; i++){
@@ -49,6 +49,6 @@ export function create(top,left){
     text.create("featureLookUpClassBackgroundPageText", "CLASS", 7, 10, 125, 10, "featuresLookupBackgroundPage", undefined, undefined, undefined, "left")
     text.create("featureLookUpSubclassBackgroundPageText", "SUBCLASS", 7, 140, 125, 10, "featuresLookupBackgroundPage", undefined, undefined, undefined, "left")
     text.create("featureLookUpFeatureBackgroundPageText", "FEATURE", 7, 270, 125, 10, "featuresLookupBackgroundPage", undefined, undefined, undefined, "left")
-    calc.calcDecorator(sync.syncDecorator("featureLookupBackgroundPage",formfield.create("featureLookupBackgroundPage", 49,10, 390, 380-13-49, "featuresLookupBackgroundPage", undefined, "left", undefined, "{('[featureLookUpSubclassBackgroundPage]'!=0) ? '':'Lookup any class feature in this field.\\nEnter any 5e class.\\nEnter BASE for subclass for base features';}⟨features,[featureLookUpClassBackgroundPage],[featureLookUpSubclassBackgroundPage],[featureLookUpFeatureBackgroundPage],description⟩")))
+    calc.calcDecorator(sync.syncDecorator("featureLookupBackgroundPage",formfield.create("featureLookupBackgroundPage", 49,10, 390, 380-13-49, "featuresLookupBackgroundPage", undefined, "left", undefined, "⟨features,[featureLookUpClassBackgroundPage],{('[featureLookUpSubclassBackgroundPage]'=='0')?'base':'[featureLookUpSubclassBackgroundPage]'},[featureLookUpFeatureBackgroundPage],description⟩")))
 };
 

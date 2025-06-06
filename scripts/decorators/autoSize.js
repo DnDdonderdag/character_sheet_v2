@@ -7,9 +7,13 @@ export function autoSizeDecorator(field){
 }
 
 
-let autoSizer = document.getElementById("autoSizer")
-if (!autoSizer){
-    autoSizer = document.createElement("div")
+
+ 
+
+
+export function resize(triggeringField){
+
+    let autoSizer = document.createElement("div")
     autoSizer.id = "autoSizer"
     autoSizer.style.setProperty("visibility", "hidden")
     autoSizer.style.setProperty("overflow" , "auto")
@@ -18,9 +22,7 @@ if (!autoSizer){
     autoSizer.style.setProperty("position", "fixed")
     autoSizer.style.setProperty("font-family", "Arial, Helvetica, sans-serif")
     document.body.appendChild(autoSizer)
-}
 
-export function resize(triggeringField){
     if (triggeringField.className.includes("formfield")){
         var fontSize = window.getComputedStyle(triggeringField, null).getPropertyValue('font-size');
         fontSize = parseFloat(fontSize);
@@ -63,6 +65,7 @@ export function resize(triggeringField){
             triggeringField.style.fontSize = fontSize + 'px'
         }
     }
+    autoSizer.remove()
 }
 
 

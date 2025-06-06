@@ -142,6 +142,15 @@
     height: var(--height);
     z-index: -1;
   }
+.assetDiv,
+.asset {
+  pointer-events: none; /* Ignore clicks */
+}
+
+.assetDiv *:not(.asset),
+.asset * {
+  pointer-events: auto; /* Re-enable clicks for all children */
+}
   .bevelledBox {
   left: var(--left);
   top: var(--top);

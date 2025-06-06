@@ -90,7 +90,7 @@ export function create(top,left){
     //Weapons
     frame.create("weaponsFrameInventoryPage", 525, 435, 190, 200, "inventoryPage", "WEAPONS", undefined, undefined, false)
     for(let i=0; i<4; i++){
-        sync.syncDecorator("weaponTypeInventoryPage"+String(i), calc.calcDecorator(formfield.singleLine("weaponTypeInventoryPage"+String(i), 7 + 45*i, 22, 155, 42, "weaponsFrameInventoryPage", undefined, "left", undefined, undefined)))
+        sync.syncDecorator("weapon"+String(i), calc.calcDecorator(formfield.singleLine("weaponTypeInventoryPage"+String(i), 7 + 45*i, 22, 155, 42, "weaponsFrameInventoryPage", undefined, "left", undefined, undefined)))
         sync.syncDecorator("weaponEquippedInventoryPage"+String(i), button.tickbox("weaponEquippedInventoryPage"+String(i), 39 + 45*i, 11, 8,8, "weaponsFrameInventoryPage", undefined))
         let line = document.createElement("div")
         line.id = "weaponLineAsset"+String(i)
