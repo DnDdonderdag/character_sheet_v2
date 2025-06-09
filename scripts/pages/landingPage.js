@@ -18,5 +18,6 @@ import * as layoutRenderer from "../utilities/layoutRenderer.js"
 export function create(top,left){
     let landingPage = page.create("landingPage", top, left)
     let loadButton = saveload.createLoadButton(40,30)
-    let defaultButton = programmableButton.create("loadDefaultButton", 60,20, 70, 22, "landingPage", undefined, "Default", 16, "Center", "fetch('/layoutTemplate.json').then(res => res.json()).then(data => {layoutRenderer.render(data.layout); update.onPageLoad()});document.body.innerHTML = '';")
+    let fullCasterTemplate = programmableButton.create("fullCasterTemplate", 60,20, 170, 22, "landingPage", undefined, "Template Full Caster", 16, "Center", "fetch('/layoutTemplates/templateFullCaster.json').then(res => res.json()).then(data => {layoutRenderer.render(data.layout); update.onPageLoad()});document.body.innerHTML = '';")
+    let martialTemplate = programmableButton.create("martialTemplate", 90,20, 170, 22, "landingPage", undefined, "Template Martial", 16, "Center", "fetch('/layoutTemplates/templateMartial.json').then(res => res.json()).then(data => {layoutRenderer.render(data.layout); update.onPageLoad()});document.body.innerHTML = '';")
 }

@@ -25,6 +25,7 @@
     text-align: var(--align);
     font-size: var(--fontsize);
     z-index: 1000;
+    box-sizing: border-box;
   }.formfield:hover{
     outline: solid 1px;
   }.singleLine{

@@ -58,9 +58,7 @@ Bugs:
 
 To do:
  - server side
- - save file name
  - bug fixing
- - layout loading on startup
  - on the fly lookup adding
 
  

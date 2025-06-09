@@ -94,7 +94,18 @@ async function saveSheet() {
         const blob = new Blob([file], { type: "application/json" });
         const link = document.createElement("a");
         link.href = URL.createObjectURL(blob);
-        link.download = "Charactersheet"; //Maybe add a dynamic name pick
+
+        let nameFields = document.getElementsByClassName("syncMecharacterName")
+        if (nameFields && nameFields[0].value!=""){
+            console.log(nameFields, nameFields[0].value!="")
+            link.download = nameFields[0].value;
+        } else {
+            link.download = "charactersheet"
+        }
+            
+
+        
+        
         link.click();
         URL.revokeObjectURL(link.href);
     }
