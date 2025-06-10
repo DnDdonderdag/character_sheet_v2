@@ -11,7 +11,7 @@
 
         "inventoryPage":{
             "function" : "inventoryPage",
-            "args": [1,1285]
+            "args": [1,1275]
         },
         "backgroundPage":{
             "function" : "backgroundPage",
@@ -24,17 +24,17 @@
 
         "spellListPage":{
             "function": "spellListPage",
-            "args": [910,1285]
+            "args": [910,1275]
         },
         "notesPage":{   
             "function": "notesPage", 
-            "args": [910,645]
+            "args": [910,640]
         },
 
 
         "lookupPage":{   
             "function": "page", 
-            "args": ["lookupPage",1,645]
+            "args": ["lookupPage",1,640]
         },
             "headerAssetLookupPage":{
                 "function":"svg",
@@ -283,11 +283,141 @@
                 "function":"text",
                 "args":["damageTextLookupPage", "DAMAGE/TYPE", 9, 134, 60, 8, "weaponsFrameLookupPage", null, "#c5c6c7", null, "left"]
             },
+            "attacksNameLookupPage0":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"weapon0",
+                        "args": ["attacksNameLookupPage0", 20 ,10, 72,20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+            "attackBonusLookupPage0":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"atkBonus0",
+                        "args": ["attackBonusLookupPage0", 20, 83, 46,20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+            "attackDamageLookupPage0":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"atkDamage0",
+                        "args": ["attackDamageLookupPage0", 20, 130, 66, 20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
 
+            "attacksNameLookupPage1":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"weapon1",
+                        "args": ["attacksNameLookupPage1", 41 ,10, 72,20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+            "attackBonusLookupPage1":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"atkBonus1",
+                        "args": ["attackBonusLookupPage1", 41, 83, 46,20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+            "attackDamageLookupPage1":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"atkDamage1",
+                        "args": ["attackDamageLookupPage1", 41, 130, 66, 20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
 
+            "attacksNameLookupPage2":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"weapon2",
+                        "args": ["attacksNameLookupPage2", 62 ,10, 72,20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+            "attackBonusLookupPage2":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"atkBonus2",
+                        "args": ["attackBonusLookupPage2", 62, 83, 46,20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+            "attackDamageLookupPage2":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"atkDamage2",
+                        "args": ["attackDamageLookupPage2", 62, 130, 66, 20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
 
-
-
+            "attacksNameLookupPage3":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"weapon3",
+                        "args": ["attacksNameLookupPage3", 83 ,10, 72,20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+            "attackBonusLookupPage3":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"atkBonus3",
+                        "args": ["attackBonusLookupPage3", 83, 83, 46,20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+            "attackDamageLookupPage3":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"atkDamage3",
+                        "args": ["attackDamageLookupPage3", 83, 130, 66, 20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
 
             "chargedAbilitiesFrameLookupPage":{
                 "function": "frame",
@@ -305,7 +435,6 @@
                 "function":"text",
                 "args":["chargesAbilityTextLookupPage", "CHARGES", 9, 144, 40, 8, "chargedAbilitiesFrameLookupPage", null, "#c5c6c7", null, "left"]
             },
-
 
             "maxChargesLookupPage1":{
                 "function":"calc",
@@ -507,7 +636,7 @@
                 "function":"calc",
                 "args":{
                     "function":"singleLine",
-                    "args":["maxChargesLookupPage7", 167, 10, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+                    "args":["maxChargesLookupPage8", 167, 10, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
                 }
             },
             "abilityLookupPage8":{
@@ -535,7 +664,7 @@
                 "function":"calc",
                 "args":{
                     "function":"singleLine",
-                    "args":["maxChargesLookupPage7", 188, 10, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+                    "args":["maxChargesLookupPage9", 188, 10, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
                 }
             },
             "abilityLookupPage9":{
@@ -563,7 +692,7 @@
                 "function":"calc",
                 "args":{
                     "function":"singleLine",
-                    "args":["maxChargesLookupPage7", 209, 10, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+                    "args":["maxChargesLookupPage10", 209, 10, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
                 }
             },
             "abilityLookupPage10":{
@@ -588,12 +717,16 @@
             },
 
 
-
             "spellbar1LookupPage":{
                 "function": "spellbar",
                 "args":["variable", 707, 423, "lookupPage", 0, false, "LookupPage"]
-            }
+            },
 
+            
+            "notesFrameLookupPage":{
+                "function":"frame",
+                "args":["notesFrameLookupPage", 755, 420, 205, 135, "lookupPage", "NOTES", "notesLookupPage", null, true]
+            }
     }
 }
 

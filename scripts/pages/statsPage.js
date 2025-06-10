@@ -101,9 +101,9 @@ export function create(top,left){
     let attackDamageText = text.create("attackNameText", "DAMAGE/TYPE", 5, 124, 80, 8, "attacks&Spellcasting", undefined, "#c5c6c7", undefined, "left")
 
     for (let i=0; i<3; i++){
-        calc.calcDecorator(sync.syncDecorator("weapon"+String(i),formfield.singleLine("weapon"+String(i), 16 + i* 21,10, 67,20, "attacks&Spellcasting", undefined, 'left', 12)))
-        calc.calcDecorator(sync.syncDecorator("atkBonus"+String(i),formfield.singleLine("atkBonus"+String(i), 16 + i* 21, 78, 45,20, "attacks&Spellcasting", undefined, 'left', 12)))
-        calc.calcDecorator(sync.syncDecorator("atkDamage"+String(i),formfield.singleLine("atkDamage"+String(i), 16 + i* 21, 124, 66,20, "attacks&Spellcasting", undefined, 'left', 12)))
+        calc.calcDecorator(sync.syncDecorator("weapon"+String(i),formfield.singleLine("weapon"+String(i), 16 + i* 21,10, 67,20, "attacks&Spellcasting", undefined, 'left', 13)))
+        calc.calcDecorator(sync.syncDecorator("atkBonus"+String(i),formfield.singleLine("atkBonus"+String(i), 16 + i* 21, 78, 45,20, "attacks&Spellcasting", undefined, 'left', 13)))
+        calc.calcDecorator(sync.syncDecorator("atkDamage"+String(i),formfield.singleLine("atkDamage"+String(i), 16 + i* 21, 124, 66,20, "attacks&Spellcasting", undefined, 'left', 13)))
     }
     let attacksAndSpellcasting = calc.calcDecorator(sync.syncDecorator("attacksAndSpellcasting",formfield.create("ATKAndSpell", 79,10,180,196,"attacks&Spellcasting" ,undefined, 'left')))
 

@@ -11,7 +11,7 @@
 
         "inventoryPage":{
             "function" : "inventoryPage",
-            "args": [910,645]
+            "args": [910,640]
         },
         "backgroundPage":{
             "function" : "backgroundPage",
@@ -24,17 +24,17 @@
 
         "spellListPage":{
             "function": "spellListPage",
-            "args": [1,1285]
+            "args": [1,1275]
         },
         "notesPage":{   
             "function": "notesPage", 
-            "args": [910,1285]
+            "args": [910,1275]
         },
 
 
         "lookupPage":{   
             "function": "page", 
-            "args": ["lookupPage",1,645]
+            "args": ["lookupPage",1,640]
         },
             "headerAssetLookupPage":{
                 "function":"svg",
