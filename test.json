@@ -1,6 +1,0 @@
-{
- "unsyncedField": "i should not sync",
- "testField2": "update me to sync",
- "testField": "when updated, i sync",
- "testButton": 0
-}
