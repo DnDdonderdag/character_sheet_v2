@@ -1,11 +1,5 @@
 {
     "fieldValues":{
-        "AC1": "10",
-        "unsyncedField" : "testtest",
-        "testField" : "1+1 [unsynce[singleLineField]Fi[singleLineField2]ld]",
-        "testButton": 1,
-        "testTickbox": 1,
-        "testTickbox2": 1
     },
     "layout": {
 
