@@ -277,7 +277,7 @@
             },
             "attackBonusTextLookupPage":{
                 "function":"text",
-                "args":["attackBonusTextLookupPage", "ATK BONUS", 9, 41, 60, 8, "weaponsFrameLookupPage", null, "#c5c6c7", null, "left"]
+                "args":["attackBonusTextLookupPage", "ATK BONUS", 9, 83, 60, 8, "weaponsFrameLookupPage", null, "#c5c6c7", null, "left"]
             },
             "damageTextLookupPage":{
                 "function":"text",
