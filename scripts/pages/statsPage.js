@@ -136,13 +136,13 @@ export function create(top,left){
         for(let j=0; j<skills[abilities[i]].length; j++){
             let skill = skills[abilities[i]][j]
             let ability = abilities[i]
-            let expertiseButton = sync.syncDecorator(ability+skill+"Exp",button.tickbox(ability+skill+"Exp", 24 + j*12, 88, 5,5, "statBoxAsset"+abilities[i], undefined))
-            let profButton = sync.syncDecorator(ability+skill+"Prof",button.tickbox(ability+skill+"Prof", 26 + j*12, 83, 6,6, "statBoxAsset"+abilities[i], undefined))
-            let profBonus = calc.calcDecorator(sync.syncDecorator(ability+skill+"Bonus", formfield.singleLine(ability+skill+"Bonus", 22 + j*12, 96, 15, 10, "statBoxAsset"+abilities[i], undefined, "center", 8)))
-            svg.create(ability+skill+"UnderlineAsset", 32 + j*12, 93, 15, 8, "HorizontalLine.svg","statBoxAsset"+abilities[i])
-            svg.create(ability+skill+"UnderlineAsset2", 32 + j*12, 99, 15, 8, "HorizontalLine.svg","statBoxAsset"+abilities[i])
-            text.create(ability+skill+"text", skill.toUpperCase(), 23 + j*12, 113, 90, 8, "statBoxAsset"+abilities[i], "scalasanslight", undefined, undefined, "left")
-            profBonus.textContent = "{[" + ability+skill+"Prof" +"] * [prof] + [" +ability+skill+"Exp" + "]*[" + ability+skill+"Prof" +"] * [prof] + [" +ability.substring(0,3).toUpperCase() + "mod"+ "]}"
+            let expertiseButton = sync.syncDecorator(ability+skill.replace(/\s/g, '')+"Exp",button.tickbox(ability+skill.replace(/\s/g, '')+"Exp", 24 + j*12, 88, 5,5, "statBoxAsset"+abilities[i], undefined))
+            let profButton = sync.syncDecorator(ability+skill.replace(/\s/g, '')+"Prof",button.tickbox(ability+skill.replace(/\s/g, '')+"Prof", 26 + j*12, 83, 6,6, "statBoxAsset"+abilities[i], undefined))
+            let profBonus = calc.calcDecorator(sync.syncDecorator(ability+skill.replace(/\s/g, '')+"Bonus", formfield.singleLine(ability+skill.replace(/\s/g, '')+"Bonus", 22 + j*12, 96, 15, 10, "statBoxAsset"+abilities[i], undefined, "center", 8)))
+            svg.create(ability+skill.replace(/\s/g, '')+"UnderlineAsset", 32 + j*12, 93, 15, 8, "HorizontalLine.svg","statBoxAsset"+abilities[i])
+            svg.create(ability+skill.replace(/\s/g, '')+"UnderlineAsset2", 32 + j*12, 99, 15, 8, "HorizontalLine.svg","statBoxAsset"+abilities[i])
+            text.create(ability+skill.replace(/\s/g, '')+"text", skill.toUpperCase(), 23 + j*12, 113, 90, 8, "statBoxAsset"+abilities[i], "scalasanslight", undefined, undefined, "left")
+            profBonus.textContent = "{[" + ability+skill.replace(/\s/g, '')+"Prof" +"] * [prof] + [" +ability+skill.replace(/\s/g, '')+"Exp" + "]*[" + ability+skill.replace(/\s/g, '')+"Prof" +"] * [prof] + [" +ability.substring(0,3).toUpperCase() + "mod"+ "]}"
         }
     }
 

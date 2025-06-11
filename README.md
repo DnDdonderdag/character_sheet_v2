@@ -24,7 +24,7 @@ format:
     "*name*":{
         "function":"*function*",
         "args": [*...args*]
-    }
+    },w
 
 \*name\* can be any string, must be unique, is an identifier in the json only
 
@@ -85,3 +85,4 @@ where \*syncClass\* is a string, equal to other fields that should sync with thi
  - idAddition: defines the string that will be added at the end of all elements of spellbar, necessary for uniqueness. EXAMPLE: "spellListPage"
  - bevel: defines the size of the bevel of bevelledBox, can be left NULL for 6. EXAMPLE: 8
  - fileName: defines the file name of the asset to be generated. EXAMPLE: "armor.svg"
+ - level: defines the spell level for the spell bar, 0 for cantrip bar "variable" for formfield in stead of level. EXAMPLE: 3
