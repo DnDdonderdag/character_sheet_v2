@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-const port = 5002; //CHANGE BEFORE COMITTING (to 5000)
+const port = 5000; //CHANGE BEFORE COMITTING (to 5000)
 
 app.set('trust proxy', true);
 app.use(express.static(__dirname));
