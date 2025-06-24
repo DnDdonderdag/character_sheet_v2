@@ -2,7 +2,7 @@ addEventListener("keydown", showTooltip, false);
 addEventListener("keyup", removeTooltip, false);
 
 function showTooltip(event){
-    if (event.keyCode == "17" && document.activeElement != document.body){
+    if (event.keyCode == "18" && document.activeElement != document.body){
         let activeElement = document.activeElement;
         const rect = activeElement.getBoundingClientRect(); 
 

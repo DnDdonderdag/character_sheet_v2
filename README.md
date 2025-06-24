@@ -24,7 +24,7 @@ format:
     "*name*":{
         "function":"*function*",
         "args": [*...args*]
-    },w
+    },
 
 \*name\* can be any string, must be unique, is an identifier in the json only
 
