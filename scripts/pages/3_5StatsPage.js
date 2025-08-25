@@ -119,7 +119,7 @@ export function create(top,left){
     let statsBevelledBox = bevelledBox.create("statsBevelledBox", 120, 5, 200, 770, undefined, "statsPage", "e7e8e8")
     
     let abilities = ["strength","dexterity","constitution","intelligence","wisdom","charisma"]
-    let skills = {strength:["climb", "jump", "swim"], dexterity:["balance", "escape artist", "hide", "move silently", "open lock", "ride", "sleight of hand", "tumble", "use rope"], constitution:["concentration"], intelligence:["appraise", "decipher script", "disable device", "forgery", "search", "custom1craft", "custom2craft", "custom3craft", "custom1knowledge", "custom2knowledge", "custom3knowledge", "custom4knowledge"], wisdom:["heal", "listen", "sense motive", "spot", "survival", "custom1profession", "custom2profession"], charisma:["bluff", "diplomacy", "disguise", "gather info", "handle animal", "use magic device", "custom1perform", "custom2perform", "custom3perform"]}
+    let skills = {strength:["climb", "jump", "swim"], dexterity:["balance", "escape artist", "hide", "move silently", "open lock", "ride", "sleight of hand", "tumble", "use rope"], constitution:["concentration"], intelligence:["appraise", "decipher script", "disable device", "forgery", "search", "custom1craft", "custom2craft", "custom3craft", "custom1knowledge", "custom2knowledge", "custom3knowledge", "custom4knowledge"], wisdom:["heal", "listen", "sense motive", "spot", "survival", "custom1profession", "custom2profession"], charisma:["bluff", "diplomacy", "disguise", "gather info", "handle animal", "intimidate","use magic device", "custom1perform", "custom2perform", "custom3perform"]}
     
     svg.create("maxRankAsset", -25, 15, 170, 100, "profbonus.svg", "statsBevelledBox")
         text.create("maxRankText", "MAX RANKS", 46, 65, 90, 8, "maxRankAsset", undefined, undefined, undefined, "center")
@@ -134,7 +134,7 @@ export function create(top,left){
     let ranksText = text.create("ranksText", "RANKS", 84, 170, 90, 8, "statsBevelledBox", "scalasanslight", undefined, undefined, "left")
     let explainerText = text.create("explainerText", "■ Can be used untrained. * Armor check penalty applies.", 757, 10, 190, 8, "statsBevelledBox", "scalasanslight", undefined, undefined, "left")
     
-    let statBoxOffset = [80,125,80,160,100,70]
+    let statBoxOffset = [80,120,80,155,95,70]
     let skillsArmorPenalty = ["balance", "climb", "escape artist", "hide", "jump", "move silently", "sleight of hand", "swim", "tumble"]
     let untrainedSkills = ["appraise", "balance", "bluff", "climb", "concentration", "craft", "diplomacy", "disguise", "escape artist", "forgery", "gather info", "heal", "hide", "intimidate", "jump", "listen", "move silently", "ride", "search", "sense motive", "spot", "survival", "swim", "use rope"]
     for (let i=0; i<6; i++){
