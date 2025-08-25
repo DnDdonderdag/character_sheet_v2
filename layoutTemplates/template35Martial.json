@@ -1,0 +1,728 @@
+{
+    "fieldValues":{
+    },
+    "layout": {
+
+        "inventoryPage":{
+            "function" : "inventoryPage3_5",
+            "args": [1,1275]
+        },
+        "backgroundPage":{
+            "function" : "backgroundPage",
+            "args": [910,5]
+        },
+        "statsPage":{
+            "function": "statsPage3_5",
+            "args": [1,5]
+        },
+
+        "spellListPage":{
+            "function": "spellListPage",
+            "args": [910,1275]
+        },
+        "notesPage":{   
+            "function": "notesPage", 
+            "args": [910,640]
+        },
+
+
+        "lookupPage":{   
+            "function": "page", 
+            "args": ["lookupPage",1,640]
+        },
+            "headerAssetLookupPage":{
+                "function":"svg",
+                "args":["headerAssetLookupPage", -95, -16, 650, 300, "headerP3.svg", "lookupPage"]
+            },
+
+            "spellCastingAbilityTextLookupPage":{
+                "function":"text",
+                "args": ["spellCastingAbilityTextLookupPage", "SPELLCASTING ABILITY", 180, 78, 80, 20, "headerAssetLookupPage", null, null, 8, "center"]
+            },
+            "spellSaveDCTextLookupPage":{
+                "function":"text",
+                "args": ["spellSaveDCTextLookupPage", "SPELL SAVE DC", 180, 190, 80, 20, "headerAssetLookupPage", null, null, 8, "center"]
+            },
+            "spellATKBonusTextLookupPage":{
+                "function":"text",
+                "args": ["spellATKBonusTextLookupPage", "SPELL ATTACK BONUS", 180, 310, 70, 20, "headerAssetLookupPage", null, null, 8, "center"]
+            },
+
+            "spellcastingAbilityLookupPage":{
+                "function": "sync",
+                "args":{
+                    "function": "calc",
+                    "syncClass": "spellcastingAbility",
+                    "args": 
+                    {
+                        "function" : "singleLine",
+                        "args": ["spellcastingAbilityLookup", 145, 84, 68, 30,"headerAssetLookupPage", null, "center", 20, "INT"]
+                    }
+                }
+            },
+            "spellSaveDCLookupPage":{
+                "function": "sync",
+                "args":{
+                    "function": "calc",
+                    "syncClass": "spellSaveDC",
+                    "args": 
+                    {
+                        "function" : "singleLine",
+                        "args": ["spellSaveDCLookup", 145, 196, 68, 30,"headerAssetLookupPage", null, "center", 20, "{8+[prof]+{'[[spellcastingAbilityLookup]mod]'.substring(1)}}"]
+                    }
+                }
+            },
+            "spellAttackBonusLookupPage":{
+                "function": "sync",
+                "args":{
+                    "function": "calc",
+                    "syncClass": "spellAttackBonus",
+                    "args": 
+                    {
+                        "function" : "singleLine",
+                        "args": ["spellAttackBonusLookup", 145, 311, 68, 30,"headerAssetLookupPage", null, "center", 20, "{[prof]+{'[[spellcastingAbilityLookup]mod]'.substring(1)}}"]
+                    }
+                }
+            },
+
+            "lookupFrameLookupPage":{
+                "function": "frame",
+                "args":["LookupFrame", 120, 5, 410, 770, "lookupPage", "LOOKUP", null, null, false]
+            },
+            "lookupBarLookupPage1":{
+                "function": "singleLine",
+                "args": ["lookupBar1", 7, 10, 194, 20, "LookupFrame", null, null, null]
+            },
+            "lookupBarLookupPage2":{
+                "function": "singleLine",
+                "args": ["lookupBar2", 7, 206, 194, 20, "LookupFrame", null, null, null]
+            },
+            "lookupBarLookupPage3":{
+                "function": "singleLine",
+                "args": ["lookupBar3", 383, 10, 194, 20, "LookupFrame", null, null, null]
+            },
+
+            "lookupBarLookupPage4":{
+                "function": "singleLine",
+                "args": ["lookupBar4", 383, 206, 194, 20, "LookupFrame", null, null, null]
+            },
+            "lookupResultLookupPage1":{
+                "function": "calc",
+                "args": 
+                {
+                    "function" : "formfield",
+                    "args": ["lookupResultLookupPage1", 30,10,194,350,"LookupFrame", "#c5c6c7", null, null, "{('[lookupBar1]'!=0) ? '[lookupBar1]':'Enter feature above';}\n\n⟨features,fighter,battlemaster,[lookupBar1],description⟩"]
+                }
+            },
+            "lookupResultLookupPage2":{
+                "function": "calc",
+                "args": 
+                {
+                    "function" : "formfield",
+                    "args": ["lookupResultLookupPage2", 30,206,194,350,"LookupFrame", "#c5c6c7", null, null, "{('[lookupBar2]'!=0) ? '[lookupBar2]':'Enter feature above';}\n\n⟨features,fighter,battlemaster,[lookupBar2],description⟩"]
+                }
+            },
+            "lookupResultLookupPage3":{
+                "function": "calc",
+                "args": 
+                {
+                    "function" : "formfield",
+                    "args": ["lookupResultLookupPage3", 406,10,194,349,"LookupFrame", "#c5c6c7", null, null, "{('[lookupBar3]'!=0) ? '[lookupBar3]':'Enter feature above';}\n\n⟨features,fighter,battlemaster,[lookupBar3],description⟩"]
+                }
+            },
+            "lookupResultLookupPage4":{
+                "function": "calc",
+                "args": 
+                {
+                    "function" : "formfield",
+                    "args": ["lookupResultLookupPage4", 406,206,194,349,"LookupFrame", "#c5c6c7", null, null, "{('[lookupBar4]'!=0) ? '[lookupBar4]':'Enter spell above';}\nLevel: ⟨spells,[lookupBar4],level⟩\nCasting Time: ⟨spells,[lookupBar4],castingtime⟩\nRange: ⟨spells,[lookupBar4],range⟩\nComponents: ⟨spells,[lookupBar4],components⟩\nDuration: ⟨spells,[lookupBar4],duration⟩\n\n⟨spells,[lookupBar4],description⟩"]
+                }
+            },
+
+            "healthBevelledBoxLookupPage":{
+                "function":"bevelledBox",
+                "args": ["healthBevelledBoxLookupPage", 31, 420, 205, 305, 8 ,"lookupPage", "c5c6c7"]
+            },
+
+            "appliedConditionsFrameLookupPage":{
+                "function":"frame",
+                "args":["appliedConditionsFrameLookupPage", 5, 5, 195, 90, "healthBevelledBoxLookupPage", "CURRENTLY APPLIED CONDITIONS", null, null, true]
+            },
+
+            "concentrationFrameLookupPage":{
+                "function":"frame",
+                "args":["concentrationFrameLookupPage", 100, 15, 175, 40, "healthBevelledBoxLookupPage", "CONCENTRATION", null, "center", true]
+            },
+
+            "speedFrameLookupPage":{
+                "function": "frame", 
+                "args": ["speedFrameLookupPage", 145, 135, 64,60, "healthBevelledBoxLookupPage", "SPEED", null, "center", false]
+            },
+            "speedFormLookupPage":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"speed",
+                        "args": ["speedFormLookupPage", 7, 10, 44, 38, "speedFrameLookupPage", null, "center", 25]
+                    }
+                }
+            },
+
+            "initiativeFrameLookupPage":{
+                "function": "frame", 
+                "args": ["initiativeFrameLookupPage", 145, 66, 64,60, "healthBevelledBoxLookupPage", "INITIATIVE", null, "center", false]
+            },
+            "initiativeFormLookupPage":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"initiative",
+                        "args": ["initiativeFormLookupPage", 7, 10, 44, 38, "initiativeFrameLookupPage", null, "center", 25, "[DEXmod]"]
+                    }
+                }
+            },
+
+            "ACassetLookupPage":{
+                "function": "svg",
+                "args": ["ACassetLookupPage", 145, 3, 62, 60, "armor.svg", "healthBevelledBoxLookupPage"]
+            },
+            "ACTextLookupPage":{
+                "function": "text",
+                "args": ["acACTextLookupPageText", "ARMOR CLASS", 38, 15, 30, 30, "ACassetLookupPage", null, null, 6, "center"]
+            },
+            "ACFormLookupPage":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"ac",
+                        "args": ["acLookupPage", 10,15,30,28, "ACassetLookupPage", null, "center", 20, "{[ACvalueInventoryPage0] * [armorEquippedInventoryPage0] + [ACvalueInventoryPage1] * [armorEquippedInventoryPage1] + [ACvalueInventoryPage2] * [armorEquippedInventoryPage2] + [ACvalueInventoryPage3] * [armorEquippedInventoryPage3]}"]
+                    }
+                }
+            },
+
+            "healthFrameLookupPage":{
+                "function": "frame",
+                "args": ["healthFrameLookupPage", 210, 5, 195, 90, "healthBevelledBoxLookupPage", null, null, null, false]
+            },
+
+            "maxHPTextLookupPage":{
+                "function":"text",
+                "args":["maxHPTextLookupPage", "HIT POINT MAXIMUM", 9, 10, 80, 8, "healthFrameLookupPage", null, "#c5c6c7", null, "left"]
+            },
+            "maxHPFormLookupPage":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"maxHP",
+                        "args": ["maxHPLookupPage", 7,90,55,12, "healthFrameLookupPage", null, "left", 8]
+                    }
+                }
+            },
+            "healButtonLookupPage":{
+                "function":"programmableButton",
+                "args": ["healButtonLookupPage", 7, 148, 37, 12, "healthFrameLookupPage", null, "HEAL", 8, "center" ,"document.getElementById('HPLookupPage').textContent = document.getElementById('maxHPLookupPage').value;document.getElementById('HPLookupPage').focus();document.getElementById('HPLookupPage').blur();"]
+            },
+            "healthFormLookupPage":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"HP",
+                        "args": ["HPLookupPage", 22,10,86,53, "healthFrameLookupPage", null, "center", 25]
+                    }
+                }
+            },
+            "TempHPFormLookupPage":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"tempHP",
+                        "args": ["tempHPLookupPage", 22,99,86,53, "healthFrameLookupPage", null, "center", 25]
+                    }
+                }
+            },
+            "currentHPTextLookupPage":{
+                "function":"text",
+                "args":["currentHPTextLookupPage", "CURRENT HIT POINTS", 77, 7, 86, 8, "healthFrameLookupPage", null, null, null, "center"]
+            },            
+            "currentTempHPTextLookupPage":{
+                "function":"text",
+                "args":["currentTempHPTextLookupPage", "NONLETHAL DAMAGE", 77, 94, 90, 8, "healthFrameLookupPage", null, null, null, "center"]
+            },
+
+            "attacksFrameLookupPage":{
+                "function": "frame",
+                "args":["weaponsFrameLookupPage", 340, 420, 205, 119, "lookupPage", "ATTACKS & SPELLCASTING", null, null, false]
+            },
+            "attackNameTextLookupPage":{
+                "function":"text",
+                "args":["attackNameTextLookupPage", "NAME", 9, 10, 20, 8, "weaponsFrameLookupPage", null, "#c5c6c7", null, "left"]
+            },
+            "attackBonusTextLookupPage":{
+                "function":"text",
+                "args":["attackBonusTextLookupPage", "ATK BONUS", 9, 83, 60, 8, "weaponsFrameLookupPage", null, "#c5c6c7", null, "left"]
+            },
+            "damageTextLookupPage":{
+                "function":"text",
+                "args":["damageTextLookupPage", "DAMAGE/TYPE", 9, 134, 60, 8, "weaponsFrameLookupPage", null, "#c5c6c7", null, "left"]
+            },
+            "attacksNameLookupPage0":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"weapon0",
+                        "args": ["attacksNameLookupPage0", 20 ,10, 72,20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+            "attackBonusLookupPage0":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"atkBonus0",
+                        "args": ["attackBonusLookupPage0", 20, 83, 46,20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+            "attackDamageLookupPage0":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"atkDamage0",
+                        "args": ["attackDamageLookupPage0", 20, 130, 66, 20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+
+            "attacksNameLookupPage1":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"weapon1",
+                        "args": ["attacksNameLookupPage1", 41 ,10, 72,20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+            "attackBonusLookupPage1":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"atkBonus1",
+                        "args": ["attackBonusLookupPage1", 41, 83, 46,20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+            "attackDamageLookupPage1":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"atkDamage1",
+                        "args": ["attackDamageLookupPage1", 41, 130, 66, 20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+
+            "attacksNameLookupPage2":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"weapon2",
+                        "args": ["attacksNameLookupPage2", 62 ,10, 72,20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+            "attackBonusLookupPage2":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"atkBonus2",
+                        "args": ["attackBonusLookupPage2", 62, 83, 46,20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+            "attackDamageLookupPage2":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"atkDamage2",
+                        "args": ["attackDamageLookupPage2", 62, 130, 66, 20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+
+            "attacksNameLookupPage3":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"weapon3",
+                        "args": ["attacksNameLookupPage3", 83 ,10, 72,20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+            "attackBonusLookupPage3":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"atkBonus3",
+                        "args": ["attackBonusLookupPage3", 83, 83, 46,20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+            "attackDamageLookupPage3":{
+                "function":"calc",
+                "args":{
+                    "function":"sync",
+                    "args":{
+                        "function":"singleLine",
+                        "syncClass":"atkDamage3",
+                        "args": ["attackDamageLookupPage3", 83, 130, 66, 20, "weaponsFrameLookupPage", null, "left", 13, ""]
+                    }
+                }
+            },
+
+            "chargedAbilitiesFrameLookupPage":{
+                "function": "frame",
+                "args":["chargedAbilitiesFrameLookupPage", 464, 420, 205, 245, "lookupPage", "CHARGED ABILITIES", null, null, false]
+            },
+            "maxAbilityTextLookupPage":{
+                "function":"text",
+                "args":["maxabilityTextLookupPage", "MAX", 9, 10, 20, 8, "chargedAbilitiesFrameLookupPage", null, "#c5c6c7", null, "left"]
+            },
+            "nameAbilityTextLookupPage":{
+                "function":"text",
+                "args":["nameAbilityTextLookupPage", "ABILITY", 9, 41, 40, 8, "chargedAbilitiesFrameLookupPage", null, "#c5c6c7", null, "left"]
+            },
+            "chargesAbilityTextLookupPage":{
+                "function":"text",
+                "args":["chargesAbilityTextLookupPage", "CHARGES", 9, 144, 40, 8, "chargedAbilitiesFrameLookupPage", null, "#c5c6c7", null, "left"]
+            },
+
+            "maxChargesLookupPage1":{
+                "function":"calc",
+                "args":{
+                    "function":"singleLine",
+                    "args":["maxChargesLookupPage1", 20, 10, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+                }
+            },
+            "abilityLookupPage1":{
+                "function":"singleLine",
+                "args":["abilityLookupPage1", 20, 31, 70, 20, "chargedAbilitiesFrameLookupPage", null, "left", 13, null]
+            },
+            "plusOneLookupPage1":{
+                "function":"programmableButton",
+                "args":["plusOneLookupPage1", 20, 102, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "+1", 13, "center", "document.getElementById('chargesLookupPage1').value = Number(document.getElementById('chargesLookupPage1').value) + 1"]
+            },
+            "minusOneLookupPage1":{
+                "function":"programmableButton",
+                "args":["minusOneLookupPage1", 20, 123, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "-1", 13, "center", "document.getElementById('chargesLookupPage1').value = Number(document.getElementById('chargesLookupPage1').value) - 1"]
+            },
+            "chargesLookupPage1":{
+                "function":"singleLine",
+                "args":["chargesLookupPage1", 20, 144, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+            },
+            "recoverLookupPage1":{
+                "function":"programmableButton",
+                "args":["recoverLookupPage1", 20, 165, 30, 20,  "chargedAbilitiesFrameLookupPage", null, "FILL", 10, "center", "document.getElementById('chargesLookupPage1').value = Number(document.getElementById('maxChargesLookupPage1').value)"]
+            },
+
+            "maxChargesLookupPage2":{
+                "function":"calc",
+                "args":{
+                    "function":"singleLine",
+                    "args":["maxChargesLookupPage2", 41, 10, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+                }
+            },
+            "abilityLookupPage2":{
+                "function":"singleLine",
+                "args":["abilityLookupPage2", 41, 31, 70, 20, "chargedAbilitiesFrameLookupPage", null, "left", 13, null]
+            },
+            "plusOneLookupPage2":{
+                "function":"programmableButton",
+                "args":["plusOneLookupPage2", 41, 102, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "+1", 13, "center", "document.getElementById('chargesLookupPage2').value = Number(document.getElementById('chargesLookupPage2').value) + 1"]
+            },
+            "minusOneLookupPage2":{
+                "function":"programmableButton",
+                "args":["minusOneLookupPage2", 41, 123, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "-1", 13, "center", "document.getElementById('chargesLookupPage2').value = Number(document.getElementById('chargesLookupPage2').value) - 1"]
+            },
+            "chargesLookupPage2":{
+                "function":"singleLine",
+                "args":["chargesLookupPage2", 41, 144, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+            },
+            "recoverLookupPage2":{
+                "function":"programmableButton",
+                "args":["recoverLookupPage2", 41, 165, 30, 20,  "chargedAbilitiesFrameLookupPage", null, "FILL", 10, "center", "document.getElementById('chargesLookupPage2').value = Number(document.getElementById('maxChargesLookupPage2').value)"]
+            },
+
+            "maxChargesLookupPage3":{
+                "function":"calc",
+                "args":{
+                    "function":"singleLine",
+                    "args":["maxChargesLookupPage3", 62, 10, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+                }
+            },
+            "abilityLookupPage3":{
+                "function":"singleLine",
+                "args":["abilityLookupPage3", 62, 31, 70, 20, "chargedAbilitiesFrameLookupPage", null, "left", 13, null]
+            },
+            "plusOneLookupPage3":{
+                "function":"programmableButton",
+                "args":["plusOneLookupPage3", 62, 102, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "+1", 13, "center", "document.getElementById('chargesLookupPage3').value = Number(document.getElementById('chargesLookupPage3').value) + 1"]
+            },
+            "minusOneLookupPage3":{
+                "function":"programmableButton",
+                "args":["minusOneLookupPage3", 62, 123, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "-1", 13, "center", "document.getElementById('chargesLookupPage3').value = Number(document.getElementById('chargesLookupPage3').value) - 1"]
+            },
+            "chargesLookupPage3":{
+                "function":"singleLine",
+                "args":["chargesLookupPage3", 62, 144, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+            },
+            "recoverLookupPage3":{
+                "function":"programmableButton",
+                "args":["recoverLookupPage3", 62, 165, 30, 20,  "chargedAbilitiesFrameLookupPage", null, "FILL", 10, "center", "document.getElementById('chargesLookupPage3').value = Number(document.getElementById('maxChargesLookupPage3').value)"]
+            },
+
+            "maxChargesLookupPage4":{
+                "function":"calc",
+                "args":{
+                    "function":"singleLine",
+                    "args":["maxChargesLookupPage4", 83, 10, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+                }
+            },
+            "abilityLookupPage4":{
+                "function":"singleLine",
+                "args":["abilityLookupPage4", 83, 31, 70, 20, "chargedAbilitiesFrameLookupPage", null, "left", 13, null]
+            },
+            "plusOneLookupPage4":{
+                "function":"programmableButton",
+                "args":["plusOneLookupPage4", 83, 102, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "+1", 13, "center", "document.getElementById('chargesLookupPage4').value = Number(document.getElementById('chargesLookupPage4').value) + 1"]
+            },
+            "minusOneLookupPage4":{
+                "function":"programmableButton",
+                "args":["minusOneLookupPage4", 83, 123, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "-1", 13, "center", "document.getElementById('chargesLookupPage4').value = Number(document.getElementById('chargesLookupPage4').value) - 1"]
+            },
+            "chargesLookupPage4":{
+                "function":"singleLine",
+                "args":["chargesLookupPage4", 83, 144, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+            },
+            "recoverLookupPage4":{
+                "function":"programmableButton",
+                "args":["recoverLookupPage4", 83, 165, 30, 20,  "chargedAbilitiesFrameLookupPage", null, "FILL", 10, "center", "document.getElementById('chargesLookupPage4').value = Number(document.getElementById('maxChargesLookupPage4').value)"]
+            },
+
+            "maxChargesLookupPage5":{
+                "function":"calc",
+                "args":{
+                    "function":"singleLine",
+                    "args":["maxChargesLookupPage5", 104, 10, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+                }
+            },
+            "abilityLookupPage5":{
+                "function":"singleLine",
+                "args":["abilityLookupPage5", 104, 31, 70, 20, "chargedAbilitiesFrameLookupPage", null, "left", 13, null]
+            },
+            "plusOneLookupPage5":{
+                "function":"programmableButton",
+                "args":["plusOneLookupPage5", 104, 102, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "+1", 13, "center", "document.getElementById('chargesLookupPage5').value = Number(document.getElementById('chargesLookupPage4').value) + 1"]
+            },
+            "minusOneLookupPage5":{
+                "function":"programmableButton",
+                "args":["minusOneLookupPage5", 104, 123, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "-1", 13, "center", "document.getElementById('chargesLookupPage5').value = Number(document.getElementById('chargesLookupPage5').value) - 1"]
+            },
+            "chargesLookupPage5":{
+                "function":"singleLine",
+                "args":["chargesLookupPage5", 104, 144, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+            },
+            "recoverLookupPage5":{
+                "function":"programmableButton",
+                "args":["recoverLookupPage5", 104, 165, 30, 20,  "chargedAbilitiesFrameLookupPage", null, "FILL", 10, "center", "document.getElementById('chargesLookupPage5').value = Number(document.getElementById('maxChargesLookupPage5').value)"]
+            },
+                       
+            "maxChargesLookupPage6":{
+                "function":"calc",
+                "args":{
+                    "function":"singleLine",
+                    "args":["maxChargesLookupPage6", 125, 10, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+                }
+            },
+            "abilityLookupPage6":{
+                "function":"singleLine",
+                "args":["abilityLookupPage6", 125, 31, 70, 20, "chargedAbilitiesFrameLookupPage", null, "left", 13, null]
+            },
+            "plusOneLookupPage6":{
+                "function":"programmableButton",
+                "args":["plusOneLookupPage6", 125, 102, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "+1", 13, "center", "document.getElementById('chargesLookupPage6').value = Number(document.getElementById('chargesLookupPage6').value) + 1"]
+            },
+            "minusOneLookupPage6":{
+                "function":"programmableButton",
+                "args":["minusOneLookupPage6", 125, 123, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "-1", 13, "center", "document.getElementById('chargesLookupPage6').value = Number(document.getElementById('chargesLookupPage6').value) - 1"]
+            },
+            "chargesLookupPage6":{
+                "function":"singleLine",
+                "args":["chargesLookupPage6", 125, 144, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+            },
+            "recoverLookupPage6":{
+                "function":"programmableButton",
+                "args":["recoverLookupPage6", 125, 165, 30, 20,  "chargedAbilitiesFrameLookupPage", null, "FILL", 10, "center", "document.getElementById('chargesLookupPage6').value = Number(document.getElementById('maxChargesLookupPage6').value)"]
+            },
+                                   
+            "maxChargesLookupPage7":{
+                "function":"calc",
+                "args":{
+                    "function":"singleLine",
+                    "args":["maxChargesLookupPage7", 146, 10, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+                }
+            },
+            "abilityLookupPage7":{
+                "function":"singleLine",
+                "args":["abilityLookupPage7", 146, 31, 70, 20, "chargedAbilitiesFrameLookupPage", null, "left", 13, null]
+            },
+            "plusOneLookupPage7":{
+                "function":"programmableButton",
+                "args":["plusOneLookupPage7", 146, 102, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "+1", 13, "center", "document.getElementById('chargesLookupPage7').value = Number(document.getElementById('chargesLookupPage7').value) + 1"]
+            },
+            "minusOneLookupPage7":{
+                "function":"programmableButton",
+                "args":["minusOneLookupPage7", 146, 123, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "-1", 13, "center", "document.getElementById('chargesLookupPage7').value = Number(document.getElementById('chargesLookupPage7').value) - 1"]
+            },
+            "chargesLookupPage7":{
+                "function":"singleLine",
+                "args":["chargesLookupPage7", 146, 144, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+            },
+            "recoverLookupPage7":{
+                "function":"programmableButton",
+                "args":["recoverLookupPage7", 146, 165, 30, 20,  "chargedAbilitiesFrameLookupPage", null, "FILL", 10, "center", "document.getElementById('chargesLookupPage7').value = Number(document.getElementById('maxChargesLookupPage7').value)"]
+            },
+
+            "maxChargesLookupPage8":{
+                "function":"calc",
+                "args":{
+                    "function":"singleLine",
+                    "args":["maxChargesLookupPage8", 167, 10, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+                }
+            },
+            "abilityLookupPage8":{
+                "function":"singleLine",
+                "args":["abilityLookupPage8", 167, 31, 70, 20, "chargedAbilitiesFrameLookupPage", null, "left", 13, null]
+            },
+            "plusOneLookupPage8":{
+                "function":"programmableButton",
+                "args":["plusOneLookupPage8", 167, 102, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "+1", 13, "center", "document.getElementById('chargesLookupPage8').value = Number(document.getElementById('chargesLookupPage8').value) + 1"]
+            },
+            "minusOneLookupPage8":{
+                "function":"programmableButton",
+                "args":["minusOneLookupPage8", 167, 123, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "-1", 13, "center", "document.getElementById('chargesLookupPage8').value = Number(document.getElementById('chargesLookupPage8').value) - 1"]
+            },
+            "chargesLookupPage8":{
+                "function":"singleLine",
+                "args":["chargesLookupPage8", 167, 144, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+            },
+            "recoverLookupPage8":{
+                "function":"programmableButton",
+                "args":["recoverLookupPage8", 167, 165, 30, 20,  "chargedAbilitiesFrameLookupPage", null, "FILL", 10, "center", "document.getElementById('chargesLookupPage8').value = Number(document.getElementById('maxChargesLookupPage8').value)"]
+            },
+
+            "maxChargesLookupPage9":{
+                "function":"calc",
+                "args":{
+                    "function":"singleLine",
+                    "args":["maxChargesLookupPage9", 188, 10, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+                }
+            },
+            "abilityLookupPage9":{
+                "function":"singleLine",
+                "args":["abilityLookupPage9", 188, 31, 70, 20, "chargedAbilitiesFrameLookupPage", null, "left", 13, null]
+            },
+            "plusOneLookupPage9":{
+                "function":"programmableButton",
+                "args":["plusOneLookupPage9", 188, 102, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "+1", 13, "center", "document.getElementById('chargesLookupPage9').value = Number(document.getElementById('chargesLookupPage9').value) + 1"]
+            },
+            "minusOneLookupPage9":{
+                "function":"programmableButton",
+                "args":["minusOneLookupPage9", 188, 123, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "-1", 13, "center", "document.getElementById('chargesLookupPage9').value = Number(document.getElementById('chargesLookupPage9').value) - 1"]
+            },
+            "chargesLookupPage9":{
+                "function":"singleLine",
+                "args":["chargesLookupPage9", 188, 144, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+            },
+            "recoverLookupPage9":{
+                "function":"programmableButton",
+                "args":["recoverLookupPage9", 188, 165, 30, 20,  "chargedAbilitiesFrameLookupPage", null, "FILL", 10, "center", "document.getElementById('chargesLookupPage9').value = Number(document.getElementById('maxChargesLookupPage9').value)"]
+            },
+
+            "maxChargesLookupPage10":{
+                "function":"calc",
+                "args":{
+                    "function":"singleLine",
+                    "args":["maxChargesLookupPage10", 209, 10, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+                }
+            },
+            "abilityLookupPage10":{
+                "function":"singleLine",
+                "args":["abilityLookupPage10", 209, 31, 70, 20, "chargedAbilitiesFrameLookupPage", null, "left", 13, null]
+            },
+            "plusOneLookupPage10":{
+                "function":"programmableButton",
+                "args":["plusOneLookupPage10", 209, 102, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "+1", 13, "center", "document.getElementById('chargesLookupPage10').value = Number(document.getElementById('chargesLookupPage10').value) + 1"]
+            },
+            "minusOneLookupPage10":{
+                "function":"programmableButton",
+                "args":["minusOneLookupPage10", 209, 123, 20, 20,  "chargedAbilitiesFrameLookupPage", null, "-1", 13, "center", "document.getElementById('chargesLookupPage10').value = Number(document.getElementById('chargesLookupPage10').value) - 1"]
+            },
+            "chargesLookupPage10":{
+                "function":"singleLine",
+                "args":["chargesLookupPage10", 209, 144, 20, 20, "chargedAbilitiesFrameLookupPage", null, "center", 13, null]
+            },
+            "recoverLookupPage10":{
+                "function":"programmableButton",
+                "args":["recoverLookupPage10", 209, 165, 30, 20,  "chargedAbilitiesFrameLookupPage", null, "FILL", 10, "center", "document.getElementById('chargesLookupPage10').value = Number(document.getElementById('maxChargesLookupPage10').value)"]
+            },
+
+
+            "spellbar1LookupPage":{
+                "function": "spellbar",
+                "args":["variable", 707, 423, "lookupPage", 0, false, "LookupPage"]
+            },
+
+            
+            "notesFrameLookupPage":{
+                "function":"frame",
+                "args":["notesFrameLookupPage", 755, 420, 205, 135, "lookupPage", "NOTES", "notesLookupPage", null, true]
+            }
+    }
+}
+
+
+

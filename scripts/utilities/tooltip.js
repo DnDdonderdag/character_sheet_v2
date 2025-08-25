@@ -36,3 +36,4 @@ function removeTooltip(){
         tooltip.remove();
     }
 }
+
