@@ -16,6 +16,8 @@ import * as inventoryPage from "../pages/inventoryPage.js"
 import * as inventoryPage3_5 from "../pages/3_5InventoryPage.js"
 import * as backgroundPage from "../pages/characterBackgroundPage.js"
 import * as notesPage from "../pages/notesPage.js"
+import * as lookupPage from "../pages/lookupPage.js"
+import * as textPage from "../pages/textPage.js"
 import * as svg from "../constructors/svg.js";
 import * as programmableButton from "../constructors/programmableButton.js"
 import * as bevelledBox from "../constructors/bevelledBox.js"
@@ -50,9 +52,10 @@ const functionMap = {
   inventoryPage: (args) => inventoryPage.create(...args),
   inventoryPage3_5: (args) => inventoryPage3_5.create(...args),
   backgroundPage: (args) => backgroundPage.create(...args),
-  notesPage: (args) => notesPage.create(...args)
-
-  };
+  notesPage: (args) => notesPage.create(...args),
+  lookupPage: (args) => lookupPage.create(...args),
+  textPage: (args) => textPage.create(...args)
+ };
 
 
 function runFunctionByName(name, args) {

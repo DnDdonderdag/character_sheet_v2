@@ -24,6 +24,29 @@
             "function": "notesPage", 
             "args": [910,1275]
         },
+          "lookupPage2": {
+        "function": "lookupPage",
+        "args": [
+            1820,
+            5
+        ]
+        },
+            "textPage1": {
+        "function": "textPage",
+        "args": [
+            1820,
+            640,
+            "1"
+        ]
+        },
+            "textPage2": {
+        "function": "textPage",
+        "args": [
+            1820,
+            1275,
+            "2"
+        ]
+        },
 
 
         "lookupPage":{   

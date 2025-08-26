@@ -42,13 +42,6 @@ export function create(top,left){
         frame.create (characterQuestions[i], 6 + i* 93, 5, 190, 88, "characterBevelledBox", characterQuestionsText[i], characterQuestions[i], undefined, true)
     }
 
-    frame.create("featuresLookupBackgroundPage", 510, 215, 410, 380, "backgroundPage", "FEATURES & TRAITS LOOKUP", undefined, undefined, false)
-    calc.calcDecorator(sync.syncDecorator("featureLookUpClassBackgroundPage",formfield.singleLine("featureLookUpClassBackgroundPage", 19,10, 125, 25, "featuresLookupBackgroundPage", undefined, "left", undefined, undefined)))
-    calc.calcDecorator(sync.syncDecorator("featureLookUpSubclassBackgroundPage",formfield.singleLine("featureLookUpSubclassBackgroundPage", 19,140, 125, 25, "featuresLookupBackgroundPage", undefined, "left", undefined, undefined)))
-    calc.calcDecorator(sync.syncDecorator("featureLookUpFeatureBackgroundPage",formfield.singleLine("featureLookUpFeatureBackgroundPage", 19,270, 130, 25, "featuresLookupBackgroundPage", undefined, "left", undefined, undefined)))
-    text.create("featureLookUpClassBackgroundPageText", "CLASS", 7, 10, 125, 10, "featuresLookupBackgroundPage", undefined, undefined, undefined, "left")
-    text.create("featureLookUpSubclassBackgroundPageText", "SUBCLASS", 7, 140, 125, 10, "featuresLookupBackgroundPage", undefined, undefined, undefined, "left")
-    text.create("featureLookUpFeatureBackgroundPageText", "FEATURE", 7, 270, 125, 10, "featuresLookupBackgroundPage", undefined, undefined, undefined, "left")
-    calc.calcDecorator(sync.syncDecorator("featureLookupBackgroundPage",formfield.create("featureLookupBackgroundPage", 49,10, 390, 380-13-49, "featuresLookupBackgroundPage", undefined, "left", undefined, "⟨features,[featureLookUpClassBackgroundPage],{('[featureLookUpSubclassBackgroundPage]'=='0')?'base':'[featureLookUpSubclassBackgroundPage]'},[featureLookUpFeatureBackgroundPage],description⟩")))
+    frame.create("characterDescriptionBackgroundPage", 510, 215, 410, 380, "backgroundPage", "CHARACTER DESCRIPTION", undefined, undefined, true)
 };
 

@@ -2,6 +2,7 @@ import * as calc from "../decorators/calculate/calculations.js"
 import * as button from "../constructors/button.js"
 import * as update from "./updater.js";
 import * as layoutRenderer from "./layoutRenderer.js"
+import * as lookup from "./lookup.js"
 
 //alert the user when reloading
 window.addEventListener('beforeunload', function (e) {
@@ -56,7 +57,7 @@ export function createLoadButton(top, left) {
 // Functions for saving
 async function saveSheet() {
     var formfields = document.getElementsByClassName("save")
-    var json = {fieldValues:{},layout:currentLayout}
+    var json = {fieldValues:{},layout:currentLayout,lookupElements:lookup.getLookup()}
     for (let i=0 ; i<formfields.length; i++){
         let field = formfields.item(i)
         if (field.className.includes("calc")){
@@ -136,13 +137,14 @@ async function loadLayout(layout){
 async function loadState(result){
     let confirmed = true
     if (!await CheckSaved()){ //Check if there is any unsaved data
-        if (!confirm("Are you sure you want to open this file, the current one is not saved.")){
+        if (!confirm("Are you sure you want to open this file, the current one might not be saved.")){
             confirmed = false // Make sure they want to overwrite unsaved data
             // There is a quirk here we might want to fix, no matter if you confirm or not, the browse button will still display the chosen file as if it is loaded
         } 
     }
     if (confirmed){ // Load the file into the sheet
         loadLayout(result.layout)
+        lookup.setLookup(result.lookupElements)
         result = result.fieldValues
         for (const property in result){
             try{
