@@ -15,5 +15,5 @@ import * as programmableButton from "../constructors/programmableButton.js"
 export function create(top,left,idAddition){
     let textPage = page.create("TextPage"+idAddition, top, left)
 
-    frame.create("textFrame" + idAddition, 0, 0, 630, 900,"TextPage"+idAddition, "NOTES", "textFrame" + idAddition, undefined, true)
+    frame.create("textFrame" + idAddition, 10, 10, 610, 880,"TextPage"+idAddition, "NOTES", "textFrame" + idAddition, undefined, true)
 };

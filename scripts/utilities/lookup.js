@@ -543,6 +543,7 @@ export function setLookup(lookupElements){
 }
 
 export function appendLookup(key, element){
+        key = key.toLowerCase()
         if (!customLookup[key] && element != ""){
                 customLookup[key] = element
                 return "success"
@@ -553,6 +554,7 @@ export function appendLookup(key, element){
 }
 
 export function removeLookup(key){
+        key = key.toLowerCase()
         if (customLookup[key]){
                 delete customLookup[key]
                 return "success"
@@ -562,7 +564,6 @@ export function removeLookup(key){
         }
 }
 export function getKeys(lookupTable){
-        console.log(lookupTable,objectMap[lookupTable])
         if (lookupTable == "custom"){return String(Object.keys(getLookup())).replaceAll(",", ", ")}
         return String(Object.keys(objectMap[lookupTable])).replace(",", ", ")
 }

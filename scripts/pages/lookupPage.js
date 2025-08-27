@@ -59,6 +59,6 @@ export function create(top,left){
 
     frame.create("lookupFrameLookupEditPage", 510, 5, 200, 380, "lookupEditPage", "LOOKUP", undefined, undefined, false)
     calc.calcDecorator(formfield.create("lookupKeyLookupEditPage", 7,10,180,20, "lookupFrameLookupEditPage", undefined, undefined, undefined, undefined))
-    calc.calcDecorator(formfield.create("lookupResultLookupEditPage",30,10,180,336, "lookupFrameLookupEditPage", "#c5c6c7", undefined, undefined, "⟨custom,[lookupKeyLookupEditPage]⟩"))
+    calc.calcDecorator(formfield.create("lookupResultLookupEditPage",30,10,180,336, "lookupFrameLookupEditPage", "#c5c6c7", undefined, undefined, "{('[lookupKeyLookupEditPage]'!=0) ? '[lookupKeyLookupEditPage]':'Enter custom feature above';}\n\n⟨custom,[lookupKeyLookupEditPage]⟩"))
 };
 

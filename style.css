@@ -256,8 +256,32 @@
   height: 1px;
   width: 190px;
   background-color: black;
-}
+}.imageHolder{
+    position: absolute;
+    left: var(--left);
+    top: var(--top);
+    width: var(--width);
+    height: var(--height);
+    background-color: white;
+    color: white;
+    overflow: hidden;
+    text-indent: -99999999999px;
+    white-space: nowrap;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}.imageHolderUploadButton{
+    position: absolute;
+    left: var(--left);
+    top: var(--top);
+    width: var(--width);
+    height: var(--height);
+    background-color: transparent;
+    color: transparent;
+    opacity: 0;
 
+
+}
 
 .not-selectable {
     -webkit-touch-callout: none;
