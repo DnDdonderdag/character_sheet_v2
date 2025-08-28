@@ -123,7 +123,7 @@ export function create(top,left){
     
     svg.create("maxRankAsset", -25, 15, 170, 100, "profbonus.svg", "statsBevelledBox")
         text.create("maxRankText", "MAX RANKS", 46, 65, 90, 8, "maxRankAsset", undefined, undefined, undefined, "center")
-        sync.syncDecorator("prof",calc.calcDecorator(formfield.singleLine("prof", 38, 11, 39, 24, "maxRankAsset", undefined, "center", 15)))
+        sync.syncDecorator("maxRanks",calc.calcDecorator(formfield.singleLine("maxRanks", 38, 11, 39, 24, "maxRankAsset", undefined, "center", 15)))
     let inspoAsset = svg.create("inspirationAsset", 13, 15, 170, 100, "profbonus.svg", "statsBevelledBox")
     inspoAsset.style.setProperty("z-index", "-100")
         text.create("inspirationText", "INSPIRATION", 46, 65, 90, 8, "inspirationAsset", undefined, undefined, undefined, "center")
