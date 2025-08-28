@@ -543,7 +543,7 @@ export function setLookup(lookupElements){
 }
 
 export function appendLookup(key, element){
-        key = key.toLowerCase()
+        key = key.toLowerCase().replaceAll(" ","").replaceAll("-","").replaceAll("'","").replaceAll("/","")
         if (!customLookup[key] && element != ""){
                 customLookup[key] = element
                 return "success"

@@ -262,7 +262,7 @@
     top: var(--top);
     width: var(--width);
     height: var(--height);
-    background-color: white;
+    background-color: transparent;
     color: white;
     overflow: hidden;
     text-indent: -99999999999px;
@@ -279,8 +279,8 @@
     background-color: transparent;
     color: transparent;
     opacity: 0;
-
-
+}.imageHolderUploadButton:hover{
+  cursor:pointer;
 }
 
 .not-selectable {
