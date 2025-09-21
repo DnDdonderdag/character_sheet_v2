@@ -11,8 +11,6 @@
   }
 input,
 textarea {
-  -webkit-appearance: none; /* remove default iOS styling */
-  border-radius: 0;         /* optional: remove iOS rounded corners */
   padding-right: 0;         /* remove extra padding on the right */
   box-sizing: border-box;   /* ensure width includes padding */
   text-indent: 0;  
