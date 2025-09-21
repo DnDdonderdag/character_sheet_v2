@@ -1,5 +1,21 @@
 import * as sync from "../decorators/syncronising.js";
 import * as update from "../utilities/updater.js";
+function isIOS() {
+  return (
+    [
+      "iPad Simulator",
+      "iPhone Simulator",
+      "iPod Simulator",
+      "iPad",
+      "iPhone",
+      "iPod"
+    ].includes(navigator.platform)
+    // iPadOS 13+ identifies as Mac, so check touch points
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  );
+}
+
+
 
 export function create(id, top, left, width, height, parentDivID, color, alignment, maxFontSize, initalCalculation){
     // ====
@@ -17,7 +33,7 @@ export function create(id, top, left, width, height, parentDivID, color, alignme
     initalCalculation = (initalCalculation === undefined || initalCalculation === null) ? "" : initalCalculation;
     const formfield = document.createElement("textarea");
     formfield.id = id;
-    formfield.style = "--top:"+String(top-1)+"px; --left:"+String(left)+"px; --width:"+String(width-4)+"px; --height:"+String(height-4)+"px; --color:"+String(color)+"; --align:"+String(alignment)+""
+    formfield.style = "--top:"+String(top-1)+"px; --left:"+String(left)+"px; --width:"+String(width)+"px; --height:"+String(height)+"px; --color:"+String(color)+"; --align:"+String(alignment)+""
     formfield.className = "not-selectable formfield save autoSize"
     formfield.spellcheck = false;
     formfield.maxFontSize = maxFontSize
@@ -50,7 +66,7 @@ export function singleLine(id, top, left, width, height, parentDivID, color, ali
 
     const formfield = document.createElement("input");
     formfield.id = id;
-    formfield.style = "--top:"+String(top)+"px; --left:"+String(left)+"px; --width:"+String(width-4)+"px; --height:"+String(height-2)+"px; --color:"+String(color)+"; --align:"+String(alignment)+""
+    formfield.style = "--top:"+String(top)+"px; --left:"+String(left)+"px; --width:"+String(width)+"px; --height:"+String(height)+"px; --color:"+String(color)+"; --align:"+String(alignment)+""
     formfield.className = "not-selectable singleLine save autoSize"
     formfield.spellcheck = false;
     formfield.maxFontSize = maxFontSize

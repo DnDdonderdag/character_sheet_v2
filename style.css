@@ -9,7 +9,15 @@
     font-family:Scalasanslight ;
     src: url(assets/otf/scala-sans-light.otf);
   }
-
+input,
+textarea {
+  -webkit-appearance: none; /* remove default iOS styling */
+  border-radius: 0;         /* optional: remove iOS rounded corners */
+  padding-right: 0;         /* remove extra padding on the right */
+  box-sizing: border-box;   /* ensure width includes padding */
+  text-indent: 0;  
+  padding-left: 0;   /* no left padding */
+}
 
 .formfield{
     position: absolute;
@@ -25,6 +33,7 @@
     text-align: var(--align);
     font-size: var(--fontsize);
     z-index: 1000;
+
   }.formfield:hover{
     outline: solid 1px;
   }.singleLine{
@@ -41,6 +50,9 @@
     text-align: var(--align);
     font-size: var(--fontsize);
     z-index: 1000;
+        -webkit-appearance: none; /* removes iOS default styling */
+    appearance: none;
+    resize: none; 
   }.singleLine:hover{
     outline: solid 1px;
   }
