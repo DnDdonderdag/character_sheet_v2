@@ -1,21 +1,5 @@
 import * as sync from "../decorators/syncronising.js";
 import * as update from "../utilities/updater.js";
-function isIOS() {
-  return (
-    [
-      "iPad Simulator",
-      "iPhone Simulator",
-      "iPod Simulator",
-      "iPad",
-      "iPhone",
-      "iPod"
-    ].includes(navigator.platform)
-    // iPadOS 13+ identifies as Mac, so check touch points
-    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
-  );
-}
-
-
 
 export function create(id, top, left, width, height, parentDivID, color, alignment, maxFontSize, initalCalculation){
     // ====

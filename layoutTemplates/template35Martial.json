@@ -17,7 +17,7 @@
         },
 
         "spellListPage":{
-            "function": "spellListPage",
+            "function": "spellListPage3_5",
             "args": [910,1275]
         },
         "notesPage":{   
