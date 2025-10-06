@@ -116,16 +116,22 @@ async function saveSheet() {
 //Functions for loading
 export function unpackJson(){
     const file = this.files[0];
-    let reader = new FileReader()
-    reader.readAsText(file)
+    let reader = new FileReader();
+
     reader.onload = function() {
-        
-        loadState(JSON.parse(reader.result));
-    }
+        try {
+            loadState(JSON.parse(reader.result));
+        } catch (e) {
+            console.log(e);
+            alert("Error parsing JSON file:\n" + e.message);
+        }
+    };
     reader.onerror = function() {
         console.log(reader.error);
-        alert("Error loading file")
+        alert("Error loading file");
     };
+
+    reader.readAsText(file);
 }
 async function loadLayout(layout){
     document.body.innerHTML = '';
