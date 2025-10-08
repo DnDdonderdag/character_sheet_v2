@@ -124,10 +124,10 @@ export function create(top,left){
     svg.create("maxRankAsset", -25, 15, 170, 100, "profbonus.svg", "statsBevelledBox")
         text.create("maxRankText", "MAX RANKS", 46, 65, 90, 8, "maxRankAsset", undefined, undefined, undefined, "center")
         sync.syncDecorator("maxRanks",calc.calcDecorator(formfield.singleLine("maxRanks", 38, 11, 39, 24, "maxRankAsset", undefined, "center", 15)))
-    let inspoAsset = svg.create("inspirationAsset", 13, 15, 170, 100, "profbonus.svg", "statsBevelledBox")
-    inspoAsset.style.setProperty("z-index", "-100")
-        text.create("inspirationText", "INSPIRATION", 46, 65, 90, 8, "inspirationAsset", undefined, undefined, undefined, "center")
-        sync.syncDecorator("inspiration",calc.calcDecorator(formfield.singleLine("inspiration", 38, 11, 39, 24, "inspirationAsset", undefined, "center", 15)))
+    let armorCheckPenaltyAsset = svg.create("armorCheckPenaltyAsset", 13, 15, 170, 100, "profbonus.svg", "statsBevelledBox")
+    armorCheckPenaltyAsset.style.setProperty("z-index", "-100")
+        text.create("ACPText", "ARMOR CHECK PENALTY", 46, 65, 90, 8, "armorCheckPenaltyAsset", undefined, undefined, undefined, "center")
+        sync.syncDecorator("armorCheckPenalty",calc.calcDecorator(formfield.singleLine("armorCheckPenalty", 38, 11, 39, 24, "armorCheckPenaltyAsset", undefined, "center", 15, "{[checkPenaltyInventoryPage0] * [armorEquippedInventoryPage0] + [checkPenaltyInventoryPage1] * [armorEquippedInventoryPage1] + [checkPenaltyInventoryPage2] * [armorEquippedInventoryPage2] + [checkPenaltyInventoryPage3] * [armorEquippedInventoryPage3]}")))
 
 
     let bonusText = text.create("bonusText", "SKILL MODIFIER", 84, 65, 90, 8, "statsBevelledBox", "scalasanslight", undefined, undefined, "left")
@@ -165,7 +165,7 @@ export function create(top,left){
             }
             let ranks = calc.calcDecorator(sync.syncDecorator(ability+skill.replace(/\s/g, '')+"Ranks", formfield.singleLine(ability+skill.replace(/\s/g, '')+"Ranks", 22 + j*12, 172, 15, 10, "statBoxAsset"+abilities[i], undefined, "center", 8,"0")))
             if(skillsArmorPenalty.includes(skill)){
-                profBonus.textContent = "{[" +ability.substring(0,3).toUpperCase() + "mod"+ "] + Math.floor([" + ability+skill.replace(/\s/g, '')+"Ranks" + "]) + " + (skill=="swim" ? "2*" : "") + "([checkPenaltyInventoryPage0] * [armorEquippedInventoryPage0] + [checkPenaltyInventoryPage1] * [armorEquippedInventoryPage1] + [checkPenaltyInventoryPage2] * [armorEquippedInventoryPage2] + [checkPenaltyInventoryPage3] * [armorEquippedInventoryPage3])}"
+                profBonus.textContent = "{[" +ability.substring(0,3).toUpperCase() + "mod"+ "] + Math.floor([" + ability+skill.replace(/\s/g, '')+"Ranks" + "]) + " + (skill=="swim" ? "2*" : "") + "([armorCheckPenalty])}"
             }
             else {
                 profBonus.textContent = "{[" +ability.substring(0,3).toUpperCase() + "mod"+ "] + Math.floor([" + ability+skill.replace(/\s/g, '')+"Ranks" + "])}"
