@@ -7,6 +7,9 @@ export function calcDecorator(field){
     let className = field.className
     className += " " + "calculated"  
     field.className = className
+    if (field.className.includes("json")){
+        field.json = field.json.slice(0,field.json.indexOf(":")+1)+'{"function":"calc","args":'+field.json.slice(field.json.indexOf(":")+1,field.json.length-1)+"},"
+    }
     return field
 }
 

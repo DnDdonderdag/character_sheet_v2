@@ -21,7 +21,7 @@ export function create(top,left){
     
 
     let characterName = sync.syncDecorator("characterName", formfield.singleLine("backgroundPageName", 61, 23, 185, 23, "backgroundPage", undefined, "center", undefined))
-    let statsPageNameText = text.create("statsPageNameText", "CHARACTER NAME", 93, 30, 100, 8, "backgroundPage", undefined, undefined, undefined, "center")
+    let statsPageNameText = text.create("backgroundPagePageNameText", "CHARACTER NAME", 93, 30, 100, 8, "backgroundPage", undefined, undefined, undefined, "center")
 
 
     let characterInfoSyncDecorators = ["age", "skin", "weight", "eyes", "height", "hair"]
@@ -31,7 +31,7 @@ export function create(top,left){
         sync.syncDecorator(characterInfoSyncDecorators[i],
             formfield.singleLine(characterInfoFormFieldIds[i], 46 + i%2 * 29, 272 + i%3 * 110, 100, 16, "backgroundPage", undefined, "Left", 13)
         )
-        text.create(characterInfoFormFieldIds+"Text", characterInfotextContents[i], 63 + i%2 * 29, 272 + i%3 * 110, 100, 8, "backgroundPage", "Scalasanslight", undefined, undefined, "left")
+        text.create(characterInfoFormFieldIds[i]+"TextBackgroundPage", characterInfotextContents[i], 63 + i%2 * 29, 272 + i%3 * 110, 100, 8, "backgroundPage", "Scalasanslight", undefined, undefined, "left")
     }
 
     frame.create("backstory", 120, 5, 410, 380, "backgroundPage", "BACKSTORY", "backstory", undefined, true)

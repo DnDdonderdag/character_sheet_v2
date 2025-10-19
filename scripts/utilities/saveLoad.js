@@ -33,11 +33,16 @@ function createSaveButton(top, left) {
     saveButton.draggable = false;
     saveButton.style.zIndex = 0;
     saveButton.onclick = function(){saveSheet()};
+
+    saveButton.className += " json"
+    let jsonCode = '"' + "saveLoadButtons" + '":{"function":"saveLoadButtons","args":['+top+','+left+']},'
+    saveButton.json = jsonCode
+
     document.body.appendChild(saveButton);
 }
 export function createLoadButton(top, left) {
     const loadButton = document.createElement("input");
-    loadButton.id = "loadButton"
+    loadButton.id = "loadButton json"
     loadButton.type = "file"
     loadButton.textContent = "Browse...";
     loadButton.style.position = "absolute"
@@ -140,7 +145,7 @@ async function loadLayout(layout){
 }
 
 
-async function loadState(result){
+export async function loadState(result){
     let confirmed = true
     if (!await CheckSaved()){ //Check if there is any unsaved data
         if (!confirm("Are you sure you want to open this file, the current one might not be saved.")){

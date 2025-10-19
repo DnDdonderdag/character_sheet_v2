@@ -1,5 +1,5 @@
 
-export function create(id, top, left, width, height, parentDivID, startImage){
+export function create(id, top, left, width, height, parentDivID, startImage, jsonBool){
     let uploadButton = document.createElement("input")
     uploadButton.type = "file"
     uploadButton.id = id+"UploadButton"
@@ -44,6 +44,12 @@ export function create(id, top, left, width, height, parentDivID, startImage){
 
     imageHolder.textContent = startImage  
 
+    jsonBool = (jsonBool === undefined || jsonBool === null || jsonBool === "null" || jsonBool === "undefined") ? true : jsonBool;
+    if(jsonBool){
+        imageHolder.className += " json"
+        let jsonCode = '"' + id + '":{"function":"imageHolder","args":["'+id+'",'+top+','+left+','+width+','+height+',"'+parentDivID+'","'+startImage+'",'+jsonBool+']},'
+        imageHolder.json = jsonCode
+    }
 
     document.getElementById(parentDivID).appendChild(imageHolder)
     document.getElementById(parentDivID).appendChild(uploadButton)

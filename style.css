@@ -239,7 +239,7 @@ textarea {
   width: var(--width);
   height: var(--height);
   background-color: white;
-  z-index: 100;
+  z-index: -1;
   clip-path:  polygon(var(--bevel) 0px,calc(var(--width) - var(--bevel)) 0px,calc(var(--width)) var(--bevel),calc(var(--width))  calc(var(--height) - var(--bevel)),calc(var(--width) - var(--bevel))  calc(var(--height)),var(--bevel)  calc(var(--height)),0px  calc(var(--height) - var(--bevel)),0px var(--bevel));
 } .corner {
   width: var(--width); /* Set desired width */

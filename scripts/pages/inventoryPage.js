@@ -57,6 +57,8 @@ export function create(top,left){
         let partyFund = calc.calcDecorator(sync.syncDecorator("party"+moneyList[i], formfield.singleLine("party"+moneyList[i]+"InventoryPage", 4, 30, 34, 20, "party"+moneyList[i]+"AssetInventoryPage", undefined, "center", undefined, undefined)))
         partyFund.style.setProperty("transform", "scale(-1,1)")
     }
+    calc.calcDecorator(formfield.create("disappearMe2", 0,0,0,0,"inventoryPage",undefined, undefined, 8, "{document.getElementById('partyCPInventoryPage').style.setProperty('transform', 'scale(-1,1)')\ndocument.getElementById('partySPInventoryPage').style.setProperty('transform', 'scale(-1,1)')\ndocument.getElementById('partyEPInventoryPage').style.setProperty('transform', 'scale(-1,1)')\ndocument.getElementById('partyGPInventoryPage').style.setProperty('transform', 'scale(-1,1)')\ndocument.getElementById('partyPPInventoryPage').style.setProperty('transform', 'scale(-1,1)')\ndocument.getElementById('partyCPAssetInventoryPage').style.setProperty('transform', 'scale(-1,1)')\ndocument.getElementById('partySPAssetInventoryPage').style.setProperty('transform', 'scale(-1,1)')\ndocument.getElementById('partyEPAssetInventoryPage').style.setProperty('transform', 'scale(-1,1)')\ndocument.getElementById('partyGPAssetInventoryPage').style.setProperty('transform', 'scale(-1,1)')\ndocument.getElementById('partyPPAssetInventoryPage').style.setProperty('transform', 'scale(-1,1)')\n}"))
+        
 
     //Essential items
     frame.create("essentialItemsFrameInventorypage", 120, 470, 155, 185, "inventoryPage", "ESSENTIAL ITEMS", undefined, undefined,false)

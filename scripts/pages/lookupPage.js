@@ -31,7 +31,7 @@ export function create(top,left){
         sync.syncDecorator(characterInfoSyncDecorators[i],
             formfield.singleLine(characterInfoFormFieldIds[i]+"LookupEditPage", 46 + i%2 * 29, 272 + i%3 * 110, 100, 16, "lookupEditPage", undefined, "Left", 13)
         )
-        text.create(characterInfoFormFieldIds+"TextlookupEditPage", characterInfotextContents[i], 63 + i%2 * 29, 272 + i%3 * 110, 100, 8, "lookupEditPage", "Scalasanslight", undefined, undefined, "left")
+        text.create(characterInfoFormFieldIds[i]+"TextlookupEditPage", characterInfotextContents[i], 63 + i%2 * 29, 272 + i%3 * 110, 100, 8, "lookupEditPage", "Scalasanslight", undefined, undefined, "left")
     }
 
     frame.create("lookupAppendFrameLookupEditPage", 120, 5, 620, 155, "lookupEditPage", "CHANGE CUSTOM LOOKUP", undefined, undefined, false)

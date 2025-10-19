@@ -1,7 +1,7 @@
 import * as sync from "../decorators/syncronising.js";
 import * as update from "../utilities/updater.js";
 
-export function create(id, top, left, width, height, parentDivID, color, alignment, maxFontSize, initalCalculation){
+export function create(id, top, left, width, height, parentDivID, color, alignment, maxFontSize, initalCalculation, jsonBool){
     // ====
     //  Creates a form field box
     // ====
@@ -27,11 +27,20 @@ export function create(id, top, left, width, height, parentDivID, color, alignme
     formfield.addEventListener("input", update.onKeystroke, false)
     if(initalCalculation){formfield.textContent = initalCalculation}
     document.getElementById(parentDivID).appendChild(formfield)
+
+    
+    jsonBool = (jsonBool === undefined || jsonBool === null || jsonBool === "null" || jsonBool === "undefined") ? true : jsonBool;
+    if(jsonBool){
+        formfield.className += " json"
+        let jsonCode = '"' + id + '":{"function":"formfield","args":["'+id+'",'+top+','+left+','+width+','+height+',"'+parentDivID+'","'+color+'","'+alignment+'",'+maxFontSize+',"'+initalCalculation.replaceAll("\n", "\\n")+'",'+jsonBool+']},'
+        formfield.json = jsonCode
+    }
+
     
     return formfield
 }
 
-export function singleLine(id, top, left, width, height, parentDivID, color, alignment, maxFontSize, initalCalculation){
+export function singleLine(id, top, left, width, height, parentDivID, color, alignment, maxFontSize, initalCalculation, jsonBool){
     // ====
     //  Creates a form field box
     // ====
@@ -60,6 +69,14 @@ export function singleLine(id, top, left, width, height, parentDivID, color, ali
     formfield.addEventListener("input", update.onKeystroke, false)
     if(initalCalculation){formfield.textContent = initalCalculation}
     document.getElementById(parentDivID).appendChild(formfield)
+        
+    jsonBool = (jsonBool === undefined || jsonBool === null || jsonBool === "null" || jsonBool === "undefined") ? true : jsonBool;
+    if(jsonBool){
+        formfield.className += " json"
+        let jsonCode = '"' + id + '":{"function":"singleLine","args":["'+id+'",'+top+','+left+','+width+','+height+',"'+parentDivID+'","'+color+'","'+alignment+'",'+maxFontSize+',"'+initalCalculation.replaceAll("\n", "\\n")+'",'+jsonBool+']},'
+        formfield.json = jsonCode
+    }
+
 
     return formfield
 }

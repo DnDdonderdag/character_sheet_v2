@@ -42,9 +42,10 @@ export function create(top,left){
 
     for (let i=0; i<3; i++){
         svg.create("spellListFrame"+String(i)+"SpellListPage", 55, 5+207*i, 207, 900, "spellListFrame.svg", "spellListPage")
+
         document.getElementById("spellListFrame"+String(i) + "SpellListPage").style.setProperty("transform", "scale(1,1.095)")
     }
-
+    calc.calcDecorator(formfield.create("disappearMe", 0,0,0,0,"spellListPage",undefined, undefined, 8, "{document.getElementById('spellListFrame0SpellListPage').style.setProperty('transform', 'scale(1,1.095)')\ndocument.getElementById('spellListFrame1SpellListPage').style.setProperty('transform', 'scale(1,1.095)')\ndocument.getElementById('spellListFrame2SpellListPage').style.setProperty('transform', 'scale(1,1.095)')}"))
     
     //57 lines total
     //1 bar = 4 lines

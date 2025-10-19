@@ -19,7 +19,7 @@ export function create(top,left){
     headerAsset.style.setProperty("z-index", "-10")
     
     let characterName = sync.syncDecorator("characterName", formfield.singleLine("notesPageName", 61, 23, 185, 23, "notesPage", undefined, "center", undefined))
-    let statsPageNameText = text.create("statsPageNameText", "CHARACTER NAME", 93, 30, 100, 8, "notesPage", undefined, undefined, undefined, "center")
+    let statsPageNameText = text.create("notesPageNameText", "CHARACTER NAME", 93, 30, 100, 8, "notesPage", undefined, undefined, undefined, "center")
 
 
     let characterInfoSyncDecorators = ["age", "skin", "weight", "eyes", "height", "hair"]
@@ -29,7 +29,7 @@ export function create(top,left){
         sync.syncDecorator(characterInfoSyncDecorators[i],
             formfield.singleLine(characterInfoFormFieldIds[i], 46 + i%2 * 29, 272 + i%3 * 110, 100, 16, "notesPage", undefined, "Left", 13)
         )
-        text.create(characterInfoFormFieldIds+"Text", characterInfotextContents[i], 63 + i%2 * 29, 272 + i%3 * 110, 100, 8, "notesPage", "Scalasanslight", undefined, undefined, "left")
+        text.create(characterInfoFormFieldIds[i]+"TextNotesPage", characterInfotextContents[i], 63 + i%2 * 29, 272 + i%3 * 110, 100, 8, "notesPage", "Scalasanslight", undefined, undefined, "left")
     }
 
     let notesSyncDecorators = ["general", "locations", "npcs", "quests", "lore"]

@@ -7,6 +7,11 @@ export function syncDecorator(syncClass,field){
     syncClasses.push(String(syncClass));
     field.className = className;
 
+    if (field.className.includes("json")){
+        field.json = field.json.slice(0,field.json.indexOf(":")+1)+'{"function":"sync","args":{"syncClass":"'+syncClass+'",'+field.json.slice(field.json.indexOf(":")+2,field.json.length-1)+"},"
+    }
+    return field
+
     return field;
 };
 

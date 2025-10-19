@@ -64,6 +64,7 @@ where \*syncClass\* is a string, equal to other fields that should sync with thi
  - programmableButton: [id, top, left, width, height, parentDivID, color, textContent, fontsize, alignment, initialScript] 
  - bevelledBox: [id, top, left, width, height, bevel ,parentDivID, color]  
  - spellbar: [level, top, left, parentDivID, lineAmount, lineBool, idAddition] 
+ - imageHolder: [id, top, left, width, height, parentDivID, startImage]
 
 ##### Variables:
  - id: defines the ID of an asset/field, should be unique over whole webpage. EXAMPLE: "healthStatsPage"
@@ -86,3 +87,4 @@ where \*syncClass\* is a string, equal to other fields that should sync with thi
  - bevel: defines the size of the bevel of bevelledBox, can be left NULL for 6. EXAMPLE: 8
  - fileName: defines the file name of the asset to be generated. EXAMPLE: "armor.svg"
  - level: defines the spell level for the spell bar, 0 for cantrip bar "variable" for formfield in stead of level. EXAMPLE: 3
+ - startImage: Base64 encoding of default image

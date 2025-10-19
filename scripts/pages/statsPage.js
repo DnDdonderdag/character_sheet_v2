@@ -17,14 +17,8 @@ export function create(top,left){
     let statsPage = page.create("statsPage", top, left)
         saveload.createSaveLoadButtons(top+12, left+380);
 
-    let statsPageHeader = document.createElement("img");
-    statsPageHeader.id = "statsPageHeaderSVG"
-    statsPageHeader.className="header not-selectable"
-    statsPageHeader.src="assets/svg/headerP1.svg";
-    statsPageHeader.alt="headerchar";
-    statsPageHeader.draggable = false;
-    statsPageHeader.style = "--top:"+String(10)+"px; --left:"+String(-20)+"px;"
-    statsPage.appendChild(statsPageHeader);
+
+    let statsPageHeader = svg.create("statsPageHeaderSVG", -135, -20, 650, 400, "headerP1.svg", "statsPage")
 
 
     let characterName = 
@@ -41,7 +35,7 @@ export function create(top,left){
         sync.syncDecorator(characterInfoSyncDecorators[i],
             formfield.singleLine(characterInfoFormFieldIds[i], 46 + i%2 * 29, 272 + i%3 * 110, 100, 16, "statsPage", undefined, "Left", 13)
         )
-        text.create(characterInfoFormFieldIds+"Text", characterInfotextContents[i], 63 + i%2 * 29, 272 + i%3 * 110, 100, 8, "statsPage", "Scalasanslight", undefined, undefined, "left")
+        text.create(characterInfoFormFieldIds[i]+"TextStatsPage", characterInfotextContents[i], 63 + i%2 * 29, 272 + i%3 * 110, 100, 8, "statsPage", "Scalasanslight", undefined, undefined, "left")
     }
     
     
@@ -97,8 +91,8 @@ export function create(top,left){
     //Attacks and spell casting
     let attacksSpellcasting = frame.create("attacks&Spellcasting", 430, 215, 200, 290, "statsPage", "ATTACKS & SPELLCASTING", "Spellcasting", undefined, false)
     let attackNameText = text.create("attackNameText", "NAME", 5, 10, 80, 8, "attacks&Spellcasting", undefined, "#c5c6c7", undefined, "left")
-    let attackBonusText = text.create("attackNameText", "ATK BONUS", 5, 78, 80, 8, "attacks&Spellcasting", undefined, "#c5c6c7", undefined, "left")
-    let attackDamageText = text.create("attackNameText", "DAMAGE/TYPE", 5, 124, 80, 8, "attacks&Spellcasting", undefined, "#c5c6c7", undefined, "left")
+    let attackBonusText = text.create("attackBonusText", "ATK BONUS", 5, 78, 80, 8, "attacks&Spellcasting", undefined, "#c5c6c7", undefined, "left")
+    let attackDamageText = text.create("attackDamageText", "DAMAGE/TYPE", 5, 124, 80, 8, "attacks&Spellcasting", undefined, "#c5c6c7", undefined, "left")
 
     for (let i=0; i<3; i++){
         calc.calcDecorator(sync.syncDecorator("weapon"+String(i),formfield.singleLine("weapon"+String(i), 16 + i* 21,10, 67,20, "attacks&Spellcasting", undefined, 'left', 13)))

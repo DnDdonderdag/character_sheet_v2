@@ -7,7 +7,7 @@ import * as calc from "../decorators/calculate/calculations.js"
 import * as sync from "../decorators/syncronising.js"
 import * as autoSize from "../decorators/autoSize.js";
 import * as programmableButton from "../constructors/programmableButton.js"
-
+import * as generateJson from "../utilities/jsonGenerator.js"
 
 export function onKeystroke(){
     let triggeringField = this
@@ -45,6 +45,7 @@ export function onPageLoad(){
     button.buttonUpdater()
     downStreamCalculationUpdater()
     autoSize.autoSizeUpdater()
+    generateJson.generateJson()
 }  
 
 export function onFileLoad(){

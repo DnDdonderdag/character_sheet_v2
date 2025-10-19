@@ -1,6 +1,6 @@
 import * as update from "../utilities/updater.js";
 
-export function checkmark(id, top, left, width, height, parentDivID, color){
+export function checkmark(id, top, left, width, height, parentDivID, color, jsonBool){
     // ====
     //  Creates square checkbox button
     // ====
@@ -22,13 +22,21 @@ export function checkmark(id, top, left, width, height, parentDivID, color){
     diamond.id = id + "Diamond";
     diamond.className = "not-selectable checkmarkDiamond save "
     diamond.style.setProperty("visibility", "hidden");
+
+
+    jsonBool = (jsonBool === undefined || jsonBool === null || jsonBool === "null" || jsonBool === "undefined") ? true : jsonBool;
+    if(jsonBool){
+        checkmark.className += " json"
+        let jsonCode = '"' + id + '":{"function":"checkmark","args":["'+id+'",'+top+','+left+','+width+','+height+',"'+parentDivID+'","'+color+'",'+jsonBool+']},'
+        checkmark.json = jsonCode
+    }
     
     document.getElementById(parentDivID).appendChild(checkmark)
     checkmark.appendChild(diamond)
     return checkmark
 }
 
-export function tickbox(id, top, left, width, height, parentDivID, color){
+export function tickbox(id, top, left, width, height, parentDivID, color, jsonBool){
     // ====
     //  Creates circular tickbox button
     // ====
@@ -45,6 +53,14 @@ export function tickbox(id, top, left, width, height, parentDivID, color){
     tickbox.className = "not-selectable tickbox button save "
     tickbox.value = 0;
     tickbox.addEventListener("click", update.onButtonPress, false)
+
+    jsonBool = (jsonBool === undefined || jsonBool === null || jsonBool === "null" || jsonBool === "undefined") ? true : jsonBool;
+    if(jsonBool){
+        tickbox.className += " json"
+        let jsonCode = '"' + id + '":{"function":"tickbox","args":["'+id+'",'+top+','+left+','+width+','+height+',"'+parentDivID+'","'+color+'",'+jsonBool+']},'
+        tickbox.json = jsonCode
+    }
+    
 
     document.getElementById(parentDivID).appendChild(tickbox)
     return tickbox

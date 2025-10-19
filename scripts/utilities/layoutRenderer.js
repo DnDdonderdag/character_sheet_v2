@@ -23,6 +23,7 @@ import * as svg from "../constructors/svg.js";
 import * as programmableButton from "../constructors/programmableButton.js"
 import * as bevelledBox from "../constructors/bevelledBox.js"
 import * as spellbar from "../constructors/spellbar.js"
+import * as imageHolder from "../constructors/imageHolder.js"
 
 
 const functionMap = {
@@ -44,6 +45,9 @@ const functionMap = {
   programmableButton: (args) => programmableButton.create(...args),
   bevelledBox: (args) => bevelledBox.create(...args),
   spellbar: (args) => spellbar.create(...args),
+  spellbar3_5: (args) => spellbar.create3_5(...args),
+
+  imageHolder: (args) => imageHolder.create(...args),
 
   //Pre made pages
   presetTestPage: (args) => presetTestPage.create(...args),

@@ -2,10 +2,10 @@ import * as update from "../utilities/updater.js";
 import * as formfield from "../constructors/formfield.js"
 import * as layoutRenderer from "../utilities/layoutRenderer.js"
 import * as lookup from "../utilities/lookup.js"
+import * as saveLoad from "../utilities/saveLoad.js";
 
 
-
-export function create(id, top, left, width, height, parentDivID, color, textContent, fontsize, alignment ,initialScript){
+export function create(id, top, left, width, height, parentDivID, color, textContent, fontsize, alignment ,initialScript, jsonBool){
     // ====
     //  Creates square checkbox button
     // ====
@@ -28,6 +28,15 @@ export function create(id, top, left, width, height, parentDivID, color, textCon
     button.addEventListener("contextmenu", e => e.preventDefault());
     button.addEventListener("contextmenu", update.onProgrammableButtonRightClick, false)
     button.textContent = textContent
+
+
+    jsonBool = (jsonBool === undefined || jsonBool === null || jsonBool === "null" || jsonBool === "undefined") ? true : jsonBool;
+    if(jsonBool){
+        button.className += " json"
+        let jsonCode = '"' + id + '":{"function":"programmableButton","args":["'+id+'",'+top+','+left+','+width+','+height+',"'+parentDivID+'","'+color+'","'+textContent+'",'+fontsize+',"'+alignment+'","'+initialScript.replaceAll("\n", "\\n")+'",'+jsonBool+']},'
+        button.json = jsonCode
+    }
+
     document.getElementById(parentDivID).appendChild(button)
     return button
 }
