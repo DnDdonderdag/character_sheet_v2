@@ -47,13 +47,13 @@ export function create(id, top, left, width, height, parentDivID,labelText, sync
         }
         frameFormField = calc.calcDecorator(frameFormField)
 
-        if (syncClass){
+        if (syncClass && syncClass!= "undefined"){
             frameFormField =
                 sync.syncDecorator(syncClass, frameFormField)
         }
         
     } else {
-        if (labelText){
+        if (labelText && labelText!= "undefined"){
             text.create(id+"FrameLabel", labelText, height-13, 0, width, 8, id, "Scalasans", undefined, undefined, undefined, false)
         }
     }
