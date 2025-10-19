@@ -33,7 +33,7 @@ export function create(id, top, left, width, height, parentDivID,labelText, sync
     let frameFormField
     if (formBool){
         
-        if(labelText && labelText!= "undefined"){
+        if(labelText && labelText!= "undefined"&& labelText!= "null"){
             frameFormField = 
                 autoSize.autoSizeDecorator(
                     formfield.create(id, 7, 10, width-20, height-22, id+"Frame", undefined, alignment, undefined, undefined, false)
@@ -47,13 +47,13 @@ export function create(id, top, left, width, height, parentDivID,labelText, sync
         }
         frameFormField = calc.calcDecorator(frameFormField)
 
-        if (syncClass && syncClass!= "undefined"){
+        if (syncClass && syncClass!= "undefined" && syncClass!= "null"){
             frameFormField =
                 sync.syncDecorator(syncClass, frameFormField)
         }
         
     } else {
-        if (labelText && labelText!= "undefined"){
+        if (labelText && labelText!= "undefined" && labelText!= "null"){
             text.create(id+"FrameLabel", labelText, height-13, 0, width, 8, id, "Scalasans", undefined, undefined, undefined, false)
         }
     }
