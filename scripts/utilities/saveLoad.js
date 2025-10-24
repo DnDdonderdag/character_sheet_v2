@@ -44,14 +44,14 @@ export function createLoadButton(top, left) {
     const loadButton = document.createElement("input");
     loadButton.id = "loadButton json"
     loadButton.type = "file"
-    loadButton.textContent = "Browse...";
+    loadButton.name = "test";
     loadButton.style.position = "absolute"
     loadButton.style.top = top + "px";
     loadButton.style.left = left + "px";
-    loadButton.style.width = ("70px");
-    loadButton.style.heigt = ("100px");
+    loadButton.style.width = ("auto");
     loadButton.draggable = false;
     loadButton.style.zIndex = 0;
+    loadButton.style.color = "transparent"
     loadButton.accept = "application/JSON"
     loadButton.addEventListener('change', unpackJson, false);
     document.body.appendChild(loadButton);

@@ -33,7 +33,7 @@ export function create(top,left){
     }
 
     let notesSyncDecorators = ["general", "locations", "npcs", "quests", "lore"]
-    let notesFormFieldIds = ["generaNotesPage", "locationsNotesPage", "npcsNotesPage", "questsNotesPage", "loreNotesPage"]
+    let notesFormFieldIds = ["generalNotesPage", "locationsNotesPage", "npcsNotesPage", "questsNotesPage", "loreNotesPage"]
     let notesInfotextContents = ["GENERAL", "LOCATIONS", "NPCS", "QUESTS", "LORE"]
     for(let i = 0; i < 5; i++){
         frame.create(notesFormFieldIds[i], 120 + 156*i, 5, 620, 146, "notesPage", notesInfotextContents[i], notesSyncDecorators[i], "left", true)
