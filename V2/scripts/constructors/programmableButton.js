@@ -1,5 +1,5 @@
 import * as update from "../utilities/updater.js";
-import * as formfield from "../constructors/formfield.js"
+import * as formfield from "./formfield.js"
 import * as layoutRenderer from "../utilities/layoutRenderer.js"
 import * as lookup from "../utilities/lookup.js"
 import * as saveLoad from "../utilities/saveLoad.js";

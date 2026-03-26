@@ -1,7 +1,7 @@
 import * as calc from "../decorators/calculate/calculations.js";
 import * as sync from "../decorators/syncronising.js";
-import * as formfield  from "../constructors/formfield.js";
-import * as text from "../constructors/text.js"
+import * as formfield  from "./formfield.js";
+import * as text from "./text.js"
 import * as autoSize from "../decorators/autoSize.js";
 
 export function create(id, top, left, width, height, parentDivID,labelText, syncClass, alignment, formBool, jsonBool){

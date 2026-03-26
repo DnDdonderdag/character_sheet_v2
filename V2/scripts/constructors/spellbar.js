@@ -1,12 +1,12 @@
 import * as calc from "../decorators/calculate/calculations.js";
 import * as sync from "../decorators/syncronising.js";
 import * as saveload from "../utilities/saveLoad.js";
-import * as formfield  from "../constructors/formfield.js";
-import * as button  from "../constructors/button.js";
-import * as text from "../constructors/text.js";
+import * as formfield  from "./formfield.js";
+import * as button  from "./button.js";
+import * as text from "./text.js";
 import * as autoSize from "../decorators/autoSize.js";
-import * as page from "../constructors/page.js";
-import * as svg from "../constructors/svg.js";
+import * as page from "./page.js";
+import * as svg from "./svg.js";
 import * as lookup from "../utilities/lookup.js"
 import * as programmableButton from "./programmableButton.js"
 
