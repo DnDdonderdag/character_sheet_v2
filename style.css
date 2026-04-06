@@ -1,0 +1,149 @@
+@font-face {
+    font-family:Scalasans;
+    src: url(assets/otf/scalasans.otf);
+  }@font-face {
+    font-family:Scalasansbold ;
+    src: url(assets/otf/scala-sans-bold.otf);
+  }@font-face {
+    font-family:Scalasanslight ;
+    src: url(assets/otf/scala-sans-light.otf);
+  }
+body {
+    font-family:Scalasans;
+    margin: 0;
+    padding: 0;
+    overflow: hidden
+}
+
+button { font-family: Scalasanslight; font-size: 15px; }
+
+
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: grey;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+
+.containerWrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    height: calc(100vh - 30px);
+    gap: 0;
+}
+
+.container {
+    flex: 1;
+    overflow: auto;
+}
+
+#characterSheet {
+    order: 2;
+    background-color: white;
+    position: relative;
+}
+
+#editor {
+    order: 1;
+    background-color:white;
+    border-right: 3px solid black;
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    transition: clip-path 0.3s linear, opacity 0.3s linear, flex-basis 0.3s linear;
+    flex: 0 0 0;
+    min-width: 0;
+
+}
+
+#editor.active {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    flex: 0 0 20%;
+}
+
+#layoutTree {
+    order: 3;
+    background-color: white;
+    border-left: 3px solid #666;
+    clip-path: inset(0 0 0 100%);
+    opacity: 0;
+    transition: clip-path 0.3s linear, opacity 0.3s linear, flex-basis 0.3s linear;
+    flex: 0 0 0;
+    min-width: 0;
+}
+
+#layoutTree.active {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    flex: 0 0 20%;
+}
+
+/* Create a row container for the three sections */
+body > div:not(.toolbar) {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+
+/* Floating container */
+.floatingContainer {
+    position: fixed;
+    top: 80px;
+    left: 80px;
+    min-width: 280px;
+    min-height: 160px;
+    max-width: calc(100vw - 20px);
+    max-height: calc(100vh - 40px);
+    background: #ffffff;
+    border: 1px solid #999;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 10000;
+
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+    pointer-events: none;
+    transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.floatingContainer.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+/* Optional drag handle area (for JS drag logic) */
+.floatingContainer .dragHandle {
+    height: 32px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    background: #ececec;
+    border-bottom: 1px solid #d6d6d6;
+    cursor: move;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#selectionOverlay {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(255, 0, 0, 0.2);
+  z-index: 10000;
+  display: none;
+}
+
+#selectionOverlay.active {
+    display: block;
+}
