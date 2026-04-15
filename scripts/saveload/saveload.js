@@ -3,6 +3,7 @@ import { Root } from "../element/subclasses/root.js"
 import { TextArea } from "../element/subclasses/textArea.js"
 import { Checkmark } from "../element/subclasses/checkmark.js"
 import { Value } from "../value/value.js"
+import { SingleLine } from "../element/subclasses/singleLine.js"
 
 export class Saveload {
     constructor(master){
@@ -203,6 +204,7 @@ export class Saveload {
             Root,
             TextArea,
             Checkmark,
+            SingleLine,
         }
 
         const loadedValues = {}

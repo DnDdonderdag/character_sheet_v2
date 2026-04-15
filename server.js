@@ -119,7 +119,7 @@ app.post('/api/character/save', (req, res) => {
   
   // Sanitize filename
   const safeFilename = filename.replace(/[^a-zA-Z0-9\-_.]/g, '');
-  const filepath = path.join(userDir, safeFilename + '.json');
+  const filepath = path.join(userDir, safeFilename + '.char');
   
   try {
     fs.writeFileSync(filepath, dataStr);
@@ -145,7 +145,7 @@ app.get('/api/character/load', (req, res) => {
   
   const userDir = path.join(savesDir, username);
   const safeFilename = filename.replace(/[^a-zA-Z0-9\-_.]/g, '');
-  const filepath = path.join(userDir, safeFilename + '.json');
+  const filepath = path.join(userDir, safeFilename + '.char');
   
   // Security check: ensure path stays within userDir
   if (!filepath.startsWith(userDir)) {
@@ -186,8 +186,8 @@ app.get('/api/character/list', (req, res) => {
   
   try {
     const files = fs.readdirSync(userDir)
-      .filter(f => f.endsWith('.json'))
-      .map(f => f.replace('.json', ''));
+      .filter(f => f.endsWith('.char'))
+      .map(f => f.replace('.char', ''));
     res.json({ files });
   } catch (error) {
     console.error("List error:", error);
@@ -223,8 +223,8 @@ app.get('/api/templates/list', (req, res) => {
   
   try {
     const files = fs.readdirSync(templatesDir)
-      .filter(f => f.endsWith('.json'))
-      .map(f => f.replace('.json', ''));
+      .filter(f => f.endsWith('.char'))
+      .map(f => f.replace('.char', ''));
     res.json({ files });
   } catch (error) {
     console.error("Template list error:", error);
@@ -241,7 +241,7 @@ app.get('/api/templates/load', (req, res) => {
   }
   
   const safeFilename = filename.replace(/[^a-zA-Z0-9\-_.]/g, '');
-  const filepath = path.join(templatesDir, safeFilename + '.json');
+  const filepath = path.join(templatesDir, safeFilename + '.char');
   
   // Security check: ensure path stays within templatesDir
   if (!filepath.startsWith(templatesDir)) {

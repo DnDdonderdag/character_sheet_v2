@@ -1,6 +1,6 @@
 import { Element } from "../element.js"
 
-export class TextArea extends Element {
+export class SingleLine extends Element {
     constructor(master, elementId, valueId, parent, children, top, left, width, height, color, maxFontSize) {
         super(master, elementId, valueId, parent, children, top, left, width, height)
         this.color = color ? color : "#dde4ff"
@@ -42,7 +42,7 @@ export class TextArea extends Element {
         elementDIV.style.width = `${this.width}px`
         elementDIV.style.height = `${this.height}px`
 
-        const textarea = document.createElement("textarea")
+        const textarea = document.createElement("input")
         textarea.spellcheck = false
         textarea.style.position = "absolute"
         textarea.style.inset = "0"
@@ -56,7 +56,7 @@ export class TextArea extends Element {
         textarea.addEventListener("mouseenter", () => textarea.style.outline = "1px solid black")
         textarea.addEventListener("mouseleave", () => textarea.style.outline = "none")
         textarea.addEventListener("focus", () => {
-            textarea.style.outline = "none";
+            textarea.style.outline = "none"
             textarea.value = this.master.getValueFromId(this.valueId).getValue()
         })
         textarea.addEventListener("blur", (event) => {
@@ -78,7 +78,7 @@ export class TextArea extends Element {
                     }, 0)
                 }
             }, 0)
-            textarea.value = this.master.getValueFromId(this.valueId).getDisplayValue()
+            textarea.value = this.master.getValueFromId(this.valueId).getValue()
         })
         textarea.value = this.master.getValueFromId(this.valueId).getDisplayValue()
         elementDIV.appendChild(textarea)
@@ -135,14 +135,14 @@ export class TextArea extends Element {
     toJSON() {
         return {
             ...super.toJSON(),
-            type: "TextArea",
+            type: 'singleLine',
             color: this.color,
             maxFontSize: this.maxFontSize,
         }
     }
 
     static fromJSON(master, data) {
-        return new TextArea(
+        return new SingleLine(
             master,
             data.elementId,
             data.valueId,

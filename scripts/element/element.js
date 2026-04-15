@@ -57,11 +57,6 @@ export class Element {
         }
     }
 
-    save() {
-
-    }
-
-
     setElementId(newElementId) {
         if (!newElementId  || newElementId === this.elementId) {return}
         if (this.master.elements && this.master.elements[newElementId]) {
@@ -210,10 +205,198 @@ export class Element {
         }
     }
     addChild() {
-        // to be implemented
+        const typeInput = prompt("Element type (TextArea, SingleLine, Checkmark, Root):", "Frame")
+        if (typeInput === null) { return }
+
+        const type = (typeInput || "Element").trim()
+
+        const elementIdInput = prompt("New elementId:")
+        if (elementIdInput === null) { return }
+        const elementId = elementIdInput.trim()
+        if (!elementId) {
+            alert("elementId is required")
+            return
+        }
+        if (this.master.elements && this.master.elements[elementId]) {
+            alert("elementId already exists")
+            return
+        }
+
+        const valueIdDefault = `${elementId}_value`
+        const valueIdInput = prompt("valueId (leave empty for null):", valueIdDefault)
+        if (valueIdInput === null) { return }
+        const valueId = valueIdInput.trim() === "" ? null : valueIdInput.trim()
+
+        const parentInput = prompt("parent elementId:", this.elementId)
+        if (parentInput === null) { return }
+        const parent = parentInput.trim() || this.elementId
+        if (!this.master.getElementFromId(parent)) {
+            alert("Parent element not found")
+            return
+        }
+
+        const children = []
+
+        const top = Number(prompt("top:", "10"))
+        const left = Number(prompt("left:", "10"))
+        const width = Number(prompt("width:", "120"))
+        const height = Number(prompt("height:", "60"))
+
+        if ([top, left, width, height].some((v) => Number.isNaN(v))) {
+            alert("top/left/width/height must be numbers")
+            return
+        }
+
+        const ensureValueExists = () => {
+            if (!valueId) { return true }
+
+            const existing = this.master.getValueFromId(valueId)
+            if (existing) {
+                if (typeof existing.addParent === "function") {
+                    existing.addParent(elementId)
+                }
+                return true
+            }
+
+            const initialValueInput = prompt("Initial value for valueId:", "")
+            if (initialValueInput === null) { return false }
+
+            const newValue = new Value(this.master, valueId, initialValueInput, [elementId], [], [])
+            if (typeof this.master.addValue === "function") {
+                this.master.addValue(newValue)
+            } else {
+                this.master.values[valueId] = newValue
+            }
+
+            return true
+        }
+
+        const finalizeAttach = (newElement) => {
+            if (!Array.isArray(newElement.children)) {
+                newElement.children = []
+            }
+
+            this.master.elements[elementId] = newElement
+
+            const parentElement = this.master.getElementFromId(parent)
+            if (parentElement) {
+                if (!Array.isArray(parentElement.children)) {
+                    parentElement.children = []
+                }
+                if (!parentElement.children.includes(elementId)) {
+                    parentElement.children.push(elementId)
+                }
+            }
+
+            if (typeof this.master.drawElements === "function") {
+                this.master.drawElements()
+            } else {
+                newElement.draw()
+            }
+
+            if (this.master.editor?.layoutTree && typeof this.master.editor.layoutTree.drawTree === "function") {
+                this.master.editor.layoutTree.drawTree()
+            }
+            if (this.master.editor && typeof this.master.editor.selectElement === "function") {
+                this.master.editor.selectElement(elementId)
+            }
+        }
+
+        if (!ensureValueExists()) { return }
+
+        const createElement = async () => {
+            try {
+                const CHILD_ELEMENT_CLASSES = { // Add new subclasses here
+                    textarea: async () => (await import("./subclasses/textArea.js")).TextArea,
+                    checkmark: async () => (await import("./subclasses/checkmark.js")).Checkmark,
+                    root: async () => (await import("./subclasses/root.js")).Root,
+                    singleline: async () => (await import("./subclasses/singleLine.js")).SingleLine,
+                }
+
+                const key = type.toLowerCase()
+                const resolver = CHILD_ELEMENT_CLASSES[key]
+
+                if (!resolver) {
+                    alert("Unknown element type. Use TextArea, Checkmark, or Root.")
+                    return
+                }
+
+                const SelectedClass = await resolver()
+                const specialArgs = [null, null, null, null, null]
+
+                finalizeAttach(new SelectedClass(
+                    this.master,
+                    elementId,
+                    valueId,
+                    parent,
+                    children,
+                    top,
+                    left,
+                    width,
+                    height,
+                    ...specialArgs,
+                ))
+            } catch (error) {
+                console.error("Could not create child element", error)
+                alert("Could not create child element. Check console for details.")
+            }
+        }
+
+        createElement()
     }
     duplicate(){
-        // to be implemented
+        const newElementId = `${this.elementId}copy`
+
+        if (this.master.elements && this.master.elements[newElementId]) {
+            alert(`elementId already exists: ${newElementId}`)
+            return
+        }
+
+        const cloneData = this.toJSON()
+        cloneData.elementId = newElementId
+        cloneData.children = []
+
+        let newElement
+        if (typeof this.constructor.fromJSON === "function") {
+            newElement = this.constructor.fromJSON(this.master, cloneData)
+        } else {
+            newElement = Element.fromJSON(this.master, cloneData)
+        }
+
+        this.master.elements[newElementId] = newElement
+
+        if (newElement.parent) {
+            const parentElement = this.master.getElementFromId(newElement.parent)
+            if (parentElement) {
+                if (!Array.isArray(parentElement.children)) {
+                    parentElement.children = []
+                }
+                if (!parentElement.children.includes(newElementId)) {
+                    parentElement.children.push(newElementId)
+                }
+            }
+        }
+
+        if (newElement.valueId) {
+            const valueObj = this.master.getValueFromId(newElement.valueId)
+            if (valueObj && typeof valueObj.addParent === "function") {
+                valueObj.addParent(newElementId)
+            }
+        }
+
+        if (typeof this.master.drawElements === "function") {
+            this.master.drawElements()
+        } else {
+            newElement.draw()
+        }
+
+        if (this.master.editor?.layoutTree && typeof this.master.editor.layoutTree.drawTree === "function") {
+            this.master.editor.layoutTree.drawTree()
+        }
+
+        if (this.master.editor && typeof this.master.editor.selectElement === "function") {
+            this.master.editor.selectElement(newElementId)
+        }
     }
     _removeInternal(shouldRedraw = true) {
         const childrenCopy = Array.isArray(this.children) ? [...this.children] : []

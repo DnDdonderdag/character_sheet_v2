@@ -1,6 +1,7 @@
 import { Element } from "../element.js"
 
 // Things to change Checklist:
+// Class name
 // draw
 // getEditingOptions
 // Functions added from editingOptions
@@ -8,7 +9,7 @@ import { Element } from "../element.js"
 // fromJson
 // elementTypeMap in loadFile in Saveload
 // import in SaveLoad
-// add elementtype to element.addElement
+// add elementtype to element.addChild (list and prompt)
 
 
 export class subclassTemplate extends Element {
@@ -90,7 +91,7 @@ export class subclassTemplate extends Element {
     }
 
     static fromJSON(master, data) {
-        return new subclassTemplate(
+        return new subclassTemplate( // And change this one
             master,
             data.elementId,
             data.valueId,

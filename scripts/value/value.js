@@ -6,10 +6,13 @@ export class Value {
         this.parentElements = parentElements
         this.referencedBy = referencedBy
         this.references = references
+        this.tempReferences = []
     }
 
     setValue(newValue) {
         this.value = newValue
+        this.tempReferences = []
+        this.getDisplayValue({ stack: [], collectReferences: true })
         this.updateReferences()
         this.cascadeChange(true, this.valueId)
         this.master.editor.drawOptions()
@@ -19,9 +22,90 @@ export class Value {
         return this.value
     }
 
-    getDisplayValue() { //TO BE IMPLEMENTED
-        return this.value
-        // calculate based on value
+    getDisplayValue(evalContext = null) {
+        if (!evalContext) {
+            evalContext = { stack: [], collectReferences: false }
+        }
+        if (!Array.isArray(evalContext.stack)) {
+            evalContext.stack = []
+        }
+        if (typeof evalContext.collectReferences !== "boolean") {
+            evalContext.collectReferences = false
+        }
+
+        evalContext.stack.push(this.valueId)
+
+        try {
+        let trueVal = this.getValue()
+
+
+        let keywords = {
+            "@js" : jsFunc,
+            "@lu" : luFunc,
+            "@sr" : srFunc,
+        }
+
+
+        function isCommandStart(displayVal, i) {
+            const checks = [
+                // must be @
+                (text, index) => text[index] === "@",
+                // must not be escaped (\\@)
+                (text, index) => index === 0 || text[index - 1] !== "\\",
+                // must have two command letters after @
+                (text, index) => index + 2 < text.length,
+                // must be closed later with /xx
+                (text, index) => {
+                    const cmd = text.slice(index, index + 3)
+                    const closingToken = `/${cmd.slice(1)}`
+                    return text.indexOf(closingToken, index + 3) !== -1
+                },
+            ]
+
+            return checks.every((check) => check(displayVal, i))
+        }
+
+        let displayVal = trueVal
+        let done = false;
+        while (!done) {
+
+            //get the index of the last @
+
+            let lastAtIndex = -1
+            for (let i = displayVal.length - 1; i >= 0; i--) {
+                if (isCommandStart(displayVal, i)) {
+                    lastAtIndex = i
+                    break
+                }
+            }
+            if (lastAtIndex == -1) {
+                done = true
+                break
+            }
+
+            let command = displayVal.slice(lastAtIndex,lastAtIndex+3)
+            let closingToken = `/${command.slice(1)}`
+            let argStartIndex = lastAtIndex + 3
+            let argEndIndex = displayVal.indexOf(closingToken, argStartIndex)
+            let arg = displayVal.slice(argStartIndex,argEndIndex)
+            let result
+            if (command in keywords) {
+                result = keywords[command](arg, this, evalContext)
+            } else {
+                result = "-unknown function \\" + command + "-"
+            }
+
+            displayVal = displayVal.slice(0, lastAtIndex) + result + displayVal.slice(argEndIndex + closingToken.length)
+        }
+
+        // Replace all escaped @ markers (\@) with literal @
+        displayVal = displayVal.replace(/\\@/g, "@")
+
+
+        return displayVal
+        } finally {
+            evalContext.stack.pop()
+        }
     }
 
     updateParentsDisplay() {
@@ -51,8 +135,6 @@ export class Value {
     }
 
     cascadeChange(firstCall, whoChanged) {
-        // WRONG NEEDS FIXING
-        // THE CASCADE SHOULD NOT CHECK THIS, WHEN A VALUE IS SET LOOPS SHOULD BE CHECKED
         if (whoChanged === this.valueId && !firstCall) {
             throw new Error(`Circular reference detected involving value: ${this.valueId}`)
         }
@@ -63,14 +145,37 @@ export class Value {
     }
 
     updateReferences() {
-        // check who were the old references
-        // check who are the new references and set this.references
-        // those who are not a reference anymore: value.removeReferencedBy(this.valueId)
-        // those who are new: value.addReferencedBy(this.valueId)
+        let oldReferences = Array.isArray(this.references) ? this.references : []
+        let newReferences = [...new Set(Array.isArray(this.tempReferences) ? this.tempReferences : [])]
+
+        const newSet = new Set(newReferences)
+        const oldSet = new Set(oldReferences)
+
+        const removed = oldReferences.filter(id => !newSet.has(id))
+        const added = newReferences.filter(id => !oldSet.has(id))
+
+        for (const valueId of removed) {
+            const value = this.master.getValueFromId(valueId)
+            if (value) {
+                value.removeReferencedBy(this.valueId)
+            }
+        }
+
+        for (const valueId of added) {
+            const value = this.master.getValueFromId(valueId)
+            if (value) {
+                value.addReferencedBy(this.valueId)
+            }
+        }
+
+        this.references = newReferences
+        this.tempReferences = []
     }
 
     addReferencedBy (valueId) {
-        this.referencedBy.push(valueId)
+        if (!this.referencedBy.includes(valueId)) {
+            this.referencedBy.push(valueId)
+        }
     }
 
     removeReferencedBy(valueId) {
@@ -99,4 +204,34 @@ export class Value {
     }
 
 
+}
+
+
+function jsFunc(arg, valueElement) {
+    try {
+        const result = eval(arg)
+        return result
+    } catch (error) {
+        return `-js error: ${error.message}-`
+    }
+}
+
+function luFunc(arg, valueElement){
+    return "i am looked up"
+}
+
+function srFunc(arg, valueElement, evalContext){
+    let result
+    if (evalContext?.stack?.includes(arg)) {
+        result = "-loopDetected-"
+    } else if (valueElement.master.getValueFromId(arg) && arg!=valueElement.valueId){
+        if (evalContext?.collectReferences) {
+            valueElement.tempReferences.push(arg)
+        }
+        result =  valueElement.master.getValueFromId(arg).getDisplayValue(evalContext)
+    } else {
+        result = "-could not find " + arg + "-"
+    }
+
+    return result
 }
