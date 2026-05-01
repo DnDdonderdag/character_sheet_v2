@@ -162,53 +162,31 @@ textarea {
   pointer-events: auto; /* Re-enable clicks for all children */
 }
   .bevelledBox {
+  --bevel: 6px;
+  --stroke: 2px;
+  --color: gray;
+
+  position: absolute;
   left: var(--left);
   top: var(--top);
-  position: absolute;
-  width:  calc(var(--width));
-  height: calc(var(--height));
-  clip-path:  polygon(var(--bevel) 0px,calc(var(--width) - var(--bevel)) 0px,calc(var(--width)) var(--bevel),calc(var(--width))  calc(var(--height) - var(--bevel)),calc(var(--width) - var(--bevel))  calc(var(--height)),var(--bevel)  calc(var(--height)),0px  calc(var(--height) - var(--bevel)),0px var(--bevel));
-  background: var(--color); 
-  z-index: -1;
-}.bevelledBox::after{
-  content: "";
-  position: absolute;
-  top:calc(var(--bevel)/4);
-  left: calc(var(--bevel)/4);
-  width:  calc(var(--width) - var(--bevel)/2);
-  height: calc(var(--height) - var(--bevel)/2 );
+  width: 100px;
+  height: 100px;
+
   clip-path: polygon(
-
-  calc(var(--bevel)) 0px,
-  calc(var(--width) - var(--bevel)*1.5) 0px,
-
-  calc(var(--width) - var(--bevel)/2) calc(var(--bevel)),
-  calc(var(--width) - var(--bevel)/2) calc(var(--height) - var(--bevel)*1.5),
-
-  calc(var(--width) - var(--bevel)*1.5) calc(var(--height) - var(--bevel)/2),
-  calc(var(--bevel)) calc(var(--height) - var(--bevel)/2),
-  
-  0px calc(var(--height) - var(--bevel)*1.5),
-  0px calc(var(--bevel)),
-
-  calc(var(--bevel)) 0px,
-
-  calc(var(--bevel) + 2px) 2px,
-  2px calc(var(--bevel) + 2px),
-  2px calc(var(--height) - var(--bevel)*1.5 - 2px),
- 
-  calc(var(--bevel) + 2px) calc(var(--height) - var(--bevel)/2 - 2px),
-  calc(var(--width) - var(--bevel)*1.5 - 2px) calc(var(--height) - var(--bevel)/2 - 2px),
-  
-  calc(var(--width) - var(--bevel)/2 - 2px) calc(var(--height) - var(--bevel)*1.5 - 2px),
-  calc(var(--width) - var(--bevel)/2 - 2px) calc(var(--bevel) + 2px),
-
-  calc(var(--width) - var(--bevel)*1.5 - 2px) 2px,
-  calc(var(--bevel) + 2px) 2px
+    var(--bevel) 0,
+    calc(100% - var(--bevel)) 0,
+    100% var(--bevel),
+    100% calc(100% - var(--bevel)),
+    calc(100% - var(--bevel)) 100%,
+    var(--bevel) 100%,
+    0 calc(100% - var(--bevel)),
+    0 var(--bevel)
   );
-  background: rgb(255, 255, 255); 
+
+  background: var(--color);
+  box-shadow: inset 0 0 0 var(--stroke) white;
   z-index: -1;
-} 
+}
 
 #tooltip{
     white-space:pre-wrap;

@@ -59,7 +59,7 @@ if (!fs.existsSync(templatesDir)) {
 }
 
 app.set('trust proxy', true);
-app.use(express.json()); // Parse JSON request bodies
+app.use(express.json({ limit: '15mb' })); // Parse JSON request bodies
 app.use(express.static(__dirname));
 
 // Redirect /index.html to root
@@ -105,10 +105,10 @@ app.post('/api/character/save', (req, res) => {
     return res.status(400).json({ error: "Missing required fields in character data" });
   }
   
-  // Check file size (5MB limit)
+  // Check file size (15MB limit)
   const dataStr = JSON.stringify(data);
-  if (dataStr.length > 5 * 1024 * 1024) {
-    return res.status(413).json({ error: "File too large (max 5MB)" });
+  if (dataStr.length > 15 * 1024 * 1024) {
+    return res.status(413).json({ error: "File too large (max 15MB)" });
   }
   
   // Create user directory if needed

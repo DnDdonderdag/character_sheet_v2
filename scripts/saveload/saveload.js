@@ -4,6 +4,13 @@ import { TextArea } from "../element/subclasses/textArea.js"
 import { Checkmark } from "../element/subclasses/checkmark.js"
 import { Value } from "../value/value.js"
 import { SingleLine } from "../element/subclasses/singleLine.js"
+import { Svg } from "../element/subclasses/svg.js"
+import { Text } from "../element/subclasses/text.js"
+import { Button } from "../element/subclasses/button.js"
+import { Page } from "../element/subclasses/page.js"
+import { Blank } from "../element/subclasses/blank.js"
+import { Css } from "../element/subclasses/css.js"
+import { Frame } from "../element/subclasses/frame.js"
 
 export class Saveload {
     constructor(master){
@@ -82,7 +89,7 @@ export class Saveload {
     exportCurrentFile() {
         const elements = this.master.elements
         const values = this.master.values
-        const lookups = this.master.lookups
+        const lookups = this.master.lookup.lookups
 
         const exportFile = {
             "elements" : {
@@ -205,6 +212,19 @@ export class Saveload {
             TextArea,
             Checkmark,
             SingleLine,
+            Svg,
+            Text,
+            Button,
+            Page,
+            Blank,
+            Css,
+            Frame,
+            text: Text,
+            button: Button,
+            page: Page,
+            blank: Blank,
+            css: Css,
+            frame: Frame,
         }
 
         const loadedValues = {}
@@ -229,7 +249,7 @@ export class Saveload {
 
         this.master.values = loadedValues
         this.master.elements = loadedElements
-        this.master.lookups = parsed.lookups ?? {}
+        this.master.lookup.lookups = parsed.lookups ?? {}
 
         if (typeof this.master.drawElements === "function") {
             this.master.drawElements()

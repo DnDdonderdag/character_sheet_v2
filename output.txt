@@ -1,0 +1,1897 @@
+{
+"elements":{
+    "level1SpellListPage": {
+      "type": "Blank",
+      "elementId": "level1SpellListPage",
+      "valueId": "level1SpellListPage_value",
+      "parent": "spellColumn1SpellListPage",
+      "children": [
+        "level1SvgSpellListPage",
+        "level1Spell1SpellListPage",\n"level1Spell2SpellListPage",\n"level1Spell3SpellListPage",\n"level1Spell4SpellListPage",\n"level1Spell5SpellListPage",\n"level1Spell6SpellListPage",\n"level1Spell7SpellListPage",\n"level1Spell8SpellListPage"
+      ],
+      "top": 15,
+      "left": 0,
+      "width": 206,
+      "height": 260
+    },
+    "level1SvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level1SvgSpellListPage",
+      "valueId": "level1SvgSpellListPage_value",
+      "parent": "level1SpellListPage",
+      "children": [
+        "level1TextSpellListPage",
+        "level1MaxSpellListPage",
+        "level1CurrentSpellListPage",
+        "level1MinusOneSpellListPage",
+        "level1FillSpellListPage"
+      ],
+      "top": 0,
+      "left": 0,
+      "width": 206,
+      "height": 42,
+      "path": "spellbar.svg"
+    },
+    "level1TextSpellListPage": {
+      "type": "Text",
+      "elementId": "level1TextSpellListPage",
+      "valueId": "level1TextSpellListPage_value",
+      "parent": "level1SvgSpellListPage",
+      "children": [],
+      "top": 8,
+      "left": 10,
+      "width": 10,
+      "height": 26,
+      "fontSize": 20,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
+    },
+    "level1MaxSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1MaxSpellListPage",
+      "valueId": "level1Max",
+      "parent": "level1SvgSpellListPage",
+      "children": [],
+      "top": 9,
+      "left": 29,
+      "width": 43,
+      "height": 24,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "level1CurrentSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1CurrentSpellListPage",
+      "valueId": "level1Current",
+      "parent": "level1SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 90,
+      "width": 30,
+      "height": 18,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "level1MinusOneSpellListPage": {
+      "type": "Button",
+      "elementId": "level1MinusOneSpellListPage",
+      "valueId": "level1MinusOneSpellListPage_value",
+      "parent": "level1SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 121,
+      "width": 20,
+      "height": 18,
+      "buttonText": "-1",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 16
+    },
+    "level1FillSpellListPage": {
+      "type": "Button",
+      "elementId": "level1FillSpellListPage",
+      "valueId": "level1FillSpellListPage_value",
+      "parent": "level1SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 142,
+      "width": 40,
+      "height": 18,
+      "buttonText": "FILL",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 12
+    },
+        "level1Spell1SpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1Spell1SpellListPage",
+      "valueId": "level1Spell1",
+      "parent": "level1SpellListPage",
+      "children": [
+        "level1Spell1LineSvgSpellListPage",
+        "level1Spell1PreparedAmountSpellListPage",
+        "level1Spell1CastSpellListPage",
+        "level1Spell1PopUpSpellListPage",
+        "level1Spell1PreparedSpellListPage"
+      ],
+      "top": 43,
+      "left": 15,
+      "width": 120,
+      "height": 10,
+      "color": "#dde4ff",
+      "maxFontSize": 9,
+      "textAlign": "left"
+    },
+    "level1Spell1LineSvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level1Spell1LineSvgSpellListPage",
+      "valueId": "level1Spell1LineSvgSpellListPage_value",
+      "parent": "level1Spell1SpellListPage",
+      "children": [],
+      "top": 5,
+      "left": 82,
+      "width": 20,
+      "height": 20,
+      "path": "HorizontalLine.svg"
+    },
+    "level1Spell1PreparedAmountSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1Spell1PreparedAmountSpellListPage",
+      "valueId": "level1Spell1PreparedAmount",
+      "parent": "level1Spell1SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 121,
+      "width": 20,
+      "height": 10,
+      "color": "#dde4ff",
+      "maxFontSize": 9,
+      "textAlign": "center"
+    },
+    "level1Spell1CastSpellListPage": {
+      "type": "Button",
+      "elementId": "level1Spell1CastSpellListPage",
+      "valueId": "level1Spell1CastSpellListPage_value",
+      "parent": "level1Spell1SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 142,
+      "width": 20,
+      "height": 10,
+      "buttonText": "-1",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 12
+    },
+    "level1Spell1PopUpSpellListPage": {
+      "type": "Button",
+      "elementId": "level1Spell1PopUpSpellListPage",
+      "valueId": "level1Spell1PopUpSpellListPage_value",
+      "parent": "level1Spell1SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 163,
+      "width": 20,
+      "height": 10,
+      "buttonText": "POP",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 9
+    },
+    "level1Spell1PreparedSpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level1Spell1PreparedSpellListPage",
+      "valueId": "level1Spell1Prepared",
+      "parent": "level1Spell1SpellListPage",
+      "children": [],
+      "top": 1,
+      "left": -10,
+      "width": 9,
+      "height": 9,
+      "style": "circle",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    }
+        
+        "level1Spell2SpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1Spell2SpellListPage",
+      "valueId": "level1Spell2",
+      "parent": "level1SpellListPage",
+      "children": [
+        "level1Spell2LineSvgSpellListPage",
+        "level1Spell2PreparedAmountSpellListPage",
+        "level1Spell2CastSpellListPage",
+        "level1Spell2PopUpSpellListPage",
+        "level1Spell2PreparedSpellListPage"
+      ],
+      "top": 43,
+      "left": 15,
+      "width": 120,
+      "height": 10,
+      "color": "#dde4ff",
+      "maxFontSize": 9,
+      "textAlign": "left"
+    },
+    "level1Spell2LineSvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level1Spell2LineSvgSpellListPage",
+      "valueId": "level1Spell2LineSvgSpellListPage_value",
+      "parent": "level1Spell2SpellListPage",
+      "children": [],
+      "top": 5,
+      "left": 82,
+      "width": 20,
+      "height": 20,
+      "path": "HorizontalLine.svg"
+    },
+    "level1Spell2PreparedAmountSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1Spell2PreparedAmountSpellListPage",
+      "valueId": "level1Spell2PreparedAmount",
+      "parent": "level1Spell2SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 121,
+      "width": 20,
+      "height": 10,
+      "color": "#dde4ff",
+      "maxFontSize": 9,
+      "textAlign": "center"
+    },
+    "level1Spell2CastSpellListPage": {
+      "type": "Button",
+      "elementId": "level1Spell2CastSpellListPage",
+      "valueId": "level1Spell2CastSpellListPage_value",
+      "parent": "level1Spell2SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 142,
+      "width": 20,
+      "height": 10,
+      "buttonText": "-1",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 12
+    },
+    "level1Spell2PopUpSpellListPage": {
+      "type": "Button",
+      "elementId": "level1Spell2PopUpSpellListPage",
+      "valueId": "level1Spell2PopUpSpellListPage_value",
+      "parent": "level1Spell2SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 163,
+      "width": 20,
+      "height": 10,
+      "buttonText": "POP",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 9
+    },
+    "level1Spell2PreparedSpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level1Spell2PreparedSpellListPage",
+      "valueId": "level1Spell2Prepared",
+      "parent": "level1Spell2SpellListPage",
+      "children": [],
+      "top": 1,
+      "left": -10,
+      "width": 9,
+      "height": 9,
+      "style": "circle",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    }
+        
+        "level1Spell3SpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1Spell3SpellListPage",
+      "valueId": "level1Spell3",
+      "parent": "level1SpellListPage",
+      "children": [
+        "level1Spell3LineSvgSpellListPage",
+        "level1Spell3PreparedAmountSpellListPage",
+        "level1Spell3CastSpellListPage",
+        "level1Spell3PopUpSpellListPage",
+        "level1Spell3PreparedSpellListPage"
+      ],
+      "top": 43,
+      "left": 15,
+      "width": 120,
+      "height": 10,
+      "color": "#dde4ff",
+      "maxFontSize": 9,
+      "textAlign": "left"
+    },
+    "level1Spell3LineSvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level1Spell3LineSvgSpellListPage",
+      "valueId": "level1Spell3LineSvgSpellListPage_value",
+      "parent": "level1Spell3SpellListPage",
+      "children": [],
+      "top": 5,
+      "left": 82,
+      "width": 20,
+      "height": 20,
+      "path": "HorizontalLine.svg"
+    },
+    "level1Spell3PreparedAmountSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1Spell3PreparedAmountSpellListPage",
+      "valueId": "level1Spell3PreparedAmount",
+      "parent": "level1Spell3SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 121,
+      "width": 20,
+      "height": 10,
+      "color": "#dde4ff",
+      "maxFontSize": 9,
+      "textAlign": "center"
+    },
+    "level1Spell3CastSpellListPage": {
+      "type": "Button",
+      "elementId": "level1Spell3CastSpellListPage",
+      "valueId": "level1Spell3CastSpellListPage_value",
+      "parent": "level1Spell3SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 142,
+      "width": 20,
+      "height": 10,
+      "buttonText": "-1",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 12
+    },
+    "level1Spell3PopUpSpellListPage": {
+      "type": "Button",
+      "elementId": "level1Spell3PopUpSpellListPage",
+      "valueId": "level1Spell3PopUpSpellListPage_value",
+      "parent": "level1Spell3SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 163,
+      "width": 20,
+      "height": 10,
+      "buttonText": "POP",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 9
+    },
+    "level1Spell3PreparedSpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level1Spell3PreparedSpellListPage",
+      "valueId": "level1Spell3Prepared",
+      "parent": "level1Spell3SpellListPage",
+      "children": [],
+      "top": 1,
+      "left": -10,
+      "width": 9,
+      "height": 9,
+      "style": "circle",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    }
+        
+        "level1Spell4SpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1Spell4SpellListPage",
+      "valueId": "level1Spell4",
+      "parent": "level1SpellListPage",
+      "children": [
+        "level1Spell4LineSvgSpellListPage",
+        "level1Spell4PreparedAmountSpellListPage",
+        "level1Spell4CastSpellListPage",
+        "level1Spell4PopUpSpellListPage",
+        "level1Spell4PreparedSpellListPage"
+      ],
+      "top": 43,
+      "left": 15,
+      "width": 120,
+      "height": 10,
+      "color": "#dde4ff",
+      "maxFontSize": 9,
+      "textAlign": "left"
+    },
+    "level1Spell4LineSvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level1Spell4LineSvgSpellListPage",
+      "valueId": "level1Spell4LineSvgSpellListPage_value",
+      "parent": "level1Spell4SpellListPage",
+      "children": [],
+      "top": 5,
+      "left": 82,
+      "width": 20,
+      "height": 20,
+      "path": "HorizontalLine.svg"
+    },
+    "level1Spell4PreparedAmountSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1Spell4PreparedAmountSpellListPage",
+      "valueId": "level1Spell4PreparedAmount",
+      "parent": "level1Spell4SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 121,
+      "width": 20,
+      "height": 10,
+      "color": "#dde4ff",
+      "maxFontSize": 9,
+      "textAlign": "center"
+    },
+    "level1Spell4CastSpellListPage": {
+      "type": "Button",
+      "elementId": "level1Spell4CastSpellListPage",
+      "valueId": "level1Spell4CastSpellListPage_value",
+      "parent": "level1Spell4SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 142,
+      "width": 20,
+      "height": 10,
+      "buttonText": "-1",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 12
+    },
+    "level1Spell4PopUpSpellListPage": {
+      "type": "Button",
+      "elementId": "level1Spell4PopUpSpellListPage",
+      "valueId": "level1Spell4PopUpSpellListPage_value",
+      "parent": "level1Spell4SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 163,
+      "width": 20,
+      "height": 10,
+      "buttonText": "POP",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 9
+    },
+    "level1Spell4PreparedSpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level1Spell4PreparedSpellListPage",
+      "valueId": "level1Spell4Prepared",
+      "parent": "level1Spell4SpellListPage",
+      "children": [],
+      "top": 1,
+      "left": -10,
+      "width": 9,
+      "height": 9,
+      "style": "circle",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    }
+        
+        "level1Spell5SpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1Spell5SpellListPage",
+      "valueId": "level1Spell5",
+      "parent": "level1SpellListPage",
+      "children": [
+        "level1Spell5LineSvgSpellListPage",
+        "level1Spell5PreparedAmountSpellListPage",
+        "level1Spell5CastSpellListPage",
+        "level1Spell5PopUpSpellListPage",
+        "level1Spell5PreparedSpellListPage"
+      ],
+      "top": 43,
+      "left": 15,
+      "width": 120,
+      "height": 10,
+      "color": "#dde4ff",
+      "maxFontSize": 9,
+      "textAlign": "left"
+    },
+    "level1Spell5LineSvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level1Spell5LineSvgSpellListPage",
+      "valueId": "level1Spell5LineSvgSpellListPage_value",
+      "parent": "level1Spell5SpellListPage",
+      "children": [],
+      "top": 5,
+      "left": 82,
+      "width": 20,
+      "height": 20,
+      "path": "HorizontalLine.svg"
+    },
+    "level1Spell5PreparedAmountSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1Spell5PreparedAmountSpellListPage",
+      "valueId": "level1Spell5PreparedAmount",
+      "parent": "level1Spell5SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 121,
+      "width": 20,
+      "height": 10,
+      "color": "#dde4ff",
+      "maxFontSize": 9,
+      "textAlign": "center"
+    },
+    "level1Spell5CastSpellListPage": {
+      "type": "Button",
+      "elementId": "level1Spell5CastSpellListPage",
+      "valueId": "level1Spell5CastSpellListPage_value",
+      "parent": "level1Spell5SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 142,
+      "width": 20,
+      "height": 10,
+      "buttonText": "-1",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 12
+    },
+    "level1Spell5PopUpSpellListPage": {
+      "type": "Button",
+      "elementId": "level1Spell5PopUpSpellListPage",
+      "valueId": "level1Spell5PopUpSpellListPage_value",
+      "parent": "level1Spell5SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 163,
+      "width": 20,
+      "height": 10,
+      "buttonText": "POP",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 9
+    },
+    "level1Spell5PreparedSpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level1Spell5PreparedSpellListPage",
+      "valueId": "level1Spell5Prepared",
+      "parent": "level1Spell5SpellListPage",
+      "children": [],
+      "top": 1,
+      "left": -10,
+      "width": 9,
+      "height": 9,
+      "style": "circle",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    }
+        
+        "level1Spell6SpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1Spell6SpellListPage",
+      "valueId": "level1Spell6",
+      "parent": "level1SpellListPage",
+      "children": [
+        "level1Spell6LineSvgSpellListPage",
+        "level1Spell6PreparedAmountSpellListPage",
+        "level1Spell6CastSpellListPage",
+        "level1Spell6PopUpSpellListPage",
+        "level1Spell6PreparedSpellListPage"
+      ],
+      "top": 43,
+      "left": 15,
+      "width": 120,
+      "height": 10,
+      "color": "#dde4ff",
+      "maxFontSize": 9,
+      "textAlign": "left"
+    },
+    "level1Spell6LineSvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level1Spell6LineSvgSpellListPage",
+      "valueId": "level1Spell6LineSvgSpellListPage_value",
+      "parent": "level1Spell6SpellListPage",
+      "children": [],
+      "top": 5,
+      "left": 82,
+      "width": 20,
+      "height": 20,
+      "path": "HorizontalLine.svg"
+    },
+    "level1Spell6PreparedAmountSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1Spell6PreparedAmountSpellListPage",
+      "valueId": "level1Spell6PreparedAmount",
+      "parent": "level1Spell6SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 121,
+      "width": 20,
+      "height": 10,
+      "color": "#dde4ff",
+      "maxFontSize": 9,
+      "textAlign": "center"
+    },
+    "level1Spell6CastSpellListPage": {
+      "type": "Button",
+      "elementId": "level1Spell6CastSpellListPage",
+      "valueId": "level1Spell6CastSpellListPage_value",
+      "parent": "level1Spell6SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 142,
+      "width": 20,
+      "height": 10,
+      "buttonText": "-1",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 12
+    },
+    "level1Spell6PopUpSpellListPage": {
+      "type": "Button",
+      "elementId": "level1Spell6PopUpSpellListPage",
+      "valueId": "level1Spell6PopUpSpellListPage_value",
+      "parent": "level1Spell6SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 163,
+      "width": 20,
+      "height": 10,
+      "buttonText": "POP",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 9
+    },
+    "level1Spell6PreparedSpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level1Spell6PreparedSpellListPage",
+      "valueId": "level1Spell6Prepared",
+      "parent": "level1Spell6SpellListPage",
+      "children": [],
+      "top": 1,
+      "left": -10,
+      "width": 9,
+      "height": 9,
+      "style": "circle",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    }
+        
+        "level1Spell7SpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1Spell7SpellListPage",
+      "valueId": "level1Spell7",
+      "parent": "level1SpellListPage",
+      "children": [
+        "level1Spell7LineSvgSpellListPage",
+        "level1Spell7PreparedAmountSpellListPage",
+        "level1Spell7CastSpellListPage",
+        "level1Spell7PopUpSpellListPage",
+        "level1Spell7PreparedSpellListPage"
+      ],
+      "top": 43,
+      "left": 15,
+      "width": 120,
+      "height": 10,
+      "color": "#dde4ff",
+      "maxFontSize": 9,
+      "textAlign": "left"
+    },
+    "level1Spell7LineSvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level1Spell7LineSvgSpellListPage",
+      "valueId": "level1Spell7LineSvgSpellListPage_value",
+      "parent": "level1Spell7SpellListPage",
+      "children": [],
+      "top": 5,
+      "left": 82,
+      "width": 20,
+      "height": 20,
+      "path": "HorizontalLine.svg"
+    },
+    "level1Spell7PreparedAmountSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1Spell7PreparedAmountSpellListPage",
+      "valueId": "level1Spell7PreparedAmount",
+      "parent": "level1Spell7SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 121,
+      "width": 20,
+      "height": 10,
+      "color": "#dde4ff",
+      "maxFontSize": 9,
+      "textAlign": "center"
+    },
+    "level1Spell7CastSpellListPage": {
+      "type": "Button",
+      "elementId": "level1Spell7CastSpellListPage",
+      "valueId": "level1Spell7CastSpellListPage_value",
+      "parent": "level1Spell7SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 142,
+      "width": 20,
+      "height": 10,
+      "buttonText": "-1",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 12
+    },
+    "level1Spell7PopUpSpellListPage": {
+      "type": "Button",
+      "elementId": "level1Spell7PopUpSpellListPage",
+      "valueId": "level1Spell7PopUpSpellListPage_value",
+      "parent": "level1Spell7SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 163,
+      "width": 20,
+      "height": 10,
+      "buttonText": "POP",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 9
+    },
+    "level1Spell7PreparedSpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level1Spell7PreparedSpellListPage",
+      "valueId": "level1Spell7Prepared",
+      "parent": "level1Spell7SpellListPage",
+      "children": [],
+      "top": 1,
+      "left": -10,
+      "width": 9,
+      "height": 9,
+      "style": "circle",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    }
+        
+        "level1Spell8SpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1Spell8SpellListPage",
+      "valueId": "level1Spell8",
+      "parent": "level1SpellListPage",
+      "children": [
+        "level1Spell8LineSvgSpellListPage",
+        "level1Spell8PreparedAmountSpellListPage",
+        "level1Spell8CastSpellListPage",
+        "level1Spell8PopUpSpellListPage",
+        "level1Spell8PreparedSpellListPage"
+      ],
+      "top": 43,
+      "left": 15,
+      "width": 120,
+      "height": 10,
+      "color": "#dde4ff",
+      "maxFontSize": 9,
+      "textAlign": "left"
+    },
+    "level1Spell8LineSvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level1Spell8LineSvgSpellListPage",
+      "valueId": "level1Spell8LineSvgSpellListPage_value",
+      "parent": "level1Spell8SpellListPage",
+      "children": [],
+      "top": 5,
+      "left": 82,
+      "width": 20,
+      "height": 20,
+      "path": "HorizontalLine.svg"
+    },
+    "level1Spell8PreparedAmountSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level1Spell8PreparedAmountSpellListPage",
+      "valueId": "level1Spell8PreparedAmount",
+      "parent": "level1Spell8SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 121,
+      "width": 20,
+      "height": 10,
+      "color": "#dde4ff",
+      "maxFontSize": 9,
+      "textAlign": "center"
+    },
+    "level1Spell8CastSpellListPage": {
+      "type": "Button",
+      "elementId": "level1Spell8CastSpellListPage",
+      "valueId": "level1Spell8CastSpellListPage_value",
+      "parent": "level1Spell8SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 142,
+      "width": 20,
+      "height": 10,
+      "buttonText": "-1",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 12
+    },
+    "level1Spell8PopUpSpellListPage": {
+      "type": "Button",
+      "elementId": "level1Spell8PopUpSpellListPage",
+      "valueId": "level1Spell8PopUpSpellListPage_value",
+      "parent": "level1Spell8SpellListPage",
+      "children": [],
+      "top": 0,
+      "left": 163,
+      "width": 20,
+      "height": 10,
+      "buttonText": "POP",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 9
+    },
+    "level1Spell8PreparedSpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level1Spell8PreparedSpellListPage",
+      "valueId": "level1Spell8Prepared",
+      "parent": "level1Spell8SpellListPage",
+      "children": [],
+      "top": 1,
+      "left": -10,
+      "width": 9,
+      "height": 9,
+      "style": "circle",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    }
+},
+"values":{
+    "level1SpellListPage_value": {
+      "valueId": "level1SpellListPage_value",
+      "value": "",
+      "parentElements": [
+        "level1SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level1SvgSpellListPage_value": {
+      "valueId": "level1SvgSpellListPage_value",
+      "value": "",
+      "parentElements": [
+        "level1SvgSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level1TextSpellListPage_value": {
+      "valueId": "level1TextSpellListPage_value",
+      "value": "1",
+      "parentElements": [
+        "level1TextSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level1Max": {
+      "valueId": "level1Max",
+      "value": "",
+      "parentElements": [
+        "level1MaxSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level1Current": {
+      "valueId": "level1Current",
+      "value": "",
+      "parentElements": [
+        "level1CurrentSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level1MinusOneSpellListPage_value": {
+      "valueId": "level1MinusOneSpellListPage_value",
+      "value": "let field = \\"level1Current\\"\\nlet oldVal =this.readValue(field);\\nlet newVal = Number(oldVal) - 1;\\nthis.changeValue(field, newVal);",
+      "parentElements": [
+        "level1MinusOneSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level1FillSpellListPage_value": {
+      "valueId": "level1FillSpellListPage_value",
+      "value": "let field = \\"level1Current\\"\\nlet maxfield = 'level1Max'\\nlet maxVal =this.readValue(maxfield);\\nthis.changeValue(field, maxVal);",
+      "parentElements": [
+        "level1FillSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    
+        "level1SpellListPage_value": {
+        "valueId": "level1SpellListPage_value",
+        "value": "",
+        "parentElements": [
+            "level1SpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1SvgSpellListPage_value": {
+        "valueId": "level1SvgSpellListPage_value",
+        "value": "",
+        "parentElements": [
+            "level1SvgSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1TextSpellListPage_value": {
+        "valueId": "level1TextSpellListPage_value",
+        "value": "1",
+        "parentElements": [
+            "level1TextSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Max": {
+        "valueId": "level1Max",
+        "value": "",
+        "parentElements": [
+            "level1MaxSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Current": {
+        "valueId": "level1Current",
+        "value": "",
+        "parentElements": [
+            "level1CurrentSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1MinusOneSpellListPage_value": {
+        "valueId": "level1MinusOneSpellListPage_value",
+        "value": "let field = \"level1Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
+        "parentElements": [
+            "level1MinusOneSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1FillSpellListPage_value": {
+        "valueId": "level1FillSpellListPage_value",
+        "value": "let field = \"level1Current\"\nlet maxfield = 'level1Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
+        "parentElements": [
+            "level1FillSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell1": {
+        "valueId": "level1Spell1",
+        "value": "",
+        "parentElements": [
+            "level1Spell1SpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell1LineSvgSpellListPage_value": {
+        "valueId": "level1Spell1LineSvgSpellListPage_value",
+        "value": "transform: Scale(9.4,0.5)",
+        "parentElements": [
+            "level1Spell1LineSvgSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell1PreparedAmount": {
+        "valueId": "level1Spell1PreparedAmount",
+        "value": "",
+        "parentElements": [
+            "level1Spell1PreparedAmountSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell1CastSpellListPage_value": {
+        "valueId": "level1Spell1CastSpellListPage_value",
+        "value": "let field = \"level1Spell1PreparedAmount\";\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
+        "parentElements": [
+            "level1Spell1CastSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell1PopUpSpellListPage_value": {
+        "valueId": "level1Spell1PopUpSpellListPage_value",
+        "value": "let field = \"level1Spell1\";\nlet spell = this.readValue(field).toLowerCase();\nthis.openWindow([\"spells3_5\",spell])",
+        "parentElements": [
+            "level1Spell1PopUpSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell1Prepared": {
+        "valueId": "level1Spell1Prepared",
+        "value": "0",
+        "parentElements": [
+            "level1Spell1PreparedSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        }
+        
+        "level1SpellListPage_value": {
+        "valueId": "level1SpellListPage_value",
+        "value": "",
+        "parentElements": [
+            "level1SpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1SvgSpellListPage_value": {
+        "valueId": "level1SvgSpellListPage_value",
+        "value": "",
+        "parentElements": [
+            "level1SvgSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1TextSpellListPage_value": {
+        "valueId": "level1TextSpellListPage_value",
+        "value": "1",
+        "parentElements": [
+            "level1TextSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Max": {
+        "valueId": "level1Max",
+        "value": "",
+        "parentElements": [
+            "level1MaxSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Current": {
+        "valueId": "level1Current",
+        "value": "",
+        "parentElements": [
+            "level1CurrentSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1MinusOneSpellListPage_value": {
+        "valueId": "level1MinusOneSpellListPage_value",
+        "value": "let field = \"level1Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
+        "parentElements": [
+            "level1MinusOneSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1FillSpellListPage_value": {
+        "valueId": "level1FillSpellListPage_value",
+        "value": "let field = \"level1Current\"\nlet maxfield = 'level1Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
+        "parentElements": [
+            "level1FillSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell2": {
+        "valueId": "level1Spell2",
+        "value": "",
+        "parentElements": [
+            "level1Spell2SpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell2LineSvgSpellListPage_value": {
+        "valueId": "level1Spell2LineSvgSpellListPage_value",
+        "value": "transform: Scale(9.4,0.5)",
+        "parentElements": [
+            "level1Spell2LineSvgSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell2PreparedAmount": {
+        "valueId": "level1Spell2PreparedAmount",
+        "value": "",
+        "parentElements": [
+            "level1Spell2PreparedAmountSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell2CastSpellListPage_value": {
+        "valueId": "level1Spell2CastSpellListPage_value",
+        "value": "let field = \"level1Spell2PreparedAmount\";\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
+        "parentElements": [
+            "level1Spell2CastSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell2PopUpSpellListPage_value": {
+        "valueId": "level1Spell2PopUpSpellListPage_value",
+        "value": "let field = \"level1Spell2\";\nlet spell = this.readValue(field).toLowerCase();\nthis.openWindow([\"spells3_5\",spell])",
+        "parentElements": [
+            "level1Spell2PopUpSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell2Prepared": {
+        "valueId": "level1Spell2Prepared",
+        "value": "0",
+        "parentElements": [
+            "level1Spell2PreparedSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        }
+        
+        "level1SpellListPage_value": {
+        "valueId": "level1SpellListPage_value",
+        "value": "",
+        "parentElements": [
+            "level1SpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1SvgSpellListPage_value": {
+        "valueId": "level1SvgSpellListPage_value",
+        "value": "",
+        "parentElements": [
+            "level1SvgSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1TextSpellListPage_value": {
+        "valueId": "level1TextSpellListPage_value",
+        "value": "1",
+        "parentElements": [
+            "level1TextSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Max": {
+        "valueId": "level1Max",
+        "value": "",
+        "parentElements": [
+            "level1MaxSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Current": {
+        "valueId": "level1Current",
+        "value": "",
+        "parentElements": [
+            "level1CurrentSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1MinusOneSpellListPage_value": {
+        "valueId": "level1MinusOneSpellListPage_value",
+        "value": "let field = \"level1Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
+        "parentElements": [
+            "level1MinusOneSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1FillSpellListPage_value": {
+        "valueId": "level1FillSpellListPage_value",
+        "value": "let field = \"level1Current\"\nlet maxfield = 'level1Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
+        "parentElements": [
+            "level1FillSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell3": {
+        "valueId": "level1Spell3",
+        "value": "",
+        "parentElements": [
+            "level1Spell3SpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell3LineSvgSpellListPage_value": {
+        "valueId": "level1Spell3LineSvgSpellListPage_value",
+        "value": "transform: Scale(9.4,0.5)",
+        "parentElements": [
+            "level1Spell3LineSvgSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell3PreparedAmount": {
+        "valueId": "level1Spell3PreparedAmount",
+        "value": "",
+        "parentElements": [
+            "level1Spell3PreparedAmountSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell3CastSpellListPage_value": {
+        "valueId": "level1Spell3CastSpellListPage_value",
+        "value": "let field = \"level1Spell3PreparedAmount\";\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
+        "parentElements": [
+            "level1Spell3CastSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell3PopUpSpellListPage_value": {
+        "valueId": "level1Spell3PopUpSpellListPage_value",
+        "value": "let field = \"level1Spell3\";\nlet spell = this.readValue(field).toLowerCase();\nthis.openWindow([\"spells3_5\",spell])",
+        "parentElements": [
+            "level1Spell3PopUpSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell3Prepared": {
+        "valueId": "level1Spell3Prepared",
+        "value": "0",
+        "parentElements": [
+            "level1Spell3PreparedSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        }
+        
+        "level1SpellListPage_value": {
+        "valueId": "level1SpellListPage_value",
+        "value": "",
+        "parentElements": [
+            "level1SpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1SvgSpellListPage_value": {
+        "valueId": "level1SvgSpellListPage_value",
+        "value": "",
+        "parentElements": [
+            "level1SvgSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1TextSpellListPage_value": {
+        "valueId": "level1TextSpellListPage_value",
+        "value": "1",
+        "parentElements": [
+            "level1TextSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Max": {
+        "valueId": "level1Max",
+        "value": "",
+        "parentElements": [
+            "level1MaxSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Current": {
+        "valueId": "level1Current",
+        "value": "",
+        "parentElements": [
+            "level1CurrentSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1MinusOneSpellListPage_value": {
+        "valueId": "level1MinusOneSpellListPage_value",
+        "value": "let field = \"level1Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
+        "parentElements": [
+            "level1MinusOneSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1FillSpellListPage_value": {
+        "valueId": "level1FillSpellListPage_value",
+        "value": "let field = \"level1Current\"\nlet maxfield = 'level1Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
+        "parentElements": [
+            "level1FillSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell4": {
+        "valueId": "level1Spell4",
+        "value": "",
+        "parentElements": [
+            "level1Spell4SpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell4LineSvgSpellListPage_value": {
+        "valueId": "level1Spell4LineSvgSpellListPage_value",
+        "value": "transform: Scale(9.4,0.5)",
+        "parentElements": [
+            "level1Spell4LineSvgSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell4PreparedAmount": {
+        "valueId": "level1Spell4PreparedAmount",
+        "value": "",
+        "parentElements": [
+            "level1Spell4PreparedAmountSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell4CastSpellListPage_value": {
+        "valueId": "level1Spell4CastSpellListPage_value",
+        "value": "let field = \"level1Spell4PreparedAmount\";\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
+        "parentElements": [
+            "level1Spell4CastSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell4PopUpSpellListPage_value": {
+        "valueId": "level1Spell4PopUpSpellListPage_value",
+        "value": "let field = \"level1Spell4\";\nlet spell = this.readValue(field).toLowerCase();\nthis.openWindow([\"spells3_5\",spell])",
+        "parentElements": [
+            "level1Spell4PopUpSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell4Prepared": {
+        "valueId": "level1Spell4Prepared",
+        "value": "0",
+        "parentElements": [
+            "level1Spell4PreparedSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        }
+        
+        "level1SpellListPage_value": {
+        "valueId": "level1SpellListPage_value",
+        "value": "",
+        "parentElements": [
+            "level1SpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1SvgSpellListPage_value": {
+        "valueId": "level1SvgSpellListPage_value",
+        "value": "",
+        "parentElements": [
+            "level1SvgSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1TextSpellListPage_value": {
+        "valueId": "level1TextSpellListPage_value",
+        "value": "1",
+        "parentElements": [
+            "level1TextSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Max": {
+        "valueId": "level1Max",
+        "value": "",
+        "parentElements": [
+            "level1MaxSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Current": {
+        "valueId": "level1Current",
+        "value": "",
+        "parentElements": [
+            "level1CurrentSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1MinusOneSpellListPage_value": {
+        "valueId": "level1MinusOneSpellListPage_value",
+        "value": "let field = \"level1Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
+        "parentElements": [
+            "level1MinusOneSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1FillSpellListPage_value": {
+        "valueId": "level1FillSpellListPage_value",
+        "value": "let field = \"level1Current\"\nlet maxfield = 'level1Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
+        "parentElements": [
+            "level1FillSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell5": {
+        "valueId": "level1Spell5",
+        "value": "",
+        "parentElements": [
+            "level1Spell5SpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell5LineSvgSpellListPage_value": {
+        "valueId": "level1Spell5LineSvgSpellListPage_value",
+        "value": "transform: Scale(9.4,0.5)",
+        "parentElements": [
+            "level1Spell5LineSvgSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell5PreparedAmount": {
+        "valueId": "level1Spell5PreparedAmount",
+        "value": "",
+        "parentElements": [
+            "level1Spell5PreparedAmountSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell5CastSpellListPage_value": {
+        "valueId": "level1Spell5CastSpellListPage_value",
+        "value": "let field = \"level1Spell5PreparedAmount\";\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
+        "parentElements": [
+            "level1Spell5CastSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell5PopUpSpellListPage_value": {
+        "valueId": "level1Spell5PopUpSpellListPage_value",
+        "value": "let field = \"level1Spell5\";\nlet spell = this.readValue(field).toLowerCase();\nthis.openWindow([\"spells3_5\",spell])",
+        "parentElements": [
+            "level1Spell5PopUpSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell5Prepared": {
+        "valueId": "level1Spell5Prepared",
+        "value": "0",
+        "parentElements": [
+            "level1Spell5PreparedSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        }
+        
+        "level1SpellListPage_value": {
+        "valueId": "level1SpellListPage_value",
+        "value": "",
+        "parentElements": [
+            "level1SpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1SvgSpellListPage_value": {
+        "valueId": "level1SvgSpellListPage_value",
+        "value": "",
+        "parentElements": [
+            "level1SvgSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1TextSpellListPage_value": {
+        "valueId": "level1TextSpellListPage_value",
+        "value": "1",
+        "parentElements": [
+            "level1TextSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Max": {
+        "valueId": "level1Max",
+        "value": "",
+        "parentElements": [
+            "level1MaxSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Current": {
+        "valueId": "level1Current",
+        "value": "",
+        "parentElements": [
+            "level1CurrentSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1MinusOneSpellListPage_value": {
+        "valueId": "level1MinusOneSpellListPage_value",
+        "value": "let field = \"level1Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
+        "parentElements": [
+            "level1MinusOneSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1FillSpellListPage_value": {
+        "valueId": "level1FillSpellListPage_value",
+        "value": "let field = \"level1Current\"\nlet maxfield = 'level1Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
+        "parentElements": [
+            "level1FillSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell6": {
+        "valueId": "level1Spell6",
+        "value": "",
+        "parentElements": [
+            "level1Spell6SpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell6LineSvgSpellListPage_value": {
+        "valueId": "level1Spell6LineSvgSpellListPage_value",
+        "value": "transform: Scale(9.4,0.5)",
+        "parentElements": [
+            "level1Spell6LineSvgSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell6PreparedAmount": {
+        "valueId": "level1Spell6PreparedAmount",
+        "value": "",
+        "parentElements": [
+            "level1Spell6PreparedAmountSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell6CastSpellListPage_value": {
+        "valueId": "level1Spell6CastSpellListPage_value",
+        "value": "let field = \"level1Spell6PreparedAmount\";\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
+        "parentElements": [
+            "level1Spell6CastSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell6PopUpSpellListPage_value": {
+        "valueId": "level1Spell6PopUpSpellListPage_value",
+        "value": "let field = \"level1Spell6\";\nlet spell = this.readValue(field).toLowerCase();\nthis.openWindow([\"spells3_5\",spell])",
+        "parentElements": [
+            "level1Spell6PopUpSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell6Prepared": {
+        "valueId": "level1Spell6Prepared",
+        "value": "0",
+        "parentElements": [
+            "level1Spell6PreparedSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        }
+        
+        "level1SpellListPage_value": {
+        "valueId": "level1SpellListPage_value",
+        "value": "",
+        "parentElements": [
+            "level1SpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1SvgSpellListPage_value": {
+        "valueId": "level1SvgSpellListPage_value",
+        "value": "",
+        "parentElements": [
+            "level1SvgSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1TextSpellListPage_value": {
+        "valueId": "level1TextSpellListPage_value",
+        "value": "1",
+        "parentElements": [
+            "level1TextSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Max": {
+        "valueId": "level1Max",
+        "value": "",
+        "parentElements": [
+            "level1MaxSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Current": {
+        "valueId": "level1Current",
+        "value": "",
+        "parentElements": [
+            "level1CurrentSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1MinusOneSpellListPage_value": {
+        "valueId": "level1MinusOneSpellListPage_value",
+        "value": "let field = \"level1Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
+        "parentElements": [
+            "level1MinusOneSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1FillSpellListPage_value": {
+        "valueId": "level1FillSpellListPage_value",
+        "value": "let field = \"level1Current\"\nlet maxfield = 'level1Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
+        "parentElements": [
+            "level1FillSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell7": {
+        "valueId": "level1Spell7",
+        "value": "",
+        "parentElements": [
+            "level1Spell7SpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell7LineSvgSpellListPage_value": {
+        "valueId": "level1Spell7LineSvgSpellListPage_value",
+        "value": "transform: Scale(9.4,0.5)",
+        "parentElements": [
+            "level1Spell7LineSvgSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell7PreparedAmount": {
+        "valueId": "level1Spell7PreparedAmount",
+        "value": "",
+        "parentElements": [
+            "level1Spell7PreparedAmountSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell7CastSpellListPage_value": {
+        "valueId": "level1Spell7CastSpellListPage_value",
+        "value": "let field = \"level1Spell7PreparedAmount\";\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
+        "parentElements": [
+            "level1Spell7CastSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell7PopUpSpellListPage_value": {
+        "valueId": "level1Spell7PopUpSpellListPage_value",
+        "value": "let field = \"level1Spell7\";\nlet spell = this.readValue(field).toLowerCase();\nthis.openWindow([\"spells3_5\",spell])",
+        "parentElements": [
+            "level1Spell7PopUpSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell7Prepared": {
+        "valueId": "level1Spell7Prepared",
+        "value": "0",
+        "parentElements": [
+            "level1Spell7PreparedSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        }
+        
+        "level1SpellListPage_value": {
+        "valueId": "level1SpellListPage_value",
+        "value": "",
+        "parentElements": [
+            "level1SpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1SvgSpellListPage_value": {
+        "valueId": "level1SvgSpellListPage_value",
+        "value": "",
+        "parentElements": [
+            "level1SvgSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1TextSpellListPage_value": {
+        "valueId": "level1TextSpellListPage_value",
+        "value": "1",
+        "parentElements": [
+            "level1TextSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Max": {
+        "valueId": "level1Max",
+        "value": "",
+        "parentElements": [
+            "level1MaxSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Current": {
+        "valueId": "level1Current",
+        "value": "",
+        "parentElements": [
+            "level1CurrentSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1MinusOneSpellListPage_value": {
+        "valueId": "level1MinusOneSpellListPage_value",
+        "value": "let field = \"level1Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
+        "parentElements": [
+            "level1MinusOneSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1FillSpellListPage_value": {
+        "valueId": "level1FillSpellListPage_value",
+        "value": "let field = \"level1Current\"\nlet maxfield = 'level1Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
+        "parentElements": [
+            "level1FillSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell8": {
+        "valueId": "level1Spell8",
+        "value": "",
+        "parentElements": [
+            "level1Spell8SpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell8LineSvgSpellListPage_value": {
+        "valueId": "level1Spell8LineSvgSpellListPage_value",
+        "value": "transform: Scale(9.4,0.5)",
+        "parentElements": [
+            "level1Spell8LineSvgSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell8PreparedAmount": {
+        "valueId": "level1Spell8PreparedAmount",
+        "value": "",
+        "parentElements": [
+            "level1Spell8PreparedAmountSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell8CastSpellListPage_value": {
+        "valueId": "level1Spell8CastSpellListPage_value",
+        "value": "let field = \"level1Spell8PreparedAmount\";\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
+        "parentElements": [
+            "level1Spell8CastSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell8PopUpSpellListPage_value": {
+        "valueId": "level1Spell8PopUpSpellListPage_value",
+        "value": "let field = \"level1Spell8\";\nlet spell = this.readValue(field).toLowerCase();\nthis.openWindow([\"spells3_5\",spell])",
+        "parentElements": [
+            "level1Spell8PopUpSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        },
+        "level1Spell8Prepared": {
+        "valueId": "level1Spell8Prepared",
+        "value": "0",
+        "parentElements": [
+            "level1Spell8PreparedSpellListPage"
+        ],
+        "referencedBy": [],
+        "references": []
+        }
+}
+}

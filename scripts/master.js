@@ -1,4 +1,5 @@
 import { Editor } from "./editor/editor.js"
+import { FloatingWindow } from "./floatingWindow/floatingWindow.js"
 import { Lookup } from "./lookup/lookup.js"
 import { Root } from "./element/subclasses/root.js"
 import { Saveload } from "./saveload/saveload.js"
@@ -8,14 +9,14 @@ export class Master {
         this.saveFile = null
         this.elements = {"characterSheet": new Root(this, "characterSheet", null, null, [], 0, 0, 0, 0)}
         this.values = {}
-        this.lookups = {}
+        this.floatingWindow = null
         this.editor = null
         this.lookup = null
         this.editorActive = false
-        this.lookupActive = false
         this.populateStartup()
+        this.floatingWindow = new FloatingWindow(this)
         this.editor = new Editor(this, document.getElementById("editor"))
-        this.lookup = new Lookup(this, document.getElementById("lookup"))
+        this.lookup = new Lookup(this)
         this.saveload = new Saveload(this)
         this.drawElements()
     }
@@ -69,10 +70,9 @@ export class Master {
 
         // Enable Lookup button
         const lookupBtn = document.createElement("button");
-        lookupBtn.textContent = "Lookup";
+        lookupBtn.textContent = "Lookup Manager";
         lookupBtn.onclick = () => {
-            this.lookupActive = !this.lookupActive;
-            this.toggleLookup(this.lookupActive);
+            this.lookup?.toggleLookupManager();
         };
         toolbar.appendChild(lookupBtn);
         // =====================================
@@ -106,40 +106,6 @@ export class Master {
         layoutTree.id = "layoutTree";
         layoutTree.className = "container";
         containerWrapper.appendChild(layoutTree);
-        // =====================================
-
-        // lookup
-        // =====================================
-        const lookup = document.createElement("div");
-        lookup.id = "lookup";
-        lookup.className = "floatingContainer";
-
-        const lookupDragHandle = document.createElement("div");
-        lookupDragHandle.className = "dragHandle";
-
-        const lookupTitle = document.createElement("span");
-        lookupTitle.textContent = "Lookup";
-        lookupDragHandle.appendChild(lookupTitle);
-
-        const lookupCloseBtn = document.createElement("button");
-        lookupCloseBtn.type = "button";
-        lookupCloseBtn.textContent = "×";
-        lookupCloseBtn.style.marginLeft = "auto";
-        lookupCloseBtn.style.cursor = "pointer";
-        lookupCloseBtn.addEventListener("pointerdown", (event) => {
-            event.stopPropagation();
-        });
-        lookupCloseBtn.addEventListener("click", (event) => {
-            event.stopPropagation();
-            this.lookupActive = false;
-            lookup.classList.remove("active");
-        });
-        lookupDragHandle.appendChild(lookupCloseBtn);
-
-        lookup.appendChild(lookupDragHandle);
-
-        this.makeDraggable(lookup, lookupDragHandle);
-        containerWrapper.appendChild(lookup);
         // =====================================
 
     }
@@ -183,10 +149,6 @@ export class Master {
         return null
     }
 
-    getLookupFromKey(key) {
-
-    }
-
     loadFromFile() {
         this.saveload.loadLocalFile()
     }
@@ -207,57 +169,12 @@ export class Master {
         this.saveload.saveCurrentFileServer()
     }
 
-    makeDraggable(container, handle) {
-        let dragging = false;
-        let startX = 0;
-        let startY = 0;
-        let startLeft = 0;
-        let startTop = 0;
-
-        handle.addEventListener("pointerdown", (event) => {
-            dragging = true;
-            startX = event.clientX;
-            startY = event.clientY;
-
-            const rect = container.getBoundingClientRect();
-            startLeft = rect.left;
-            startTop = rect.top;
-
-            handle.setPointerCapture(event.pointerId);
-        });
-
-        handle.addEventListener("pointermove", (event) => {
-            if (!dragging) return;
-
-            const dx = event.clientX - startX;
-            const dy = event.clientY - startY;
-
-            const maxLeft = window.innerWidth - container.offsetWidth;
-            const maxTop = window.innerHeight - container.offsetHeight;
-
-            const nextLeft = Math.min(Math.max(0, startLeft + dx), Math.max(0, maxLeft));
-            const nextTop = Math.min(Math.max(0, startTop + dy), Math.max(0, maxTop));
-
-            container.style.left = `${nextLeft}px`;
-            container.style.top = `${nextTop}px`;
-        });
-
-        const stopDrag = (event) => {
-            if (!dragging) return;
-            dragging = false;
-            if (event && event.pointerId !== undefined) {
-                handle.releasePointerCapture(event.pointerId);
-            }
-        };
-
-        handle.addEventListener("pointerup", stopDrag);
-        handle.addEventListener("pointercancel", stopDrag);
-    }
-
     toggleEditor(enabled) {
         let editor = document.getElementById("editor")
         let layoutTree = document.getElementById("layoutTree")
         let overlay = document.getElementById("selectionOverlay")
+
+        this.editor.enabled = enabled
         
         if (enabled) {
             editor.classList.add("active")
@@ -273,16 +190,4 @@ export class Master {
             if (overlay){overlay.classList.remove("active")}
         }
     }
-
-    toggleLookup(enabled) {
-        let lookup = document.getElementById("lookup")
-
-        if (enabled) {
-            lookup.classList.add("active")
-        }
-        if (!enabled) {
-            lookup.classList.remove("active")
-        }
-    }
-
 }

@@ -1,10 +1,11 @@
 import { Element } from "../element.js"
 
 export class SingleLine extends Element {
-    constructor(master, elementId, valueId, parent, children, top, left, width, height, color, maxFontSize) {
+    constructor(master, elementId, valueId, parent, children, top, left, width, height, color, maxFontSize, textAlign) {
         super(master, elementId, valueId, parent, children, top, left, width, height)
         this.color = color ? color : "#dde4ff"
-        this.maxFontSize = maxFontSize ?? 8
+        this.maxFontSize = maxFontSize ?? 16
+        this.textAlign = ["left", "center", "right"].includes(textAlign) ? textAlign : "left"
     }
 
     draw() {
@@ -41,9 +42,14 @@ export class SingleLine extends Element {
         elementDIV.style.left = `${this.left}px`
         elementDIV.style.width = `${this.width}px`
         elementDIV.style.height = `${this.height}px`
+        elementDIV.style.userSelect = "none"
+        elementDIV.style.webkitUserSelect = "none"
 
         const textarea = document.createElement("input")
         textarea.spellcheck = false
+        const stopBubble = (event) => event.stopPropagation()
+        textarea.addEventListener("pointerdown", stopBubble)
+        textarea.addEventListener("click", stopBubble)
         textarea.style.position = "absolute"
         textarea.style.inset = "0"
         textarea.style.width = "100%"
@@ -51,8 +57,11 @@ export class SingleLine extends Element {
         textarea.style.background = this.color
         textarea.style.boxSizing = "border-box"
         textarea.style.resize = "none"
+        textarea.style.overflow = "hidden"
         textarea.style.border = "none"
         textarea.style.outline = "none"
+        textarea.style.fontFamily = "Arial, Helvetica, sans-serif"
+        textarea.style.textAlign = this.textAlign
         textarea.addEventListener("mouseenter", () => textarea.style.outline = "1px solid black")
         textarea.addEventListener("mouseleave", () => textarea.style.outline = "none")
         textarea.addEventListener("focus", () => {
@@ -65,7 +74,7 @@ export class SingleLine extends Element {
             const shouldRestoreFocus = !!(relatedElementId && this.master.getElementFromId(relatedElementId))
 
             setTimeout(() => {
-                const currentValue = this.master.getValueFromId(this.valueId)?.getValue()
+                const currentValue = this.master.getValueFromId(this.valueId)?.getDisplayValue()
                 if (nextValue !== currentValue) { this.setValue(nextValue) }
 
                 if (shouldRestoreFocus) {
@@ -81,7 +90,12 @@ export class SingleLine extends Element {
             textarea.value = this.master.getValueFromId(this.valueId).getValue()
         })
         textarea.value = this.master.getValueFromId(this.valueId).getDisplayValue()
+        textarea.addEventListener("focus", () => this.resizeText())
+        textarea.addEventListener("blur", () => this.resizeText())
+        textarea.addEventListener("change", () => this.resizeText())
+        textarea.addEventListener("input", () => this.resizeText())
         elementDIV.appendChild(textarea)
+        this.resizeText()
 
         // ======================== End =======================
 
@@ -114,6 +128,17 @@ export class SingleLine extends Element {
         this.draw()
     }
 
+    setTextAlign(textAlign) {
+        const nextAlign = (textAlign ?? "").toString().trim().toLowerCase()
+        if (!["left", "center", "right"].includes(nextAlign)) {
+            alert("textAlign must be one of: left, center, right")
+            return
+        }
+
+        this.textAlign = nextAlign
+        this.draw()
+    }
+
     getEditingOptions() {
         return [
             {name: "elementId", type: "String", value: this.elementId, function: this.setElementId.bind(this)},
@@ -121,12 +146,15 @@ export class SingleLine extends Element {
             {name: "value", type: "Multiline", value: this.master.getValueFromId(this.valueId).value, function: this.setValue.bind(this)},
             {name: "color", type: "String", value: this.color, function: this.setColor.bind(this)},
             {name: "maximum font size", type: "Int", value: this.maxFontSize, function: this.setMaxFontSize.bind(this)},
+            {name: "text align", type: "String", value: this.textAlign, function: this.setTextAlign.bind(this)},
             {name: "top", type: "Int", value: this.top, function: this.setTop.bind(this)},
             {name: "left", type: "Int", value: this.left, function: this.setLeft.bind(this)},
             {name: "width", type: "Int", value: this.width, function: this.setWidth.bind(this)},
             {name: "height", type: "Int", value: this.height, function: this.setHeight.bind(this)},
             {name: "parent", type: "String", value: this.parent, function: this.setParent.bind(this)},
             {name: "Add Child", type: "button", value: null, function: this.addChild.bind(this)},
+            {name: "Export Branch", type: "button", value: null, function: this.exportBranch.bind(this)},
+            {name: "Import Branch as Child", type: "button", value: null, function: this.importBranchAsChild.bind(this)},
             {name: "Duplicate", type: "button", value: null, function: this.duplicate.bind(this)},
             {name: "Remove Element", type: "button", value: null, function: this.remove.bind(this)},
         ]
@@ -135,10 +163,74 @@ export class SingleLine extends Element {
     toJSON() {
         return {
             ...super.toJSON(),
-            type: 'singleLine',
+            type: 'SingleLine',
             color: this.color,
             maxFontSize: this.maxFontSize,
+            textAlign: this.textAlign,
         }
+    }
+
+    resizeText() {
+        const triggeringField = this.html?.querySelector("input")
+        if (!triggeringField) {
+            return
+        }
+
+        const maxFont = Number(this.maxFont ?? this.maxFontSize)
+        if (!Number.isFinite(maxFont) || maxFont <= 0) {
+            return
+        }
+
+        const autoSizer = document.createElement("div")
+        autoSizer.id = "autoSizer"
+        autoSizer.style.setProperty("visibility", "hidden")
+        autoSizer.style.setProperty("overflow", "hidden")
+        autoSizer.style.setProperty("width", "auto")
+        autoSizer.style.setProperty("display", "inline-block")
+        autoSizer.style.setProperty("position", "fixed")
+        autoSizer.style.setProperty("left", "-10000px")
+        autoSizer.style.setProperty("top", "-10000px")
+        autoSizer.style.setProperty("white-space", "pre")
+        const computedStyle = window.getComputedStyle(triggeringField)
+        autoSizer.style.setProperty("font-family", computedStyle.fontFamily)
+        autoSizer.style.setProperty("font-weight", computedStyle.fontWeight)
+        autoSizer.style.setProperty("font-style", computedStyle.fontStyle)
+        autoSizer.style.setProperty("letter-spacing", computedStyle.letterSpacing)
+        autoSizer.style.setProperty("text-transform", computedStyle.textTransform)
+        document.body.appendChild(autoSizer)
+
+        const setSize = (size) => {
+            triggeringField.style.fontSize = `${size}px`
+            autoSizer.style.fontSize = `${size}px`
+            autoSizer.textContent = triggeringField.value?.length ? triggeringField.value : " "
+        }
+
+        const horizontalPadding = parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight)
+        const availableWidth = Math.max(0, triggeringField.clientWidth - horizontalPadding - 4)
+        const overflows = () => autoSizer.offsetWidth > availableWidth
+
+        let low = 1
+        let high = maxFont
+        let bestFit = 1
+
+        setSize(low)
+        if (!overflows()) {
+            bestFit = low
+            for (let i = 0; i < 16; i++) {
+                const mid = (low + high) / 2
+                setSize(mid)
+                if (overflows()) {
+                    high = mid
+                } else {
+                    bestFit = mid
+                    low = mid
+                }
+            }
+        }
+
+        setSize(Math.min(maxFont, bestFit))
+
+        autoSizer.remove()
     }
 
     static fromJSON(master, data) {
@@ -154,6 +246,7 @@ export class SingleLine extends Element {
             data.height,
             data.color,
             data.maxFontSize,
+            data.textAlign,
         )
     }
 }

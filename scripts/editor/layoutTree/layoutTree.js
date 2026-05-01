@@ -2,6 +2,7 @@ export class LayoutTree {
     constructor(editor, html){
         this.editor = editor
         this.html = html
+        this.expandedNodeIds = new Set(["characterSheet"])
         this.populateBase()
         this.drawTree()
     }
@@ -10,6 +11,8 @@ export class LayoutTree {
         this.html.style.display = "flex"
         this.html.style.flexDirection = "column"
         this.html.style.height = "100%"
+        this.html.style.userSelect = "none"
+        this.html.style.webkitUserSelect = "none"
 
         const headerContainer = document.createElement("div")
         headerContainer.style.width = "100%"
@@ -42,40 +45,81 @@ export class LayoutTree {
     }
 
     drawTree() {
-        const gatherTree = (elementId) => {
-            const element = this.editor.master.getElementFromId(elementId)
-            const childTree = element.children.reduce((acc, childId) => {
-                return { ...acc, ...gatherTree(childId) }
-            }, {})
-
-            return { [elementId]: childTree }
-        }
-
-        let tree = gatherTree("characterSheet")
-
         this.html.textContent = ""
-        const fragment = document.createDocumentFragment()
-
-        const drawBranch = (branch, depth) => {
-            if (!branch || Object.keys(branch).length === 0) return
-
-            for (const key of Object.keys(branch)) {
-                const row = document.createElement("div")
-                row.textContent = " • ".repeat(depth) + key
-                row.style.paddingLeft = `10px`
-                row.style.lineHeight = "24px"
-                row.style.whiteSpace = "nowrap"
-                row.style.cursor = "pointer"
-                if (key == this.editor.selectedElement) {row.style.color = "blue"}
-                row.addEventListener("click", () => this.selectElement(key))
-                fragment.appendChild(row)
-
-                drawBranch(branch[key], depth + 1)
-            }
+        const rootId = "characterSheet"
+        const rootElement = this.editor.master.getElementFromId(rootId)
+        if (!rootElement) {
+            return
         }
 
-        drawBranch(tree, 0)
-        this.html.appendChild(fragment)
+        const treeContainer = document.createElement("div")
+        treeContainer.style.fontFamily = "monospace"
+        treeContainer.style.padding = "5px"
+        this.html.appendChild(treeContainer)
+
+        const createNode = (elementId, depth = 0) => {
+            const element = this.editor.master.getElementFromId(elementId)
+            if (!element) {
+                return document.createElement("div")
+            }
+
+            const node = document.createElement("div")
+            const row = document.createElement("div")
+            row.style.paddingLeft = `${depth * 16}px`
+            row.style.whiteSpace = "pre-wrap"
+            row.style.wordBreak = "break-word"
+            row.style.cursor = "pointer"
+            row.style.userSelect = "none"
+            row.style.lineHeight = "22px"
+
+            const childIds = Array.isArray(element.children) ? element.children : []
+            const isExpandable = childIds.length > 0
+            const isOpen = this.expandedNodeIds.has(elementId)
+
+            const arrow = document.createElement("span")
+            arrow.textContent = isExpandable ? (isOpen ? "▼ " : "▶ ") : "• "
+            arrow.style.cursor = isExpandable ? "pointer" : "default"
+            row.appendChild(arrow)
+
+            const label = document.createElement("span")
+            label.textContent = elementId
+            label.style.cursor = "pointer"
+            if (elementId === this.editor.selectedElement) {
+                label.style.color = "blue"
+                label.style.fontWeight = "700"
+            }
+            row.appendChild(label)
+
+            const childrenContainer = document.createElement("div")
+            childrenContainer.style.display = isExpandable && isOpen ? "block" : "none"
+
+            for (const childId of childIds) {
+                childrenContainer.appendChild(createNode(childId, depth + 1))
+            }
+
+            arrow.addEventListener("click", (event) => {
+                event.stopPropagation()
+                if (isExpandable) {
+                    if (this.expandedNodeIds.has(elementId)) {
+                        this.expandedNodeIds.delete(elementId)
+                    } else {
+                        this.expandedNodeIds.add(elementId)
+                    }
+                }
+                this.drawTree()
+            })
+
+            label.addEventListener("click", (event) => {
+                event.stopPropagation()
+                this.selectElement(elementId)
+            })
+
+            node.appendChild(row)
+            node.appendChild(childrenContainer)
+            return node
+        }
+
+        treeContainer.appendChild(createNode(rootId, 0))
     }
 
     highlightElement(elementId) {
@@ -98,8 +142,19 @@ export class LayoutTree {
         overlay.classList.add("active")
     }
 
+    expandPathToElement(elementId) {
+        let currentId = elementId
+        while (currentId) {
+            this.expandedNodeIds.add(currentId)
+            const currentElement = this.editor.master.getElementFromId(currentId)
+            currentId = currentElement?.parent ?? null
+        }
+        this.expandedNodeIds.add("characterSheet")
+    }
+
     selectElement(elementId) {
         this.editor.selectElement(elementId)
+        this.expandPathToElement(elementId)
         this.highlightElement(elementId)
         this.drawTree()
     }

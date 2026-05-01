@@ -136,6 +136,29 @@ body > div:not(.toolbar) {
     -webkit-user-select: none;
 }
 
+.floatingContainer .floatingContent {
+    position: absolute;
+    top: 32px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.floatingContainer .resizeHandle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 16px;
+    height: 16px;
+    cursor: nwse-resize;
+    z-index: 2;
+    background:
+        linear-gradient(135deg, transparent 0 45%, #999 45% 55%, transparent 55% 100%);
+}
+
 #selectionOverlay {
   position: absolute;
   pointer-events: none;

@@ -15,7 +15,7 @@ export class Element {
     }
 
     getValue() {
-        // return this.master.getValueFromId(this.valueId).getDisplayValue()
+        return this.master.getValueFromId(this.valueId).getDisplayValue()
     }
 
     draw() {
@@ -205,7 +205,7 @@ export class Element {
         }
     }
     addChild() {
-        const typeInput = prompt("Element type (TextArea, SingleLine, Checkmark, Root):", "Frame")
+        const typeInput = prompt("Element type (TextArea, SingleLine, Checkmark, Svg, Text, Button, Page, Blank, Css, Frame):", "Frame")
         if (typeInput === null) { return }
 
         const type = (typeInput || "Element").trim()
@@ -309,20 +309,33 @@ export class Element {
                 const CHILD_ELEMENT_CLASSES = { // Add new subclasses here
                     textarea: async () => (await import("./subclasses/textArea.js")).TextArea,
                     checkmark: async () => (await import("./subclasses/checkmark.js")).Checkmark,
-                    root: async () => (await import("./subclasses/root.js")).Root,
                     singleline: async () => (await import("./subclasses/singleLine.js")).SingleLine,
+                    svg: async () => (await import("./subclasses/svg.js")).Svg,
+                    text: async () => (await import("./subclasses/text.js")).Text,
+                    button: async () => (await import("./subclasses/button.js")).Button,
+                    page: async () => (await import("./subclasses/page.js")).Page,
+                    blank: async () => (await import("./subclasses/blank.js")).Blank,
+                    css: async () => (await import("./subclasses/css.js")).Css,
+                    frame: async () => (await import("./subclasses/frame.js")).Frame,
                 }
 
                 const key = type.toLowerCase()
                 const resolver = CHILD_ELEMENT_CLASSES[key]
 
                 if (!resolver) {
-                    alert("Unknown element type. Use TextArea, Checkmark, or Root.")
+                    alert("Unknown element type. Use TextArea, SingleLine, Checkmark, Svg, Text, Button, Page, Blank, Css, or Frame.")
                     return
                 }
 
                 const SelectedClass = await resolver()
-                const specialArgs = [null, null, null, null, null]
+                let specialArgs = [null, null, null, null, null]
+                if (key === "svg") {
+                    const path = prompt("SVG path:", "")
+                    if (path === null) {
+                        return
+                    }
+                    specialArgs = [path]
+                }
 
                 finalizeAttach(new SelectedClass(
                     this.master,
@@ -345,49 +358,100 @@ export class Element {
         createElement()
     }
     duplicate(){
-        const newElementId = `${this.elementId}copy`
+        const sourceIds = []
+        const collectSubtreeIds = (elementId) => {
+            const element = this.master.elements?.[elementId]
+            if (!element) { return }
+            sourceIds.push(elementId)
+            for (const childId of Array.isArray(element.children) ? element.children : []) {
+                collectSubtreeIds(childId)
+            }
+        }
+        collectSubtreeIds(this.elementId)
 
-        if (this.master.elements && this.master.elements[newElementId]) {
-            alert(`elementId already exists: ${newElementId}`)
+        if (sourceIds.length === 0) {
+            alert("could not duplicate element subtree")
             return
         }
 
-        const cloneData = this.toJSON()
-        cloneData.elementId = newElementId
-        cloneData.children = []
+        const existingIds = new Set(Object.keys(this.master.elements ?? {}))
+        const allocatedIds = new Set()
 
-        let newElement
-        if (typeof this.constructor.fromJSON === "function") {
-            newElement = this.constructor.fromJSON(this.master, cloneData)
-        } else {
-            newElement = Element.fromJSON(this.master, cloneData)
+        const makeCopyId = (oldId) => {
+            const base = `${oldId}Copy`
+            let candidate = base
+            let counter = 2
+
+            while (existingIds.has(candidate) || allocatedIds.has(candidate)) {
+                candidate = `${base}${counter}`
+                counter += 1
+            }
+
+            allocatedIds.add(candidate)
+            return candidate
         }
 
-        this.master.elements[newElementId] = newElement
+        const idMap = {}
+        for (const oldId of sourceIds) {
+            idMap[oldId] = makeCopyId(oldId)
+        }
 
-        if (newElement.parent) {
-            const parentElement = this.master.getElementFromId(newElement.parent)
+        const createdElements = {}
+        for (const oldId of sourceIds) {
+            const sourceElement = this.master.elements?.[oldId]
+            if (!sourceElement) { continue }
+
+            const cloneData = sourceElement.toJSON()
+            cloneData.elementId = idMap[oldId]
+            cloneData.parent = oldId === this.elementId
+                ? this.parent
+                : (idMap[sourceElement.parent] ?? sourceElement.parent)
+            cloneData.children = (Array.isArray(sourceElement.children) ? sourceElement.children : [])
+                .map((childId) => idMap[childId])
+                .filter(Boolean)
+
+            const SourceClass = sourceElement.constructor
+            let clonedElement
+            if (SourceClass && typeof SourceClass.fromJSON === "function") {
+                clonedElement = SourceClass.fromJSON(this.master, cloneData)
+            } else {
+                clonedElement = Element.fromJSON(this.master, cloneData)
+            }
+
+            createdElements[cloneData.elementId] = clonedElement
+        }
+
+        for (const [newId, newElement] of Object.entries(createdElements)) {
+            this.master.elements[newId] = newElement
+        }
+
+        const duplicatedRootId = idMap[this.elementId]
+        if (this.parent) {
+            const parentElement = this.master.getElementFromId(this.parent)
             if (parentElement) {
                 if (!Array.isArray(parentElement.children)) {
                     parentElement.children = []
                 }
-                if (!parentElement.children.includes(newElementId)) {
-                    parentElement.children.push(newElementId)
+                if (!parentElement.children.includes(duplicatedRootId)) {
+                    parentElement.children.push(duplicatedRootId)
                 }
             }
         }
 
-        if (newElement.valueId) {
+        for (const newElement of Object.values(createdElements)) {
+            if (!newElement.valueId) { continue }
             const valueObj = this.master.getValueFromId(newElement.valueId)
-            if (valueObj && typeof valueObj.addParent === "function") {
-                valueObj.addParent(newElementId)
+            if (!valueObj) { continue }
+
+            if (typeof valueObj.addParent === "function") {
+                valueObj.addParent(newElement.elementId)
+            } else if (Array.isArray(valueObj.parentElements) && !valueObj.parentElements.includes(newElement.elementId)) {
+                valueObj.parentElements.push(newElement.elementId)
             }
         }
 
         if (typeof this.master.drawElements === "function") {
             this.master.drawElements()
-        } else {
-            newElement.draw()
         }
 
         if (this.master.editor?.layoutTree && typeof this.master.editor.layoutTree.drawTree === "function") {
@@ -395,7 +459,7 @@ export class Element {
         }
 
         if (this.master.editor && typeof this.master.editor.selectElement === "function") {
-            this.master.editor.selectElement(newElementId)
+            this.master.editor.selectElement(duplicatedRootId)
         }
     }
     _removeInternal(shouldRedraw = true) {
@@ -505,6 +569,262 @@ export class Element {
         document.body.appendChild(overlay)
     }
 
+    _collectBranchElementIds(rootElementId = this.elementId) {
+        const collectedIds = []
+        const visit = (elementId) => {
+            const element = this.master.elements?.[elementId]
+            if (!element) { return }
+            collectedIds.push(elementId)
+            for (const childId of Array.isArray(element.children) ? element.children : []) {
+                visit(childId)
+            }
+        }
+        visit(rootElementId)
+        return collectedIds
+    }
+
+    _buildBranchExportData(rootElementId = this.elementId) {
+        const elementIds = this._collectBranchElementIds(rootElementId)
+        const usedValueIds = new Set()
+
+        const elements = {}
+        for (const elementId of elementIds) {
+            const element = this.master.elements?.[elementId]
+            if (!element || typeof element.toJSON !== "function") { continue }
+            elements[elementId] = element.toJSON()
+            if (element.valueId) {
+                usedValueIds.add(element.valueId)
+            }
+        }
+
+        const values = {}
+        for (const valueId of usedValueIds) {
+            const value = this.master.values?.[valueId]
+            if (!value || typeof value.toJSON !== "function") { continue }
+            values[valueId] = value.toJSON()
+        }
+
+        return {
+            elements,
+            values,
+        }
+    }
+
+    exportBranch() {
+        const exportData = this._buildBranchExportData(this.elementId)
+        const content = JSON.stringify(exportData, null, 2)
+        const blob = new Blob([content], { type: "application/json" })
+        const url = URL.createObjectURL(blob)
+
+        const a = document.createElement("a")
+        a.href = url
+        a.download = `${this.elementId}-branch.branch`
+        document.body.appendChild(a)
+        a.click()
+        a.remove()
+
+        URL.revokeObjectURL(url)
+    }
+
+    _makeUniqueId(baseId, takenIds) {
+        let candidate = baseId
+        let suffix = 2
+        while (takenIds.has(candidate)) {
+            candidate = `${baseId}${suffix}`
+            suffix += 1
+        }
+        takenIds.add(candidate)
+        return candidate
+    }
+
+    _makeImportId(baseId, takenIds) {
+        if (!takenIds.has(baseId)) {
+            takenIds.add(baseId)
+            return baseId
+        }
+        return this._makeUniqueId(`${baseId}Import`, takenIds)
+    }
+
+    async _resolveElementClass(type) {
+        const key = (type ?? "Element").toString().trim().toLowerCase()
+        const CLASS_LOADERS = {
+            element: async () => Element,
+            root: async () => (await import("./subclasses/root.js")).Root,
+            textarea: async () => (await import("./subclasses/textArea.js")).TextArea,
+            checkmark: async () => (await import("./subclasses/checkmark.js")).Checkmark,
+            singleline: async () => (await import("./subclasses/singleLine.js")).SingleLine,
+            svg: async () => (await import("./subclasses/svg.js")).Svg,
+            text: async () => (await import("./subclasses/text.js")).Text,
+            button: async () => (await import("./subclasses/button.js")).Button,
+            page: async () => (await import("./subclasses/page.js")).Page,
+            blank: async () => (await import("./subclasses/blank.js")).Blank,
+            css: async () => (await import("./subclasses/css.js")).Css,
+            frame: async () => (await import("./subclasses/frame.js")).Frame,
+        }
+
+        const loader = CLASS_LOADERS[key] ?? CLASS_LOADERS.element
+        return loader()
+    }
+
+    _rebuildAllValueReferences() {
+        const allValues = Object.values(this.master.values ?? {})
+
+        for (const value of allValues) {
+            value.references = []
+            value.referencedBy = []
+            value.tempReferences = []
+        }
+
+        for (const value of allValues) {
+            try {
+                value.tempReferences = []
+                value.getDisplayValue({ stack: [], collectReferences: true })
+                value.updateReferences()
+            } catch (error) {
+                console.warn(`could not rebuild references for valueId: ${value.valueId}`, error)
+            }
+        }
+    }
+
+    async importBranchAsChild() {
+        const input = document.createElement("input")
+        input.type = "file"
+        input.accept = ".branch,.char,.json,application/json,text/json"
+
+        const selectedFile = await new Promise((resolve) => {
+            input.addEventListener("change", () => {
+                resolve(input.files?.[0] ?? null)
+            }, { once: true })
+            input.click()
+        })
+
+        if (!selectedFile) { return }
+
+        try {
+            const text = await selectedFile.text()
+            const parsed = JSON.parse(text)
+
+            const elementsData = parsed?.elements ?? {}
+            const valuesData = parsed?.values ?? {}
+            const elementIds = Object.keys(elementsData)
+            if (elementIds.length === 0) {
+                alert("No elements found in imported branch file")
+                return
+            }
+
+            let sourceRootId = parsed?.rootElementId
+            if (!sourceRootId || !elementsData[sourceRootId]) {
+                sourceRootId = elementIds.find((id) => {
+                    const parentId = elementsData[id]?.parent
+                    return !parentId || !(parentId in elementsData)
+                }) ?? elementIds[0]
+            }
+
+            const takenElementIds = new Set(Object.keys(this.master.elements ?? {}))
+            const elementIdMap = {}
+            for (const oldId of elementIds) {
+                elementIdMap[oldId] = this._makeImportId(oldId, takenElementIds)
+            }
+
+            const takenValueIds = new Set(Object.keys(this.master.values ?? {}))
+            const valueIdMap = {}
+            for (const oldValueId of Object.keys(valuesData)) {
+                valueIdMap[oldValueId] = this._makeImportId(oldValueId, takenValueIds)
+            }
+
+            const importedValues = {}
+            for (const [oldValueId, valueData] of Object.entries(valuesData)) {
+                const newValueId = valueIdMap[oldValueId]
+                const mappedParents = (Array.isArray(valueData?.parentElements) ? valueData.parentElements : [])
+                    .map((parentId) => elementIdMap[parentId])
+                    .filter(Boolean)
+
+                importedValues[newValueId] = new Value(
+                    this.master,
+                    newValueId,
+                    valueData?.value ?? "",
+                    mappedParents,
+                    [],
+                    [],
+                )
+            }
+
+            const createdElements = {}
+            for (const oldElementId of elementIds) {
+                const elementData = elementsData[oldElementId]
+                const ElementClass = await this._resolveElementClass(elementData?.type)
+
+                const mappedElementId = elementIdMap[oldElementId]
+                const mappedParent = oldElementId === sourceRootId
+                    ? this.elementId
+                    : (elementIdMap[elementData?.parent] ?? this.elementId)
+                const mappedChildren = (Array.isArray(elementData?.children) ? elementData.children : [])
+                    .map((childId) => elementIdMap[childId])
+                    .filter(Boolean)
+                const mappedValueId = elementData?.valueId
+                    ? (valueIdMap[elementData.valueId] ?? elementData.valueId)
+                    : null
+
+                const cloneData = {
+                    ...elementData,
+                    elementId: mappedElementId,
+                    parent: mappedParent,
+                    children: mappedChildren,
+                    valueId: mappedValueId,
+                }
+
+                const created = (typeof ElementClass.fromJSON === "function")
+                    ? ElementClass.fromJSON(this.master, cloneData)
+                    : Element.fromJSON(this.master, cloneData)
+
+                createdElements[mappedElementId] = created
+            }
+
+            for (const [newValueId, value] of Object.entries(importedValues)) {
+                this.master.values[newValueId] = value
+            }
+
+            for (const [newElementId, element] of Object.entries(createdElements)) {
+                this.master.elements[newElementId] = element
+            }
+
+            const importedRootId = elementIdMap[sourceRootId]
+            if (!Array.isArray(this.children)) {
+                this.children = []
+            }
+            if (!this.children.includes(importedRootId)) {
+                this.children.push(importedRootId)
+            }
+
+            for (const element of Object.values(createdElements)) {
+                if (!element.valueId) { continue }
+                const valueObj = this.master.getValueFromId(element.valueId)
+                if (!valueObj) { continue }
+                if (!Array.isArray(valueObj.parentElements)) {
+                    valueObj.parentElements = []
+                }
+                if (!valueObj.parentElements.includes(element.elementId)) {
+                    valueObj.parentElements.push(element.elementId)
+                }
+            }
+
+            this._rebuildAllValueReferences()
+
+            if (typeof this.master.drawElements === "function") {
+                this.master.drawElements()
+            }
+            if (this.master.editor?.layoutTree && typeof this.master.editor.layoutTree.drawTree === "function") {
+                this.master.editor.layoutTree.drawTree()
+            }
+            if (this.master.editor && typeof this.master.editor.selectElement === "function") {
+                this.master.editor.selectElement(importedRootId)
+            }
+        } catch (error) {
+            console.error("Could not import branch", error)
+            alert("Could not import branch. Check console for details.")
+        }
+    }
+
     getEditingOptions() {
         return [
             {name: "elementId", type: "String", value: this.elementId, function: this.setElementId.bind(this)},
@@ -516,6 +836,8 @@ export class Element {
             {name: "height", type: "Int", value: this.height, function: this.setHeight.bind(this)},
             {name: "parent", type: "String", value: this.parent, function: this.setParent.bind(this)},
             {name: "Add Child", type: "button", value: null, function: this.addChild.bind(this)},
+            {name: "Export Branch", type: "button", value: null, function: this.exportBranch.bind(this)},
+            {name: "Import Branch as Child", type: "button", value: null, function: this.importBranchAsChild.bind(this)},
             {name: "Duplicate", type: "button", value: null, function: this.duplicate.bind(this)},
             {name: "Remove Element", type: "button", value: null, function: this.remove.bind(this)}
         ]

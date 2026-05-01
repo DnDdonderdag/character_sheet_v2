@@ -1,20 +1,14 @@
 import { Element } from "../element.js"
 
-// Things to change Checklist:
-// Class name
-// draw
-// getEditingOptions
-// Functions added from editingOptions
-// toJson
-// fromJson
-// elementTypeMap in loadFile in Saveload
-// import in SaveLoad
-// add elementtype to element.addChild (list and prompt)
-
-
-export class subclassTemplate extends Element {
-    constructor(master, elementId, valueId, parent, children, top, left, width, height) {
+export class ImageHolder extends Element {
+    constructor(master, elementId, valueId, parent, children, top, left, width, height, imageString) {
         super(master, elementId, valueId, parent, children, top, left, width, height)
+        this.imageString = (imageString ?? "").toString()
+    }
+
+    setImageString(newImageString) {
+        this.imageString = (newImageString ?? "").toString()
+        this.draw()
     }
 
     draw() {
@@ -54,9 +48,47 @@ export class subclassTemplate extends Element {
         elementDIV.style.height = `${this.height}px`
         elementDIV.style.userSelect = "none"
         elementDIV.style.webkitUserSelect = "none"
+        elementDIV.style.cursor = "pointer"
 
-        elementDIV.textContent = this.master.getValueFromId(this.valueId).getDisplayValue()
+        elementDIV.addEventListener("click", (event) => {
+            event.stopPropagation()
 
+            const input = document.createElement("input")
+            input.type = "file"
+            input.accept = "image/*"
+
+            input.addEventListener("change", () => {
+                const file = input.files?.[0]
+                if (!file) { return }
+
+                const reader = new FileReader()
+                reader.onload = () => {
+                    const encodedImage = typeof reader.result === "string" ? reader.result : ""
+                    if (!encodedImage) { return }
+                    this.setImageString(encodedImage)
+                }
+                reader.onerror = () => {
+                    alert("Could not read selected image")
+                }
+                reader.readAsDataURL(file)
+            }, { once: true })
+
+            input.click()
+        })
+        const imageValue = this.imageString
+
+        if (imageValue) {
+            const safeUrl = imageValue.replace(/"/g, "\\\"")
+            elementDIV.style.backgroundImage = `url("${safeUrl}")`
+            elementDIV.style.backgroundSize = "contain"
+            elementDIV.style.backgroundRepeat = "no-repeat"
+            elementDIV.style.backgroundPosition = "center center"
+        } else {
+            elementDIV.style.backgroundImage = "none"
+        }
+
+
+        
 
         // ======================== End =======================
 
@@ -65,14 +97,12 @@ export class subclassTemplate extends Element {
             if (element) {element.draw()}
             else {console.log("could not draw element with elementId" + elementId)}
         }
-
     }
 
     getEditingOptions() {
         return [
             {name: "elementId", type: "String", value: this.elementId, function: this.setElementId.bind(this)},
-            {name: "valueId", type: "String", value: this.valueId, function: this.setValueId.bind(this)},
-            {name: "value", type: "Multiline", value: this.master.getValueFromId(this.valueId).value, function: this.setValue.bind(this)},
+            {name: "image string", type: "Multiline", value: this.imageString, function: this.setImageString.bind(this)},
             {name: "top", type: "Int", value: this.top, function: this.setTop.bind(this)},
             {name: "left", type: "Int", value: this.left, function: this.setLeft.bind(this)},
             {name: "width", type: "Int", value: this.width, function: this.setWidth.bind(this)},
@@ -89,13 +119,13 @@ export class subclassTemplate extends Element {
     toJSON() {
         return {
             ...super.toJSON(),
-            type: this.constructor.name, // Set type
-            // Add other parameters here
+            type: this.constructor.name,
+            imageString: this.imageString,
         }
     }
 
     static fromJSON(master, data) {
-        return new subclassTemplate( // And change this one
+        return new ImageHolder(
             master,
             data.elementId,
             data.valueId,
@@ -105,7 +135,7 @@ export class subclassTemplate extends Element {
             data.left,
             data.width,
             data.height,
-            // Add other parameters here
+            data.imageString,
         )
     }
 }

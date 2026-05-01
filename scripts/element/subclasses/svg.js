@@ -12,9 +12,10 @@ import { Element } from "../element.js"
 // add elementtype to element.addChild (list and prompt)
 
 
-export class subclassTemplate extends Element {
-    constructor(master, elementId, valueId, parent, children, top, left, width, height) {
+export class Svg extends Element {
+    constructor(master, elementId, valueId, parent, children, top, left, width, height, path) {
         super(master, elementId, valueId, parent, children, top, left, width, height)
+        this.path = path ?? ""
     }
 
     draw() {
@@ -55,7 +56,52 @@ export class subclassTemplate extends Element {
         elementDIV.style.userSelect = "none"
         elementDIV.style.webkitUserSelect = "none"
 
-        elementDIV.textContent = this.master.getValueFromId(this.valueId).getDisplayValue()
+        elementDIV.textContent = ""
+
+        const svgImg = document.createElement("img")
+        svgImg.alt = this.path || "svg"
+        svgImg.draggable = false
+        svgImg.style.position = "absolute"
+        svgImg.style.inset = "0"
+        svgImg.style.width = "100%"
+        svgImg.style.height = "100%"
+        svgImg.style.objectFit = "contain"
+        svgImg.style.pointerEvents = "none"
+        svgImg.style.userSelect = "none"
+        svgImg.style.webkitUserSelect = "none"
+
+        const normalizedPath = (this.path ?? "").toString().trim().replace(/^\/+/, "")
+        svgImg.src = `../../../assets/svg/${normalizedPath}`
+
+
+        const cssText = this.master.getValueFromId(this.valueId)?.getDisplayValue?.() ?? ""
+
+        // Optional: remove previously applied dynamic props
+        if (!Array.isArray(this._dynamicCssProps)) {
+            this._dynamicCssProps = []
+        }
+        for (const prop of this._dynamicCssProps) {
+            elementDIV.style.removeProperty(prop)
+        }
+        this._dynamicCssProps = []
+
+        // Parse safely using a temp element
+        const parser = document.createElement("div")
+        parser.style.cssText = cssText
+
+        // Optional protect layout-owned props
+        const blocked = new Set(["position", "top", "left", "width", "height"])
+
+        // Apply parsed declarations
+        for (const prop of parser.style) {
+            if (blocked.has(prop)) continue
+            const value = parser.style.getPropertyValue(prop)
+            const priority = parser.style.getPropertyPriority(prop) // handles !important
+            elementDIV.style.setProperty(prop, value, priority)
+            this._dynamicCssProps.push(prop)
+        }
+
+        elementDIV.appendChild(svgImg)
 
 
         // ======================== End =======================
@@ -72,7 +118,8 @@ export class subclassTemplate extends Element {
         return [
             {name: "elementId", type: "String", value: this.elementId, function: this.setElementId.bind(this)},
             {name: "valueId", type: "String", value: this.valueId, function: this.setValueId.bind(this)},
-            {name: "value", type: "Multiline", value: this.master.getValueFromId(this.valueId).value, function: this.setValue.bind(this)},
+            {name: "value (added css)", type: "Multiline", value: this.master.getValueFromId(this.valueId).value, function: this.setValue.bind(this)},
+            {name: "SVG path", type: "String", value: this.path, function: this.setPath.bind(this)},
             {name: "top", type: "Int", value: this.top, function: this.setTop.bind(this)},
             {name: "left", type: "Int", value: this.left, function: this.setLeft.bind(this)},
             {name: "width", type: "Int", value: this.width, function: this.setWidth.bind(this)},
@@ -86,16 +133,25 @@ export class subclassTemplate extends Element {
         ]
     }
 
+    setPath(path) {
+        let nextPath = (path ?? "").toString().trim()
+        if (nextPath && !nextPath.toLowerCase().endsWith(".svg")) {
+            nextPath += ".svg"
+        }
+        this.path = nextPath
+        this.draw()
+    }
+
     toJSON() {
         return {
             ...super.toJSON(),
-            type: this.constructor.name, // Set type
-            // Add other parameters here
+            type: "Svg",
+            path: this.path,
         }
     }
 
     static fromJSON(master, data) {
-        return new subclassTemplate( // And change this one
+        return new Svg(
             master,
             data.elementId,
             data.valueId,
@@ -105,7 +161,7 @@ export class subclassTemplate extends Element {
             data.left,
             data.width,
             data.height,
-            // Add other parameters here
+            data.path,
         )
     }
 }

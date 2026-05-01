@@ -41,7 +41,10 @@ export class Root extends Element {
     }
 
     getEditingOptions() {
-        return [{name: "Add Child", type: "button", value: null, function: this.addChild.bind(this)},]
+        return [
+            {name: "Add Child", type: "button", value: null, function: this.addChild.bind(this)},
+            {name: "Import Branch as Child", type: "button", value: null, function: this.importBranchAsChild.bind(this)},
+        ]
     }
 
     toJSON() {

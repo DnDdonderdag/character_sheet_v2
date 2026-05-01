@@ -3,9 +3,9 @@ export class Value {
         this.master = master
         this.valueId = valueId // Must be unique
         this.value = value
-        this.parentElements = parentElements
-        this.referencedBy = referencedBy
-        this.references = references
+        this.parentElements = [...new Set(Array.isArray(parentElements) ? parentElements : [])]
+        this.referencedBy = [...new Set(Array.isArray(referencedBy) ? referencedBy : [])]
+        this.references = [...new Set(Array.isArray(references) ? references : [])]
         this.tempReferences = []
     }
 
@@ -54,11 +54,13 @@ export class Value {
                 (text, index) => index === 0 || text[index - 1] !== "\\",
                 // must have two command letters after @
                 (text, index) => index + 2 < text.length,
-                // must be closed later with /xx
+                // must be followed by opening parenthesis
+                (text, index) => text[index + 3] === "(",
+                // must be closed later with )xx
                 (text, index) => {
-                    const cmd = text.slice(index, index + 3)
-                    const closingToken = `/${cmd.slice(1)}`
-                    return text.indexOf(closingToken, index + 3) !== -1
+                    const cmd = text.slice(index + 1, index + 3)
+                    const closingToken = `)${cmd}`
+                    return text.indexOf(closingToken, index + 4) !== -1
                 },
             ]
 
@@ -84,8 +86,8 @@ export class Value {
             }
 
             let command = displayVal.slice(lastAtIndex,lastAtIndex+3)
-            let closingToken = `/${command.slice(1)}`
-            let argStartIndex = lastAtIndex + 3
+            let closingToken = `)${command.slice(1)}`
+            let argStartIndex = lastAtIndex + 4
             let argEndIndex = displayVal.indexOf(closingToken, argStartIndex)
             let arg = displayVal.slice(argStartIndex,argEndIndex)
             let result
@@ -127,7 +129,9 @@ export class Value {
     }
 
     addParent(elementId) {
-        this.parentElements.push(elementId)
+        if (!this.parentElements.includes(elementId)) {
+            this.parentElements.push(elementId)
+        }
     }
 
     save() {
@@ -186,9 +190,9 @@ export class Value {
         return {
             valueId: this.valueId,
             value: this.value,
-            parentElements: Array.isArray(this.parentElements) ? [...this.parentElements] : [],
-            referencedBy: Array.isArray(this.referencedBy) ? [...this.referencedBy] : [],
-            references: Array.isArray(this.references) ? [...this.references] : [],
+            parentElements: [...new Set(Array.isArray(this.parentElements) ? this.parentElements : [])],
+            referencedBy: [...new Set(Array.isArray(this.referencedBy) ? this.referencedBy : [])],
+            references: [...new Set(Array.isArray(this.references) ? this.references : [])],
         }
     }
 
@@ -217,7 +221,8 @@ function jsFunc(arg, valueElement) {
 }
 
 function luFunc(arg, valueElement){
-    return "i am looked up"
+    let keyset = arg.split(",")
+    return valueElement.master.lookup.formatLookupFromKeyset(keyset)
 }
 
 function srFunc(arg, valueElement, evalContext){

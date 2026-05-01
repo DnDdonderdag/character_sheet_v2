@@ -1,20 +1,9 @@
 import { Element } from "../element.js"
 
-// Things to change Checklist:
-// Class name
-// draw
-// getEditingOptions
-// Functions added from editingOptions
-// toJson
-// fromJson
-// elementTypeMap in loadFile in Saveload
-// import in SaveLoad
-// add elementtype to element.addChild (list and prompt)
-
-
-export class subclassTemplate extends Element {
-    constructor(master, elementId, valueId, parent, children, top, left, width, height) {
+export class Page extends Element {
+    constructor(master, elementId, valueId, parent, children, top, left, width, height, backgroundColor) {
         super(master, elementId, valueId, parent, children, top, left, width, height)
+        this.backgroundColor = (backgroundColor ?? "").toString().trim() || "white"
     }
 
     draw() {
@@ -54,9 +43,7 @@ export class subclassTemplate extends Element {
         elementDIV.style.height = `${this.height}px`
         elementDIV.style.userSelect = "none"
         elementDIV.style.webkitUserSelect = "none"
-
-        elementDIV.textContent = this.master.getValueFromId(this.valueId).getDisplayValue()
-
+        elementDIV.style.background = this.backgroundColor
 
         // ======================== End =======================
 
@@ -73,29 +60,40 @@ export class subclassTemplate extends Element {
             {name: "elementId", type: "String", value: this.elementId, function: this.setElementId.bind(this)},
             {name: "valueId", type: "String", value: this.valueId, function: this.setValueId.bind(this)},
             {name: "value", type: "Multiline", value: this.master.getValueFromId(this.valueId).value, function: this.setValue.bind(this)},
+            {name: "background color", type: "String", value: this.backgroundColor, function: this.setBackgroundColor.bind(this)},
             {name: "top", type: "Int", value: this.top, function: this.setTop.bind(this)},
             {name: "left", type: "Int", value: this.left, function: this.setLeft.bind(this)},
             {name: "width", type: "Int", value: this.width, function: this.setWidth.bind(this)},
             {name: "height", type: "Int", value: this.height, function: this.setHeight.bind(this)},
             {name: "parent", type: "String", value: this.parent, function: this.setParent.bind(this)},
             {name: "Add Child", type: "button", value: null, function: this.addChild.bind(this)},
-            {name: "Export Branch", type: "button", value: null, function: this.exportBranch.bind(this)},
-            {name: "Import Branch as Child", type: "button", value: null, function: this.importBranchAsChild.bind(this)},
+                {name: "Export Branch", type: "button", value: null, function: this.exportBranch.bind(this)},
+                {name: "Import Branch as Child", type: "button", value: null, function: this.importBranchAsChild.bind(this)},
             {name: "Duplicate", type: "button", value: null, function: this.duplicate.bind(this)},
             {name: "Remove Element", type: "button", value: null, function: this.remove.bind(this)}
         ]
     }
 
+    setBackgroundColor(backgroundColor) {
+        const nextColor = (backgroundColor ?? "").toString().trim()
+        if (!nextColor) {
+            this.backgroundColor = "white"
+        } else {
+            this.backgroundColor = CSS.supports("color", nextColor) ? nextColor : "white"
+        }
+        this.draw()
+    }
+
     toJSON() {
         return {
             ...super.toJSON(),
-            type: this.constructor.name, // Set type
-            // Add other parameters here
+            type: "Page",
+            backgroundColor: this.backgroundColor,
         }
     }
 
     static fromJSON(master, data) {
-        return new subclassTemplate( // And change this one
+        return new Page(
             master,
             data.elementId,
             data.valueId,
@@ -105,7 +103,7 @@ export class subclassTemplate extends Element {
             data.left,
             data.width,
             data.height,
-            // Add other parameters here
+            data.backgroundColor,
         )
     }
 }

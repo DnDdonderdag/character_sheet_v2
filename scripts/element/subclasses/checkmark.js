@@ -50,11 +50,15 @@ export class Checkmark extends Element {
         mark.style.top = "50%"
         mark.style.left = "50%"
         mark.style.transform = "translate(-50%, -50%)"
+        mark.style.userSelect = "none"
+        mark.style.webkitUserSelect = "none"
+        elementDIV.style.border = "none"
+        elementDIV.style.boxShadow = "none"
 
 
         if (this.style == "circle") {
             elementDIV.style.borderRadius = "50%"
-            elementDIV.style.border = "1px black solid"
+            elementDIV.style.boxShadow = "inset 0 0 0 1px black"
             mark.style.width = "90%"
             mark.style.height = "90%"
             mark.style.borderRadius = "50%"
@@ -63,7 +67,8 @@ export class Checkmark extends Element {
             mark.style.width = "80%"
             mark.style.height = "80%"
             mark.style.clipPath = "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)"
-            elementDIV.style.border = "1px black solid"
+            mark.style.background = "black"
+            elementDIV.style.boxShadow = "inset 0 0 0 1px black"
         }
         elementDIV.style.background = this.color
         elementDIV.style.top = `${this.top}px`
@@ -71,6 +76,22 @@ export class Checkmark extends Element {
         elementDIV.style.width = `${this.width}px`
         elementDIV.style.height = `${this.height}px`
         elementDIV.style.cursor = "pointer"
+        elementDIV.style.userSelect = "none"
+        elementDIV.style.webkitUserSelect = "none"
+        elementDIV.style.outline = "1px solid transparent"
+
+        const updateDirectHoverOutline = (event) => {
+            const hoveredNode = document.elementFromPoint(event.clientX, event.clientY)
+            const hoveredDiv = hoveredNode?.closest?.("div[id]")
+            const isDirectlyHovered = hoveredDiv?.id === this.elementId
+            elementDIV.style.outline = isDirectlyHovered ? "1px solid black" : "1px solid transparent"
+        }
+
+        elementDIV.addEventListener("mouseenter", updateDirectHoverOutline)
+        elementDIV.addEventListener("mousemove", updateDirectHoverOutline)
+        elementDIV.addEventListener("mouseleave", () => {
+            elementDIV.style.outline = "1px solid transparent"
+        })
 
         let value = this.master.getValueFromId(this.valueId).getDisplayValue()
         let toggledOn
@@ -79,7 +100,8 @@ export class Checkmark extends Element {
 
         mark.style.display = toggledOn ? "block" : "none"
 
-        const handleClick = () => {
+        const handleClick = (event) => {
+            event.stopPropagation()
             this.setValue(toggledOn ? this.stateOff : this.stateOn)
             if (toggledOn) {
                 this.master.getValueFromId(this.valueId).setValue(this.stateOff)
@@ -115,6 +137,9 @@ export class Checkmark extends Element {
             {name: "checkmark color", type: "String", value: this.color, function: this.setColor.bind(this)},
             {name: "'on' state value", type: "String", value: this.stateOn, function: this.setstateOn.bind(this)},
             {name: "'off' state value", type: "String", value: this.stateOff, function: this.setstateOff.bind(this)},
+            {name: "parent", type: "String", value: this.parent, function: this.setParent.bind(this)},
+                {name: "Export Branch", type: "button", value: null, function: this.exportBranch.bind(this)},
+                {name: "Import Branch as Child", type: "button", value: null, function: this.importBranchAsChild.bind(this)},
             {name: "Add Child", type: "button", value: null, function: this.addChild.bind(this)},
             {name: "Duplicate", type: "button", value: null, function: this.duplicate.bind(this)},
             {name: "Remove Element", type: "button", value: null, function: this.remove.bind(this)}

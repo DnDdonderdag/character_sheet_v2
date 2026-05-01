@@ -1,18 +1,6 @@
 import { Element } from "../element.js"
 
-// Things to change Checklist:
-// Class name
-// draw
-// getEditingOptions
-// Functions added from editingOptions
-// toJson
-// fromJson
-// elementTypeMap in loadFile in Saveload
-// import in SaveLoad
-// add elementtype to element.addChild (list and prompt)
-
-
-export class subclassTemplate extends Element {
+export class Blank extends Element {
     constructor(master, elementId, valueId, parent, children, top, left, width, height) {
         super(master, elementId, valueId, parent, children, top, left, width, height)
     }
@@ -55,9 +43,6 @@ export class subclassTemplate extends Element {
         elementDIV.style.userSelect = "none"
         elementDIV.style.webkitUserSelect = "none"
 
-        elementDIV.textContent = this.master.getValueFromId(this.valueId).getDisplayValue()
-
-
         // ======================== End =======================
 
         for (const elementId of this.children) {
@@ -89,13 +74,12 @@ export class subclassTemplate extends Element {
     toJSON() {
         return {
             ...super.toJSON(),
-            type: this.constructor.name, // Set type
-            // Add other parameters here
+            type: this.constructor.name,
         }
     }
 
     static fromJSON(master, data) {
-        return new subclassTemplate( // And change this one
+        return new Blank(
             master,
             data.elementId,
             data.valueId,
@@ -105,7 +89,6 @@ export class subclassTemplate extends Element {
             data.left,
             data.width,
             data.height,
-            // Add other parameters here
         )
     }
 }
