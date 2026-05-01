@@ -8,7 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-const port = 3000;
+const port = 5004;
 
 function loadUsersFromFile(filePath) {
   try {
