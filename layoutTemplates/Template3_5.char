@@ -5546,7 +5546,7 @@
     "initiativeLookupPage": {
       "type": "Frame",
       "elementId": "initiativeLookupPage",
-      "valueId": "initiativeImport",
+      "valueId": "initiative",
       "parent": "healthBevelledBoxLookupPage",
       "children": [],
       "top": 150,
@@ -5563,7 +5563,7 @@
     "speedLookupPage": {
       "type": "Frame",
       "elementId": "speedLookupPage",
-      "valueId": "speedImport",
+      "valueId": "speed",
       "parent": "healthBevelledBoxLookupPage",
       "children": [],
       "top": 150,
@@ -5580,7 +5580,7 @@
     "hpFrameLookupPage": {
       "type": "Frame",
       "elementId": "hpFrameLookupPage",
-      "valueId": "hpFrameStatsPage_valueImport",
+      "valueId": "hpFrameStatsPage_value",
       "parent": "healthBevelledBoxLookupPage",
       "children": [
         "hpMaximumTextLookupPage",
@@ -5588,7 +5588,8 @@
         "currentHpTextLookupPage",
         "currentHpLookupPage",
         "nonlethalLookupPage",
-        "currentHpTextLookupPageCopy"
+        "nonlethalTextLookupPage",
+        "healButtonLookupPage"
       ],
       "top": 215,
       "left": 10,
@@ -5604,7 +5605,7 @@
     "hpMaximumTextLookupPage": {
       "type": "Text",
       "elementId": "hpMaximumTextLookupPage",
-      "valueId": "hpMaximumText_valueImport",
+      "valueId": "hpMaximumText_value",
       "parent": "hpFrameLookupPage",
       "children": [],
       "top": 9,
@@ -5619,12 +5620,12 @@
     "hpMaximumLookupPage": {
       "type": "SingleLine",
       "elementId": "hpMaximumLookupPage",
-      "valueId": "maxHpImport",
+      "valueId": "maxHp",
       "parent": "hpFrameLookupPage",
       "children": [],
       "top": 7,
       "left": 95,
-      "width": 85,
+      "width": 55,
       "height": 12,
       "color": "#dde4ff",
       "maxFontSize": 10,
@@ -5648,7 +5649,7 @@
     "currentHpLookupPage": {
       "type": "SingleLine",
       "elementId": "currentHpLookupPage",
-      "valueId": "currentHpImport",
+      "valueId": "currentHp",
       "parent": "hpFrameLookupPage",
       "children": [],
       "top": 20,
@@ -5662,7 +5663,7 @@
     "nonlethalLookupPage": {
       "type": "SingleLine",
       "elementId": "nonlethalLookupPage",
-      "valueId": "nonlethalDamageImport",
+      "valueId": "nonlethalDamage",
       "parent": "hpFrameLookupPage",
       "children": [],
       "top": 20,
@@ -5673,25 +5674,10 @@
       "maxFontSize": 25,
       "textAlign": "center"
     },
-    "currentHpTextLookupPageCopy": {
-      "type": "Text",
-      "elementId": "currentHpTextLookupPageCopy",
-      "valueId": "nonlethalTextLookupPage_value",
-      "parent": "hpFrameLookupPage",
-      "children": [],
-      "top": 67,
-      "left": 95,
-      "width": 85,
-      "height": 8,
-      "fontSize": 8,
-      "font": "scalasans",
-      "color": "black",
-      "alignment": "center"
-    },
     "acSvgLookupPage": {
       "type": "Svg",
       "elementId": "acSvgLookupPage",
-      "valueId": "acSvgImport",
+      "valueId": "acSvg",
       "parent": "healthBevelledBoxLookupPage",
       "children": [
         "acLookupPage",
@@ -5706,7 +5692,7 @@
     "acLookupPage": {
       "type": "SingleLine",
       "elementId": "acLookupPage",
-      "valueId": "acImport",
+      "valueId": "ac",
       "parent": "acSvgLookupPage",
       "children": [],
       "top": 10,
@@ -5720,7 +5706,7 @@
     "acTextLookupPage": {
       "type": "Text",
       "elementId": "acTextLookupPage",
-      "valueId": "acTextStatsPage_valueImport",
+      "valueId": "acTextStatsPage_value",
       "parent": "acSvgLookupPage",
       "children": [],
       "top": 35,
@@ -6022,16 +6008,16 @@
         "chargedAbilityNameTextLookupPageCopy",
         "chargedAbilitieChargesTextLookupPage",
         "chargedAbilityMax1LookupPage",
-        "attackBonus1LookupPageCopy",
+        "chargedAbilityName1LookupPage",
         "charges1LookupPage",
         "chargedAbilityMax2LookupPage",
-        "attackBonus2LookupPageCopy",
+        "chargedAbilityName2LookupPage",
         "charges2LookupPage",
         "chargedAbilityMax3LookupPage",
-        "attackBonus3LookupPageCopy",
+        "chargedAbilityName3LookupPage",
         "charges3LookupPage",
         "chargedAbilityMax4LookupPage",
-        "attackBonus4LookupPageCopy",
+        "chargedAbilityName4LookupPage",
         "charges4LookupPage",
         "chargedAbilitiesPlusOne1LookupPage",
         "chargedAbilitiesPlusOne2LookupPage",
@@ -6046,7 +6032,7 @@
         "chargedAbilitiesFill3LookupPage",
         "chargedAbilitiesFill4LookupPage",
         "chargedAbilityMax5LookupPage",
-        "attackBonus5LookupPage",
+        "chargedAbilityName5LookupPage",
         "chargedAbilitiesPlusOne5LookupPage5",
         "chargedAbilitiesMinusOne5LookupPage",
         "charges5LookupPage",
@@ -6122,20 +6108,6 @@
       "maxFontSize": 16,
       "textAlign": "center"
     },
-    "attackBonus1LookupPageCopy": {
-      "type": "SingleLine",
-      "elementId": "attackBonus1LookupPageCopy",
-      "valueId": "attackBonus1Import",
-      "parent": "chargedAbilitiesFrameLookupPage",
-      "children": [],
-      "top": 14,
-      "left": 31,
-      "width": 70,
-      "height": 20,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "left"
-    },
     "charges1LookupPage": {
       "type": "SingleLine",
       "elementId": "charges1LookupPage",
@@ -6163,20 +6135,6 @@
       "color": "#dde4ff",
       "maxFontSize": 16,
       "textAlign": "center"
-    },
-    "attackBonus2LookupPageCopy": {
-      "type": "SingleLine",
-      "elementId": "attackBonus2LookupPageCopy",
-      "valueId": "attackBonus2Import",
-      "parent": "chargedAbilitiesFrameLookupPage",
-      "children": [],
-      "top": 35,
-      "left": 31,
-      "width": 70,
-      "height": 20,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "left"
     },
     "charges2LookupPage": {
       "type": "SingleLine",
@@ -6206,20 +6164,6 @@
       "maxFontSize": 16,
       "textAlign": "center"
     },
-    "attackBonus3LookupPageCopy": {
-      "type": "SingleLine",
-      "elementId": "attackBonus3LookupPageCopy",
-      "valueId": "attackBonus3Import",
-      "parent": "chargedAbilitiesFrameLookupPage",
-      "children": [],
-      "top": 56,
-      "left": 31,
-      "width": 70,
-      "height": 20,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "left"
-    },
     "charges3LookupPage": {
       "type": "SingleLine",
       "elementId": "charges3LookupPage",
@@ -6247,20 +6191,6 @@
       "color": "#dde4ff",
       "maxFontSize": 16,
       "textAlign": "center"
-    },
-    "attackBonus4LookupPageCopy": {
-      "type": "SingleLine",
-      "elementId": "attackBonus4LookupPageCopy",
-      "valueId": "attackBonus4",
-      "parent": "chargedAbilitiesFrameLookupPage",
-      "children": [],
-      "top": 77,
-      "left": 31,
-      "width": 70,
-      "height": 20,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "left"
     },
     "charges4LookupPage": {
       "type": "SingleLine",
@@ -6493,20 +6423,6 @@
       "color": "#dde4ff",
       "maxFontSize": 16,
       "textAlign": "center"
-    },
-    "attackBonus5LookupPage": {
-      "type": "SingleLine",
-      "elementId": "attackBonus5LookupPage",
-      "valueId": "attackBonus5",
-      "parent": "chargedAbilitiesFrameLookupPage",
-      "children": [],
-      "top": 98,
-      "left": 31,
-      "width": 70,
-      "height": 20,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "left"
     },
     "chargedAbilitiesPlusOne5LookupPage5": {
       "type": "Button",
@@ -23827,7 +23743,7 @@
         "characterDescriptionBackstoryPage"
       ],
       "top": 910,
-      "left": 640,
+      "left": 1275,
       "width": 630,
       "height": 900,
       "backgroundColor": "white"
@@ -24228,36 +24144,2262 @@
       "textAlign": "left",
       "inputType": "textArea"
     },
+    "chargedAbilityName1LookupPage": {
+      "type": "SingleLine",
+      "elementId": "chargedAbilityName1LookupPage",
+      "valueId": "chargedAbilityName1",
+      "parent": "chargedAbilitiesFrameLookupPage",
+      "children": [],
+      "top": 14,
+      "left": 31,
+      "width": 70,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "chargedAbilityName2LookupPage": {
+      "type": "SingleLine",
+      "elementId": "chargedAbilityName2LookupPage",
+      "valueId": "chargedAbilityName2",
+      "parent": "chargedAbilitiesFrameLookupPage",
+      "children": [],
+      "top": 35,
+      "left": 31,
+      "width": 70,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "chargedAbilityName3LookupPage": {
+      "type": "SingleLine",
+      "elementId": "chargedAbilityName3LookupPage",
+      "valueId": "chargedAbilityName3",
+      "parent": "chargedAbilitiesFrameLookupPage",
+      "children": [],
+      "top": 56,
+      "left": 31,
+      "width": 70,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "chargedAbilityName4LookupPage": {
+      "type": "SingleLine",
+      "elementId": "chargedAbilityName4LookupPage",
+      "valueId": "chargedAbilityName4",
+      "parent": "chargedAbilitiesFrameLookupPage",
+      "children": [],
+      "top": 77,
+      "left": 31,
+      "width": 70,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "chargedAbilityName5LookupPage": {
+      "type": "SingleLine",
+      "elementId": "chargedAbilityName5LookupPage",
+      "valueId": "chargedAbilityName5",
+      "parent": "chargedAbilitiesFrameLookupPage",
+      "children": [],
+      "top": 98,
+      "left": 31,
+      "width": 70,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
     "notesPage1": {
       "type": "Page",
       "elementId": "notesPage1",
       "valueId": "notesPage1_value",
       "parent": "characterSheet",
       "children": [
-        "notes1NotesPage1"
+        "modifiers1FrameNotesPage",
+        "modifiers2FrameNotesPage",
+        "locationsNotesPage",
+        "npcsNotesPage",
+        "questsNotesPage"
       ],
       "top": 910,
-      "left": 1275,
+      "left": 640,
       "width": 630,
       "height": 900,
       "backgroundColor": "white"
     },
-    "notes1NotesPage1": {
+    "modifiers1FrameNotesPage": {
       "type": "Frame",
-      "elementId": "notes1NotesPage1",
-      "valueId": "notes1",
+      "elementId": "modifiers1FrameNotesPage",
+      "valueId": "modifiers1FrameNotesPage_value",
       "parent": "notesPage1",
-      "children": [],
+      "children": [
+        "allSkillsNotesPage",
+        "allSavesNotesPage",
+        "allAttacksNotesPage",
+        "allDamageNotesPage"
+      ],
       "top": 5,
       "left": 5,
       "width": 620,
-      "height": 885,
-      "title": "NOTES",
+      "height": 169,
+      "title": "MODIFIERS",
+      "content": "false",
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left",
+      "inputType": "textArea"
+    },
+    "allSkillsNotesPage": {
+      "type": "Frame",
+      "elementId": "allSkillsNotesPage",
+      "valueId": "allSkillsNotesPage_value",
+      "parent": "modifiers1FrameNotesPage",
+      "children": [
+        "allSkills1NotesPage",
+        "allSkills2NotesPage",
+        "allSkills3NotesPage",
+        "allSkills4NotesPage",
+        "allSkills5NotesPage",
+        "allSkills6NotesPage"
+      ],
+      "top": 5,
+      "left": 10,
+      "width": 142,
+      "height": 146,
+      "title": "ALL SKILLS",
+      "content": "false",
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left",
+      "inputType": "textArea"
+    },
+    "allSkills1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSkills1NotesPage",
+      "valueId": "allSkills1NotesPage_value",
+      "parent": "allSkillsNotesPage",
+      "children": [
+        "allSkillsVal1NotesPage"
+      ],
+      "top": 5,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allSkillsVal1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSkillsVal1NotesPage",
+      "valueId": "allSkillsVal1",
+      "parent": "allSkills1NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allSkills2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSkills2NotesPage",
+      "valueId": "allSkills2NotesPage_value",
+      "parent": "allSkillsNotesPage",
+      "children": [
+        "allSkillsVal2NotesPage"
+      ],
+      "top": 26,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allSkillsVal2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSkillsVal2NotesPage",
+      "valueId": "allSkillsVal2",
+      "parent": "allSkills2NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allSkills3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSkills3NotesPage",
+      "valueId": "allSkills3NotesPage_value",
+      "parent": "allSkillsNotesPage",
+      "children": [
+        "allSkillsVal3NotesPage"
+      ],
+      "top": 47,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allSkillsVal3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSkillsVal3NotesPage",
+      "valueId": "allSkillsVal3",
+      "parent": "allSkills3NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allSkills4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSkills4NotesPage",
+      "valueId": "allSkills4NotesPage_value",
+      "parent": "allSkillsNotesPage",
+      "children": [
+        "allSkillsVal4NotesPage"
+      ],
+      "top": 68,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allSkillsVal4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSkillsVal4NotesPage",
+      "valueId": "allSkillsVal4",
+      "parent": "allSkills4NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allSkills5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSkills5NotesPage",
+      "valueId": "allSkills5NotesPage_value",
+      "parent": "allSkillsNotesPage",
+      "children": [
+        "allSkillsVal5NotesPage"
+      ],
+      "top": 89,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allSkillsVal5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSkillsVal5NotesPage",
+      "valueId": "allSkillsVal5",
+      "parent": "allSkills5NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allSkills6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSkills6NotesPage",
+      "valueId": "allSkills6NotesPage_value",
+      "parent": "allSkillsNotesPage",
+      "children": [
+        "allSkillsVal6NotesPage"
+      ],
+      "top": 110,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allSkillsVal6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSkillsVal6NotesPage",
+      "valueId": "allSkills",
+      "parent": "allSkills6NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allSavesNotesPage": {
+      "type": "Frame",
+      "elementId": "allSavesNotesPage",
+      "valueId": "allSavesNotesPage_value",
+      "parent": "modifiers1FrameNotesPage",
+      "children": [
+        "allSaves1NotesPage",
+        "allSaves2NotesPage",
+        "allSaves3NotesPage",
+        "allSaves4NotesPage",
+        "allSaves5NotesPage",
+        "allSaves6NotesPage"
+      ],
+      "top": 5,
+      "left": 163,
+      "width": 142,
+      "height": 146,
+      "title": "ALL SAVES",
+      "content": "false",
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left",
+      "inputType": "textArea"
+    },
+    "allSaves1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSaves1NotesPage",
+      "valueId": "allSaves1NotesPage_value",
+      "parent": "allSavesNotesPage",
+      "children": [
+        "allSavesVal1NotesPage"
+      ],
+      "top": 5,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allSavesVal1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSavesVal1NotesPage",
+      "valueId": "allSavesVal1",
+      "parent": "allSaves1NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allSaves2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSaves2NotesPage",
+      "valueId": "allSaves2NotesPage_value",
+      "parent": "allSavesNotesPage",
+      "children": [
+        "allSavesVal2NotesPage"
+      ],
+      "top": 26,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allSavesVal2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSavesVal2NotesPage",
+      "valueId": "allSavesVal2",
+      "parent": "allSaves2NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allSaves3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSaves3NotesPage",
+      "valueId": "allSaves3NotesPage_value",
+      "parent": "allSavesNotesPage",
+      "children": [
+        "allSavesVal3NotesPage"
+      ],
+      "top": 47,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allSavesVal3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSavesVal3NotesPage",
+      "valueId": "allSavesVal3",
+      "parent": "allSaves3NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allSaves4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSaves4NotesPage",
+      "valueId": "allSaves4NotesPage_value",
+      "parent": "allSavesNotesPage",
+      "children": [
+        "allSavesVal4NotesPage"
+      ],
+      "top": 68,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allSavesVal4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSavesVal4NotesPage",
+      "valueId": "allSavesVal4",
+      "parent": "allSaves4NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allSaves5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSaves5NotesPage",
+      "valueId": "allSaves5NotesPage_value",
+      "parent": "allSavesNotesPage",
+      "children": [
+        "allSavesVal5NotesPage"
+      ],
+      "top": 89,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allSavesVal5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSavesVal5NotesPage",
+      "valueId": "allSavesVal5",
+      "parent": "allSaves5NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allSaves6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSaves6NotesPage",
+      "valueId": "allSaves6NotesPage_value",
+      "parent": "allSavesNotesPage",
+      "children": [
+        "allSavesVal6NotesPage"
+      ],
+      "top": 110,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allSavesVal6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allSavesVal6NotesPage",
+      "valueId": "allSaves",
+      "parent": "allSaves6NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allAttacksNotesPage": {
+      "type": "Frame",
+      "elementId": "allAttacksNotesPage",
+      "valueId": "allAttacksNotesPage_value",
+      "parent": "modifiers1FrameNotesPage",
+      "children": [
+        "allAttacks1NotesPage",
+        "allAttacks2NotesPage",
+        "allAttacks3NotesPage",
+        "allAttacks4NotesPage",
+        "allAttacks5NotesPage",
+        "allAttacks6NotesPage"
+      ],
+      "top": 5,
+      "left": 315,
+      "width": 142,
+      "height": 146,
+      "title": "ALL ATTACKS",
+      "content": "false",
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left",
+      "inputType": "textArea"
+    },
+    "allAttacks1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allAttacks1NotesPage",
+      "valueId": "allAttacks1NotesPage_value",
+      "parent": "allAttacksNotesPage",
+      "children": [
+        "allAttacksVal1NotesPage"
+      ],
+      "top": 5,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allAttacksVal1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allAttacksVal1NotesPage",
+      "valueId": "allAttacksVal1",
+      "parent": "allAttacks1NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allAttacks2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allAttacks2NotesPage",
+      "valueId": "allAttacks2NotesPage_value",
+      "parent": "allAttacksNotesPage",
+      "children": [
+        "allAttacksVal2NotesPage"
+      ],
+      "top": 26,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allAttacksVal2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allAttacksVal2NotesPage",
+      "valueId": "allAttacksVal2",
+      "parent": "allAttacks2NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allAttacks3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allAttacks3NotesPage",
+      "valueId": "allAttacks3NotesPage_value",
+      "parent": "allAttacksNotesPage",
+      "children": [
+        "allAttacksVal3NotesPage"
+      ],
+      "top": 47,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allAttacksVal3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allAttacksVal3NotesPage",
+      "valueId": "allAttacksVal3",
+      "parent": "allAttacks3NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allAttacks4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allAttacks4NotesPage",
+      "valueId": "allAttacks4NotesPage_value",
+      "parent": "allAttacksNotesPage",
+      "children": [
+        "allAttacksVal4NotesPage"
+      ],
+      "top": 68,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allAttacksVal4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allAttacksVal4NotesPage",
+      "valueId": "allAttacksVal4",
+      "parent": "allAttacks4NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allAttacks5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allAttacks5NotesPage",
+      "valueId": "allAttacks5NotesPage_value",
+      "parent": "allAttacksNotesPage",
+      "children": [
+        "allAttacksVal5NotesPage"
+      ],
+      "top": 89,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allAttacksVal5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allAttacksVal5NotesPage",
+      "valueId": "allAttacksVal5",
+      "parent": "allAttacks5NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allAttacks6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allAttacks6NotesPage",
+      "valueId": "allAttacks6NotesPage_value",
+      "parent": "allAttacksNotesPage",
+      "children": [
+        "allAttacksVal6NotesPage"
+      ],
+      "top": 110,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allAttacksVal6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allAttacksVal6NotesPage",
+      "valueId": "allAttacks",
+      "parent": "allAttacks6NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allDamageNotesPage": {
+      "type": "Frame",
+      "elementId": "allDamageNotesPage",
+      "valueId": "allDamageNotesPage_value",
+      "parent": "modifiers1FrameNotesPage",
+      "children": [
+        "allDamage1NotesPage",
+        "allDamage2NotesPage",
+        "allDamage3NotesPage",
+        "allDamage4NotesPage",
+        "allDamage5NotesPage",
+        "allDamage6NotesPage"
+      ],
+      "top": 5,
+      "left": 468,
+      "width": 142,
+      "height": 146,
+      "title": "ALL DAMAGE",
+      "content": "false",
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left",
+      "inputType": "textArea"
+    },
+    "allDamage1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allDamage1NotesPage",
+      "valueId": "allDamage1NotesPage_value",
+      "parent": "allDamageNotesPage",
+      "children": [
+        "allDamageVal1NotesPage"
+      ],
+      "top": 5,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allDamageVal1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allDamageVal1NotesPage",
+      "valueId": "allDamageVal1",
+      "parent": "allDamage1NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allDamage2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allDamage2NotesPage",
+      "valueId": "allDamage2NotesPage_value",
+      "parent": "allDamageNotesPage",
+      "children": [
+        "allDamageVal2NotesPage"
+      ],
+      "top": 26,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allDamageVal2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allDamageVal2NotesPage",
+      "valueId": "allDamageVal2",
+      "parent": "allDamage2NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allDamage3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allDamage3NotesPage",
+      "valueId": "allDamage3NotesPage_value",
+      "parent": "allDamageNotesPage",
+      "children": [
+        "allDamageVal3NotesPage"
+      ],
+      "top": 47,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allDamageVal3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allDamageVal3NotesPage",
+      "valueId": "allDamageVal3",
+      "parent": "allDamage3NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allDamage4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allDamage4NotesPage",
+      "valueId": "allDamage4NotesPage_value",
+      "parent": "allDamageNotesPage",
+      "children": [
+        "allDamageVal4NotesPage"
+      ],
+      "top": 68,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allDamageVal4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allDamageVal4NotesPage",
+      "valueId": "allDamageVal4",
+      "parent": "allDamage4NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allDamage5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allDamage5NotesPage",
+      "valueId": "allDamage5NotesPage_value",
+      "parent": "allDamageNotesPage",
+      "children": [
+        "allDamageVal5NotesPage"
+      ],
+      "top": 89,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allDamageVal5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allDamageVal5NotesPage",
+      "valueId": "allDamageVal5",
+      "parent": "allDamage5NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "allDamage6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allDamage6NotesPage",
+      "valueId": "allDamage6NotesPage_value",
+      "parent": "allDamageNotesPage",
+      "children": [
+        "allDamageVal6NotesPage"
+      ],
+      "top": 110,
+      "left": 10,
+      "width": 92,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "allDamageVal6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "allDamageVal6NotesPage",
+      "valueId": "allDamage",
+      "parent": "allDamage6NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 93,
+      "width": 29,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "modifiers2FrameNotesPage": {
+      "type": "Frame",
+      "elementId": "modifiers2FrameNotesPage",
+      "valueId": "modifiers2FrameNotesPage_value",
+      "parent": "notesPage1",
+      "children": [
+        "strengthNotesPage",
+        "dexterityNotesPage",
+        "constitutionNotesPage",
+        "intelligenceNotesPage",
+        "wisdomNotesPage",
+        "charismaNotesPage"
+      ],
+      "top": 184,
+      "left": 5,
+      "width": 620,
+      "height": 169,
+      "title": "MODIFIERS",
+      "content": "false",
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left",
+      "inputType": "textArea"
+    },
+    "strengthNotesPage": {
+      "type": "Frame",
+      "elementId": "strengthNotesPage",
+      "valueId": "strengthNotesPage_value",
+      "parent": "modifiers2FrameNotesPage",
+      "children": [
+        "strength1NotesPage",
+        "strength2NotesPage",
+        "strength3NotesPage",
+        "strength4NotesPage",
+        "strength5NotesPage",
+        "strength6NotesPage"
+      ],
+      "top": 5,
+      "left": 10,
+      "width": 91,
+      "height": 146,
+      "title": "STRENGTH",
+      "content": "false",
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left",
+      "inputType": "textArea"
+    },
+    "strength1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "strength1NotesPage",
+      "valueId": "strength1NotesPage_value",
+      "parent": "strengthNotesPage",
+      "children": [
+        "strengthVal1NotesPage"
+      ],
+      "top": 5,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "strengthVal1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "strengthVal1NotesPage",
+      "valueId": "strengthVal1",
+      "parent": "strength1NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "strength2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "strength2NotesPage",
+      "valueId": "strength2NotesPage_value",
+      "parent": "strengthNotesPage",
+      "children": [
+        "strengthVal2NotesPage"
+      ],
+      "top": 26,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "strengthVal2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "strengthVal2NotesPage",
+      "valueId": "strengthVal2",
+      "parent": "strength2NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "strength3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "strength3NotesPage",
+      "valueId": "strength3NotesPage_value",
+      "parent": "strengthNotesPage",
+      "children": [
+        "strengthVal3NotesPage"
+      ],
+      "top": 47,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "strengthVal3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "strengthVal3NotesPage",
+      "valueId": "strengthVal3",
+      "parent": "strength3NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "strength4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "strength4NotesPage",
+      "valueId": "strength4NotesPage_value",
+      "parent": "strengthNotesPage",
+      "children": [
+        "strengthVal4NotesPage"
+      ],
+      "top": 68,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "strengthVal4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "strengthVal4NotesPage",
+      "valueId": "strengthVal4",
+      "parent": "strength4NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "strength5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "strength5NotesPage",
+      "valueId": "strength5NotesPage_value",
+      "parent": "strengthNotesPage",
+      "children": [
+        "strengthVal5NotesPage"
+      ],
+      "top": 89,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "strengthVal5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "strengthVal5NotesPage",
+      "valueId": "strengthVal5",
+      "parent": "strength5NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "strength6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "strength6NotesPage",
+      "valueId": "strength6NotesPage_value",
+      "parent": "strengthNotesPage",
+      "children": [
+        "strengthVal6NotesPage"
+      ],
+      "top": 110,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "strengthVal6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "strengthVal6NotesPage",
+      "valueId": "STRbonus",
+      "parent": "strength6NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "dexterityNotesPage": {
+      "type": "Frame",
+      "elementId": "dexterityNotesPage",
+      "valueId": "dexterityNotesPage_value",
+      "parent": "modifiers2FrameNotesPage",
+      "children": [
+        "dexterity1NotesPage",
+        "dexterity2NotesPage",
+        "dexterity3NotesPage",
+        "dexterity4NotesPage",
+        "dexterity5NotesPage",
+        "dexterity6NotesPage"
+      ],
+      "top": 5,
+      "left": 112,
+      "width": 91,
+      "height": 146,
+      "title": "DEXTERITY",
+      "content": "false",
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left",
+      "inputType": "textArea"
+    },
+    "dexterity1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "dexterity1NotesPage",
+      "valueId": "dexterity1NotesPage_value",
+      "parent": "dexterityNotesPage",
+      "children": [
+        "dexterityVal1NotesPage"
+      ],
+      "top": 5,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "dexterityVal1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "dexterityVal1NotesPage",
+      "valueId": "dexterityVal1",
+      "parent": "dexterity1NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "dexterity2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "dexterity2NotesPage",
+      "valueId": "dexterity2NotesPage_value",
+      "parent": "dexterityNotesPage",
+      "children": [
+        "dexterityVal2NotesPage"
+      ],
+      "top": 26,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "dexterityVal2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "dexterityVal2NotesPage",
+      "valueId": "dexterityVal2",
+      "parent": "dexterity2NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "dexterity3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "dexterity3NotesPage",
+      "valueId": "dexterity3NotesPage_value",
+      "parent": "dexterityNotesPage",
+      "children": [
+        "dexterityVal3NotesPage"
+      ],
+      "top": 47,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "dexterityVal3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "dexterityVal3NotesPage",
+      "valueId": "dexterityVal3",
+      "parent": "dexterity3NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "dexterity4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "dexterity4NotesPage",
+      "valueId": "dexterity4NotesPage_value",
+      "parent": "dexterityNotesPage",
+      "children": [
+        "dexterityVal4NotesPage"
+      ],
+      "top": 68,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "dexterityVal4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "dexterityVal4NotesPage",
+      "valueId": "dexterityVal4",
+      "parent": "dexterity4NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "dexterity5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "dexterity5NotesPage",
+      "valueId": "dexterity5NotesPage_value",
+      "parent": "dexterityNotesPage",
+      "children": [
+        "dexterityVal5NotesPage"
+      ],
+      "top": 89,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "dexterityVal5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "dexterityVal5NotesPage",
+      "valueId": "dexterityVal5",
+      "parent": "dexterity5NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "dexterity6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "dexterity6NotesPage",
+      "valueId": "dexterity6NotesPage_value",
+      "parent": "dexterityNotesPage",
+      "children": [
+        "dexterityVal6NotesPage"
+      ],
+      "top": 110,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "dexterityVal6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "dexterityVal6NotesPage",
+      "valueId": "DEXbonus",
+      "parent": "dexterity6NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "constitutionNotesPage": {
+      "type": "Frame",
+      "elementId": "constitutionNotesPage",
+      "valueId": "constitutionNotesPage_value",
+      "parent": "modifiers2FrameNotesPage",
+      "children": [
+        "constitution1NotesPage",
+        "constitution2NotesPage",
+        "constitution3NotesPage",
+        "constitution4NotesPage",
+        "constitution5NotesPage",
+        "constitution6NotesPage"
+      ],
+      "top": 5,
+      "left": 214,
+      "width": 91,
+      "height": 146,
+      "title": "CONSTITUTION",
+      "content": "false",
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left",
+      "inputType": "textArea"
+    },
+    "constitution1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "constitution1NotesPage",
+      "valueId": "constitution1NotesPage_value",
+      "parent": "constitutionNotesPage",
+      "children": [
+        "constitutionVal1NotesPage"
+      ],
+      "top": 5,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "constitutionVal1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "constitutionVal1NotesPage",
+      "valueId": "constitutionVal1",
+      "parent": "constitution1NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "constitution2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "constitution2NotesPage",
+      "valueId": "constitution2NotesPage_value",
+      "parent": "constitutionNotesPage",
+      "children": [
+        "constitutionVal2NotesPage"
+      ],
+      "top": 26,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "constitutionVal2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "constitutionVal2NotesPage",
+      "valueId": "constitutionVal2",
+      "parent": "constitution2NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "constitution3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "constitution3NotesPage",
+      "valueId": "constitution3NotesPage_value",
+      "parent": "constitutionNotesPage",
+      "children": [
+        "constitutionVal3NotesPage"
+      ],
+      "top": 47,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "constitutionVal3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "constitutionVal3NotesPage",
+      "valueId": "constitutionVal3",
+      "parent": "constitution3NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "constitution4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "constitution4NotesPage",
+      "valueId": "constitution4NotesPage_value",
+      "parent": "constitutionNotesPage",
+      "children": [
+        "constitutionVal4NotesPage"
+      ],
+      "top": 68,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "constitutionVal4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "constitutionVal4NotesPage",
+      "valueId": "constitutionVal4",
+      "parent": "constitution4NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "constitution5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "constitution5NotesPage",
+      "valueId": "constitution5NotesPage_value",
+      "parent": "constitutionNotesPage",
+      "children": [
+        "constitutionVal5NotesPage"
+      ],
+      "top": 89,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "constitutionVal5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "constitutionVal5NotesPage",
+      "valueId": "constitutionVal5",
+      "parent": "constitution5NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "constitution6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "constitution6NotesPage",
+      "valueId": "constitution6NotesPage_value",
+      "parent": "constitutionNotesPage",
+      "children": [
+        "constitutionVal6NotesPage"
+      ],
+      "top": 110,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "constitutionVal6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "constitutionVal6NotesPage",
+      "valueId": "CONbonus",
+      "parent": "constitution6NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "intelligenceNotesPage": {
+      "type": "Frame",
+      "elementId": "intelligenceNotesPage",
+      "valueId": "intelligenceNotesPage_value",
+      "parent": "modifiers2FrameNotesPage",
+      "children": [
+        "intelligence1NotesPage",
+        "intelligence2NotesPage",
+        "intelligence3NotesPage",
+        "intelligence4NotesPage",
+        "intelligence5NotesPage",
+        "intelligence6NotesPage"
+      ],
+      "top": 5,
+      "left": 315,
+      "width": 91,
+      "height": 146,
+      "title": "INTELLIGENCE",
+      "content": "false",
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left",
+      "inputType": "textArea"
+    },
+    "intelligence1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "intelligence1NotesPage",
+      "valueId": "intelligence1NotesPage_value",
+      "parent": "intelligenceNotesPage",
+      "children": [
+        "intelligenceVal1NotesPage"
+      ],
+      "top": 5,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "intelligenceVal1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "intelligenceVal1NotesPage",
+      "valueId": "intelligenceVal1",
+      "parent": "intelligence1NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "intelligence2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "intelligence2NotesPage",
+      "valueId": "intelligence2NotesPage_value",
+      "parent": "intelligenceNotesPage",
+      "children": [
+        "intelligenceVal2NotesPage"
+      ],
+      "top": 26,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "intelligenceVal2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "intelligenceVal2NotesPage",
+      "valueId": "intelligenceVal2",
+      "parent": "intelligence2NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "intelligence3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "intelligence3NotesPage",
+      "valueId": "intelligence3NotesPage_value",
+      "parent": "intelligenceNotesPage",
+      "children": [
+        "intelligenceVal3NotesPage"
+      ],
+      "top": 47,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "intelligenceVal3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "intelligenceVal3NotesPage",
+      "valueId": "intelligenceVal3",
+      "parent": "intelligence3NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "intelligence4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "intelligence4NotesPage",
+      "valueId": "intelligence4NotesPage_value",
+      "parent": "intelligenceNotesPage",
+      "children": [
+        "intelligenceVal4NotesPage"
+      ],
+      "top": 68,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "intelligenceVal4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "intelligenceVal4NotesPage",
+      "valueId": "intelligenceVal4",
+      "parent": "intelligence4NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "intelligence5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "intelligence5NotesPage",
+      "valueId": "intelligence5NotesPage_value",
+      "parent": "intelligenceNotesPage",
+      "children": [
+        "intelligenceVal5NotesPage"
+      ],
+      "top": 89,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "intelligenceVal5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "intelligenceVal5NotesPage",
+      "valueId": "intelligenceVal5",
+      "parent": "intelligence5NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "intelligence6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "intelligence6NotesPage",
+      "valueId": "intelligence6NotesPage_value",
+      "parent": "intelligenceNotesPage",
+      "children": [
+        "intelligenceVal6NotesPage"
+      ],
+      "top": 110,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "intelligenceVal6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "intelligenceVal6NotesPage",
+      "valueId": "INTbonus",
+      "parent": "intelligence6NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "wisdomNotesPage": {
+      "type": "Frame",
+      "elementId": "wisdomNotesPage",
+      "valueId": "wisdomNotesPage_value",
+      "parent": "modifiers2FrameNotesPage",
+      "children": [
+        "wisdom1NotesPage",
+        "wisdom2NotesPage",
+        "wisdom3NotesPage",
+        "wisdom4NotesPage",
+        "wisdom5NotesPage",
+        "wisdom6NotesPage"
+      ],
+      "top": 5,
+      "left": 417,
+      "width": 91,
+      "height": 146,
+      "title": "WISDOM",
+      "content": "false",
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left",
+      "inputType": "textArea"
+    },
+    "wisdom1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "wisdom1NotesPage",
+      "valueId": "wisdom1NotesPage_value",
+      "parent": "wisdomNotesPage",
+      "children": [
+        "wisdomVal1NotesPage"
+      ],
+      "top": 5,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "wisdomVal1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "wisdomVal1NotesPage",
+      "valueId": "wisdomVal1",
+      "parent": "wisdom1NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "wisdom2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "wisdom2NotesPage",
+      "valueId": "wisdom2NotesPage_value",
+      "parent": "wisdomNotesPage",
+      "children": [
+        "wisdomVal2NotesPage"
+      ],
+      "top": 26,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "wisdomVal2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "wisdomVal2NotesPage",
+      "valueId": "wisdomVal2",
+      "parent": "wisdom2NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "wisdom3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "wisdom3NotesPage",
+      "valueId": "wisdom3NotesPage_value",
+      "parent": "wisdomNotesPage",
+      "children": [
+        "wisdomVal3NotesPage"
+      ],
+      "top": 47,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "wisdomVal3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "wisdomVal3NotesPage",
+      "valueId": "wisdomVal3",
+      "parent": "wisdom3NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "wisdom4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "wisdom4NotesPage",
+      "valueId": "wisdom4NotesPage_value",
+      "parent": "wisdomNotesPage",
+      "children": [
+        "wisdomVal4NotesPage"
+      ],
+      "top": 68,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "wisdomVal4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "wisdomVal4NotesPage",
+      "valueId": "wisdomVal4",
+      "parent": "wisdom4NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "wisdom5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "wisdom5NotesPage",
+      "valueId": "wisdom5NotesPage_value",
+      "parent": "wisdomNotesPage",
+      "children": [
+        "wisdomVal5NotesPage"
+      ],
+      "top": 89,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "wisdomVal5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "wisdomVal5NotesPage",
+      "valueId": "wisdomVal5",
+      "parent": "wisdom5NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "wisdom6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "wisdom6NotesPage",
+      "valueId": "wisdom6NotesPage_value",
+      "parent": "wisdomNotesPage",
+      "children": [
+        "wisdomVal6NotesPage"
+      ],
+      "top": 110,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "wisdomVal6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "wisdomVal6NotesPage",
+      "valueId": "WISbonus",
+      "parent": "wisdom6NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "charismaNotesPage": {
+      "type": "Frame",
+      "elementId": "charismaNotesPage",
+      "valueId": "charismaNotesPage_value",
+      "parent": "modifiers2FrameNotesPage",
+      "children": [
+        "charisma1NotesPage",
+        "charisma2NotesPage",
+        "charisma3NotesPage",
+        "charisma4NotesPage",
+        "charisma5NotesPage",
+        "charisma6NotesPage"
+      ],
+      "top": 5,
+      "left": 519,
+      "width": 91,
+      "height": 146,
+      "title": "CHARISMA",
+      "content": "false",
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left",
+      "inputType": "textArea"
+    },
+    "charisma1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "charisma1NotesPage",
+      "valueId": "charisma1NotesPage_value",
+      "parent": "charismaNotesPage",
+      "children": [
+        "charismaVal1NotesPage"
+      ],
+      "top": 5,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "charismaVal1NotesPage": {
+      "type": "SingleLine",
+      "elementId": "charismaVal1NotesPage",
+      "valueId": "charismaVal1",
+      "parent": "charisma1NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "charisma2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "charisma2NotesPage",
+      "valueId": "charisma2NotesPage_value",
+      "parent": "charismaNotesPage",
+      "children": [
+        "charismaVal2NotesPage"
+      ],
+      "top": 26,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "charismaVal2NotesPage": {
+      "type": "SingleLine",
+      "elementId": "charismaVal2NotesPage",
+      "valueId": "charismaVal2",
+      "parent": "charisma2NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "charisma3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "charisma3NotesPage",
+      "valueId": "charisma3NotesPage_value",
+      "parent": "charismaNotesPage",
+      "children": [
+        "charismaVal3NotesPage"
+      ],
+      "top": 47,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "charismaVal3NotesPage": {
+      "type": "SingleLine",
+      "elementId": "charismaVal3NotesPage",
+      "valueId": "charismaVal3",
+      "parent": "charisma3NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "charisma4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "charisma4NotesPage",
+      "valueId": "charisma4NotesPage_value",
+      "parent": "charismaNotesPage",
+      "children": [
+        "charismaVal4NotesPage"
+      ],
+      "top": 68,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "charismaVal4NotesPage": {
+      "type": "SingleLine",
+      "elementId": "charismaVal4NotesPage",
+      "valueId": "charismaVal4",
+      "parent": "charisma4NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "charisma5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "charisma5NotesPage",
+      "valueId": "charisma5NotesPage_value",
+      "parent": "charismaNotesPage",
+      "children": [
+        "charismaVal5NotesPage"
+      ],
+      "top": 89,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "charismaVal5NotesPage": {
+      "type": "SingleLine",
+      "elementId": "charismaVal5NotesPage",
+      "valueId": "charismaVal5",
+      "parent": "charisma5NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "charisma6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "charisma6NotesPage",
+      "valueId": "charisma6NotesPage_value",
+      "parent": "charismaNotesPage",
+      "children": [
+        "charismaVal6NotesPage"
+      ],
+      "top": 110,
+      "left": 10,
+      "width": 50,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left"
+    },
+    "charismaVal6NotesPage": {
+      "type": "SingleLine",
+      "elementId": "charismaVal6NotesPage",
+      "valueId": "CHAbonus",
+      "parent": "charisma6NotesPage",
+      "children": [],
+      "top": 0,
+      "left": 51,
+      "width": 20,
+      "height": 20,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "locationsNotesPage": {
+      "type": "Frame",
+      "elementId": "locationsNotesPage",
+      "valueId": "locationsNotesPage_value",
+      "parent": "notesPage1",
+      "children": [],
+      "top": 363,
+      "left": 5,
+      "width": 620,
+      "height": 169,
+      "title": "LOCATIONS",
       "content": "true",
       "color": "#dde4ff",
       "maxFontSize": 16,
       "textAlign": "left",
       "inputType": "textArea"
+    },
+    "npcsNotesPage": {
+      "type": "Frame",
+      "elementId": "npcsNotesPage",
+      "valueId": "npcsNotesPage_value",
+      "parent": "notesPage1",
+      "children": [],
+      "top": 542,
+      "left": 5,
+      "width": 620,
+      "height": 169,
+      "title": "NPCS",
+      "content": "true",
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left",
+      "inputType": "textArea"
+    },
+    "questsNotesPage": {
+      "type": "Frame",
+      "elementId": "questsNotesPage",
+      "valueId": "questsNotesPage_value",
+      "parent": "notesPage1",
+      "children": [],
+      "top": 721,
+      "left": 5,
+      "width": 620,
+      "height": 169,
+      "title": "QUESTS",
+      "content": "true",
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "left",
+      "inputType": "textArea"
+    },
+    "healButtonLookupPage": {
+      "type": "Button",
+      "elementId": "healButtonLookupPage",
+      "valueId": "healButtonLookupPage_value",
+      "parent": "hpFrameLookupPage",
+      "children": [],
+      "top": 7,
+      "left": 151,
+      "width": 29,
+      "height": 12,
+      "buttonText": "HEAL",
+      "color": "black",
+      "backgroundColor": "#c5c6c7",
+      "alignment": "center",
+      "font": "scalasans",
+      "fontSize": 8
+    },
+    "nonlethalTextLookupPage": {
+      "type": "Text",
+      "elementId": "nonlethalTextLookupPage",
+      "valueId": "nonlethalTextLookupPage_value",
+      "parent": "hpFrameLookupPage",
+      "children": [],
+      "top": 67,
+      "left": 95,
+      "width": 85,
+      "height": 8,
+      "fontSize": 8,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
     }
   },
   "values": {
@@ -24607,7 +26749,8 @@
       "valueId": "acSvg",
       "value": "",
       "parentElements": [
-        "acSvgStatsPage"
+        "acSvgStatsPage",
+        "acSvgLookupPage"
       ],
       "referencedBy": [],
       "references": []
@@ -24643,7 +26786,8 @@
       "valueId": "initiative",
       "value": "",
       "parentElements": [
-        "initiativeStatsPage"
+        "initiativeStatsPage",
+        "initiativeLookupPage"
       ],
       "referencedBy": [],
       "references": []
@@ -24652,7 +26796,8 @@
       "valueId": "speed",
       "value": "",
       "parentElements": [
-        "speedStatsPage"
+        "speedStatsPage",
+        "speedLookupPage"
       ],
       "referencedBy": [],
       "references": []
@@ -24661,7 +26806,8 @@
       "valueId": "hpFrameStatsPage_value",
       "value": "",
       "parentElements": [
-        "hpFrameStatsPage"
+        "hpFrameStatsPage",
+        "hpFrameLookupPage"
       ],
       "referencedBy": [],
       "references": []
@@ -24670,7 +26816,8 @@
       "valueId": "hpMaximumText_value",
       "value": "HIT POINT MAXIMUM",
       "parentElements": [
-        "hpMaximumTextStatsPage"
+        "hpMaximumTextStatsPage",
+        "hpMaximumTextLookupPage"
       ],
       "referencedBy": [],
       "references": []
@@ -24679,7 +26826,8 @@
       "valueId": "maxHp",
       "value": "",
       "parentElements": [
-        "hpMaximumStatsPage"
+        "hpMaximumStatsPage",
+        "hpMaximumLookupPage"
       ],
       "referencedBy": [],
       "references": []
@@ -24704,36 +26852,46 @@
     },
     "fortSave": {
       "valueId": "fortSave",
-      "value": "",
+      "value": "+@js(0 + @sr(CONmod)sr + @sr(allSaves)sr)js",
       "parentElements": [
         "fortSaveStatsPage"
       ],
       "referencedBy": [],
-      "references": []
+      "references": [
+        "allSaves",
+        "CONmod"
+      ]
     },
     "willSave": {
       "valueId": "willSave",
-      "value": "",
+      "value": "+@js(0  + @sr(WISmod)sr + @sr(allSaves)sr)js",
       "parentElements": [
         "willSaveStatsPage"
       ],
       "referencedBy": [],
-      "references": []
+      "references": [
+        "allSaves",
+        "WISmod"
+      ]
     },
     "reflexSave": {
       "valueId": "reflexSave",
-      "value": "",
+      "value": "+@js(0 + @sr(DEXmod)sr + @sr(allSaves)sr)js",
       "parentElements": [
         "reflexSaveStatsPage"
       ],
       "referencedBy": [],
-      "references": []
+      "references": [
+        "allSaves",
+        "DEXmod"
+      ]
     },
     "currentHp": {
       "valueId": "currentHp",
       "value": "",
       "parentElements": [
-        "currentHpStatsPage"
+        "currentHpStatsPage",
+        "currentHpLookupPage"
       ],
       "referencedBy": [],
       "references": []
@@ -24808,7 +26966,8 @@
       "valueId": "ac",
       "value": "",
       "parentElements": [
-        "acStatsPage"
+        "acStatsPage",
+        "acLookupPage"
       ],
       "referencedBy": [],
       "references": []
@@ -24817,7 +26976,8 @@
       "valueId": "acTextStatsPage_value",
       "value": "ARMOR\nCLASS",
       "parentElements": [
-        "acTextStatsPage"
+        "acTextStatsPage",
+        "acTextLookupPage"
       ],
       "referencedBy": [],
       "references": []
@@ -24911,14 +27071,16 @@
     },
     "strength": {
       "valueId": "strength",
-      "value": "10",
+      "value": "@js( 10 + @sr(STRbonus)sr\n\n)js",
       "parentElements": [
         "strength"
       ],
       "referencedBy": [
         "STRmod"
       ],
-      "references": []
+      "references": [
+        "STRbonus"
+      ]
     },
     "DEXmod": {
       "valueId": "DEXmod",
@@ -24933,7 +27095,8 @@
         "ride",
         "sleightOfHand",
         "tumble",
-        "useRope"
+        "useRope",
+        "reflexSave"
       ],
       "references": [
         "dexterity"
@@ -24962,7 +27125,9 @@
       "value": "@js(let mod= Math.floor((@sr(constitution)sr-10)/2);mod>=0?\"+\"+mod:mod)js",
       "parentElements": [],
       "referencedBy": [
-        "concentration"
+        "concentration",
+        "backstoryPage_value",
+        "fortSave"
       ],
       "references": [
         "constitution"
@@ -24988,7 +27153,7 @@
     },
     "dexterity": {
       "valueId": "dexterity",
-      "value": "10",
+      "value": "@js( 10 + @sr(DEXbonus)sr )js",
       "parentElements": [
         "dexterity"
       ],
@@ -24998,7 +27163,9 @@
         "DEXmodImport2",
         "DEXmodImport3"
       ],
-      "references": []
+      "references": [
+        "DEXbonus"
+      ]
     },
     "dexterityTextStatsPage_value": {
       "valueId": "dexterityTextStatsPage_value",
@@ -25040,7 +27207,7 @@
     },
     "constitution": {
       "valueId": "constitution",
-      "value": "10",
+      "value": "@js( 10 + @sr(CONbonus)sr )js",
       "parentElements": [
         "constitution"
       ],
@@ -25048,7 +27215,9 @@
         "CONmod",
         "CONmodImport"
       ],
-      "references": []
+      "references": [
+        "CONbonus"
+      ]
     },
     "constitutionTextStatsPage_value": {
       "valueId": "constitutionTextStatsPage_value",
@@ -25090,14 +27259,16 @@
     },
     "intelligence": {
       "valueId": "intelligence",
-      "value": "10",
+      "value": "@js( 10 + @sr(INTbonus)sr )js",
       "parentElements": [
         "intelligence"
       ],
       "referencedBy": [
         "INTmod"
       ],
-      "references": []
+      "references": [
+        "INTbonus"
+      ]
     },
     "intelligenceTextStatsPage_value": {
       "valueId": "intelligenceTextStatsPage_value",
@@ -25148,14 +27319,16 @@
     },
     "wisdom": {
       "valueId": "wisdom",
-      "value": "10",
+      "value": "@js( 10 + @sr(WISbonus)sr )js",
       "parentElements": [
         "wisdom"
       ],
       "referencedBy": [
         "WISmod"
       ],
-      "references": []
+      "references": [
+        "WISbonus"
+      ]
     },
     "wisdomTextStatsPage_value": {
       "valueId": "wisdomTextStatsPage_value",
@@ -25178,7 +27351,8 @@
         "senseMotive",
         "spot",
         "survival",
-        "profession"
+        "profession",
+        "willSave"
       ],
       "references": [
         "wisdom"
@@ -25204,14 +27378,16 @@
     },
     "charisma": {
       "valueId": "charisma",
-      "value": "10",
+      "value": "@js( 10 + @sr(CHAbonus)sr )js",
       "parentElements": [
         "charisma"
       ],
       "referencedBy": [
         "CHAmod"
       ],
-      "references": []
+      "references": [
+        "CHAbonus"
+      ]
     },
     "charismaTextStatsPage_value": {
       "valueId": "charismaTextStatsPage_value",
@@ -25280,13 +27456,14 @@
     },
     "climb": {
       "valueId": "climb",
-      "value": "@js(@sr(STRmod)sr + @sr(climbRanks)sr + @sr(armorCheckPenalty)sr )js",
+      "value": "@js(@sr(STRmod)sr + @sr(climbRanks)sr + @sr(allSkills)sr + @sr(armorCheckPenalty)sr )js",
       "parentElements": [
         "climbStatsPage"
       ],
       "referencedBy": [],
       "references": [
         "armorCheckPenalty",
+        "allSkills",
         "climbRanks",
         "STRmod"
       ]
@@ -25349,13 +27526,14 @@
     },
     "jump": {
       "valueId": "jump",
-      "value": "@js(@sr(STRmod)sr + @sr(jumpRanks)sr + @sr(armorCheckPenalty)sr )js",
+      "value": "@js(@sr(STRmod)sr + @sr(jumpRanks)sr + @sr(allSkills)sr + @sr(armorCheckPenalty)sr )js",
       "parentElements": [
         "jumpStatsPage"
       ],
       "referencedBy": [],
       "references": [
         "armorCheckPenalty",
+        "allSkills",
         "jumpRanks",
         "STRmod"
       ]
@@ -25418,13 +27596,14 @@
     },
     "swim": {
       "valueId": "swim",
-      "value": "@js(@sr(STRmod)sr + @sr(swimRanks)sr + @sr(armorCheckPenalty)sr )js",
+      "value": "@js(@sr(STRmod)sr + @sr(swimRanks)sr + @sr(allSkills)sr + @sr(armorCheckPenalty)sr )js",
       "parentElements": [
         "swimStatsPage"
       ],
       "referencedBy": [],
       "references": [
         "armorCheckPenalty",
+        "allSkills",
         "swimRanks",
         "STRmod"
       ]
@@ -25487,13 +27666,14 @@
     },
     "balance": {
       "valueId": "balance",
-      "value": "@js(@sr(DEXmod)sr + @sr(balanceRanks)sr + @sr(armorCheckPenalty)sr )js",
+      "value": "@js(@sr(DEXmod)sr + @sr(balanceRanks)sr + @sr(allSkills)sr + @sr(armorCheckPenalty)sr )js",
       "parentElements": [
         "balanceStatsPage"
       ],
       "referencedBy": [],
       "references": [
         "armorCheckPenalty",
+        "allSkills",
         "balanceRanks",
         "DEXmod"
       ]
@@ -25556,13 +27736,14 @@
     },
     "ecapeArtist": {
       "valueId": "ecapeArtist",
-      "value": "@js(@sr(DEXmod)sr + @sr(ecapeArtistRanks)sr + @sr(armorCheckPenalty)sr )js",
+      "value": "@js(@sr(DEXmod)sr + @sr(ecapeArtistRanks)sr + @sr(allSkills)sr + @sr(armorCheckPenalty)sr )js",
       "parentElements": [
         "ecapeArtistStatsPage"
       ],
       "referencedBy": [],
       "references": [
         "armorCheckPenalty",
+        "allSkills",
         "ecapeArtistRanks",
         "DEXmod"
       ]
@@ -25625,13 +27806,14 @@
     },
     "hide": {
       "valueId": "hide",
-      "value": "@js(@sr(DEXmod)sr + @sr(hideRanks)sr + @sr(armorCheckPenalty)sr )js",
+      "value": "@js(@sr(DEXmod)sr + @sr(hideRanks)sr + @sr(allSkills)sr + @sr(armorCheckPenalty)sr )js",
       "parentElements": [
         "hideStatsPage"
       ],
       "referencedBy": [],
       "references": [
         "armorCheckPenalty",
+        "allSkills",
         "hideRanks",
         "DEXmod"
       ]
@@ -25694,13 +27876,14 @@
     },
     "moveSilently": {
       "valueId": "moveSilently",
-      "value": "@js(@sr(DEXmod)sr + @sr(moveSilentlyRanks)sr + @sr(armorCheckPenalty)sr )js",
+      "value": "@js(@sr(DEXmod)sr + @sr(moveSilentlyRanks)sr + @sr(allSkills)sr + @sr(armorCheckPenalty)sr )js",
       "parentElements": [
         "moveSilentlyStatsPage"
       ],
       "referencedBy": [],
       "references": [
         "armorCheckPenalty",
+        "allSkills",
         "moveSilentlyRanks",
         "DEXmod"
       ]
@@ -25763,12 +27946,13 @@
     },
     "openLock": {
       "valueId": "openLock",
-      "value": "@js(@sr(DEXmod)sr + @sr(openLockRanks)sr )js",
+      "value": "@js(@sr(DEXmod)sr + @sr(openLockRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "openLockStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "openLockRanks",
         "DEXmod"
       ]
@@ -25831,12 +28015,13 @@
     },
     "ride": {
       "valueId": "ride",
-      "value": "@js(@sr(DEXmod)sr + @sr(rideRanks)sr )js",
+      "value": "@js(@sr(DEXmod)sr + @sr(rideRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "rideStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "rideRanks",
         "DEXmod"
       ]
@@ -25899,13 +28084,14 @@
     },
     "sleightOfHand": {
       "valueId": "sleightOfHand",
-      "value": "@js(@sr(DEXmod)sr + @sr(sleightOfHandRanks)sr + @sr(armorCheckPenalty)sr )js",
+      "value": "@js(@sr(DEXmod)sr + @sr(sleightOfHandRanks)sr + @sr(allSkills)sr + @sr(armorCheckPenalty)sr )js",
       "parentElements": [
         "sleightOfHandStatsPage"
       ],
       "referencedBy": [],
       "references": [
         "armorCheckPenalty",
+        "allSkills",
         "sleightOfHandRanks",
         "DEXmod"
       ]
@@ -25968,13 +28154,14 @@
     },
     "tumble": {
       "valueId": "tumble",
-      "value": "@js(@sr(DEXmod)sr + @sr(tumbleRanks)sr + @sr(armorCheckPenalty)sr )js",
+      "value": "@js(@sr(DEXmod)sr + @sr(tumbleRanks)sr + @sr(allSkills)sr + @sr(armorCheckPenalty)sr )js",
       "parentElements": [
         "tumbleStatsPage"
       ],
       "referencedBy": [],
       "references": [
         "armorCheckPenalty",
+        "allSkills",
         "tumbleRanks",
         "DEXmod"
       ]
@@ -26037,12 +28224,13 @@
     },
     "useRope": {
       "valueId": "useRope",
-      "value": "@js(@sr(DEXmod)sr + @sr(useRopeRanks)sr )js",
+      "value": "@js(@sr(DEXmod)sr + @sr(useRopeRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "useRopeStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "useRopeRanks",
         "DEXmod"
       ]
@@ -26105,12 +28293,13 @@
     },
     "concentration": {
       "valueId": "concentration",
-      "value": "@js(@sr(CONmod)sr + @sr(concentrationRanks)sr )js",
+      "value": "@js(@sr(CONmod)sr + @sr(concentrationRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "concentrationStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "concentrationRanks",
         "CONmod"
       ]
@@ -26173,12 +28362,13 @@
     },
     "appraise": {
       "valueId": "appraise",
-      "value": "@js(@sr(INTmod)sr + @sr(appraiseRanks)sr )js",
+      "value": "@js(@sr(INTmod)sr + @sr(appraiseRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "appraiseStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "appraiseRanks",
         "INTmod"
       ]
@@ -26241,12 +28431,13 @@
     },
     "decipherScript": {
       "valueId": "decipherScript",
-      "value": "@js(@sr(INTmod)sr + @sr(decipherScriptRanks)sr )js",
+      "value": "@js(@sr(INTmod)sr + @sr(decipherScriptRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "decipherScriptStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "decipherScriptRanks",
         "INTmod"
       ]
@@ -26309,12 +28500,13 @@
     },
     "disableDevice": {
       "valueId": "disableDevice",
-      "value": "@js(@sr(INTmod)sr + @sr(disableDeviceRanks)sr )js",
+      "value": "@js(@sr(INTmod)sr + @sr(disableDeviceRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "disableDeviceStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "disableDeviceRanks",
         "INTmod"
       ]
@@ -26377,12 +28569,13 @@
     },
     "forgery": {
       "valueId": "forgery",
-      "value": "@js(@sr(INTmod)sr + @sr(forgeryRanks)sr )js",
+      "value": "@js(@sr(INTmod)sr + @sr(forgeryRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "forgeryStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "forgeryRanks",
         "INTmod"
       ]
@@ -26445,12 +28638,13 @@
     },
     "search": {
       "valueId": "search",
-      "value": "@js(@sr(INTmod)sr + @sr(searchRanks)sr )js",
+      "value": "@js(@sr(INTmod)sr + @sr(searchRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "searchStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "searchRanks",
         "INTmod"
       ]
@@ -26513,12 +28707,13 @@
     },
     "spellcraft": {
       "valueId": "spellcraft",
-      "value": "@js(@sr(INTmod)sr + @sr(spellcraftRanks)sr )js",
+      "value": "@js(@sr(INTmod)sr + @sr(spellcraftRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "spellcraftStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "spellcraftRanks",
         "INTmod"
       ]
@@ -26581,12 +28776,13 @@
     },
     "craft": {
       "valueId": "craft",
-      "value": "@js(@sr(INTmod)sr + @sr(craftRanks)sr )js",
+      "value": "@js(@sr(INTmod)sr + @sr(craftRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "craftStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "craftRanks",
         "INTmod"
       ]
@@ -26649,12 +28845,13 @@
     },
     "knowledge": {
       "valueId": "knowledge",
-      "value": "@js(@sr(INTmod)sr + @sr(knowledgeRanks)sr )js",
+      "value": "@js(@sr(INTmod)sr + @sr(knowledgeRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "knowledgeStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "knowledgeRanks",
         "INTmod"
       ]
@@ -26717,12 +28914,13 @@
     },
     "heal": {
       "valueId": "heal",
-      "value": "@js(@sr(WISmod)sr + @sr(healRanks)sr )js",
+      "value": "@js(@sr(WISmod)sr + @sr(healRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "healStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "healRanks",
         "WISmod"
       ]
@@ -26785,12 +28983,13 @@
     },
     "listen": {
       "valueId": "listen",
-      "value": "@js(@sr(WISmod)sr + @sr(listenRanks)sr )js",
+      "value": "@js(@sr(WISmod)sr + @sr(listenRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "listenStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "listenRanks",
         "WISmod"
       ]
@@ -26853,12 +29052,13 @@
     },
     "senseMotive": {
       "valueId": "senseMotive",
-      "value": "@js(@sr(WISmod)sr + @sr(senseMotiveRanks)sr )js",
+      "value": "@js(@sr(WISmod)sr + @sr(senseMotiveRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "senseMotiveStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "senseMotiveRanks",
         "WISmod"
       ]
@@ -26921,12 +29121,13 @@
     },
     "spot": {
       "valueId": "spot",
-      "value": "@js(@sr(WISmod)sr + @sr(spotRanks)sr )js",
+      "value": "@js(@sr(WISmod)sr + @sr(spotRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "spotStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "spotRanks",
         "WISmod"
       ]
@@ -26989,12 +29190,13 @@
     },
     "survival": {
       "valueId": "survival",
-      "value": "@js(@sr(WISmod)sr + @sr(survivalRanks)sr )js",
+      "value": "@js(@sr(WISmod)sr + @sr(survivalRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "survivalStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "survivalRanks",
         "WISmod"
       ]
@@ -27066,12 +29268,13 @@
     },
     "profession": {
       "valueId": "profession",
-      "value": "@js(@sr(WISmod)sr + @sr(professionRanks)sr )js",
+      "value": "@js(@sr(WISmod)sr + @sr(professionRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "professionStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "professionRanks",
         "WISmod"
       ]
@@ -27134,12 +29337,13 @@
     },
     "bluff": {
       "valueId": "bluff",
-      "value": "@js(@sr(CHAmod)sr + @sr(bluffRanks)sr )js",
+      "value": "@js(@sr(CHAmod)sr + @sr(bluffRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "bluffStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "bluffRanks",
         "CHAmod"
       ]
@@ -27202,12 +29406,13 @@
     },
     "diplomacy": {
       "valueId": "diplomacy",
-      "value": "@js(@sr(CHAmod)sr + @sr(diplomacyRanks)sr )js",
+      "value": "@js(@sr(CHAmod)sr + @sr(diplomacyRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "diplomacyStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "diplomacyRanks",
         "CHAmod"
       ]
@@ -27270,12 +29475,13 @@
     },
     "disguise": {
       "valueId": "disguise",
-      "value": "@js(@sr(CHAmod)sr + @sr(disguiseRanks)sr )js",
+      "value": "@js(@sr(CHAmod)sr + @sr(disguiseRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "disguiseStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "disguiseRanks",
         "CHAmod"
       ]
@@ -27338,12 +29544,13 @@
     },
     "gatherInfo": {
       "valueId": "gatherInfo",
-      "value": "@js(@sr(CHAmod)sr + @sr(gatherInfoRanks)sr )js",
+      "value": "@js(@sr(CHAmod)sr + @sr(gatherInfoRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "gatherInfoStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "gatherInfoRanks",
         "CHAmod"
       ]
@@ -27406,12 +29613,13 @@
     },
     "handleAnimal": {
       "valueId": "handleAnimal",
-      "value": "@js(@sr(CHAmod)sr + @sr(handleAnimalRanks)sr )js",
+      "value": "@js(@sr(CHAmod)sr + @sr(handleAnimalRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "handleAnimalStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "handleAnimalRanks",
         "CHAmod"
       ]
@@ -27474,12 +29682,13 @@
     },
     "intimidate": {
       "valueId": "intimidate",
-      "value": "@js(@sr(CHAmod)sr + @sr(intimidateRanks)sr )js",
+      "value": "@js(@sr(CHAmod)sr + @sr(intimidateRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "intimidateStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "intimidateRanks",
         "CHAmod"
       ]
@@ -27542,12 +29751,13 @@
     },
     "useMagicDevice": {
       "valueId": "useMagicDevice",
-      "value": "@js(@sr(CHAmod)sr + @sr(useMagicDeviceRanks)sr )js",
+      "value": "@js(@sr(CHAmod)sr + @sr(useMagicDeviceRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "useMagicDeviceStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "useMagicDeviceRanks",
         "CHAmod"
       ]
@@ -27610,12 +29820,13 @@
     },
     "perform": {
       "valueId": "perform",
-      "value": "@js(@sr(CHAmod)sr + @sr(performRanks)sr )js",
+      "value": "@js(@sr(CHAmod)sr + @sr(performRanks)sr + @sr(allSkills)sr )js",
       "parentElements": [
         "performStatsPage"
       ],
       "referencedBy": [],
       "references": [
+        "allSkills",
         "performRanks",
         "CHAmod"
       ]
@@ -27680,7 +29891,8 @@
       "valueId": "nonlethalDamage",
       "value": "",
       "parentElements": [
-        "nonlethalDamageStatsPage"
+        "nonlethalDamageStatsPage",
+        "nonlethalLookupPage"
       ],
       "referencedBy": [],
       "references": []
@@ -27921,51 +30133,6 @@
       "referencedBy": [],
       "references": []
     },
-    "initiativeImport": {
-      "valueId": "initiativeImport",
-      "value": "",
-      "parentElements": [
-        "initiativeLookupPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "speedImport": {
-      "valueId": "speedImport",
-      "value": "",
-      "parentElements": [
-        "speedLookupPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "hpFrameStatsPage_valueImport": {
-      "valueId": "hpFrameStatsPage_valueImport",
-      "value": "",
-      "parentElements": [
-        "hpFrameLookupPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "hpMaximumText_valueImport": {
-      "valueId": "hpMaximumText_valueImport",
-      "value": "HIT POINT MAXIMUM",
-      "parentElements": [
-        "hpMaximumTextLookupPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "maxHpImport": {
-      "valueId": "maxHpImport",
-      "value": "",
-      "parentElements": [
-        "hpMaximumLookupPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
     "currentHpTextLookupPage_value": {
       "valueId": "currentHpTextLookupPage_value",
       "value": "WOUNDS / CURRENT HP",
@@ -27975,56 +30142,11 @@
       "referencedBy": [],
       "references": []
     },
-    "currentHpImport": {
-      "valueId": "currentHpImport",
-      "value": "",
-      "parentElements": [
-        "currentHpLookupPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "nonlethalDamageImport": {
-      "valueId": "nonlethalDamageImport",
-      "value": "",
-      "parentElements": [
-        "nonlethalLookupPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
     "nonlethalTextLookupPage_value": {
       "valueId": "nonlethalTextLookupPage_value",
       "value": "NONLETHAL DAMAGE",
       "parentElements": [
-        "currentHpTextLookupPageCopy"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "acSvgImport": {
-      "valueId": "acSvgImport",
-      "value": "",
-      "parentElements": [
-        "acSvgLookupPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "acImport": {
-      "valueId": "acImport",
-      "value": "",
-      "parentElements": [
-        "acLookupPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "acTextStatsPage_valueImport": {
-      "valueId": "acTextStatsPage_valueImport",
-      "value": "ARMOR\nCLASS",
-      "parentElements": [
-        "acTextLookupPage"
+        "nonlethalTextLookupPage"
       ],
       "referencedBy": [],
       "references": []
@@ -28083,33 +30205,6 @@
       "referencedBy": [],
       "references": []
     },
-    "attackBonus1Import": {
-      "valueId": "attackBonus1Import",
-      "value": "",
-      "parentElements": [
-        "attackBonus1LookupPageCopy"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "attackBonus2Import": {
-      "valueId": "attackBonus2Import",
-      "value": "",
-      "parentElements": [
-        "attackBonus2LookupPageCopy"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "attackBonus3Import": {
-      "valueId": "attackBonus3Import",
-      "value": "",
-      "parentElements": [
-        "attackBonus3LookupPageCopy"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
     "attackName4": {
       "valueId": "attackName4",
       "value": "",
@@ -28124,8 +30219,7 @@
       "valueId": "attackBonus4",
       "value": "",
       "parentElements": [
-        "attackBonus4LookupPage",
-        "attackBonus4LookupPageCopy"
+        "attackBonus4LookupPage"
       ],
       "referencedBy": [],
       "references": []
@@ -28360,15 +30454,6 @@
       "value": "",
       "parentElements": [
         "chargedAbilityMax5LookupPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "attackBonus5": {
-      "valueId": "attackBonus5",
-      "value": "",
-      "parentElements": [
-        "attackBonus5LookupPage"
       ],
       "referencedBy": [],
       "references": []
@@ -38036,12 +40121,14 @@
     },
     "backstoryPage_value": {
       "valueId": "backstoryPage_value",
-      "value": "",
+      "value": "@js(\n@sr(CONmod)sr + @sr(allSaves)sr\n)js",
       "parentElements": [
         "backstoryPage"
       ],
       "referencedBy": [],
-      "references": []
+      "references": [
+        "CONmod"
+      ]
     },
     "age": {
       "valueId": "age",
@@ -38233,6 +40320,51 @@
       "referencedBy": [],
       "references": []
     },
+    "chargedAbilityName1": {
+      "valueId": "chargedAbilityName1",
+      "value": "",
+      "parentElements": [
+        "chargedAbilityName1LookupPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "chargedAbilityName2": {
+      "valueId": "chargedAbilityName2",
+      "value": "",
+      "parentElements": [
+        "chargedAbilityName2LookupPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "chargedAbilityName3": {
+      "valueId": "chargedAbilityName3",
+      "value": "",
+      "parentElements": [
+        "chargedAbilityName3LookupPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "chargedAbilityName4": {
+      "valueId": "chargedAbilityName4",
+      "value": "",
+      "parentElements": [
+        "chargedAbilityName4LookupPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "chargedAbilityName5": {
+      "valueId": "chargedAbilityName5",
+      "value": "",
+      "parentElements": [
+        "chargedAbilityName5LookupPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
     "notesPage1_value": {
       "valueId": "notesPage1_value",
       "value": "",
@@ -38242,11 +40374,1438 @@
       "referencedBy": [],
       "references": []
     },
-    "notes1": {
-      "valueId": "notes1",
+    "modifiers1FrameNotesPage_value": {
+      "valueId": "modifiers1FrameNotesPage_value",
       "value": "",
       "parentElements": [
-        "notes1NotesPage1"
+        "modifiers1FrameNotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allSkillsNotesPage_value": {
+      "valueId": "allSkillsNotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allSkillsNotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allSkills1NotesPage_value": {
+      "valueId": "allSkills1NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allSkills1NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allSkillsVal1": {
+      "valueId": "allSkillsVal1",
+      "value": "",
+      "parentElements": [
+        "allSkillsVal1NotesPage"
+      ],
+      "referencedBy": [
+        "allSkills"
+      ],
+      "references": []
+    },
+    "allSkills2NotesPage_value": {
+      "valueId": "allSkills2NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allSkills2NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allSkillsVal2": {
+      "valueId": "allSkillsVal2",
+      "value": "",
+      "parentElements": [
+        "allSkillsVal2NotesPage"
+      ],
+      "referencedBy": [
+        "allSkills"
+      ],
+      "references": []
+    },
+    "allSkills3NotesPage_value": {
+      "valueId": "allSkills3NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allSkills3NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allSkillsVal3": {
+      "valueId": "allSkillsVal3",
+      "value": "",
+      "parentElements": [
+        "allSkillsVal3NotesPage"
+      ],
+      "referencedBy": [
+        "allSkills"
+      ],
+      "references": []
+    },
+    "allSkills4NotesPage_value": {
+      "valueId": "allSkills4NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allSkills4NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allSkillsVal4": {
+      "valueId": "allSkillsVal4",
+      "value": "",
+      "parentElements": [
+        "allSkillsVal4NotesPage"
+      ],
+      "referencedBy": [
+        "allSkills"
+      ],
+      "references": []
+    },
+    "allSkills5NotesPage_value": {
+      "valueId": "allSkills5NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allSkills5NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allSkillsVal5": {
+      "valueId": "allSkillsVal5",
+      "value": "",
+      "parentElements": [
+        "allSkillsVal5NotesPage"
+      ],
+      "referencedBy": [
+        "allSkills"
+      ],
+      "references": []
+    },
+    "allSkills6NotesPage_value": {
+      "valueId": "allSkills6NotesPage_value",
+      "value": "TOTAL",
+      "parentElements": [
+        "allSkills6NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allSavesNotesPage_value": {
+      "valueId": "allSavesNotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allSavesNotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allSaves1NotesPage_value": {
+      "valueId": "allSaves1NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allSaves1NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allSavesVal1": {
+      "valueId": "allSavesVal1",
+      "value": "",
+      "parentElements": [
+        "allSavesVal1NotesPage"
+      ],
+      "referencedBy": [
+        "allSaves"
+      ],
+      "references": []
+    },
+    "allSaves2NotesPage_value": {
+      "valueId": "allSaves2NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allSaves2NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allSavesVal2": {
+      "valueId": "allSavesVal2",
+      "value": "",
+      "parentElements": [
+        "allSavesVal2NotesPage"
+      ],
+      "referencedBy": [
+        "allSaves"
+      ],
+      "references": []
+    },
+    "allSaves3NotesPage_value": {
+      "valueId": "allSaves3NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allSaves3NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allSavesVal3": {
+      "valueId": "allSavesVal3",
+      "value": "",
+      "parentElements": [
+        "allSavesVal3NotesPage"
+      ],
+      "referencedBy": [
+        "allSaves"
+      ],
+      "references": []
+    },
+    "allSaves4NotesPage_value": {
+      "valueId": "allSaves4NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allSaves4NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allSavesVal4": {
+      "valueId": "allSavesVal4",
+      "value": "",
+      "parentElements": [
+        "allSavesVal4NotesPage"
+      ],
+      "referencedBy": [
+        "allSaves"
+      ],
+      "references": []
+    },
+    "allSaves5NotesPage_value": {
+      "valueId": "allSaves5NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allSaves5NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allSavesVal5": {
+      "valueId": "allSavesVal5",
+      "value": "",
+      "parentElements": [
+        "allSavesVal5NotesPage"
+      ],
+      "referencedBy": [
+        "allSaves"
+      ],
+      "references": []
+    },
+    "allSaves6NotesPage_value": {
+      "valueId": "allSaves6NotesPage_value",
+      "value": "TOTAL",
+      "parentElements": [
+        "allSaves6NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allAttacksNotesPage_value": {
+      "valueId": "allAttacksNotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allAttacksNotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allAttacks1NotesPage_value": {
+      "valueId": "allAttacks1NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allAttacks1NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allAttacksVal1": {
+      "valueId": "allAttacksVal1",
+      "value": "",
+      "parentElements": [
+        "allAttacksVal1NotesPage"
+      ],
+      "referencedBy": [
+        "allAttacks"
+      ],
+      "references": []
+    },
+    "allAttacks2NotesPage_value": {
+      "valueId": "allAttacks2NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allAttacks2NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allAttacksVal2": {
+      "valueId": "allAttacksVal2",
+      "value": "",
+      "parentElements": [
+        "allAttacksVal2NotesPage"
+      ],
+      "referencedBy": [
+        "allAttacks"
+      ],
+      "references": []
+    },
+    "allAttacks3NotesPage_value": {
+      "valueId": "allAttacks3NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allAttacks3NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allAttacksVal3": {
+      "valueId": "allAttacksVal3",
+      "value": "",
+      "parentElements": [
+        "allAttacksVal3NotesPage"
+      ],
+      "referencedBy": [
+        "allAttacks"
+      ],
+      "references": []
+    },
+    "allAttacks4NotesPage_value": {
+      "valueId": "allAttacks4NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allAttacks4NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allAttacksVal4": {
+      "valueId": "allAttacksVal4",
+      "value": "",
+      "parentElements": [
+        "allAttacksVal4NotesPage"
+      ],
+      "referencedBy": [
+        "allAttacks"
+      ],
+      "references": []
+    },
+    "allAttacks5NotesPage_value": {
+      "valueId": "allAttacks5NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allAttacks5NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allAttacksVal5": {
+      "valueId": "allAttacksVal5",
+      "value": "",
+      "parentElements": [
+        "allAttacksVal5NotesPage"
+      ],
+      "referencedBy": [
+        "allAttacks"
+      ],
+      "references": []
+    },
+    "allAttacks6NotesPage_value": {
+      "valueId": "allAttacks6NotesPage_value",
+      "value": "TOTAL",
+      "parentElements": [
+        "allAttacks6NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allDamageNotesPage_value": {
+      "valueId": "allDamageNotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allDamageNotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allDamage1NotesPage_value": {
+      "valueId": "allDamage1NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allDamage1NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allDamageVal1": {
+      "valueId": "allDamageVal1",
+      "value": "",
+      "parentElements": [
+        "allDamageVal1NotesPage"
+      ],
+      "referencedBy": [
+        "allDamage"
+      ],
+      "references": []
+    },
+    "allDamage2NotesPage_value": {
+      "valueId": "allDamage2NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allDamage2NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allDamageVal2": {
+      "valueId": "allDamageVal2",
+      "value": "",
+      "parentElements": [
+        "allDamageVal2NotesPage"
+      ],
+      "referencedBy": [
+        "allDamage"
+      ],
+      "references": []
+    },
+    "allDamage3NotesPage_value": {
+      "valueId": "allDamage3NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allDamage3NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allDamageVal3": {
+      "valueId": "allDamageVal3",
+      "value": "",
+      "parentElements": [
+        "allDamageVal3NotesPage"
+      ],
+      "referencedBy": [
+        "allDamage"
+      ],
+      "references": []
+    },
+    "allDamage4NotesPage_value": {
+      "valueId": "allDamage4NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allDamage4NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allDamageVal4": {
+      "valueId": "allDamageVal4",
+      "value": "",
+      "parentElements": [
+        "allDamageVal4NotesPage"
+      ],
+      "referencedBy": [
+        "allDamage"
+      ],
+      "references": []
+    },
+    "allDamage5NotesPage_value": {
+      "valueId": "allDamage5NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "allDamage5NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allDamageVal5": {
+      "valueId": "allDamageVal5",
+      "value": "",
+      "parentElements": [
+        "allDamageVal5NotesPage"
+      ],
+      "referencedBy": [
+        "allDamage"
+      ],
+      "references": []
+    },
+    "allDamage6NotesPage_value": {
+      "valueId": "allDamage6NotesPage_value",
+      "value": "TOTAL",
+      "parentElements": [
+        "allDamage6NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "modifiers2FrameNotesPage_value": {
+      "valueId": "modifiers2FrameNotesPage_value",
+      "value": "",
+      "parentElements": [
+        "modifiers2FrameNotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "strengthNotesPage_value": {
+      "valueId": "strengthNotesPage_value",
+      "value": "",
+      "parentElements": [
+        "strengthNotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "strength1NotesPage_value": {
+      "valueId": "strength1NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "strength1NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "strengthVal1": {
+      "valueId": "strengthVal1",
+      "value": "",
+      "parentElements": [
+        "strengthVal1NotesPage"
+      ],
+      "referencedBy": [
+        "STRbonus"
+      ],
+      "references": []
+    },
+    "strength2NotesPage_value": {
+      "valueId": "strength2NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "strength2NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "strengthVal2": {
+      "valueId": "strengthVal2",
+      "value": "",
+      "parentElements": [
+        "strengthVal2NotesPage"
+      ],
+      "referencedBy": [
+        "STRbonus"
+      ],
+      "references": []
+    },
+    "strength3NotesPage_value": {
+      "valueId": "strength3NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "strength3NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "strengthVal3": {
+      "valueId": "strengthVal3",
+      "value": "",
+      "parentElements": [
+        "strengthVal3NotesPage"
+      ],
+      "referencedBy": [
+        "STRbonus"
+      ],
+      "references": []
+    },
+    "strength4NotesPage_value": {
+      "valueId": "strength4NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "strength4NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "strengthVal4": {
+      "valueId": "strengthVal4",
+      "value": "",
+      "parentElements": [
+        "strengthVal4NotesPage"
+      ],
+      "referencedBy": [
+        "STRbonus"
+      ],
+      "references": []
+    },
+    "strength5NotesPage_value": {
+      "valueId": "strength5NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "strength5NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "strengthVal5": {
+      "valueId": "strengthVal5",
+      "value": "",
+      "parentElements": [
+        "strengthVal5NotesPage"
+      ],
+      "referencedBy": [
+        "STRbonus"
+      ],
+      "references": []
+    },
+    "strength6NotesPage_value": {
+      "valueId": "strength6NotesPage_value",
+      "value": "TOTAL",
+      "parentElements": [
+        "strength6NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "STRbonus": {
+      "valueId": "STRbonus",
+      "value": "@js(@sr(strengthVal1)sr + @sr(strengthVal2)sr + @sr(strengthVal3)sr + @sr(strengthVal4)sr + @sr(strengthVal5)sr + 0)js",
+      "parentElements": [
+        "strengthVal6NotesPage"
+      ],
+      "referencedBy": [
+        "strength"
+      ],
+      "references": [
+        "strengthVal5",
+        "strengthVal4",
+        "strengthVal3",
+        "strengthVal2",
+        "strengthVal1"
+      ]
+    },
+    "dexterityNotesPage_value": {
+      "valueId": "dexterityNotesPage_value",
+      "value": "",
+      "parentElements": [
+        "dexterityNotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "dexterity1NotesPage_value": {
+      "valueId": "dexterity1NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "dexterity1NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "dexterityVal1": {
+      "valueId": "dexterityVal1",
+      "value": "",
+      "parentElements": [
+        "dexterityVal1NotesPage"
+      ],
+      "referencedBy": [
+        "DEXbonus"
+      ],
+      "references": []
+    },
+    "dexterity2NotesPage_value": {
+      "valueId": "dexterity2NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "dexterity2NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "dexterityVal2": {
+      "valueId": "dexterityVal2",
+      "value": "",
+      "parentElements": [
+        "dexterityVal2NotesPage"
+      ],
+      "referencedBy": [
+        "DEXbonus"
+      ],
+      "references": []
+    },
+    "dexterity3NotesPage_value": {
+      "valueId": "dexterity3NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "dexterity3NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "dexterityVal3": {
+      "valueId": "dexterityVal3",
+      "value": "",
+      "parentElements": [
+        "dexterityVal3NotesPage"
+      ],
+      "referencedBy": [
+        "DEXbonus"
+      ],
+      "references": []
+    },
+    "dexterity4NotesPage_value": {
+      "valueId": "dexterity4NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "dexterity4NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "dexterityVal4": {
+      "valueId": "dexterityVal4",
+      "value": "",
+      "parentElements": [
+        "dexterityVal4NotesPage"
+      ],
+      "referencedBy": [
+        "DEXbonus"
+      ],
+      "references": []
+    },
+    "dexterity5NotesPage_value": {
+      "valueId": "dexterity5NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "dexterity5NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "dexterityVal5": {
+      "valueId": "dexterityVal5",
+      "value": "",
+      "parentElements": [
+        "dexterityVal5NotesPage"
+      ],
+      "referencedBy": [
+        "DEXbonus"
+      ],
+      "references": []
+    },
+    "dexterity6NotesPage_value": {
+      "valueId": "dexterity6NotesPage_value",
+      "value": "TOTAL",
+      "parentElements": [
+        "dexterity6NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "DEXbonus": {
+      "valueId": "DEXbonus",
+      "value": "@js(@sr(dexterityVal1)sr + @sr(dexterityVal2)sr + @sr(dexterityVal3)sr + @sr(dexterityVal4)sr + @sr(dexterityVal5)sr + 0)js",
+      "parentElements": [
+        "dexterityVal6NotesPage"
+      ],
+      "referencedBy": [
+        "dexterity"
+      ],
+      "references": [
+        "dexterityVal5",
+        "dexterityVal4",
+        "dexterityVal3",
+        "dexterityVal2",
+        "dexterityVal1"
+      ]
+    },
+    "constitutionNotesPage_value": {
+      "valueId": "constitutionNotesPage_value",
+      "value": "",
+      "parentElements": [
+        "constitutionNotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "constitution1NotesPage_value": {
+      "valueId": "constitution1NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "constitution1NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "constitutionVal1": {
+      "valueId": "constitutionVal1",
+      "value": "",
+      "parentElements": [
+        "constitutionVal1NotesPage"
+      ],
+      "referencedBy": [
+        "CONbonus"
+      ],
+      "references": []
+    },
+    "constitution2NotesPage_value": {
+      "valueId": "constitution2NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "constitution2NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "constitutionVal2": {
+      "valueId": "constitutionVal2",
+      "value": "",
+      "parentElements": [
+        "constitutionVal2NotesPage"
+      ],
+      "referencedBy": [
+        "CONbonus"
+      ],
+      "references": []
+    },
+    "constitution3NotesPage_value": {
+      "valueId": "constitution3NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "constitution3NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "constitutionVal3": {
+      "valueId": "constitutionVal3",
+      "value": "",
+      "parentElements": [
+        "constitutionVal3NotesPage"
+      ],
+      "referencedBy": [
+        "CONbonus"
+      ],
+      "references": []
+    },
+    "constitution4NotesPage_value": {
+      "valueId": "constitution4NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "constitution4NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "constitutionVal4": {
+      "valueId": "constitutionVal4",
+      "value": "",
+      "parentElements": [
+        "constitutionVal4NotesPage"
+      ],
+      "referencedBy": [
+        "CONbonus"
+      ],
+      "references": []
+    },
+    "constitution5NotesPage_value": {
+      "valueId": "constitution5NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "constitution5NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "constitutionVal5": {
+      "valueId": "constitutionVal5",
+      "value": "",
+      "parentElements": [
+        "constitutionVal5NotesPage"
+      ],
+      "referencedBy": [
+        "CONbonus"
+      ],
+      "references": []
+    },
+    "constitution6NotesPage_value": {
+      "valueId": "constitution6NotesPage_value",
+      "value": "TOTAL",
+      "parentElements": [
+        "constitution6NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "CONbonus": {
+      "valueId": "CONbonus",
+      "value": "@js(@sr(constitutionVal1)sr + @sr(constitutionVal2)sr + @sr(constitutionVal3)sr + @sr(constitutionVal4)sr + @sr(constitutionVal5)sr + 0)js",
+      "parentElements": [
+        "constitutionVal6NotesPage"
+      ],
+      "referencedBy": [
+        "constitution"
+      ],
+      "references": [
+        "constitutionVal5",
+        "constitutionVal4",
+        "constitutionVal3",
+        "constitutionVal2",
+        "constitutionVal1"
+      ]
+    },
+    "intelligenceNotesPage_value": {
+      "valueId": "intelligenceNotesPage_value",
+      "value": "",
+      "parentElements": [
+        "intelligenceNotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "intelligence1NotesPage_value": {
+      "valueId": "intelligence1NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "intelligence1NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "intelligenceVal1": {
+      "valueId": "intelligenceVal1",
+      "value": "",
+      "parentElements": [
+        "intelligenceVal1NotesPage"
+      ],
+      "referencedBy": [
+        "INTbonus"
+      ],
+      "references": []
+    },
+    "intelligence2NotesPage_value": {
+      "valueId": "intelligence2NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "intelligence2NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "intelligenceVal2": {
+      "valueId": "intelligenceVal2",
+      "value": "",
+      "parentElements": [
+        "intelligenceVal2NotesPage"
+      ],
+      "referencedBy": [
+        "INTbonus"
+      ],
+      "references": []
+    },
+    "intelligence3NotesPage_value": {
+      "valueId": "intelligence3NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "intelligence3NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "intelligenceVal3": {
+      "valueId": "intelligenceVal3",
+      "value": "",
+      "parentElements": [
+        "intelligenceVal3NotesPage"
+      ],
+      "referencedBy": [
+        "INTbonus"
+      ],
+      "references": []
+    },
+    "intelligence4NotesPage_value": {
+      "valueId": "intelligence4NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "intelligence4NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "intelligenceVal4": {
+      "valueId": "intelligenceVal4",
+      "value": "",
+      "parentElements": [
+        "intelligenceVal4NotesPage"
+      ],
+      "referencedBy": [
+        "INTbonus"
+      ],
+      "references": []
+    },
+    "intelligence5NotesPage_value": {
+      "valueId": "intelligence5NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "intelligence5NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "intelligenceVal5": {
+      "valueId": "intelligenceVal5",
+      "value": "",
+      "parentElements": [
+        "intelligenceVal5NotesPage"
+      ],
+      "referencedBy": [
+        "INTbonus"
+      ],
+      "references": []
+    },
+    "intelligence6NotesPage_value": {
+      "valueId": "intelligence6NotesPage_value",
+      "value": "TOTAL",
+      "parentElements": [
+        "intelligence6NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "INTbonus": {
+      "valueId": "INTbonus",
+      "value": "@js(@sr(intelligenceVal1)sr + @sr(intelligenceVal2)sr + @sr(intelligenceVal3)sr + @sr(intelligenceVal4)sr + @sr(intelligenceVal5)sr + 0)js",
+      "parentElements": [
+        "intelligenceVal6NotesPage"
+      ],
+      "referencedBy": [
+        "intelligence"
+      ],
+      "references": [
+        "intelligenceVal5",
+        "intelligenceVal4",
+        "intelligenceVal3",
+        "intelligenceVal2",
+        "intelligenceVal1"
+      ]
+    },
+    "wisdomNotesPage_value": {
+      "valueId": "wisdomNotesPage_value",
+      "value": "",
+      "parentElements": [
+        "wisdomNotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "wisdom1NotesPage_value": {
+      "valueId": "wisdom1NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "wisdom1NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "wisdomVal1": {
+      "valueId": "wisdomVal1",
+      "value": "",
+      "parentElements": [
+        "wisdomVal1NotesPage"
+      ],
+      "referencedBy": [
+        "WISbonus"
+      ],
+      "references": []
+    },
+    "wisdom2NotesPage_value": {
+      "valueId": "wisdom2NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "wisdom2NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "wisdomVal2": {
+      "valueId": "wisdomVal2",
+      "value": "",
+      "parentElements": [
+        "wisdomVal2NotesPage"
+      ],
+      "referencedBy": [
+        "WISbonus"
+      ],
+      "references": []
+    },
+    "wisdom3NotesPage_value": {
+      "valueId": "wisdom3NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "wisdom3NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "wisdomVal3": {
+      "valueId": "wisdomVal3",
+      "value": "",
+      "parentElements": [
+        "wisdomVal3NotesPage"
+      ],
+      "referencedBy": [
+        "WISbonus"
+      ],
+      "references": []
+    },
+    "wisdom4NotesPage_value": {
+      "valueId": "wisdom4NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "wisdom4NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "wisdomVal4": {
+      "valueId": "wisdomVal4",
+      "value": "",
+      "parentElements": [
+        "wisdomVal4NotesPage"
+      ],
+      "referencedBy": [
+        "WISbonus"
+      ],
+      "references": []
+    },
+    "wisdom5NotesPage_value": {
+      "valueId": "wisdom5NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "wisdom5NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "wisdomVal5": {
+      "valueId": "wisdomVal5",
+      "value": "",
+      "parentElements": [
+        "wisdomVal5NotesPage"
+      ],
+      "referencedBy": [
+        "WISbonus"
+      ],
+      "references": []
+    },
+    "wisdom6NotesPage_value": {
+      "valueId": "wisdom6NotesPage_value",
+      "value": "TOTAL",
+      "parentElements": [
+        "wisdom6NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "WISbonus": {
+      "valueId": "WISbonus",
+      "value": "@js(@sr(wisdomVal1)sr + @sr(wisdomVal2)sr + @sr(wisdomVal3)sr + @sr(wisdomVal4)sr + @sr(wisdomVal5)sr + 0)js",
+      "parentElements": [
+        "wisdomVal6NotesPage"
+      ],
+      "referencedBy": [
+        "wisdom"
+      ],
+      "references": [
+        "wisdomVal5",
+        "wisdomVal4",
+        "wisdomVal3",
+        "wisdomVal2",
+        "wisdomVal1"
+      ]
+    },
+    "charismaNotesPage_value": {
+      "valueId": "charismaNotesPage_value",
+      "value": "",
+      "parentElements": [
+        "charismaNotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "charisma1NotesPage_value": {
+      "valueId": "charisma1NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "charisma1NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "charismaVal1": {
+      "valueId": "charismaVal1",
+      "value": "",
+      "parentElements": [
+        "charismaVal1NotesPage"
+      ],
+      "referencedBy": [
+        "CHAbonus"
+      ],
+      "references": []
+    },
+    "charisma2NotesPage_value": {
+      "valueId": "charisma2NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "charisma2NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "charismaVal2": {
+      "valueId": "charismaVal2",
+      "value": "",
+      "parentElements": [
+        "charismaVal2NotesPage"
+      ],
+      "referencedBy": [
+        "CHAbonus"
+      ],
+      "references": []
+    },
+    "charisma3NotesPage_value": {
+      "valueId": "charisma3NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "charisma3NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "charismaVal3": {
+      "valueId": "charismaVal3",
+      "value": "",
+      "parentElements": [
+        "charismaVal3NotesPage"
+      ],
+      "referencedBy": [
+        "CHAbonus"
+      ],
+      "references": []
+    },
+    "charisma4NotesPage_value": {
+      "valueId": "charisma4NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "charisma4NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "charismaVal4": {
+      "valueId": "charismaVal4",
+      "value": "",
+      "parentElements": [
+        "charismaVal4NotesPage"
+      ],
+      "referencedBy": [
+        "CHAbonus"
+      ],
+      "references": []
+    },
+    "charisma5NotesPage_value": {
+      "valueId": "charisma5NotesPage_value",
+      "value": "",
+      "parentElements": [
+        "charisma5NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "charismaVal5": {
+      "valueId": "charismaVal5",
+      "value": "",
+      "parentElements": [
+        "charismaVal5NotesPage"
+      ],
+      "referencedBy": [
+        "CHAbonus"
+      ],
+      "references": []
+    },
+    "charisma6NotesPage_value": {
+      "valueId": "charisma6NotesPage_value",
+      "value": "TOTAL",
+      "parentElements": [
+        "charisma6NotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "CHAbonus": {
+      "valueId": "CHAbonus",
+      "value": "@js(@sr(charismaVal1)sr + @sr(charismaVal2)sr + @sr(charismaVal3)sr + @sr(charismaVal4)sr + @sr(charismaVal5)sr + 0)js",
+      "parentElements": [
+        "charismaVal6NotesPage"
+      ],
+      "referencedBy": [
+        "charisma"
+      ],
+      "references": [
+        "charismaVal5",
+        "charismaVal4",
+        "charismaVal3",
+        "charismaVal2",
+        "charismaVal1"
+      ]
+    },
+    "locationsNotesPage_value": {
+      "valueId": "locationsNotesPage_value",
+      "value": "",
+      "parentElements": [
+        "locationsNotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "npcsNotesPage_value": {
+      "valueId": "npcsNotesPage_value",
+      "value": "",
+      "parentElements": [
+        "npcsNotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "questsNotesPage_value": {
+      "valueId": "questsNotesPage_value",
+      "value": "",
+      "parentElements": [
+        "questsNotesPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "allSkills": {
+      "valueId": "allSkills",
+      "value": "@js(@sr(allSkillsVal1)sr + @sr(allSkillsVal2)sr + @sr(allSkillsVal3)sr + @sr(allSkillsVal4)sr + @sr(allSkillsVal5)sr + 0)js",
+      "parentElements": [
+        "allSkillsVal6NotesPage"
+      ],
+      "referencedBy": [
+        "climb",
+        "jump",
+        "swim",
+        "ecapeArtist",
+        "balance",
+        "hide",
+        "moveSilently",
+        "openLock",
+        "ride",
+        "sleightOfHand",
+        "tumble",
+        "useRope",
+        "concentration",
+        "appraise",
+        "disableDevice",
+        "forgery",
+        "decipherScript",
+        "search",
+        "craft",
+        "knowledge",
+        "spellcraft",
+        "heal",
+        "listen",
+        "senseMotive",
+        "spot",
+        "survival",
+        "profession",
+        "bluff",
+        "diplomacy",
+        "gatherInfo",
+        "handleAnimal",
+        "intimidate",
+        "useMagicDevice",
+        "perform",
+        "disguise"
+      ],
+      "references": [
+        "allSkillsVal5",
+        "allSkillsVal4",
+        "allSkillsVal3",
+        "allSkillsVal2",
+        "allSkillsVal1"
+      ]
+    },
+    "allSaves": {
+      "valueId": "allSaves",
+      "value": "@js(@sr(allSavesVal1)sr + @sr(allSavesVal2)sr + @sr(allSavesVal3)sr + @sr(allSavesVal4)sr + @sr(allSavesVal5)sr + 0)js",
+      "parentElements": [
+        "allSavesVal6NotesPage"
+      ],
+      "referencedBy": [
+        "fortSave",
+        "willSave",
+        "reflexSave"
+      ],
+      "references": [
+        "allSavesVal5",
+        "allSavesVal4",
+        "allSavesVal3",
+        "allSavesVal2",
+        "allSavesVal1"
+      ]
+    },
+    "allAttacks": {
+      "valueId": "allAttacks",
+      "value": "@js(@sr(allAttacksVal1)sr + @sr(allAttacksVal2)sr + @sr(allAttacksVal3)sr + @sr(allAttacksVal4)sr + @sr(allAttacksVal5)sr + 0)js",
+      "parentElements": [
+        "allAttacksVal6NotesPage"
+      ],
+      "referencedBy": [],
+      "references": [
+        "allAttacksVal5",
+        "allAttacksVal4",
+        "allAttacksVal3",
+        "allAttacksVal2",
+        "allAttacksVal1"
+      ]
+    },
+    "allDamage": {
+      "valueId": "allDamage",
+      "value": "@js(@sr(allDamageVal1)sr + @sr(allDamageVal2)sr + @sr(allDamageVal3)sr + @sr(allDamageVal4)sr + @sr(allDamageVal5)sr + 0)js",
+      "parentElements": [
+        "allDamageVal6NotesPage"
+      ],
+      "referencedBy": [],
+      "references": [
+        "allDamageVal5",
+        "allDamageVal4",
+        "allDamageVal3",
+        "allDamageVal2",
+        "allDamageVal1"
+      ]
+    },
+    "healButtonLookupPage_value": {
+      "valueId": "healButtonLookupPage_value",
+      "value": "let field = \"currentHp\"\nlet maxfield = 'maxHp'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
+      "parentElements": [
+        "healButtonLookupPage"
       ],
       "referencedBy": [],
       "references": []
