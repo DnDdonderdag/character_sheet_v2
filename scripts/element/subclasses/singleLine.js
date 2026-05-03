@@ -205,9 +205,11 @@ export class SingleLine extends Element {
             autoSizer.textContent = triggeringField.value?.length ? triggeringField.value : " "
         }
 
-        const horizontalPadding = parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight)
-        const availableWidth = Math.max(0, triggeringField.clientWidth - horizontalPadding - 4)
-        const overflows = () => autoSizer.offsetWidth > availableWidth
+        const paddingLeft = parseFloat(computedStyle.paddingLeft) || 0
+        const paddingRight = parseFloat(computedStyle.paddingRight) || 0
+        const horizontalPadding = paddingLeft + paddingRight
+        const availableWidth = Math.max(0, triggeringField.clientWidth - horizontalPadding)
+        const overflows = () => autoSizer.offsetWidth > (availableWidth + 0.5)
 
         let low = 1
         let high = maxFont
