@@ -120,7 +120,7 @@ export class Button extends Element {
     }
 
     getElement(elementId){
-        return this.master.getElementById(elementId)
+        return this.master.getElementFromId(elementId)
     }
 
 
