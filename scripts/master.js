@@ -13,7 +13,9 @@ export class Master {
         this.editor = null
         this.lookup = null
         this.editorActive = false
+        this.zoom = 1
         this.populateStartup()
+        this.setupZoom()
         this.floatingWindow = new FloatingWindow(this)
         this.editor = new Editor(this, document.getElementById("editor"))
         this.lookup = new Lookup(this)
@@ -110,6 +112,18 @@ export class Master {
 
     }
 
+    setupZoom() {
+        const charSheet = document.getElementById("characterSheet")
+
+        window.addEventListener("wheel", (e) => {
+            if (!e.ctrlKey) return
+            e.preventDefault()
+            this.zoom *= 1 - e.deltaY * 0.001
+            this.zoom = Math.min(Math.max(this.zoom, 1), 5)
+            charSheet.style.zoom = this.zoom
+        }, { passive: false })
+    }
+
     uploadSaveFile(file) {
         // activated by upload button
         // set elements, values and lookup from file
@@ -133,10 +147,26 @@ export class Master {
     }
 
     drawElements() {
-        document.getElementById("characterSheet").innerHTML = ""
+        // Save scroll positions of characterSheet and any scrolled children
+        const scrollPositions = {}
+        const charSheet = document.getElementById("characterSheet")
+        ;[charSheet, ...charSheet.querySelectorAll("[id]")].forEach(el => {
+            if (el.scrollTop !== 0 || el.scrollLeft !== 0) {
+                scrollPositions[el.id] = { top: el.scrollTop, left: el.scrollLeft }
+            }
+        })
+
+        charSheet.innerHTML = ""
         this.elements["characterSheet"].draw()
-        // clear DOM
-        // for element in children {element.draw}
+
+        // Restore scroll positions after redraw
+        for (const [id, pos] of Object.entries(scrollPositions)) {
+            const el = document.getElementById(id)
+            if (el) {
+                el.scrollTop = pos.top
+                el.scrollLeft = pos.left
+            }
+        }
     }
 
     getElementFromId(elementId) {

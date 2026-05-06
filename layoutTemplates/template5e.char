@@ -9614,7 +9614,7 @@
       "top": 17,
       "left": 0,
       "width": 206,
-      "height": 260
+      "height": 210
     },
     "level0SvgSpellListPage": {
       "type": "Svg",
@@ -10288,7 +10288,7 @@
       "top": 225,
       "left": 0,
       "width": 206,
-      "height": 260
+      "height": 280
     },
     "level1SvgSpellListPage": {
       "type": "Svg",
@@ -10298,9 +10298,10 @@
       "children": [
         "level1TextSpellListPage",
         "level1MaxSpellListPage",
-        "level1CurrentSpellListPage",
-        "level1MinusOneSpellListPage",
-        "level1FillSpellListPage"
+        "level1Spellslot1SpellListPage",
+        "level1Spellslot2SpellListPage",
+        "level1Spellslot3SpellListPage",
+        "level1Spellslot4SpellListPage"
       ],
       "top": 0,
       "left": 0,
@@ -10336,54 +10337,6 @@
       "color": "#dde4ff",
       "maxFontSize": 16,
       "textAlign": "center"
-    },
-    "level1CurrentSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level1CurrentSpellListPage",
-      "valueId": "level1Current",
-      "parent": "level1SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 90,
-      "width": 30,
-      "height": 18,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level1MinusOneSpellListPage": {
-      "type": "Button",
-      "elementId": "level1MinusOneSpellListPage",
-      "valueId": "level1MinusOneSpellListPage_value",
-      "parent": "level1SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 121,
-      "width": 20,
-      "height": 18,
-      "buttonText": "-1",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 16
-    },
-    "level1FillSpellListPage": {
-      "type": "Button",
-      "elementId": "level1FillSpellListPage",
-      "valueId": "level1FillSpellListPage_value",
-      "parent": "level1SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 142,
-      "width": 40,
-      "height": 18,
-      "buttonText": "FILL",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 12
     },
     "level1Spell1SpellListPage": {
       "type": "SingleLine",
@@ -11525,7 +11478,6 @@
       "valueId": "level2SpellListPage_value",
       "parent": "spellColumn1SpellListPage",
       "children": [
-        "level2SvgSpellListPage",
         "level2Spell1SpellListPage",
         "level2Spell2SpellListPage",
         "level2Spell3SpellListPage",
@@ -11542,107 +11494,13 @@
         "level2Spell14SpellListPage",
         "level2Spell15SpellListPage",
         "level2Spell16SpellListPage",
-        "level2Spell17SpellListPage"
+        "level2Spell17SpellListPage",
+        "level2SvgSpellListPage"
       ],
       "top": 498,
       "left": 0,
       "width": 206,
       "height": 260
-    },
-    "level2SvgSpellListPage": {
-      "type": "Svg",
-      "elementId": "level2SvgSpellListPage",
-      "valueId": "level2SvgSpellListPage_value",
-      "parent": "level2SpellListPage",
-      "children": [
-        "level2TextSpellListPage",
-        "level2MaxSpellListPage",
-        "level2CurrentSpellListPage",
-        "level2MinusOneSpellListPage",
-        "level2FillSpellListPage"
-      ],
-      "top": 0,
-      "left": 0,
-      "width": 206,
-      "height": 42,
-      "path": "spellbar.svg"
-    },
-    "level2TextSpellListPage": {
-      "type": "Text",
-      "elementId": "level2TextSpellListPage",
-      "valueId": "level2TextSpellListPage_value",
-      "parent": "level2SvgSpellListPage",
-      "children": [],
-      "top": 8,
-      "left": 10,
-      "width": 10,
-      "height": 26,
-      "fontSize": 20,
-      "font": "scalasans",
-      "color": "black",
-      "alignment": "center"
-    },
-    "level2MaxSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level2MaxSpellListPage",
-      "valueId": "level2Max",
-      "parent": "level2SvgSpellListPage",
-      "children": [],
-      "top": 9,
-      "left": 29,
-      "width": 43,
-      "height": 24,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level2CurrentSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level2CurrentSpellListPage",
-      "valueId": "level2Current",
-      "parent": "level2SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 90,
-      "width": 30,
-      "height": 18,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level2MinusOneSpellListPage": {
-      "type": "Button",
-      "elementId": "level2MinusOneSpellListPage",
-      "valueId": "level2MinusOneSpellListPage_value",
-      "parent": "level2SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 121,
-      "width": 20,
-      "height": 18,
-      "buttonText": "-1",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 16
-    },
-    "level2FillSpellListPage": {
-      "type": "Button",
-      "elementId": "level2FillSpellListPage",
-      "valueId": "level2FillSpellListPage_value",
-      "parent": "level2SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 142,
-      "width": 40,
-      "height": 18,
-      "buttonText": "FILL",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 12
     },
     "level2Spell1SpellListPage": {
       "type": "SingleLine",
@@ -12749,7 +12607,6 @@
       "valueId": "level3SpellListPage_value",
       "parent": "spellColumn2SpellListPage",
       "children": [
-        "level3SvgSpellListPage",
         "level3Spell1SpellListPage",
         "level3Spell2SpellListPage",
         "level3Spell3SpellListPage",
@@ -12766,107 +12623,13 @@
         "level3Spell14SpellListPage",
         "level3Spell15SpellListPage",
         "level3Spell16SpellListPage",
-        "level3Spell17SpellListPage"
+        "level3Spell17SpellListPage",
+        "level3SvgSpellListPage"
       ],
       "top": 17,
       "left": 0,
       "width": 206,
       "height": 260
-    },
-    "level3SvgSpellListPage": {
-      "type": "Svg",
-      "elementId": "level3SvgSpellListPage",
-      "valueId": "level3SvgSpellListPage_value",
-      "parent": "level3SpellListPage",
-      "children": [
-        "level3TextSpellListPage",
-        "level3MaxSpellListPage",
-        "level3CurrentSpellListPage",
-        "level3MinusOneSpellListPage",
-        "level3FillSpellListPage"
-      ],
-      "top": 0,
-      "left": 0,
-      "width": 206,
-      "height": 42,
-      "path": "spellbar.svg"
-    },
-    "level3TextSpellListPage": {
-      "type": "Text",
-      "elementId": "level3TextSpellListPage",
-      "valueId": "level3TextSpellListPage_value",
-      "parent": "level3SvgSpellListPage",
-      "children": [],
-      "top": 8,
-      "left": 10,
-      "width": 10,
-      "height": 26,
-      "fontSize": 20,
-      "font": "scalasans",
-      "color": "black",
-      "alignment": "center"
-    },
-    "level3MaxSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level3MaxSpellListPage",
-      "valueId": "level3Max",
-      "parent": "level3SvgSpellListPage",
-      "children": [],
-      "top": 9,
-      "left": 29,
-      "width": 43,
-      "height": 24,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level3CurrentSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level3CurrentSpellListPage",
-      "valueId": "level3Current",
-      "parent": "level3SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 90,
-      "width": 30,
-      "height": 18,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level3MinusOneSpellListPage": {
-      "type": "Button",
-      "elementId": "level3MinusOneSpellListPage",
-      "valueId": "level3MinusOneSpellListPage_value",
-      "parent": "level3SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 121,
-      "width": 20,
-      "height": 18,
-      "buttonText": "-1",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 16
-    },
-    "level3FillSpellListPage": {
-      "type": "Button",
-      "elementId": "level3FillSpellListPage",
-      "valueId": "level3FillSpellListPage_value",
-      "parent": "level3SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 142,
-      "width": 40,
-      "height": 18,
-      "buttonText": "FILL",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 12
     },
     "level3Spell1SpellListPage": {
       "type": "SingleLine",
@@ -13945,7 +13708,6 @@
       "valueId": "level4SpellListPage_value",
       "parent": "spellColumn2SpellListPage",
       "children": [
-        "level4SvgSpellListPage",
         "level4Spell1SpellListPage",
         "level4Spell2SpellListPage",
         "level4Spell3SpellListPage",
@@ -13961,107 +13723,13 @@
         "level4Spell13SpellListPage",
         "level4Spell14SpellListPage",
         "level4Spell15SpellListPage",
-        "level4Spell16SpellListPage"
+        "level4Spell16SpellListPage",
+        "level4SvgSpellListPage"
       ],
       "top": 277,
       "left": 0,
       "width": 206,
-      "height": 260
-    },
-    "level4SvgSpellListPage": {
-      "type": "Svg",
-      "elementId": "level4SvgSpellListPage",
-      "valueId": "level4SvgSpellListPage_value",
-      "parent": "level4SpellListPage",
-      "children": [
-        "level4TextSpellListPage",
-        "level4MaxSpellListPage",
-        "level4CurrentSpellListPage",
-        "level4MinusOneSpellListPage",
-        "level4FillSpellListPage"
-      ],
-      "top": 0,
-      "left": 0,
-      "width": 206,
-      "height": 42,
-      "path": "spellbar.svg"
-    },
-    "level4TextSpellListPage": {
-      "type": "Text",
-      "elementId": "level4TextSpellListPage",
-      "valueId": "level4TextSpellListPage_value",
-      "parent": "level4SvgSpellListPage",
-      "children": [],
-      "top": 8,
-      "left": 10,
-      "width": 10,
-      "height": 26,
-      "fontSize": 20,
-      "font": "scalasans",
-      "color": "black",
-      "alignment": "center"
-    },
-    "level4MaxSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level4MaxSpellListPage",
-      "valueId": "level4Max",
-      "parent": "level4SvgSpellListPage",
-      "children": [],
-      "top": 9,
-      "left": 29,
-      "width": 43,
-      "height": 24,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level4CurrentSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level4CurrentSpellListPage",
-      "valueId": "level4Current",
-      "parent": "level4SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 90,
-      "width": 30,
-      "height": 18,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level4MinusOneSpellListPage": {
-      "type": "Button",
-      "elementId": "level4MinusOneSpellListPage",
-      "valueId": "level4MinusOneSpellListPage_value",
-      "parent": "level4SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 121,
-      "width": 20,
-      "height": 18,
-      "buttonText": "-1",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 16
-    },
-    "level4FillSpellListPage": {
-      "type": "Button",
-      "elementId": "level4FillSpellListPage",
-      "valueId": "level4FillSpellListPage_value",
-      "parent": "level4SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 142,
-      "width": 40,
-      "height": 18,
-      "buttonText": "FILL",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 12
+      "height": 250
     },
     "level4Spell1SpellListPage": {
       "type": "SingleLine",
@@ -15077,7 +14745,6 @@
       "valueId": "level5SpellListPage_value",
       "parent": "spellColumn2SpellListPage",
       "children": [
-        "level5SvgSpellListPage",
         "level5Spell1SpellListPage",
         "level5Spell2SpellListPage",
         "level5Spell3SpellListPage",
@@ -15092,107 +14759,13 @@
         "level5Spell12SpellListPage",
         "level5Spell13SpellListPage",
         "level5Spell14SpellListPage",
-        "level5Spell15SpellListPage"
+        "level5Spell15SpellListPage",
+        "level5SvgSpellListPage"
       ],
       "top": 524,
       "left": 0,
       "width": 206,
-      "height": 260
-    },
-    "level5SvgSpellListPage": {
-      "type": "Svg",
-      "elementId": "level5SvgSpellListPage",
-      "valueId": "level5SvgSpellListPage_value",
-      "parent": "level5SpellListPage",
-      "children": [
-        "level5TextSpellListPage",
-        "level5MaxSpellListPage",
-        "level5CurrentSpellListPage",
-        "level5MinusOneSpellListPage",
-        "level5FillSpellListPage"
-      ],
-      "top": 0,
-      "left": 0,
-      "width": 206,
-      "height": 42,
-      "path": "spellbar.svg"
-    },
-    "level5TextSpellListPage": {
-      "type": "Text",
-      "elementId": "level5TextSpellListPage",
-      "valueId": "level5TextSpellListPage_value",
-      "parent": "level5SvgSpellListPage",
-      "children": [],
-      "top": 8,
-      "left": 10,
-      "width": 10,
-      "height": 26,
-      "fontSize": 20,
-      "font": "scalasans",
-      "color": "black",
-      "alignment": "center"
-    },
-    "level5MaxSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level5MaxSpellListPage",
-      "valueId": "level5Max",
-      "parent": "level5SvgSpellListPage",
-      "children": [],
-      "top": 9,
-      "left": 29,
-      "width": 43,
-      "height": 24,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level5CurrentSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level5CurrentSpellListPage",
-      "valueId": "level5Current",
-      "parent": "level5SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 90,
-      "width": 30,
-      "height": 18,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level5MinusOneSpellListPage": {
-      "type": "Button",
-      "elementId": "level5MinusOneSpellListPage",
-      "valueId": "level5MinusOneSpellListPage_value",
-      "parent": "level5SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 121,
-      "width": 20,
-      "height": 18,
-      "buttonText": "-1",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 16
-    },
-    "level5FillSpellListPage": {
-      "type": "Button",
-      "elementId": "level5FillSpellListPage",
-      "valueId": "level5FillSpellListPage_value",
-      "parent": "level5SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 142,
-      "width": 40,
-      "height": 18,
-      "buttonText": "FILL",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 12
+      "height": 240
     },
     "level5Spell1SpellListPage": {
       "type": "SingleLine",
@@ -16174,7 +15747,6 @@
       "valueId": "level6SpellListPage_value",
       "parent": "spellColumn3SpellListPage",
       "children": [
-        "level6SvgSpellListPage",
         "level6Spell1SpellListPage",
         "level6Spell2SpellListPage",
         "level6Spell3SpellListPage",
@@ -16187,107 +15759,13 @@
         "level6Spell10SpellListPage",
         "level6Spell11SpellListPage",
         "level6Spell12SpellListPage",
-        "level6Spell13SpellListPage"
+        "level6Spell13SpellListPage",
+        "level6SvgSpellListPage"
       ],
       "top": 17,
       "left": 0,
       "width": 206,
-      "height": 260
-    },
-    "level6SvgSpellListPage": {
-      "type": "Svg",
-      "elementId": "level6SvgSpellListPage",
-      "valueId": "level6SvgSpellListPage_value",
-      "parent": "level6SpellListPage",
-      "children": [
-        "level6TextSpellListPage",
-        "level6MaxSpellListPage",
-        "level6CurrentSpellListPage",
-        "level6MinusOneSpellListPage",
-        "level6FillSpellListPage"
-      ],
-      "top": 0,
-      "left": 0,
-      "width": 206,
-      "height": 42,
-      "path": "spellbar.svg"
-    },
-    "level6TextSpellListPage": {
-      "type": "Text",
-      "elementId": "level6TextSpellListPage",
-      "valueId": "level6TextSpellListPage_value",
-      "parent": "level6SvgSpellListPage",
-      "children": [],
-      "top": 8,
-      "left": 10,
-      "width": 10,
-      "height": 26,
-      "fontSize": 20,
-      "font": "scalasans",
-      "color": "black",
-      "alignment": "center"
-    },
-    "level6MaxSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level6MaxSpellListPage",
-      "valueId": "level6Max",
-      "parent": "level6SvgSpellListPage",
-      "children": [],
-      "top": 9,
-      "left": 29,
-      "width": 43,
-      "height": 24,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level6CurrentSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level6CurrentSpellListPage",
-      "valueId": "level6Current",
-      "parent": "level6SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 90,
-      "width": 30,
-      "height": 18,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level6MinusOneSpellListPage": {
-      "type": "Button",
-      "elementId": "level6MinusOneSpellListPage",
-      "valueId": "level6MinusOneSpellListPage_value",
-      "parent": "level6SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 121,
-      "width": 20,
-      "height": 18,
-      "buttonText": "-1",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 16
-    },
-    "level6FillSpellListPage": {
-      "type": "Button",
-      "elementId": "level6FillSpellListPage",
-      "valueId": "level6FillSpellListPage_value",
-      "parent": "level6SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 142,
-      "width": 40,
-      "height": 18,
-      "buttonText": "FILL",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 12
+      "height": 210
     },
     "level6Spell1SpellListPage": {
       "type": "SingleLine",
@@ -17114,7 +16592,6 @@
       "valueId": "level7SpellListPage_value",
       "parent": "spellColumn3SpellListPage",
       "children": [
-        "level7SvgSpellListPage",
         "level7Spell1SpellListPage",
         "level7Spell2SpellListPage",
         "level7Spell3SpellListPage",
@@ -17126,107 +16603,13 @@
         "level7Spell9SpellListPage",
         "level7Spell10SpellListPage",
         "level7Spell11SpellListPage",
-        "level7Spell12SpellListPage"
+        "level7Spell12SpellListPage",
+        "level7SvgSpellListPage"
       ],
       "top": 225,
       "left": 0,
       "width": 206,
-      "height": 260
-    },
-    "level7SvgSpellListPage": {
-      "type": "Svg",
-      "elementId": "level7SvgSpellListPage",
-      "valueId": "level7SvgSpellListPage_value",
-      "parent": "level7SpellListPage",
-      "children": [
-        "level7TextSpellListPage",
-        "level7MaxSpellListPage",
-        "level7CurrentSpellListPage",
-        "level7MinusOneSpellListPage",
-        "level7FillSpellListPage"
-      ],
-      "top": 0,
-      "left": 0,
-      "width": 206,
-      "height": 42,
-      "path": "spellbar.svg"
-    },
-    "level7TextSpellListPage": {
-      "type": "Text",
-      "elementId": "level7TextSpellListPage",
-      "valueId": "level7TextSpellListPage_value",
-      "parent": "level7SvgSpellListPage",
-      "children": [],
-      "top": 8,
-      "left": 10,
-      "width": 10,
-      "height": 26,
-      "fontSize": 20,
-      "font": "scalasans",
-      "color": "black",
-      "alignment": "center"
-    },
-    "level7MaxSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level7MaxSpellListPage",
-      "valueId": "level7Max",
-      "parent": "level7SvgSpellListPage",
-      "children": [],
-      "top": 9,
-      "left": 29,
-      "width": 43,
-      "height": 24,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level7CurrentSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level7CurrentSpellListPage",
-      "valueId": "level7Current",
-      "parent": "level7SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 90,
-      "width": 30,
-      "height": 18,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level7MinusOneSpellListPage": {
-      "type": "Button",
-      "elementId": "level7MinusOneSpellListPage",
-      "valueId": "level7MinusOneSpellListPage_value",
-      "parent": "level7SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 121,
-      "width": 20,
-      "height": 18,
-      "buttonText": "-1",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 16
-    },
-    "level7FillSpellListPage": {
-      "type": "Button",
-      "elementId": "level7FillSpellListPage",
-      "valueId": "level7FillSpellListPage_value",
-      "parent": "level7SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 142,
-      "width": 40,
-      "height": 18,
-      "buttonText": "FILL",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 12
+      "height": 200
     },
     "level7Spell1SpellListPage": {
       "type": "SingleLine",
@@ -17990,7 +17373,6 @@
       "valueId": "level8SpellListPage_value",
       "parent": "spellColumn3SpellListPage",
       "children": [
-        "level8SvgSpellListPage",
         "level8Spell1SpellListPage",
         "level8Spell2SpellListPage",
         "level8Spell3SpellListPage",
@@ -18001,107 +17383,13 @@
         "level8Spell8SpellListPage",
         "level8Spell9SpellListPage",
         "level8Spell10SpellListPage",
-        "level8Spell11SpellListPage"
+        "level8Spell11SpellListPage",
+        "level8SvgSpellListPage"
       ],
       "top": 420,
       "left": 0,
       "width": 206,
-      "height": 260
-    },
-    "level8SvgSpellListPage": {
-      "type": "Svg",
-      "elementId": "level8SvgSpellListPage",
-      "valueId": "level8SvgSpellListPage_value",
-      "parent": "level8SpellListPage",
-      "children": [
-        "level8TextSpellListPage",
-        "level8MaxSpellListPage",
-        "level8CurrentSpellListPage",
-        "level8MinusOneSpellListPage",
-        "level8FillSpellListPage"
-      ],
-      "top": 0,
-      "left": 0,
-      "width": 206,
-      "height": 42,
-      "path": "spellbar.svg"
-    },
-    "level8TextSpellListPage": {
-      "type": "Text",
-      "elementId": "level8TextSpellListPage",
-      "valueId": "level8TextSpellListPage_value",
-      "parent": "level8SvgSpellListPage",
-      "children": [],
-      "top": 8,
-      "left": 10,
-      "width": 10,
-      "height": 26,
-      "fontSize": 20,
-      "font": "scalasans",
-      "color": "black",
-      "alignment": "center"
-    },
-    "level8MaxSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level8MaxSpellListPage",
-      "valueId": "level8Max",
-      "parent": "level8SvgSpellListPage",
-      "children": [],
-      "top": 9,
-      "left": 29,
-      "width": 43,
-      "height": 24,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level8CurrentSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level8CurrentSpellListPage",
-      "valueId": "level8Current",
-      "parent": "level8SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 90,
-      "width": 30,
-      "height": 18,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level8MinusOneSpellListPage": {
-      "type": "Button",
-      "elementId": "level8MinusOneSpellListPage",
-      "valueId": "level8MinusOneSpellListPage_value",
-      "parent": "level8SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 121,
-      "width": 20,
-      "height": 18,
-      "buttonText": "-1",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 16
-    },
-    "level8FillSpellListPage": {
-      "type": "Button",
-      "elementId": "level8FillSpellListPage",
-      "valueId": "level8FillSpellListPage_value",
-      "parent": "level8SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 142,
-      "width": 40,
-      "height": 18,
-      "buttonText": "FILL",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 12
+      "height": 180
     },
     "level8Spell1SpellListPage": {
       "type": "SingleLine",
@@ -18802,7 +18090,6 @@
       "valueId": "level9SpellListPage_value",
       "parent": "spellColumn3SpellListPage",
       "children": [
-        "level9SvgSpellListPage",
         "level9Spell1SpellListPage",
         "level9Spell2SpellListPage",
         "level9Spell3SpellListPage",
@@ -18811,107 +18098,13 @@
         "level9Spell6SpellListPage",
         "level9Spell7SpellListPage",
         "level9Spell8SpellListPage",
-        "level9Spell9SpellListPage"
+        "level9Spell9SpellListPage",
+        "level9SvgSpellListPage"
       ],
       "top": 602,
       "left": 0,
       "width": 206,
-      "height": 170
-    },
-    "level9SvgSpellListPage": {
-      "type": "Svg",
-      "elementId": "level9SvgSpellListPage",
-      "valueId": "level9SvgSpellListPage_value",
-      "parent": "level9SpellListPage",
-      "children": [
-        "level9TextSpellListPage",
-        "level9MaxSpellListPage",
-        "level9CurrentSpellListPage",
-        "level9MinusOneSpellListPage",
-        "level9FillSpellListPage"
-      ],
-      "top": 0,
-      "left": 0,
-      "width": 206,
-      "height": 42,
-      "path": "spellbar.svg"
-    },
-    "level9TextSpellListPage": {
-      "type": "Text",
-      "elementId": "level9TextSpellListPage",
-      "valueId": "level9TextSpellListPage_value",
-      "parent": "level9SvgSpellListPage",
-      "children": [],
-      "top": 8,
-      "left": 10,
-      "width": 10,
-      "height": 26,
-      "fontSize": 20,
-      "font": "scalasans",
-      "color": "black",
-      "alignment": "center"
-    },
-    "level9MaxSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level9MaxSpellListPage",
-      "valueId": "level9Max",
-      "parent": "level9SvgSpellListPage",
-      "children": [],
-      "top": 9,
-      "left": 29,
-      "width": 43,
-      "height": 24,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level9CurrentSpellListPage": {
-      "type": "SingleLine",
-      "elementId": "level9CurrentSpellListPage",
-      "valueId": "level9Current",
-      "parent": "level9SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 90,
-      "width": 30,
-      "height": 18,
-      "color": "#dde4ff",
-      "maxFontSize": 16,
-      "textAlign": "center"
-    },
-    "level9MinusOneSpellListPage": {
-      "type": "Button",
-      "elementId": "level9MinusOneSpellListPage",
-      "valueId": "level9MinusOneSpellListPage_value",
-      "parent": "level9SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 121,
-      "width": 20,
-      "height": 18,
-      "buttonText": "-1",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 16
-    },
-    "level9FillSpellListPage": {
-      "type": "Button",
-      "elementId": "level9FillSpellListPage",
-      "valueId": "level9FillSpellListPage_value",
-      "parent": "level9SvgSpellListPage",
-      "children": [],
-      "top": 12,
-      "left": 142,
-      "width": 40,
-      "height": 18,
-      "buttonText": "FILL",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 12
+      "height": 160
     },
     "level9Spell1SpellListPage": {
       "type": "SingleLine",
@@ -19685,6 +18878,966 @@
       "maxFontSize": 16,
       "textAlign": "left",
       "inputType": "textArea"
+    },
+    "level1Spellslot1SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level1Spellslot1SpellListPage",
+      "valueId": "level1Spellslot1SpellListPage_value",
+      "parent": "level1SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 95,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level2TextSpellListPage": {
+      "type": "Text",
+      "elementId": "level2TextSpellListPage",
+      "valueId": "level2TextSpellListPage_value",
+      "parent": "level2SvgSpellListPage",
+      "children": [],
+      "top": 8,
+      "left": 10,
+      "width": 10,
+      "height": 26,
+      "fontSize": 20,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
+    },
+    "level2MaxSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level2MaxSpellListPage",
+      "valueId": "level2Max",
+      "parent": "level2SvgSpellListPage",
+      "children": [],
+      "top": 9,
+      "left": 29,
+      "width": 43,
+      "height": 24,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "level2SvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level2SvgSpellListPage",
+      "valueId": "level2SvgSpellListPage_value",
+      "parent": "level2SpellListPage",
+      "children": [
+        "level2TextSpellListPage",
+        "level2MaxSpellListPage",
+        "level2Spellslot1SpellListPage",
+        "level2Spellslot2SpellListPage",
+        "level2Spellslot3SpellListPage",
+        "level2Spellslot4SpellListPage"
+      ],
+      "top": 0,
+      "left": 0,
+      "width": 206,
+      "height": 42,
+      "path": "spellbar.svg"
+    },
+    "level1Spellslot2SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level1Spellslot2SpellListPage",
+      "valueId": "level1Spellslot2SpellListPage_value",
+      "parent": "level1SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 116,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level1Spellslot3SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level1Spellslot3SpellListPage",
+      "valueId": "level1Spellslot3SpellListPage_value",
+      "parent": "level1SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 137,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level1Spellslot4SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level1Spellslot4SpellListPage",
+      "valueId": "level1Spellslot4SpellListPage_value",
+      "parent": "level1SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 158,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level2Spellslot1SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level2Spellslot1SpellListPage",
+      "valueId": "level2Spellslot1SpellListPage_value",
+      "parent": "level2SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 95,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level2Spellslot2SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level2Spellslot2SpellListPage",
+      "valueId": "level2Spellslot2SpellListPage_value",
+      "parent": "level2SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 116,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level2Spellslot3SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level2Spellslot3SpellListPage",
+      "valueId": "level2Spellslot3SpellListPage_value",
+      "parent": "level2SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 137,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level2Spellslot4SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level2Spellslot4SpellListPage",
+      "valueId": "level2Spellslot4SpellListPage_value",
+      "parent": "level2SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 158,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level3TextSpellListPage": {
+      "type": "Text",
+      "elementId": "level3TextSpellListPage",
+      "valueId": "level3TextSpellListPage_value",
+      "parent": "level3SvgSpellListPage",
+      "children": [],
+      "top": 8,
+      "left": 10,
+      "width": 10,
+      "height": 26,
+      "fontSize": 20,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
+    },
+    "level3SvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level3SvgSpellListPage",
+      "valueId": "level3SvgSpellListPage_value",
+      "parent": "level3SpellListPage",
+      "children": [
+        "level3TextSpellListPage",
+        "level3MaxSpellListPage",
+        "level3Spellslot1SpellListPage",
+        "level3Spellslot2SpellListPage",
+        "level3Spellslot3SpellListPage",
+        "level3Spellslot4SpellListPage"
+      ],
+      "top": 0,
+      "left": 0,
+      "width": 206,
+      "height": 42,
+      "path": "spellbar.svg"
+    },
+    "level3MaxSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level3MaxSpellListPage",
+      "valueId": "level3Max",
+      "parent": "level3SvgSpellListPage",
+      "children": [],
+      "top": 9,
+      "left": 29,
+      "width": 43,
+      "height": 24,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "level3Spellslot4SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level3Spellslot4SpellListPage",
+      "valueId": "level3Spellslot4SpellListPage_value",
+      "parent": "level3SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 158,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level3Spellslot3SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level3Spellslot3SpellListPage",
+      "valueId": "level3Spellslot3SpellListPage_value",
+      "parent": "level3SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 137,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level3Spellslot2SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level3Spellslot2SpellListPage",
+      "valueId": "level3Spellslot2SpellListPage_value",
+      "parent": "level3SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 116,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level3Spellslot1SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level3Spellslot1SpellListPage",
+      "valueId": "level3Spellslot1SpellListPage_value",
+      "parent": "level3SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 95,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level4TextSpellListPage": {
+      "type": "Text",
+      "elementId": "level4TextSpellListPage",
+      "valueId": "level4TextSpellListPage_value",
+      "parent": "level4SvgSpellListPage",
+      "children": [],
+      "top": 8,
+      "left": 10,
+      "width": 10,
+      "height": 26,
+      "fontSize": 20,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
+    },
+    "level4MaxSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level4MaxSpellListPage",
+      "valueId": "level4Max",
+      "parent": "level4SvgSpellListPage",
+      "children": [],
+      "top": 9,
+      "left": 29,
+      "width": 43,
+      "height": 24,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "level4SvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level4SvgSpellListPage",
+      "valueId": "level4SvgSpellListPage_value",
+      "parent": "level4SpellListPage",
+      "children": [
+        "level4TextSpellListPage",
+        "level4MaxSpellListPage",
+        "level4Spellslot1SpellListPage",
+        "level4Spellslot2SpellListPage",
+        "level4Spellslot3SpellListPage",
+        "level4Spellslot4SpellListPage"
+      ],
+      "top": 0,
+      "left": 0,
+      "width": 206,
+      "height": 42,
+      "path": "spellbar.svg"
+    },
+    "level4Spellslot4SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level4Spellslot4SpellListPage",
+      "valueId": "level4Spellslot4SpellListPage_value",
+      "parent": "level4SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 158,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level4Spellslot3SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level4Spellslot3SpellListPage",
+      "valueId": "level4Spellslot3SpellListPage_value",
+      "parent": "level4SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 137,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level4Spellslot2SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level4Spellslot2SpellListPage",
+      "valueId": "level4Spellslot2SpellListPage_value",
+      "parent": "level4SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 116,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level4Spellslot1SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level4Spellslot1SpellListPage",
+      "valueId": "level4Spellslot1SpellListPage_value",
+      "parent": "level4SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 95,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level5TextSpellListPage": {
+      "type": "Text",
+      "elementId": "level5TextSpellListPage",
+      "valueId": "level5TextSpellListPage_value",
+      "parent": "level5SvgSpellListPage",
+      "children": [],
+      "top": 8,
+      "left": 10,
+      "width": 10,
+      "height": 26,
+      "fontSize": 20,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
+    },
+    "level5MaxSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level5MaxSpellListPage",
+      "valueId": "level5Max",
+      "parent": "level5SvgSpellListPage",
+      "children": [],
+      "top": 9,
+      "left": 29,
+      "width": 43,
+      "height": 24,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "level5SvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level5SvgSpellListPage",
+      "valueId": "level5SvgSpellListPage_value",
+      "parent": "level5SpellListPage",
+      "children": [
+        "level5TextSpellListPage",
+        "level5MaxSpellListPage",
+        "level5Spellslot1SpellListPage",
+        "level5Spellslot2SpellListPage",
+        "level5Spellslot3SpellListPage",
+        "level5Spellslot4SpellListPage"
+      ],
+      "top": 0,
+      "left": 0,
+      "width": 206,
+      "height": 42,
+      "path": "spellbar.svg"
+    },
+    "level5Spellslot4SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level5Spellslot4SpellListPage",
+      "valueId": "level5Spellslot4SpellListPage_value",
+      "parent": "level5SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 158,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level5Spellslot3SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level5Spellslot3SpellListPage",
+      "valueId": "level5Spellslot3SpellListPage_value",
+      "parent": "level5SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 137,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level5Spellslot2SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level5Spellslot2SpellListPage",
+      "valueId": "level5Spellslot2SpellListPage_value",
+      "parent": "level5SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 116,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level5Spellslot1SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level5Spellslot1SpellListPage",
+      "valueId": "level5Spellslot1SpellListPage_value",
+      "parent": "level5SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 95,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level6SvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level6SvgSpellListPage",
+      "valueId": "level6SvgSpellListPage_value",
+      "parent": "level6SpellListPage",
+      "children": [
+        "level6TextSpellListPage",
+        "level6MaxSpellListPage",
+        "level6Spellslot1SpellListPage",
+        "level6Spellslot2SpellListPage",
+        "level6Spellslot3SpellListPage",
+        "level6Spellslot4SpellListPage"
+      ],
+      "top": 0,
+      "left": 0,
+      "width": 206,
+      "height": 42,
+      "path": "spellbar.svg"
+    },
+    "level6MaxSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level6MaxSpellListPage",
+      "valueId": "level6Max",
+      "parent": "level6SvgSpellListPage",
+      "children": [],
+      "top": 9,
+      "left": 29,
+      "width": 43,
+      "height": 24,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "level6TextSpellListPage": {
+      "type": "Text",
+      "elementId": "level6TextSpellListPage",
+      "valueId": "level6TextSpellListPage_value",
+      "parent": "level6SvgSpellListPage",
+      "children": [],
+      "top": 8,
+      "left": 10,
+      "width": 10,
+      "height": 26,
+      "fontSize": 20,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
+    },
+    "level6Spellslot4SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level6Spellslot4SpellListPage",
+      "valueId": "level6Spellslot4SpellListPage_value",
+      "parent": "level6SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 158,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level6Spellslot3SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level6Spellslot3SpellListPage",
+      "valueId": "level6Spellslot3SpellListPage_value",
+      "parent": "level6SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 137,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level6Spellslot2SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level6Spellslot2SpellListPage",
+      "valueId": "level6Spellslot2SpellListPage_value",
+      "parent": "level6SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 116,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level6Spellslot1SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level6Spellslot1SpellListPage",
+      "valueId": "level6Spellslot1SpellListPage_value",
+      "parent": "level6SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 95,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level7TextSpellListPage": {
+      "type": "Text",
+      "elementId": "level7TextSpellListPage",
+      "valueId": "level7TextSpellListPage_value",
+      "parent": "level7SvgSpellListPage",
+      "children": [],
+      "top": 8,
+      "left": 10,
+      "width": 10,
+      "height": 26,
+      "fontSize": 20,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
+    },
+    "level7MaxSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level7MaxSpellListPage",
+      "valueId": "level7Max",
+      "parent": "level7SvgSpellListPage",
+      "children": [],
+      "top": 9,
+      "left": 29,
+      "width": 43,
+      "height": 24,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "level7SvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level7SvgSpellListPage",
+      "valueId": "level7SvgSpellListPage_value",
+      "parent": "level7SpellListPage",
+      "children": [
+        "level7TextSpellListPage",
+        "level7MaxSpellListPage",
+        "level7Spellslot1SpellListPage",
+        "level7Spellslot2SpellListPage",
+        "level7Spellslot3SpellListPage",
+        "level7Spellslot4SpellListPage"
+      ],
+      "top": 0,
+      "left": 0,
+      "width": 206,
+      "height": 42,
+      "path": "spellbar.svg"
+    },
+    "level7Spellslot1SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level7Spellslot1SpellListPage",
+      "valueId": "level7Spellslot1SpellListPage_value",
+      "parent": "level7SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 95,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level7Spellslot2SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level7Spellslot2SpellListPage",
+      "valueId": "level7Spellslot2SpellListPage_value",
+      "parent": "level7SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 116,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level7Spellslot3SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level7Spellslot3SpellListPage",
+      "valueId": "level7Spellslot3SpellListPage_value",
+      "parent": "level7SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 137,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level7Spellslot4SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level7Spellslot4SpellListPage",
+      "valueId": "level7Spellslot4SpellListPage_value",
+      "parent": "level7SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 158,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level8TextSpellListPage": {
+      "type": "Text",
+      "elementId": "level8TextSpellListPage",
+      "valueId": "level8TextSpellListPage_value",
+      "parent": "level8SvgSpellListPage",
+      "children": [],
+      "top": 8,
+      "left": 10,
+      "width": 10,
+      "height": 26,
+      "fontSize": 20,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
+    },
+    "level8MaxSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level8MaxSpellListPage",
+      "valueId": "level8Max",
+      "parent": "level8SvgSpellListPage",
+      "children": [],
+      "top": 9,
+      "left": 29,
+      "width": 43,
+      "height": 24,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "level8SvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level8SvgSpellListPage",
+      "valueId": "level8SvgSpellListPage_value",
+      "parent": "level8SpellListPage",
+      "children": [
+        "level8TextSpellListPage",
+        "level8MaxSpellListPage",
+        "level8Spellslot1SpellListPage",
+        "level8Spellslot2SpellListPage",
+        "level8Spellslot3SpellListPage",
+        "level8Spellslot4SpellListPage"
+      ],
+      "top": 0,
+      "left": 0,
+      "width": 206,
+      "height": 42,
+      "path": "spellbar.svg"
+    },
+    "level8Spellslot4SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level8Spellslot4SpellListPage",
+      "valueId": "level8Spellslot4SpellListPage_value",
+      "parent": "level8SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 158,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level8Spellslot3SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level8Spellslot3SpellListPage",
+      "valueId": "level8Spellslot3SpellListPage_value",
+      "parent": "level8SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 137,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level8Spellslot2SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level8Spellslot2SpellListPage",
+      "valueId": "level8Spellslot2SpellListPage_value",
+      "parent": "level8SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 116,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level8Spellslot1SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level8Spellslot1SpellListPage",
+      "valueId": "level8Spellslot1SpellListPage_value",
+      "parent": "level8SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 95,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level9TextSpellListPage": {
+      "type": "Text",
+      "elementId": "level9TextSpellListPage",
+      "valueId": "level9TextSpellListPage_value",
+      "parent": "level9SvgSpellListPage",
+      "children": [],
+      "top": 8,
+      "left": 10,
+      "width": 10,
+      "height": 26,
+      "fontSize": 20,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
+    },
+    "level9MaxSpellListPage": {
+      "type": "SingleLine",
+      "elementId": "level9MaxSpellListPage",
+      "valueId": "level9Max",
+      "parent": "level9SvgSpellListPage",
+      "children": [],
+      "top": 9,
+      "left": 29,
+      "width": 43,
+      "height": 24,
+      "color": "#dde4ff",
+      "maxFontSize": 16,
+      "textAlign": "center"
+    },
+    "level9SvgSpellListPage": {
+      "type": "Svg",
+      "elementId": "level9SvgSpellListPage",
+      "valueId": "level9SvgSpellListPage_value",
+      "parent": "level9SpellListPage",
+      "children": [
+        "level9TextSpellListPage",
+        "level9MaxSpellListPage",
+        "level9Spellslot1SpellListPage",
+        "level9Spellslot2SpellListPage",
+        "level9Spellslot3SpellListPage",
+        "level9Spellslot4SpellListPage"
+      ],
+      "top": 0,
+      "left": 0,
+      "width": 206,
+      "height": 42,
+      "path": "spellbar.svg"
+    },
+    "level9Spellslot4SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level9Spellslot4SpellListPage",
+      "valueId": "level9Spellslot4SpellListPage_value",
+      "parent": "level9SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 158,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level9Spellslot3SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level9Spellslot3SpellListPage",
+      "valueId": "level9Spellslot3SpellListPage_value",
+      "parent": "level9SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 137,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level9Spellslot2SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level9Spellslot2SpellListPage",
+      "valueId": "level9Spellslot2SpellListPage_value",
+      "parent": "level9SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 116,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
+    },
+    "level9Spellslot1SpellListPage": {
+      "type": "Checkmark",
+      "elementId": "level9Spellslot1SpellListPage",
+      "valueId": "level9Spellslot1SpellListPage_value",
+      "parent": "level9SvgSpellListPage",
+      "children": [],
+      "top": 12,
+      "left": 95,
+      "width": 18,
+      "height": 18,
+      "style": "diamond",
+      "color": "#dde4ff",
+      "markColor": "gray",
+      "stateOff": "0",
+      "stateOn": "1"
     }
   },
   "values": {
@@ -25972,33 +26125,6 @@
       "referencedBy": [],
       "references": []
     },
-    "level1Current": {
-      "valueId": "level1Current",
-      "value": "",
-      "parentElements": [
-        "level1CurrentSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level1MinusOneSpellListPage_value": {
-      "valueId": "level1MinusOneSpellListPage_value",
-      "value": "let field = \"level1Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
-      "parentElements": [
-        "level1MinusOneSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level1FillSpellListPage_value": {
-      "valueId": "level1FillSpellListPage_value",
-      "value": "let field = \"level1Current\"\nlet maxfield = 'level1Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
-      "parentElements": [
-        "level1FillSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
     "level1Spell1": {
       "valueId": "level1Spell1",
       "value": "",
@@ -26656,60 +26782,6 @@
       "referencedBy": [],
       "references": []
     },
-    "level2SvgSpellListPage_value": {
-      "valueId": "level2SvgSpellListPage_value",
-      "value": "",
-      "parentElements": [
-        "level2SvgSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level2TextSpellListPage_value": {
-      "valueId": "level2TextSpellListPage_value",
-      "value": "2",
-      "parentElements": [
-        "level2TextSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level2Max": {
-      "valueId": "level2Max",
-      "value": "",
-      "parentElements": [
-        "level2MaxSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level2Current": {
-      "valueId": "level2Current",
-      "value": "",
-      "parentElements": [
-        "level2CurrentSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level2MinusOneSpellListPage_value": {
-      "valueId": "level2MinusOneSpellListPage_value",
-      "value": "let field = \"level2Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
-      "parentElements": [
-        "level2MinusOneSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level2FillSpellListPage_value": {
-      "valueId": "level2FillSpellListPage_value",
-      "value": "let field = \"level2Current\"\nlet maxfield = 'level2Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
-      "parentElements": [
-        "level2FillSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
     "level2Spell1": {
       "valueId": "level2Spell1",
       "value": "",
@@ -27349,60 +27421,6 @@
       "referencedBy": [],
       "references": []
     },
-    "level3SvgSpellListPage_value": {
-      "valueId": "level3SvgSpellListPage_value",
-      "value": "",
-      "parentElements": [
-        "level3SvgSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level3TextSpellListPage_value": {
-      "valueId": "level3TextSpellListPage_value",
-      "value": "3",
-      "parentElements": [
-        "level3TextSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level3Max": {
-      "valueId": "level3Max",
-      "value": "",
-      "parentElements": [
-        "level3MaxSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level3Current": {
-      "valueId": "level3Current",
-      "value": "",
-      "parentElements": [
-        "level3CurrentSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level3MinusOneSpellListPage_value": {
-      "valueId": "level3MinusOneSpellListPage_value",
-      "value": "let field = \"level3Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
-      "parentElements": [
-        "level3MinusOneSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level3FillSpellListPage_value": {
-      "valueId": "level3FillSpellListPage_value",
-      "value": "let field = \"level3Current\"\nlet maxfield = 'level3Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
-      "parentElements": [
-        "level3FillSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
     "level3Spell1": {
       "valueId": "level3Spell1",
       "value": "",
@@ -28024,60 +28042,6 @@
       "referencedBy": [],
       "references": []
     },
-    "level4SvgSpellListPage_value": {
-      "valueId": "level4SvgSpellListPage_value",
-      "value": "",
-      "parentElements": [
-        "level4SvgSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level4TextSpellListPage_value": {
-      "valueId": "level4TextSpellListPage_value",
-      "value": "4",
-      "parentElements": [
-        "level4TextSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level4Max": {
-      "valueId": "level4Max",
-      "value": "",
-      "parentElements": [
-        "level4MaxSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level4Current": {
-      "valueId": "level4Current",
-      "value": "",
-      "parentElements": [
-        "level4CurrentSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level4MinusOneSpellListPage_value": {
-      "valueId": "level4MinusOneSpellListPage_value",
-      "value": "let field = \"level4Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
-      "parentElements": [
-        "level4MinusOneSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level4FillSpellListPage_value": {
-      "valueId": "level4FillSpellListPage_value",
-      "value": "let field = \"level4Current\"\nlet maxfield = 'level4Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
-      "parentElements": [
-        "level4FillSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
     "level4Spell1": {
       "valueId": "level4Spell1",
       "value": "",
@@ -28663,60 +28627,6 @@
       "referencedBy": [],
       "references": []
     },
-    "level5SvgSpellListPage_value": {
-      "valueId": "level5SvgSpellListPage_value",
-      "value": "",
-      "parentElements": [
-        "level5SvgSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level5TextSpellListPage_value": {
-      "valueId": "level5TextSpellListPage_value",
-      "value": "5",
-      "parentElements": [
-        "level5TextSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level5Max": {
-      "valueId": "level5Max",
-      "value": "",
-      "parentElements": [
-        "level5MaxSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level5Current": {
-      "valueId": "level5Current",
-      "value": "",
-      "parentElements": [
-        "level5CurrentSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level5MinusOneSpellListPage_value": {
-      "valueId": "level5MinusOneSpellListPage_value",
-      "value": "let field = \"level5Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
-      "parentElements": [
-        "level5MinusOneSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level5FillSpellListPage_value": {
-      "valueId": "level5FillSpellListPage_value",
-      "value": "let field = \"level5Current\"\nlet maxfield = 'level5Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
-      "parentElements": [
-        "level5FillSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
     "level5Spell1": {
       "valueId": "level5Spell1",
       "value": "",
@@ -29284,60 +29194,6 @@
       "referencedBy": [],
       "references": []
     },
-    "level6SvgSpellListPage_value": {
-      "valueId": "level6SvgSpellListPage_value",
-      "value": "",
-      "parentElements": [
-        "level6SvgSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level6TextSpellListPage_value": {
-      "valueId": "level6TextSpellListPage_value",
-      "value": "6",
-      "parentElements": [
-        "level6TextSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level6Max": {
-      "valueId": "level6Max",
-      "value": "",
-      "parentElements": [
-        "level6MaxSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level6Current": {
-      "valueId": "level6Current",
-      "value": "",
-      "parentElements": [
-        "level6CurrentSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level6MinusOneSpellListPage_value": {
-      "valueId": "level6MinusOneSpellListPage_value",
-      "value": "let field = \"level6Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
-      "parentElements": [
-        "level6MinusOneSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level6FillSpellListPage_value": {
-      "valueId": "level6FillSpellListPage_value",
-      "value": "let field = \"level6Current\"\nlet maxfield = 'level6Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
-      "parentElements": [
-        "level6FillSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
     "level6Spell1": {
       "valueId": "level6Spell1",
       "value": "",
@@ -29815,60 +29671,6 @@
       "referencedBy": [],
       "references": []
     },
-    "level7SvgSpellListPage_value": {
-      "valueId": "level7SvgSpellListPage_value",
-      "value": "",
-      "parentElements": [
-        "level7SvgSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level7TextSpellListPage_value": {
-      "valueId": "level7TextSpellListPage_value",
-      "value": "7",
-      "parentElements": [
-        "level7TextSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level7Max": {
-      "valueId": "level7Max",
-      "value": "",
-      "parentElements": [
-        "level7MaxSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level7Current": {
-      "valueId": "level7Current",
-      "value": "",
-      "parentElements": [
-        "level7CurrentSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level7MinusOneSpellListPage_value": {
-      "valueId": "level7MinusOneSpellListPage_value",
-      "value": "let field = \"level7Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
-      "parentElements": [
-        "level7MinusOneSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level7FillSpellListPage_value": {
-      "valueId": "level7FillSpellListPage_value",
-      "value": "let field = \"level7Current\"\nlet maxfield = 'level7Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
-      "parentElements": [
-        "level7FillSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
     "level7Spell1": {
       "valueId": "level7Spell1",
       "value": "",
@@ -30310,60 +30112,6 @@
       "referencedBy": [],
       "references": []
     },
-    "level8SvgSpellListPage_value": {
-      "valueId": "level8SvgSpellListPage_value",
-      "value": "",
-      "parentElements": [
-        "level8SvgSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level8TextSpellListPage_value": {
-      "valueId": "level8TextSpellListPage_value",
-      "value": "8",
-      "parentElements": [
-        "level8TextSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level8Max": {
-      "valueId": "level8Max",
-      "value": "",
-      "parentElements": [
-        "level8MaxSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level8Current": {
-      "valueId": "level8Current",
-      "value": "",
-      "parentElements": [
-        "level8CurrentSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level8MinusOneSpellListPage_value": {
-      "valueId": "level8MinusOneSpellListPage_value",
-      "value": "let field = \"level8Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
-      "parentElements": [
-        "level8MinusOneSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level8FillSpellListPage_value": {
-      "valueId": "level8FillSpellListPage_value",
-      "value": "let field = \"level8Current\"\nlet maxfield = 'level8Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
-      "parentElements": [
-        "level8FillSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
     "level8Spell1": {
       "valueId": "level8Spell1",
       "value": "",
@@ -30765,60 +30513,6 @@
       "value": "",
       "parentElements": [
         "level9SpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level9SvgSpellListPage_value": {
-      "valueId": "level9SvgSpellListPage_value",
-      "value": "",
-      "parentElements": [
-        "level9SvgSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level9TextSpellListPage_value": {
-      "valueId": "level9TextSpellListPage_value",
-      "value": "9",
-      "parentElements": [
-        "level9TextSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level9Max": {
-      "valueId": "level9Max",
-      "value": "",
-      "parentElements": [
-        "level9MaxSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level9Current": {
-      "valueId": "level9Current",
-      "value": "",
-      "parentElements": [
-        "level9CurrentSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level9MinusOneSpellListPage_value": {
-      "valueId": "level9MinusOneSpellListPage_value",
-      "value": "let field = \"level9Current\"\nlet oldVal =this.readValue(field);\nlet newVal = Number(oldVal) - 1;\nthis.changeValue(field, newVal);",
-      "parentElements": [
-        "level9MinusOneSpellListPage"
-      ],
-      "referencedBy": [],
-      "references": []
-    },
-    "level9FillSpellListPage_value": {
-      "valueId": "level9FillSpellListPage_value",
-      "value": "let field = \"level9Current\"\nlet maxfield = 'level9Max'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
-      "parentElements": [
-        "level9FillSpellListPage"
       ],
       "referencedBy": [],
       "references": []
@@ -31268,6 +30962,546 @@
       "value": "",
       "parentElements": [
         "shoppingListInventoryPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level1Spellslot1SpellListPage_value": {
+      "valueId": "level1Spellslot1SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level1Spellslot1SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level2Spellslot2SpellListPage_value": {
+      "valueId": "level2Spellslot2SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level2Spellslot2SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level2TextSpellListPage_value": {
+      "valueId": "level2TextSpellListPage_value",
+      "value": "2",
+      "parentElements": [
+        "level2TextSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level2Max": {
+      "valueId": "level2Max",
+      "value": "",
+      "parentElements": [
+        "level2MaxSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level2SvgSpellListPage_value": {
+      "valueId": "level2SvgSpellListPage_value",
+      "value": "",
+      "parentElements": [
+        "level2SvgSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level1Spellslot2SpellListPage_value": {
+      "valueId": "level1Spellslot2SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level1Spellslot2SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level1Spellslot3SpellListPage_value": {
+      "valueId": "level1Spellslot3SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level1Spellslot3SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level1Spellslot4SpellListPage_value": {
+      "valueId": "level1Spellslot4SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level1Spellslot4SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level2Spellslot1SpellListPage_value": {
+      "valueId": "level2Spellslot1SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level2Spellslot1SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level2Spellslot3SpellListPage_value": {
+      "valueId": "level2Spellslot3SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level2Spellslot3SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level2Spellslot4SpellListPage_value": {
+      "valueId": "level2Spellslot4SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level2Spellslot4SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level3TextSpellListPage_value": {
+      "valueId": "level3TextSpellListPage_value",
+      "value": "3",
+      "parentElements": [
+        "level3TextSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level3SvgSpellListPage_value": {
+      "valueId": "level3SvgSpellListPage_value",
+      "value": "",
+      "parentElements": [
+        "level3SvgSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level3Max": {
+      "valueId": "level3Max",
+      "value": "",
+      "parentElements": [
+        "level3MaxSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level3Spellslot1SpellListPage_value": {
+      "valueId": "level3Spellslot1SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level3Spellslot1SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level3Spellslot2SpellListPage_value": {
+      "valueId": "level3Spellslot2SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level3Spellslot2SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level3Spellslot3SpellListPage_value": {
+      "valueId": "level3Spellslot3SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level3Spellslot3SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level3Spellslot4SpellListPage_value": {
+      "valueId": "level3Spellslot4SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level3Spellslot4SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level4TextSpellListPage_value": {
+      "valueId": "level4TextSpellListPage_value",
+      "value": "4",
+      "parentElements": [
+        "level4TextSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level4Max": {
+      "valueId": "level4Max",
+      "value": "",
+      "parentElements": [
+        "level4MaxSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level4SvgSpellListPage_value": {
+      "valueId": "level4SvgSpellListPage_value",
+      "value": "",
+      "parentElements": [
+        "level4SvgSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level4Spellslot1SpellListPage_value": {
+      "valueId": "level4Spellslot1SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level4Spellslot1SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level4Spellslot2SpellListPage_value": {
+      "valueId": "level4Spellslot2SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level4Spellslot2SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level4Spellslot3SpellListPage_value": {
+      "valueId": "level4Spellslot3SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level4Spellslot3SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level4Spellslot4SpellListPage_value": {
+      "valueId": "level4Spellslot4SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level4Spellslot4SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level5TextSpellListPage_value": {
+      "valueId": "level5TextSpellListPage_value",
+      "value": "5",
+      "parentElements": [
+        "level5TextSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level5Max": {
+      "valueId": "level5Max",
+      "value": "",
+      "parentElements": [
+        "level5MaxSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level5SvgSpellListPage_value": {
+      "valueId": "level5SvgSpellListPage_value",
+      "value": "",
+      "parentElements": [
+        "level5SvgSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level5Spellslot1SpellListPage_value": {
+      "valueId": "level5Spellslot1SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level5Spellslot1SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level5Spellslot2SpellListPage_value": {
+      "valueId": "level5Spellslot2SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level5Spellslot2SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level5Spellslot3SpellListPage_value": {
+      "valueId": "level5Spellslot3SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level5Spellslot3SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level5Spellslot4SpellListPage_value": {
+      "valueId": "level5Spellslot4SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level5Spellslot4SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level6TextSpellListPage_value": {
+      "valueId": "level6TextSpellListPage_value",
+      "value": "6",
+      "parentElements": [
+        "level6TextSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level6Max": {
+      "valueId": "level6Max",
+      "value": "",
+      "parentElements": [
+        "level6MaxSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level6SvgSpellListPage_value": {
+      "valueId": "level6SvgSpellListPage_value",
+      "value": "",
+      "parentElements": [
+        "level6SvgSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level6Spellslot1SpellListPage_value": {
+      "valueId": "level6Spellslot1SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level6Spellslot1SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level6Spellslot2SpellListPage_value": {
+      "valueId": "level6Spellslot2SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level6Spellslot2SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level6Spellslot3SpellListPage_value": {
+      "valueId": "level6Spellslot3SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level6Spellslot3SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level6Spellslot4SpellListPage_value": {
+      "valueId": "level6Spellslot4SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level6Spellslot4SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level7TextSpellListPage_value": {
+      "valueId": "level7TextSpellListPage_value",
+      "value": "7",
+      "parentElements": [
+        "level7TextSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level7Max": {
+      "valueId": "level7Max",
+      "value": "",
+      "parentElements": [
+        "level7MaxSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level7SvgSpellListPage_value": {
+      "valueId": "level7SvgSpellListPage_value",
+      "value": "",
+      "parentElements": [
+        "level7SvgSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level7Spellslot1SpellListPage_value": {
+      "valueId": "level7Spellslot1SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level7Spellslot1SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level7Spellslot2SpellListPage_value": {
+      "valueId": "level7Spellslot2SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level7Spellslot2SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level7Spellslot3SpellListPage_value": {
+      "valueId": "level7Spellslot3SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level7Spellslot3SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level7Spellslot4SpellListPage_value": {
+      "valueId": "level7Spellslot4SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level7Spellslot4SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level8TextSpellListPage_value": {
+      "valueId": "level8TextSpellListPage_value",
+      "value": "8",
+      "parentElements": [
+        "level8TextSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level8Max": {
+      "valueId": "level8Max",
+      "value": "",
+      "parentElements": [
+        "level8MaxSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level8SvgSpellListPage_value": {
+      "valueId": "level8SvgSpellListPage_value",
+      "value": "",
+      "parentElements": [
+        "level8SvgSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level8Spellslot1SpellListPage_value": {
+      "valueId": "level8Spellslot1SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level8Spellslot1SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level8Spellslot2SpellListPage_value": {
+      "valueId": "level8Spellslot2SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level8Spellslot2SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level8Spellslot3SpellListPage_value": {
+      "valueId": "level8Spellslot3SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level8Spellslot3SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level8Spellslot4SpellListPage_value": {
+      "valueId": "level8Spellslot4SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level8Spellslot4SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level9TextSpellListPage_value": {
+      "valueId": "level9TextSpellListPage_value",
+      "value": "9",
+      "parentElements": [
+        "level9TextSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level9Max": {
+      "valueId": "level9Max",
+      "value": "",
+      "parentElements": [
+        "level9MaxSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level9SvgSpellListPage_value": {
+      "valueId": "level9SvgSpellListPage_value",
+      "value": "",
+      "parentElements": [
+        "level9SvgSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level9Spellslot1SpellListPage_value": {
+      "valueId": "level9Spellslot1SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level9Spellslot1SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level9Spellslot2SpellListPage_value": {
+      "valueId": "level9Spellslot2SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level9Spellslot2SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level9Spellslot3SpellListPage_value": {
+      "valueId": "level9Spellslot3SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level9Spellslot3SpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "level9Spellslot4SpellListPage_value": {
+      "valueId": "level9Spellslot4SpellListPage_value",
+      "value": "0",
+      "parentElements": [
+        "level9Spellslot4SpellListPage"
       ],
       "referencedBy": [],
       "references": []
