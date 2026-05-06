@@ -89,7 +89,7 @@ export class Frame extends Element {
         const horizontalInset = 7
         const horizontalSpan = Math.max(this.width - (horizontalInset * 2), 0)
         const horizontalScale = horizontalSpan / lineSize
-        const verticalScale = Math.max((this.height - 38) / lineSize, 0)
+        const verticalScale = Math.max((this.height - 38) / lineSize * 1.01, 0)
         const halfLine = (lineSize / 2)
 
         const lines = [

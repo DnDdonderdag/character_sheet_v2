@@ -119,6 +119,10 @@ export class Button extends Element {
         return this.master.getValueFromId(valueId).getDisplayValue()
     }
 
+    getElement(elementId){
+        return this.master.getElementById(elementId)
+    }
+
 
     getEditingOptions() {
         return [

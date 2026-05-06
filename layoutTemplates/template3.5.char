@@ -5325,7 +5325,9 @@
       "elementId": "variableHeader1LookupPage",
       "valueId": "variableHeader1LookupPage_value",
       "parent": "headerLookupPage",
-      "children": [],
+      "children": [
+        "variable1TextLookupPage"
+      ],
       "top": 65,
       "left": 85,
       "width": 66,
@@ -5339,7 +5341,9 @@
       "elementId": "variableHeader2LookupPage",
       "valueId": "variableHeader2LookupPage_value",
       "parent": "headerLookupPage",
-      "children": [],
+      "children": [
+        "variable2TextLookupPage"
+      ],
       "top": 65,
       "left": 197,
       "width": 66,
@@ -5353,7 +5357,9 @@
       "elementId": "variableHeader3LookupPage",
       "valueId": "variableHeader3LookupPage_value",
       "parent": "headerLookupPage",
-      "children": [],
+      "children": [
+        "variable3TextLookupPage"
+      ],
       "top": 65,
       "left": 311,
       "width": 66,
@@ -23679,7 +23685,9 @@
       "elementId": "variableHeader1SpellListPage",
       "valueId": "variableHeader1SpellListPage_value",
       "parent": "headerSpellListPage",
-      "children": [],
+      "children": [
+        "variable1TextSpellListPage"
+      ],
       "top": 62,
       "left": 296,
       "width": 66,
@@ -23693,7 +23701,9 @@
       "elementId": "variableHeader2SpellListPage",
       "valueId": "variableHeader2SpellListPage_value",
       "parent": "headerSpellListPage",
-      "children": [],
+      "children": [
+        "variable2TextSpellListPage"
+      ],
       "top": 62,
       "left": 379,
       "width": 66,
@@ -23707,7 +23717,9 @@
       "elementId": "variableHeader3SpellListPage",
       "valueId": "variableHeader3SpellListPage_value",
       "parent": "headerSpellListPage",
-      "children": [],
+      "children": [
+        "variable3TextSpellListPage"
+      ],
       "top": 62,
       "left": 463,
       "width": 66,
@@ -23721,7 +23733,9 @@
       "elementId": "variableHeader4SpellListPage",
       "valueId": "variableHeader4SpellListPage_value",
       "parent": "headerSpellListPage",
-      "children": [],
+      "children": [
+        "variable4TextSpellListPage"
+      ],
       "top": 62,
       "left": 547,
       "width": 66,
@@ -26400,6 +26414,111 @@
       "font": "scalasans",
       "color": "black",
       "alignment": "center"
+    },
+    "variable1TextLookupPage": {
+      "type": "Text",
+      "elementId": "variable1TextLookupPage",
+      "valueId": "variable1Text",
+      "parent": "variableHeader1LookupPage",
+      "children": [],
+      "top": 35,
+      "left": 0,
+      "width": 66,
+      "height": 20,
+      "fontSize": 8,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
+    },
+    "variable2TextLookupPage": {
+      "type": "Text",
+      "elementId": "variable2TextLookupPage",
+      "valueId": "variable2Text",
+      "parent": "variableHeader2LookupPage",
+      "children": [],
+      "top": 35,
+      "left": 0,
+      "width": 66,
+      "height": 20,
+      "fontSize": 8,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
+    },
+    "variable3TextLookupPage": {
+      "type": "Text",
+      "elementId": "variable3TextLookupPage",
+      "valueId": "variable3Text",
+      "parent": "variableHeader3LookupPage",
+      "children": [],
+      "top": 35,
+      "left": 0,
+      "width": 66,
+      "height": 20,
+      "fontSize": 8,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
+    },
+    "variable1TextSpellListPage": {
+      "type": "Text",
+      "elementId": "variable1TextSpellListPage",
+      "valueId": "variable1Text2",
+      "parent": "variableHeader1SpellListPage",
+      "children": [],
+      "top": 35,
+      "left": 0,
+      "width": 66,
+      "height": 20,
+      "fontSize": 8,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
+    },
+    "variable2TextSpellListPage": {
+      "type": "Text",
+      "elementId": "variable2TextSpellListPage",
+      "valueId": "variable2Text2",
+      "parent": "variableHeader2SpellListPage",
+      "children": [],
+      "top": 35,
+      "left": 0,
+      "width": 66,
+      "height": 20,
+      "fontSize": 8,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
+    },
+    "variable3TextSpellListPage": {
+      "type": "Text",
+      "elementId": "variable3TextSpellListPage",
+      "valueId": "variable3Text2",
+      "parent": "variableHeader3SpellListPage",
+      "children": [],
+      "top": 35,
+      "left": 0,
+      "width": 66,
+      "height": 20,
+      "fontSize": 8,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
+    },
+    "variable4TextSpellListPage": {
+      "type": "Text",
+      "elementId": "variable4TextSpellListPage",
+      "valueId": "variable4Text2",
+      "parent": "variableHeader4SpellListPage",
+      "children": [],
+      "top": 35,
+      "left": 0,
+      "width": 66,
+      "height": 20,
+      "fontSize": 8,
+      "font": "scalasans",
+      "color": "black",
+      "alignment": "center"
     }
   },
   "values": {
@@ -27087,6 +27206,7 @@
       "value": "+@js(Math.floor((@sr(dexterity)sr-10)/2))js",
       "parentElements": [],
       "referencedBy": [
+        "reflexSave",
         "balance",
         "ecapeArtist",
         "hide",
@@ -27095,8 +27215,7 @@
         "ride",
         "sleightOfHand",
         "tumble",
-        "useRope",
-        "reflexSave"
+        "useRope"
       ],
       "references": [
         "dexterity"
@@ -27125,9 +27244,9 @@
       "value": "@js(let mod= Math.floor((@sr(constitution)sr-10)/2);mod>=0?\"+\"+mod:mod)js",
       "parentElements": [],
       "referencedBy": [
+        "fortSave",
         "concentration",
-        "backstoryPage_value",
-        "fortSave"
+        "backstoryPage_value"
       ],
       "references": [
         "constitution"
@@ -27346,13 +27465,13 @@
         "WISmodStatsPage"
       ],
       "referencedBy": [
+        "willSave",
         "heal",
         "listen",
         "senseMotive",
         "spot",
         "survival",
-        "profession",
-        "willSave"
+        "profession"
       ],
       "references": [
         "wisdom"
@@ -40127,6 +40246,7 @@
       ],
       "referencedBy": [],
       "references": [
+        "allSaves",
         "CONmod"
       ]
     },
@@ -41711,8 +41831,8 @@
         "climb",
         "jump",
         "swim",
-        "ecapeArtist",
         "balance",
+        "ecapeArtist",
         "hide",
         "moveSilently",
         "openLock",
@@ -41722,13 +41842,13 @@
         "useRope",
         "concentration",
         "appraise",
+        "decipherScript",
         "disableDevice",
         "forgery",
-        "decipherScript",
         "search",
+        "spellcraft",
         "craft",
         "knowledge",
-        "spellcraft",
         "heal",
         "listen",
         "senseMotive",
@@ -41737,12 +41857,12 @@
         "profession",
         "bluff",
         "diplomacy",
+        "disguise",
         "gatherInfo",
         "handleAnimal",
         "intimidate",
         "useMagicDevice",
-        "perform",
-        "disguise"
+        "perform"
       ],
       "references": [
         "allSkillsVal5",
@@ -41761,7 +41881,8 @@
       "referencedBy": [
         "fortSave",
         "willSave",
-        "reflexSave"
+        "reflexSave",
+        "backstoryPage_value"
       ],
       "references": [
         "allSavesVal5",
@@ -41806,6 +41927,69 @@
       "value": "let field = \"currentHp\"\nlet maxfield = 'maxHp'\nlet maxVal =this.readValue(maxfield);\nthis.changeValue(field, maxVal);",
       "parentElements": [
         "healButtonLookupPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "variable1Text": {
+      "valueId": "variable1Text",
+      "value": "VARIABLE 1",
+      "parentElements": [
+        "variable1TextLookupPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "variable2Text": {
+      "valueId": "variable2Text",
+      "value": "VARIABLE 2",
+      "parentElements": [
+        "variable2TextLookupPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "variable3Text": {
+      "valueId": "variable3Text",
+      "value": "VARIABLE 3",
+      "parentElements": [
+        "variable3TextLookupPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "variable1Text2": {
+      "valueId": "variable1Text2",
+      "value": "VARIABLE 1",
+      "parentElements": [
+        "variable1TextSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "variable2Text2": {
+      "valueId": "variable2Text2",
+      "value": "VARIABLE 2",
+      "parentElements": [
+        "variable2TextSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "variable3Text2": {
+      "valueId": "variable3Text2",
+      "value": "VARIABLE 3",
+      "parentElements": [
+        "variable3TextSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "variable4Text2": {
+      "valueId": "variable4Text2",
+      "value": "VARIABLE 4",
+      "parentElements": [
+        "variable4TextSpellListPage"
       ],
       "referencedBy": [],
       "references": []
