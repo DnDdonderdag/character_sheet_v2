@@ -294,7 +294,7 @@ def singleline(top, level, number):
       ],
       "top": {offset+top},
       "left": 15,
-      "width": 120,
+      "width": 162,
       "height": 10,
       "color": "#dde4ff",
       "maxFontSize": 9,
@@ -311,37 +311,6 @@ def singleline(top, level, number):
       "width": 20,
       "height": 20,
       "path": "HorizontalLine.svg"
-    }},
-    "level{level}Spell{number}PreparedAmountSpellListPage": {{
-      "type": "SingleLine",
-      "elementId": "level{level}Spell{number}PreparedAmountSpellListPage",
-      "valueId": "level{level}Spell{number}PreparedAmount",
-      "parent": "level{level}Spell{number}SpellListPage",
-      "children": [],
-      "top": 0,
-      "left": 121,
-      "width": 20,
-      "height": 10,
-      "color": "#dde4ff",
-      "maxFontSize": 9,
-      "textAlign": "center"
-    }},
-    "level{level}Spell{number}CastSpellListPage": {{
-      "type": "Button",
-      "elementId": "level{level}Spell{number}CastSpellListPage",
-      "valueId": "level{level}Spell{number}CastSpellListPage_value",
-      "parent": "level{level}Spell{number}SpellListPage",
-      "children": [],
-      "top": 0,
-      "left": 142,
-      "width": 20,
-      "height": 10,
-      "buttonText": "-1",
-      "color": "black",
-      "backgroundColor": "#c5c6c7",
-      "alignment": "center",
-      "font": "scalasans",
-      "fontSize": 12
     }},
     "level{level}Spell{number}PopUpSpellListPage": {{
       "type": "Button",
@@ -455,24 +424,6 @@ def singleline(top, level, number):
         "value": "transform: Scale(9.4,0.5)",
         "parentElements": [
             "level{level}Spell{number}LineSvgSpellListPage"
-        ],
-        "referencedBy": [],
-        "references": []
-        }},
-        "level{level}Spell{number}PreparedAmount": {{
-        "valueId": "level{level}Spell{number}PreparedAmount",
-        "value": "",
-        "parentElements": [
-            "level{level}Spell{number}PreparedAmountSpellListPage"
-        ],
-        "referencedBy": [],
-        "references": []
-        }},
-        "level{level}Spell{number}CastSpellListPage_value": {{
-        "valueId": "level{level}Spell{number}CastSpellListPage_value",
-        "value": "let field = \\"level{level}Spell{number}PreparedAmount\\";\\nlet oldVal =this.readValue(field);\\nlet newVal = Number(oldVal) - 1;\\nthis.changeValue(field, newVal);",
-        "parentElements": [
-            "level{level}Spell{number}CastSpellListPage"
         ],
         "referencedBy": [],
         "references": []

@@ -30064,7 +30064,7 @@
     },
     "lookupResult1Import": {
       "valueId": "lookupResult1Import",
-      "value": "@js(\n\"@sr(lookupLine1)sr\" != \"\" ? `@sr(lookupLine1)sr\\n\n@lu(@js(\n\nlet keyRoot=[\"spells5e\"];\n//Enter keySet here^\n\nkeyRoot\n)js,@sr(lookupLine1)sr)lu`\n\n: \"Enter value above\"\n\n)js\n",
+      "value": "@js(\n\"@sr(lookupLine1)sr\" != \"\" ? `@sr(lookupLine1)sr\\n\n@lu(@js(\n\nlet keyRoot=[\"spells5e\"];\n//Enter keySet here^\n\nkeyRoot\n)js,@js(\"@sr(lookupLine1)sr\".toLowerCase().replace(/\\s+/g, \"\"))js)lu`\n\n: \"Enter value above\"\n\n)js\n",
       "parentElements": [
         "lookupResult1LookupPageImport"
       ],
@@ -30075,7 +30075,7 @@
     },
     "lookupResult2Import": {
       "valueId": "lookupResult2Import",
-      "value": "@js(\n\"@sr(lookupLine2)sr\" != \"\" ? `@sr(lookupLine2)sr\\n\n@lu(@js(\n\nlet keyRoot=[\"spells5e\"];\n//Enter keySet here^\n\nkeyRoot\n)js,@sr(lookupLine2)sr)lu`\n\n: \"Enter value above\"\n\n)js",
+      "value": "@js(\n\"@sr(lookupLine2)sr\" != \"\" ? `@sr(lookupLine2)sr\\n\n@lu(@js(\n\nlet keyRoot=[\"spells5e\"];\n//Enter keySet here^\n\nkeyRoot\n)js,@js(\"@sr(lookupLine2)sr\".toLowerCase().replace(/\\s+/g, \"\"))js)lu`\n\n: \"Enter value above\"\n\n)js",
       "parentElements": [
         "lookupResult2LookupPageImport"
       ],
@@ -30086,7 +30086,7 @@
     },
     "lookupResult3Import": {
       "valueId": "lookupResult3Import",
-      "value": "@js(\n\"@sr(lookupLine3)sr\" != \"\" ? `@sr(lookupLine3)sr\\n\n@lu(@js(\n\nlet keyRoot=[\"spells5e\"];\n//Enter keySet here^\n\nkeyRoot\n)js,@sr(lookupLine3)sr)lu`\n\n: \"Enter value above\"\n\n)js",
+      "value": "@js(\n\"@sr(lookupLine3)sr\" != \"\" ? `@sr(lookupLine3)sr\\n\n@lu(@js(\n\nlet keyRoot=[\"spells5e\"];\n//Enter keySet here^\n\nkeyRoot\n)js,@js(\"@sr(lookupLine3)sr\".toLowerCase().replace(/\\s+/g, \"\"))js)lu`\n\n: \"Enter value above\"\n\n)js",
       "parentElements": [
         "lookupResult3LookupPageImport"
       ],
@@ -30097,7 +30097,7 @@
     },
     "lookupResult4Import": {
       "valueId": "lookupResult4Import",
-      "value": "@js(\n\"@sr(lookupLine4)sr\" != \"\" ? `@sr(lookupLine4)sr\\n\n@lu(@js(\n\nlet keyRoot=[\"spells5e\"];\n//Enter keySet here^\n\nkeyRoot\n)js,@sr(lookupLine4)sr)lu`\n\n: \"Enter value above\"\n\n)js",
+      "value": "@js(\n\"@sr(lookupLine4)sr\" != \"\" ? `@sr(lookupLine4)sr\\n\n@lu(@js(\n\nlet keyRoot=[\"spells5e\"];\n//Enter keySet here^\n\nkeyRoot\n)js,@js(\"@sr(lookupLine4)sr\".toLowerCase().replace(/\\s+/g, \"\"))js)lu`\n\n: \"Enter value above\"\n\n)js",
       "parentElements": [
         "lookupResult4LookupPageImport"
       ],
