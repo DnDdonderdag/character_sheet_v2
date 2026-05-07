@@ -117,10 +117,31 @@ export class Master {
 
         window.addEventListener("wheel", (e) => {
             if (!e.ctrlKey) return
+            const bounds = charSheet.getBoundingClientRect()
+            const isHoveringCharacterSheet = (
+                e.clientX >= bounds.left &&
+                e.clientX <= bounds.right &&
+                e.clientY >= bounds.top &&
+                e.clientY <= bounds.bottom
+            )
+
+            if (!isHoveringCharacterSheet) return
+
             e.preventDefault()
-            this.zoom *= 1 - e.deltaY * 0.001
-            this.zoom = Math.min(Math.max(this.zoom, 1), 5)
+            const oldZoom = this.zoom
+            const nextZoom = Math.min(Math.max(oldZoom * (1 - e.deltaY * 0.001), 1), 5)
+
+            if (nextZoom === oldZoom) return
+
+            const mouseX = e.clientX - bounds.left
+            const mouseY = e.clientY - bounds.top
+            const contentX = charSheet.scrollLeft + (mouseX / oldZoom)
+            const contentY = charSheet.scrollTop + (mouseY / oldZoom)
+
+            this.zoom = nextZoom
             charSheet.style.zoom = this.zoom
+            charSheet.scrollLeft = contentX - (mouseX / this.zoom)
+            charSheet.scrollTop = contentY - (mouseY / this.zoom)
         }, { passive: false })
     }
 
