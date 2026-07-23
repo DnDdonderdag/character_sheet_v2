@@ -89,6 +89,7 @@ export class Css extends Element {
             {name: "height", type: "Int", value: this.height, function: this.setHeight.bind(this)},
             {name: "parent", type: "String", value: this.parent, function: this.setParent.bind(this)},
             {name: "Add Child", type: "button", value: null, function: this.addChild.bind(this)},
+            {name: "Mass Add Child", type: "button", value: null, function: this.massAddChild.bind(this)},
             {name: "Export Branch", type: "button", value: null, function: this.exportBranch.bind(this)},
             {name: "Import Branch as Child", type: "button", value: null, function: this.importBranchAsChild.bind(this)},
             {name: "Duplicate", type: "button", value: null, function: this.duplicate.bind(this)},

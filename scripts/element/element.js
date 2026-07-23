@@ -357,6 +357,198 @@ export class Element {
 
         createElement()
     }
+    massAddChild() {
+        const countInput = prompt("How many children to create?", "1")
+        if (countInput === null) { return }
+
+        const count = Number.parseInt(countInput, 10)
+        if (!Number.isInteger(count) || count <= 0) {
+            alert("Please enter a positive whole number")
+            return
+        }
+
+        const typeInput = prompt("Element type (TextArea, SingleLine, Checkmark, Svg, Text, Button, Page, Blank, Css, Frame):", "Frame")
+        if (typeInput === null) { return }
+        const type = (typeInput || "Element").trim()
+
+        const elementIdTemplateInput = prompt("New elementId template (must include #):", "child#")
+        if (elementIdTemplateInput === null) { return }
+        const elementIdTemplate = elementIdTemplateInput.trim()
+        if (!elementIdTemplate) {
+            alert("elementId template is required")
+            return
+        }
+        if (!elementIdTemplate.includes("#")) {
+            alert("elementId template must include #")
+            return
+        }
+
+        const valueIdTemplateDefault = `${elementIdTemplate}_value`
+        const valueIdTemplateInput = prompt("valueId template (leave empty for null):", valueIdTemplateDefault)
+        if (valueIdTemplateInput === null) { return }
+        const valueIdTemplate = valueIdTemplateInput.trim() === "" ? null : valueIdTemplateInput.trim()
+
+        const parentInput = prompt("parent elementId:", this.elementId)
+        if (parentInput === null) { return }
+        const parent = parentInput.trim() || this.elementId
+        const parentElement = this.master.getElementFromId(parent)
+        if (!parentElement) {
+            alert("Parent element not found")
+            return
+        }
+
+        const topFormula = prompt("top formula (use # for index):", "10")
+        if (topFormula === null) { return }
+        const leftFormula = prompt("left formula (use # for index):", "10")
+        if (leftFormula === null) { return }
+        const widthFormula = prompt("width formula (use # for index):", "120")
+        if (widthFormula === null) { return }
+        const heightFormula = prompt("height formula (use # for index):", "60")
+        if (heightFormula === null) { return }
+
+        const replaceHash = (template, index) => template.split("#").join(String(index))
+
+        const evaluateFormula = (formula, index, label) => {
+            const expression = replaceHash(formula, index)
+            let result
+            try {
+                result = Function(`"use strict"; return (${expression});`)()
+            } catch (error) {
+                alert(`Invalid ${label} formula for index ${index}: ${expression}`)
+                throw error
+            }
+
+            const numericResult = Number(result)
+            if (Number.isNaN(numericResult)) {
+                alert(`${label} formula must evaluate to a number for index ${index}`)
+                throw new Error(`${label} formula is NaN for index ${index}`)
+            }
+            return numericResult
+        }
+
+        const key = type.toLowerCase()
+        const CHILD_ELEMENT_CLASSES = { // Add new subclasses here
+            textarea: async () => (await import("./subclasses/textArea.js")).TextArea,
+            checkmark: async () => (await import("./subclasses/checkmark.js")).Checkmark,
+            singleline: async () => (await import("./subclasses/singleLine.js")).SingleLine,
+            svg: async () => (await import("./subclasses/svg.js")).Svg,
+            text: async () => (await import("./subclasses/text.js")).Text,
+            button: async () => (await import("./subclasses/button.js")).Button,
+            page: async () => (await import("./subclasses/page.js")).Page,
+            blank: async () => (await import("./subclasses/blank.js")).Blank,
+            css: async () => (await import("./subclasses/css.js")).Css,
+            frame: async () => (await import("./subclasses/frame.js")).Frame,
+        }
+
+        const resolver = CHILD_ELEMENT_CLASSES[key]
+        if (!resolver) {
+            alert("Unknown element type. Use TextArea, SingleLine, Checkmark, Svg, Text, Button, Page, Blank, Css, or Frame.")
+            return
+        }
+
+        let specialArgs = [null, null, null, null, null]
+        if (key === "svg") {
+            const path = prompt("SVG path:", "")
+            if (path === null) { return }
+            specialArgs = [path]
+        }
+
+        const createMassChildren = async () => {
+            try {
+                const SelectedClass = await resolver()
+                const createdElementIds = []
+                const reservedIds = new Set(Object.keys(this.master.elements ?? {}))
+
+                for (let i = 0; i < count; i += 1) {
+                    const childIndex = i
+                    const elementId = replaceHash(elementIdTemplate, childIndex).trim()
+
+                    if (!elementId) {
+                        alert(`elementId resolved to empty value for index ${childIndex}`)
+                        return
+                    }
+                    if (reservedIds.has(elementId)) {
+                        alert(`elementId already exists: ${elementId}`)
+                        return
+                    }
+
+                    const valueId = valueIdTemplate === null
+                        ? null
+                        : replaceHash(valueIdTemplate, childIndex).trim()
+
+                    const top = evaluateFormula(topFormula, childIndex, "top")
+                    const left = evaluateFormula(leftFormula, childIndex, "left")
+                    const width = evaluateFormula(widthFormula, childIndex, "width")
+                    const height = evaluateFormula(heightFormula, childIndex, "height")
+
+                    if (valueId) {
+                        const existingValue = this.master.getValueFromId(valueId)
+                        if (existingValue) {
+                            if (typeof existingValue.addParent === "function") {
+                                existingValue.addParent(elementId)
+                            }
+                        } else {
+                            const initialValueInput = prompt(`Initial value for valueId '${valueId}':`, "")
+                            if (initialValueInput === null) { return }
+
+                            const newValue = new Value(this.master, valueId, initialValueInput, [elementId], [], [])
+                            if (typeof this.master.addValue === "function") {
+                                this.master.addValue(newValue)
+                            } else {
+                                this.master.values[valueId] = newValue
+                            }
+                        }
+                    }
+
+                    const newElement = new SelectedClass(
+                        this.master,
+                        elementId,
+                        valueId,
+                        parent,
+                        [],
+                        top,
+                        left,
+                        width,
+                        height,
+                        ...specialArgs,
+                    )
+
+                    this.master.elements[elementId] = newElement
+                    reservedIds.add(elementId)
+
+                    if (!Array.isArray(parentElement.children)) {
+                        parentElement.children = []
+                    }
+                    if (!parentElement.children.includes(elementId)) {
+                        parentElement.children.push(elementId)
+                    }
+
+                    createdElementIds.push(elementId)
+                }
+
+                if (typeof this.master.drawElements === "function") {
+                    this.master.drawElements()
+                } else {
+                    for (const createdElementId of createdElementIds) {
+                        this.master.getElementFromId(createdElementId)?.draw()
+                    }
+                }
+
+                if (this.master.editor?.layoutTree && typeof this.master.editor.layoutTree.drawTree === "function") {
+                    this.master.editor.layoutTree.drawTree()
+                }
+
+                if (this.master.editor && typeof this.master.editor.selectElement === "function" && createdElementIds.length > 0) {
+                    this.master.editor.selectElement(createdElementIds[createdElementIds.length - 1])
+                }
+            } catch (error) {
+                console.error("Could not create child elements", error)
+                alert("Could not create child elements. Check console for details.")
+            }
+        }
+
+        createMassChildren()
+    }
     duplicate(){
         const sourceIds = []
         const collectSubtreeIds = (elementId) => {
@@ -836,6 +1028,7 @@ export class Element {
             {name: "height", type: "Int", value: this.height, function: this.setHeight.bind(this)},
             {name: "parent", type: "String", value: this.parent, function: this.setParent.bind(this)},
             {name: "Add Child", type: "button", value: null, function: this.addChild.bind(this)},
+            {name: "Mass Add Child", type: "button", value: null, function: this.massAddChild.bind(this)},
             {name: "Export Branch", type: "button", value: null, function: this.exportBranch.bind(this)},
             {name: "Import Branch as Child", type: "button", value: null, function: this.importBranchAsChild.bind(this)},
             {name: "Duplicate", type: "button", value: null, function: this.duplicate.bind(this)},

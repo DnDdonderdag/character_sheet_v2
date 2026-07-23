@@ -141,6 +141,7 @@ export class Checkmark extends Element {
                 {name: "Export Branch", type: "button", value: null, function: this.exportBranch.bind(this)},
                 {name: "Import Branch as Child", type: "button", value: null, function: this.importBranchAsChild.bind(this)},
             {name: "Add Child", type: "button", value: null, function: this.addChild.bind(this)},
+            {name: "Mass Add Child", type: "button", value: null, function: this.massAddChild.bind(this)},
             {name: "Duplicate", type: "button", value: null, function: this.duplicate.bind(this)},
             {name: "Remove Element", type: "button", value: null, function: this.remove.bind(this)}
         ]

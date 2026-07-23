@@ -7132,7 +7132,10 @@
       "elementId": "fundsFrameInventoryPage",
       "valueId": "fundsFrameInventoryPage_value",
       "parent": "fundsBlankInventoryPage",
-      "children": [],
+      "children": [
+        "personalFundsTextInventoryPage",
+        "partylFundsTextInventoryPage"
+      ],
       "top": 0,
       "left": 10,
       "width": 140,
@@ -7270,7 +7273,7 @@
       "width": 43,
       "height": 43,
       "color": "#c5c6c7",
-      "maxFontSize": 16,
+      "maxFontSize": 24,
       "textAlign": "center"
     },
     "acPenalty1InventoryPage": {
@@ -7284,7 +7287,7 @@
       "width": 43,
       "height": 43,
       "color": "#c5c6c7",
-      "maxFontSize": 16,
+      "maxFontSize": 24,
       "textAlign": "center"
     },
     "armorEquipped1InventoryPage": {
@@ -7330,7 +7333,7 @@
       "width": 43,
       "height": 44,
       "color": "#c5c6c7",
-      "maxFontSize": 16,
+      "maxFontSize": 24,
       "textAlign": "center"
     },
     "armorName2InventoryPage": {
@@ -7388,7 +7391,7 @@
       "width": 43,
       "height": 43,
       "color": "#c5c6c7",
-      "maxFontSize": 16,
+      "maxFontSize": 24,
       "textAlign": "center"
     },
     "ac2InventoryPage": {
@@ -7402,7 +7405,7 @@
       "width": 43,
       "height": 44,
       "color": "#c5c6c7",
-      "maxFontSize": 16,
+      "maxFontSize": 24,
       "textAlign": "center"
     },
     "armorName3InventoryPage": {
@@ -7430,7 +7433,7 @@
       "width": 43,
       "height": 43,
       "color": "#c5c6c7",
-      "maxFontSize": 16,
+      "maxFontSize": 24,
       "textAlign": "center"
     },
     "armorEquipped4InventoryPage": {
@@ -7460,7 +7463,7 @@
       "width": 43,
       "height": 43,
       "color": "#c5c6c7",
-      "maxFontSize": 16,
+      "maxFontSize": 24,
       "textAlign": "center"
     },
     "armorName4InventoryPage": {
@@ -7488,7 +7491,7 @@
       "width": 43,
       "height": 43,
       "color": "#c5c6c7",
-      "maxFontSize": 16,
+      "maxFontSize": 24,
       "textAlign": "center"
     },
     "weaponsFrameInventoryPage": {
@@ -26519,6 +26522,36 @@
       "font": "scalasans",
       "color": "black",
       "alignment": "center"
+    },
+    "personalFundsTextInventoryPage": {
+      "type": "Text",
+      "elementId": "personalFundsTextInventoryPage",
+      "valueId": "personalFundsTextInventoryPage_value",
+      "parent": "fundsFrameInventoryPage",
+      "children": [],
+      "top": 5,
+      "left": 10,
+      "width": 55,
+      "height": 8,
+      "fontSize": 8,
+      "font": "scalasans",
+      "color": "#c5c6c7",
+      "alignment": "center"
+    },
+    "partylFundsTextInventoryPage": {
+      "type": "Text",
+      "elementId": "partylFundsTextInventoryPage",
+      "valueId": "partyFundsTextInventoryPage_value",
+      "parent": "fundsFrameInventoryPage",
+      "children": [],
+      "top": 5,
+      "left": 75,
+      "width": 55,
+      "height": 8,
+      "fontSize": 8,
+      "font": "scalasans",
+      "color": "#c5c6c7",
+      "alignment": "center"
     }
   },
   "values": {
@@ -27055,7 +27088,7 @@
     },
     "armorCheckPenalty": {
       "valueId": "armorCheckPenalty",
-      "value": "0",
+      "value": "@js(@sr(acPenalty1)sr + @sr(acPenalty2)sr + @sr(acPenalty3)sr + @sr(acPenalty4)sr + 0)js",
       "parentElements": [
         "armorCheckPenaltyStatsPage"
       ],
@@ -27070,7 +27103,12 @@
         "sleightOfHand",
         "tumble"
       ],
-      "references": []
+      "references": [
+        "acPenalty4",
+        "acPenalty3",
+        "acPenalty2",
+        "acPenalty1"
+      ]
     },
     "armorCheckPenaltyTextStatsPage_value": {
       "valueId": "armorCheckPenaltyTextStatsPage_value",
@@ -27715,7 +27753,7 @@
     },
     "swim": {
       "valueId": "swim",
-      "value": "@js(@sr(STRmod)sr + @sr(swimRanks)sr + @sr(allSkills)sr + @sr(armorCheckPenalty)sr )js",
+      "value": "@js(@sr(STRmod)sr + @sr(swimRanks)sr + @sr(allSkills)sr + 2*@sr(armorCheckPenalty)sr )js",
       "parentElements": [
         "swimStatsPage"
       ],
@@ -30183,7 +30221,7 @@
     },
     "lookupResult1Import": {
       "valueId": "lookupResult1Import",
-      "value": "@js(\n\"@sr(lookupLine1)sr\" != \"\" ? `@sr(lookupLine1)sr\\n\n@lu(@js(\n\nlet keyRoot=[\"spells5e\"];\n//Enter keySet here^\n\nkeyRoot\n)js,@js(\"@sr(lookupLine1)sr\".toLowerCase().replace(/\\s+/g, \"\"))js)lu`\n\n: \"Enter value above\"\n\n)js\n",
+      "value": "@js(\n\"@sr(lookupLine1)sr\" != \"\" ? `@sr(lookupLine1)sr\\n\n@lu(@js(\n\nlet keyRoot=[\"spells3_5\"];\n//Enter keySet here^\n\nkeyRoot\n)js,@js(\"@sr(lookupLine1)sr\".toLowerCase().replace(/\\s+/g, \"\"))js)lu`\n\n: \"Enter value above\"\n\n)js\n",
       "parentElements": [
         "lookupResult1LookupPageImport"
       ],
@@ -30194,7 +30232,7 @@
     },
     "lookupResult2Import": {
       "valueId": "lookupResult2Import",
-      "value": "@js(\n\"@sr(lookupLine2)sr\" != \"\" ? `@sr(lookupLine2)sr\\n\n@lu(@js(\n\nlet keyRoot=[\"spells5e\"];\n//Enter keySet here^\n\nkeyRoot\n)js,@js(\"@sr(lookupLine2)sr\".toLowerCase().replace(/\\s+/g, \"\"))js)lu`\n\n: \"Enter value above\"\n\n)js",
+      "value": "@js(\n\"@sr(lookupLine2)sr\" != \"\" ? `@sr(lookupLine2)sr\\n\n@lu(@js(\n\nlet keyRoot=[\"spells3_5\"];\n//Enter keySet here^\n\nkeyRoot\n)js,@js(\"@sr(lookupLine2)sr\".toLowerCase().replace(/\\s+/g, \"\"))js)lu`\n\n: \"Enter value above\"\n\n)js",
       "parentElements": [
         "lookupResult2LookupPageImport"
       ],
@@ -30205,7 +30243,7 @@
     },
     "lookupResult3Import": {
       "valueId": "lookupResult3Import",
-      "value": "@js(\n\"@sr(lookupLine3)sr\" != \"\" ? `@sr(lookupLine3)sr\\n\n@lu(@js(\n\nlet keyRoot=[\"spells5e\"];\n//Enter keySet here^\n\nkeyRoot\n)js,@js(\"@sr(lookupLine3)sr\".toLowerCase().replace(/\\s+/g, \"\"))js)lu`\n\n: \"Enter value above\"\n\n)js",
+      "value": "@js(\n\"@sr(lookupLine3)sr\" != \"\" ? `@sr(lookupLine3)sr\\n\n@lu(@js(\n\nlet keyRoot=[\"spells3_5\"];\n//Enter keySet here^\n\nkeyRoot\n)js,@js(\"@sr(lookupLine3)sr\".toLowerCase().replace(/\\s+/g, \"\"))js)lu`\n\n: \"Enter value above\"\n\n)js",
       "parentElements": [
         "lookupResult3LookupPageImport"
       ],
@@ -30216,7 +30254,7 @@
     },
     "lookupResult4Import": {
       "valueId": "lookupResult4Import",
-      "value": "@js(\n\"@sr(lookupLine4)sr\" != \"\" ? `@sr(lookupLine4)sr\\n\n@lu(@js(\n\nlet keyRoot=[\"spells5e\"];\n//Enter keySet here^\n\nkeyRoot\n)js,@js(\"@sr(lookupLine4)sr\".toLowerCase().replace(/\\s+/g, \"\"))js)lu`\n\n: \"Enter value above\"\n\n)js",
+      "value": "@js(\n\"@sr(lookupLine4)sr\" != \"\" ? `@sr(lookupLine4)sr\\n\n@lu(@js(\n\nlet keyRoot=[\"spells3_5\"];\n//Enter keySet here^\n\nkeyRoot\n)js,@js(\"@sr(lookupLine4)sr\".toLowerCase().replace(/\\s+/g, \"\"))js)lu`\n\n: \"Enter value above\"\n\n)js",
       "parentElements": [
         "lookupResult4LookupPageImport"
       ],
@@ -31069,7 +31107,9 @@
       "parentElements": [
         "acPenalty1InventoryPage"
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        "armorCheckPenalty"
+      ],
       "references": []
     },
     "armorEquipped1": {
@@ -31114,7 +31154,9 @@
       "parentElements": [
         "acPenalty2InventoryPage"
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        "armorCheckPenalty"
+      ],
       "references": []
     },
     "ac2": {
@@ -31159,7 +31201,9 @@
       "parentElements": [
         "acPenalty3InventoryPage"
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        "armorCheckPenalty"
+      ],
       "references": []
     },
     "armorEquipped4": {
@@ -31195,7 +31239,9 @@
       "parentElements": [
         "acPenalty4InventoryPage"
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        "armorCheckPenalty"
+      ],
       "references": []
     },
     "weaponsFrameInventoryPage_value": {
@@ -41990,6 +42036,24 @@
       "value": "VARIABLE 4",
       "parentElements": [
         "variable4TextSpellListPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "personalFundsTextInventoryPage_value": {
+      "valueId": "personalFundsTextInventoryPage_value",
+      "value": "PERSONAL",
+      "parentElements": [
+        "personalFundsTextInventoryPage"
+      ],
+      "referencedBy": [],
+      "references": []
+    },
+    "partyFundsTextInventoryPage_value": {
+      "valueId": "partyFundsTextInventoryPage_value",
+      "value": "PARTY",
+      "parentElements": [
+        "partylFundsTextInventoryPage"
       ],
       "referencedBy": [],
       "references": []
