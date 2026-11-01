@@ -402,10 +402,11 @@ export class Lookup {
         }
 
         if (typeof value !== "object") {
+            const resolvedValue = this.resolveLookupDisplayCommands(String(value), null)
             if (label !== null) {
-                makeKeyLine(label, depth, String(value))
+                makeKeyLine(label, depth, resolvedValue)
             } else {
-                makeLine(String(value), depth)
+                makeLine(resolvedValue, depth)
             }
             return
         }
@@ -437,7 +438,15 @@ export class Lookup {
         }
     }
 
-    formatLookupFromKeyset(keyset) {
+    formatLookupFromKeyset(keyset, evalContext = null) {
+        const context = this.getOrCreateLookupEvalContext(evalContext)
+        const lookupPathKey = keyset.join("\u001f")
+        if (context.lookupStack.includes(lookupPathKey)) {
+            return "-lookupLoopDetected-"
+        }
+
+        context.lookupStack.push(lookupPathKey)
+        try {
         const result = this.getLookupFromKeyset(keyset)
         if (!result.ok) {
             return result.message
@@ -447,7 +456,114 @@ export class Lookup {
             return this.formatDirectKeysOnly(result.value)
         }
 
-        return this.formatLookupValueToString(result.value, 0, null).trimEnd()
+        return this.formatLookupValueToString(result.value, 0, null, context).trimEnd()
+        } finally {
+            context.lookupStack.pop()
+        }
+    }
+
+    getOrCreateLookupEvalContext(evalContext = null) {
+        const context = evalContext ?? { stack: [], collectReferences: false }
+        if (!Array.isArray(context.stack)) {
+            context.stack = []
+        }
+        if (typeof context.collectReferences !== "boolean") {
+            context.collectReferences = false
+        }
+        if (!Array.isArray(context.lookupStack)) {
+            context.lookupStack = []
+        }
+        return context
+    }
+
+    resolveLookupDisplayCommands(rawValue, evalContext = null) {
+        if (typeof rawValue !== "string") {
+            return rawValue
+        }
+
+        const context = this.getOrCreateLookupEvalContext(evalContext)
+
+        const keywords = {
+            "@js": (arg) => this.resolveLookupJsCommand(arg),
+            "@lu": (arg) => this.resolveLookupLuCommand(arg, context),
+            "@sr": (arg) => this.resolveLookupSrCommand(arg, context),
+        }
+
+        const isCommandStart = (displayVal, i) => {
+            const checks = [
+                (text, index) => text[index] === "@",
+                (text, index) => index === 0 || text[index - 1] !== "\\",
+                (text, index) => index + 2 < text.length,
+                (text, index) => text[index + 3] === "(",
+                (text, index) => {
+                    const cmd = text.slice(index + 1, index + 3)
+                    const closingToken = `)${cmd}`
+                    return text.indexOf(closingToken, index + 4) !== -1
+                },
+            ]
+
+            return checks.every((check) => check(displayVal, i))
+        }
+
+        let displayVal = rawValue
+        let done = false
+        while (!done) {
+            let lastAtIndex = -1
+            for (let i = displayVal.length - 1; i >= 0; i--) {
+                if (isCommandStart(displayVal, i)) {
+                    lastAtIndex = i
+                    break
+                }
+            }
+
+            if (lastAtIndex === -1) {
+                done = true
+                break
+            }
+
+            const command = displayVal.slice(lastAtIndex, lastAtIndex + 3)
+            const closingToken = `)${command.slice(1)}`
+            const argStartIndex = lastAtIndex + 4
+            const argEndIndex = displayVal.indexOf(closingToken, argStartIndex)
+            const arg = displayVal.slice(argStartIndex, argEndIndex)
+
+            let result
+            if (command in keywords) {
+                result = keywords[command](arg)
+            } else {
+                result = "-unknown function \\" + command + "-"
+            }
+
+            displayVal = displayVal.slice(0, lastAtIndex) + result + displayVal.slice(argEndIndex + closingToken.length)
+        }
+
+        return displayVal.replace(/\\@/g, "@")
+    }
+
+    resolveLookupJsCommand(arg) {
+        try {
+            return eval(arg)
+        } catch (error) {
+            return `-js error: ${error.message}-`
+        }
+    }
+
+    resolveLookupLuCommand(arg, evalContext) {
+        const keyset = arg.split(",")
+        return this.formatLookupFromKeyset(keyset, evalContext)
+    }
+
+    resolveLookupSrCommand(arg, evalContext) {
+        if (evalContext?.stack?.includes(arg)) {
+            return "-loopDetected-"
+        }
+
+        const referencedValue = this.master.getValueFromId(arg)
+        if (!referencedValue) {
+            return "-could not find " + arg + "-"
+        }
+
+        return referencedValue.getDisplayValue(evalContext)
     }
 
     isLookupValueVeryLarge(value, maxNodes = 100, maxDepth = 8) {
@@ -510,7 +626,7 @@ export class Lookup {
         return output
     }
 
-    formatLookupValueToString(value, depth = 0, label = null) {
+    formatLookupValueToString(value, depth = 0, label = null, evalContext = null) {
         const indent = " ".repeat(depth * 4)
         let output = ""
         const childDepth = label === null ? depth : depth + 1
@@ -529,10 +645,11 @@ export class Lookup {
         }
 
         if (typeof value !== "object") {
+            const resolvedValue = this.resolveLookupDisplayCommands(String(value), evalContext)
             if (label !== null) {
-                appendLine(`${String(label)}: ${String(value)}`)
+                appendLine(`${String(label)}: ${resolvedValue}`)
             } else {
-                appendLine(String(value))
+                appendLine(resolvedValue)
             }
             return output
         }
@@ -548,7 +665,7 @@ export class Lookup {
             }
 
             for (let i = 0; i < value.length; i++) {
-                output += this.formatLookupValueToString(value[i], childDepth, `[${i}]`)
+                output += this.formatLookupValueToString(value[i], childDepth, `[${i}]`, evalContext)
             }
             return output
         }
@@ -560,7 +677,7 @@ export class Lookup {
         }
 
         for (const [key, child] of entries) {
-            output += this.formatLookupValueToString(child, childDepth, key)
+            output += this.formatLookupValueToString(child, childDepth, key, evalContext)
         }
 
         return output

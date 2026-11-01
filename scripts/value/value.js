@@ -220,9 +220,9 @@ function jsFunc(arg, valueElement) {
     }
 }
 
-function luFunc(arg, valueElement){
+function luFunc(arg, valueElement, evalContext){
     let keyset = arg.split(",")
-    return valueElement.master.lookup.formatLookupFromKeyset(keyset)
+    return valueElement.master.lookup.formatLookupFromKeyset(keyset, evalContext)
 }
 
 function srFunc(arg, valueElement, evalContext){
